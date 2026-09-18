@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "AutoDetail — Luxury Car Detailing & Restoration",
+  description: "Restoring lasting shine, inside and out. Professional auto detailing, multi-stage paint correction, 9H ceramic coating, and luxury interior deep cleaning.",
+  icons: {
+    icon: "/images/autodetail/logo-white.webp",
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +30,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${plusJakartaSans.variable} dark scroll-smooth h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-[#0a0a0c] text-neutral-200 font-sans selection:bg-[#e30613] selection:text-white flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

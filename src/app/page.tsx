@@ -1,9 +1,91 @@
+"use client";
+
+import { useState } from "react";
+import { NoticeBar } from "@/components/autodetail/NoticeBar";
+import { Header } from "@/components/autodetail/Header";
+import { HeroSection } from "@/components/autodetail/HeroSection";
+import { BrandPartners } from "@/components/autodetail/BrandPartners";
+import { AboutSection } from "@/components/autodetail/AboutSection";
+import { StatsCounters } from "@/components/autodetail/StatsCounters";
+import { ServicesSection } from "@/components/autodetail/ServicesSection";
+import { WhyChooseUs } from "@/components/autodetail/WhyChooseUs";
+import { CockpitBanner } from "@/components/autodetail/CockpitBanner";
+import { TestimonialsSection } from "@/components/autodetail/TestimonialsSection";
+import { CtaBanner } from "@/components/autodetail/CtaBanner";
+import { FaqSection } from "@/components/autodetail/FaqSection";
+import { InstagramGallery } from "@/components/autodetail/InstagramGallery";
+import { Footer } from "@/components/autodetail/Footer";
+import { AppointmentModal } from "@/components/autodetail/AppointmentModal";
+import { BackToTop } from "@/components/autodetail/BackToTop";
+
 export default function Home() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("Ceramic Coating Protection");
+
+  const handleOpenBooking = (service?: string) => {
+    if (service) {
+      setSelectedService(service);
+    }
+    setIsBookingOpen(true);
+  };
+
+  const handleCloseBooking = () => {
+    setIsBookingOpen(false);
+  };
+
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
+    <main className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-hidden selection:bg-[#e30613] selection:text-white">
+      {/* Top Notice Bar */}
+      <NoticeBar onOpenBooking={() => handleOpenBooking("Ceramic Coating Protection")} />
+
+      {/* Sticky Main Navigation */}
+      <Header onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Hero Section with Looping Detailing Video */}
+      <HeroSection onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Partner Brand Logos Marquee */}
+      <BrandPartners />
+
+      {/* About Us Showcase with Dual Staggered Imagery */}
+      <AboutSection onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Performance Metrics Counters */}
+      <StatsCounters />
+
+      {/* 6 Premium Detailing Services */}
+      <ServicesSection onSelectService={(s) => handleOpenBooking(s)} />
+
+      {/* Why Choose Us 4-Card Grid */}
+      <WhyChooseUs />
+
+      {/* Parallax Cockpit Interior Break */}
+      <CockpitBanner onOpenBooking={() => handleOpenBooking("Interior Deep Cleaning")} />
+
+      {/* Client Testimonials & Google 5.0 Rating */}
+      <TestimonialsSection />
+
+      {/* Red Call-to-Action Banner */}
+      <CtaBanner onOpenBooking={() => handleOpenBooking()} />
+
+      {/* Frequently Asked Questions */}
+      <FaqSection />
+
+      {/* Instagram Gallery Feed */}
+      <InstagramGallery />
+
+      {/* Comprehensive Footer */}
+      <Footer />
+
+      {/* Interactive Booking Modal Dialog */}
+      <AppointmentModal
+        isOpen={isBookingOpen}
+        onClose={handleCloseBooking}
+        defaultService={selectedService}
+      />
+
+      {/* Smooth Scroll to Top */}
+      <BackToTop />
     </main>
   );
 }
