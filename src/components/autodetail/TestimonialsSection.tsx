@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { TESTIMONIALS } from "@/data/autodetailData";
-import { Star, Quote, Sparkles } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 export function TestimonialsSection() {
   return (
@@ -12,11 +12,12 @@ export function TestimonialsSection() {
         {/* Header with Google Badge */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>TESTIMONIALS</span>
+            <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
+              <span className="text-[#1277ff] font-mono font-bold">04</span>
+              <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
+              <span>Verified Client Experiences</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight text-balance">
               What They Say
             </h2>
           </div>
@@ -49,18 +50,18 @@ export function TestimonialsSection() {
             {TESTIMONIALS.map((item) => (
               <div
                 key={item.id}
-                className="relative flex flex-col justify-between rounded-2xl bg-[#14151a] border border-white/10 p-8 shadow-xl hover:border-[#e30613]/40 transition-all group"
+                className="relative flex flex-col justify-between rounded-2xl bg-[#14151a] border border-white/10 p-8 shadow-xl hover:border-[#1277ff]/40 transition-all group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     {/* Stars */}
-                    <div className="flex items-center gap-1 text-[#e30613]">
+                    <div className="flex items-center gap-1 text-[#1277ff]">
                       {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#e30613]" />
+                        <Star key={i} className="w-4 h-4 fill-[#1277ff]" />
                       ))}
                     </div>
 
-                    <Quote className="w-8 h-8 text-neutral-600 group-hover:text-[#e30613]/40 transition-colors" />
+                    <Quote className="w-8 h-8 text-neutral-600 group-hover:text-[#1277ff]/40 transition-colors" />
                   </div>
 
                   <p className="text-base sm:text-lg text-neutral-300 leading-relaxed italic">

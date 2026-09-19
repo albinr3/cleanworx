@@ -31,7 +31,7 @@ export function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[#e30613] hover:bg-[#c5040f] text-white shadow-2xl shadow-[#e30613]/50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer border border-white/20"
+      className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[#1277ff] hover:bg-[#0d62d6] text-white shadow-2xl shadow-[#1277ff]/50 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer border border-white/20"
     >
       <ArrowUp className="w-5 h-5" />
     </button>

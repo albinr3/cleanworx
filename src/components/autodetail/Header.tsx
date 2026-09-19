@@ -31,8 +31,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
     { label: "Home", href: "#" },
     { label: "About Us", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Reviews", href: "#testimonials" },
+    { label: "Reviews", href: "#why-us" },
     { label: "FAQ", href: "#faq" },
     { label: "Gallery", href: "#gallery" },
     { label: "Contact", href: "#contact" },
@@ -70,7 +69,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 className="relative text-sm font-medium text-neutral-300 hover:text-white transition-colors py-1 group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#e30613] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#1277ff] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -82,7 +81,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
               href="tel:+1234567890"
               className="hidden md:flex items-center gap-2 text-sm text-neutral-300 hover:text-white transition-colors group"
             >
-              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#e30613] group-hover:bg-[#e30613] group-hover:text-white transition-all">
+              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#1277ff] group-hover:bg-[#1277ff] group-hover:text-white transition-all">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="text-left leading-tight">
@@ -103,7 +102,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
             {/* Appointment CTA */}
             <button
               onClick={onOpenBooking}
-              className="hidden sm:inline-flex items-center gap-2 rounded-md bg-[#e30613] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#e30613]/25 hover:bg-[#c5040f] hover:shadow-xl hover:shadow-[#e30613]/40 active:scale-95 transition-all cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 rounded-md bg-[#1277ff] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#1277ff]/25 hover:bg-[#0d62d6] hover:shadow-xl hover:shadow-[#1277ff]/40 active:scale-95 transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Make Appointment</span>
@@ -173,7 +172,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                   setIsMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#e30613] py-3 text-sm font-bold text-white shadow-lg hover:bg-[#c5040f] transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#1277ff] py-3 text-sm font-bold text-white shadow-lg hover:bg-[#0d62d6] transition-all"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Make Appointment</span>
@@ -207,7 +206,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="e.g. Ceramic coating, paint correction, interior..."
-                className="w-full rounded-lg bg-black/50 border border-white/10 pl-11 pr-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#e30613] transition-colors"
+                className="w-full rounded-lg bg-black/50 border border-white/10 pl-11 pr-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                 autoFocus
               />
             </div>

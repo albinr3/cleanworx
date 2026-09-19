@@ -10,7 +10,6 @@ import { StatsCounters } from "@/components/autodetail/StatsCounters";
 import { ServicesSection } from "@/components/autodetail/ServicesSection";
 import { WhyChooseUs } from "@/components/autodetail/WhyChooseUs";
 import { CockpitBanner } from "@/components/autodetail/CockpitBanner";
-import { TestimonialsSection } from "@/components/autodetail/TestimonialsSection";
 import { CtaBanner } from "@/components/autodetail/CtaBanner";
 import { FaqSection } from "@/components/autodetail/FaqSection";
 import { InstagramGallery } from "@/components/autodetail/InstagramGallery";
@@ -34,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-hidden selection:bg-[#e30613] selection:text-white">
+    <main className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-hidden selection:bg-[#1277ff] selection:text-white">
       {/* Top Notice Bar */}
       <NoticeBar onOpenBooking={() => handleOpenBooking("Ceramic Coating Protection")} />
 
@@ -62,10 +61,7 @@ export default function Home() {
       {/* Parallax Cockpit Interior Break */}
       <CockpitBanner onOpenBooking={() => handleOpenBooking("Interior Deep Cleaning")} />
 
-      {/* Client Testimonials & Google 5.0 Rating */}
-      <TestimonialsSection />
-
-      {/* Red Call-to-Action Banner */}
+      {/* Blue Call-to-Action Banner */}
       <CtaBanner onOpenBooking={() => handleOpenBooking()} />
 
       {/* Frequently Asked Questions */}

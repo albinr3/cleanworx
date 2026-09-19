@@ -30,7 +30,7 @@ export function InstagramGallery() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-3">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1277ff] mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>RECENT WORK &amp; GALLERY</span>
             </div>
@@ -45,7 +45,7 @@ export function InstagramGallery() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 px-5 py-2.5 text-xs font-bold text-white transition-colors"
           >
-            <InstagramIcon className="w-4 h-4 text-[#e30613]" />
+            <InstagramIcon className="w-4 h-4 text-[#1277ff]" />
             <span>Follow on Instagram</span>
           </a>
         </div>
@@ -65,7 +65,7 @@ export function InstagramGallery() {
               />
               {/* Hover Dark Overlay with Icon */}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#e30613] text-white flex items-center justify-center shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-full bg-[#1277ff] text-white flex items-center justify-center shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <InstagramIcon className="w-6 h-6" />
                 </div>
                 <span className="mt-3 text-xs font-bold text-white uppercase tracking-wider">

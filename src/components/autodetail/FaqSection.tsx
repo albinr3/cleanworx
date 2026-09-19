@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FAQS } from "@/data/autodetailData";
-import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 export function FaqSection() {
   const [openId, setOpenId] = useState<string | null>("faq-1");
@@ -17,22 +17,23 @@ export function FaqSection() {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>EVERYTHING YOU NEED TO KNOW</span>
+          <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
+            <span className="text-[#1277ff] font-mono font-bold">05</span>
+            <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
+            <span>Specifications &amp; Inquiries</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight text-balance">
             Frequently Asked Questions
           </h2>
 
-          <p className="mt-4 text-base text-neutral-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-base text-neutral-400 max-w-2xl mx-auto text-pretty">
             Got questions about our detailing process, ceramic coats, or booking? Here are quick answers to our most common inquiries.
           </p>
         </div>
 
         {/* Accordion Container */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           {FAQS.map((faq) => {
             const isOpen = openId === faq.id;
             return (
@@ -40,8 +41,8 @@ export function FaqSection() {
                 key={faq.id}
                 className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-[#14151b] border-[#e30613]/40 shadow-xl"
-                    : "bg-[#111216] border-white/5 hover:border-white/15"
+                    ? "bg-[#14151b] border-white/15 border-l-2 border-l-[#1277ff] shadow-xl"
+                    : "bg-[#101115] border-white/5 hover:border-white/10"
                 }`}
               >
                 <button
@@ -50,12 +51,14 @@ export function FaqSection() {
                   className="w-full flex items-center justify-between p-6 text-left cursor-pointer transition-colors"
                 >
                   <span className="text-base sm:text-lg font-bold text-white flex items-center gap-3">
-                    <span className={`w-2 h-2 rounded-full transition-colors ${isOpen ? "bg-[#e30613]" : "bg-neutral-600"}`} />
+                    <span className="font-mono text-xs text-neutral-400">
+                      {faq.id.replace("faq-", "Q0")}
+                    </span>
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/5 text-neutral-300 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-[#e30613] text-white" : ""
+                    className={`w-7 h-7 rounded-md flex items-center justify-center bg-white/5 text-neutral-300 transition-transform duration-300 ${
+                      isOpen ? "rotate-180 bg-[#1277ff] text-white" : ""
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -75,7 +78,7 @@ export function FaqSection() {
         {/* Still have questions callout */}
         <div className="mt-12 text-center p-6 rounded-2xl bg-[#14151b] border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-left">
-            <div className="w-10 h-10 rounded-full bg-[#e30613]/10 text-[#e30613] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-[#1277ff]/10 text-[#1277ff] flex items-center justify-center">
               <HelpCircle className="w-5 h-5" />
             </div>
             <div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Calendar, CheckCircle2, Shield, Sparkles } from "lucide-react";
+import { X, Calendar, CheckCircle2, Shield } from "lucide-react";
 import { SERVICES } from "@/data/autodetailData";
 
 interface AppointmentModalProps {
@@ -50,16 +50,16 @@ export function AppointmentModal({
       <div className="relative w-full max-w-xl rounded-2xl bg-[#13141a] border border-white/15 p-6 sm:p-8 shadow-2xl z-10 my-8 animate-in fade-in zoom-in-95 duration-200">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-neutral-400 hover:text-white p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+          className="absolute top-5 right-5 text-neutral-400 hover:text-white p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {!submitted ? (
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>ONLINE RESERVATION</span>
+            <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1277ff]" />
+              <span>Direct Reservation Desk</span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -81,7 +81,7 @@ export function AppointmentModal({
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. John Doe"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#e30613] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
 
@@ -95,7 +95,7 @@ export function AppointmentModal({
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+1 (234) 567-890"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#e30613] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
               </div>
@@ -111,7 +111,7 @@ export function AppointmentModal({
                     value={formData.vehicle}
                     onChange={(e) => setFormData({ ...formData, vehicle: e.target.value })}
                     placeholder="e.g. 2024 Porsche 911 GT3"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#e30613] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
 
@@ -122,7 +122,7 @@ export function AppointmentModal({
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#e30613] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
                   >
                     {SERVICES.map((s) => (
                       <option key={s.id} value={s.title} className="bg-[#14151a] text-white">
@@ -144,7 +144,7 @@ export function AppointmentModal({
                   type="date"
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#e30613] transition-colors"
+                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
                 />
               </div>
 
@@ -157,14 +157,14 @@ export function AppointmentModal({
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   placeholder="Mention paint swirls, pet hair, or any specific concerns..."
-                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#e30613] transition-colors resize-none"
+                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors resize-none"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#e30613] py-3.5 text-sm font-bold text-white shadow-xl hover:bg-[#c5040f] hover:shadow-2xl transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white shadow-xl hover:bg-[#0d62d6] hover:shadow-2xl active:scale-[0.98] transition-all cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Confirm Appointment Request</span>
@@ -172,18 +172,18 @@ export function AppointmentModal({
               </div>
 
               <div className="flex items-center justify-center gap-2 text-xs text-neutral-400 pt-1">
-                <Shield className="w-3.5 h-3.5 text-[#e30613]" />
+                <Shield className="w-3.5 h-3.5 text-[#1277ff]" />
                 <span>No upfront charge. We confirm booking by phone.</span>
               </div>
             </form>
           </div>
         ) : (
           <div className="py-8 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#e30613]/10 border border-[#e30613]/30 text-[#e30613] flex items-center justify-center mx-auto mb-5">
+            <div className="w-16 h-16 rounded-full bg-[#1277ff]/10 border border-[#1277ff]/30 text-[#1277ff] flex items-center justify-center mx-auto mb-5">
               <CheckCircle2 className="w-9 h-9" />
             </div>
             <h3 className="text-2xl font-black text-white">
-              Appointment Request Received!
+              Appointment Request Received
             </h3>
             <p className="mt-3 text-sm text-neutral-300 max-w-md mx-auto leading-relaxed">
               Thank you, <strong className="text-white">{formData.name}</strong>. We have logged your booking for your{" "}
@@ -196,7 +196,7 @@ export function AppointmentModal({
             <div className="mt-8">
               <button
                 onClick={handleReset}
-                className="rounded-lg bg-white/10 hover:bg-white/15 px-6 py-2.5 text-sm font-bold text-white transition-colors"
+                className="rounded-lg bg-white/10 hover:bg-white/15 active:scale-[0.98] px-6 py-2.5 text-sm font-bold text-white transition-all cursor-pointer"
               >
                 Close Window
               </button>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { SERVICES } from "@/data/autodetailData";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 interface ServicesSectionProps {
   onSelectService: (serviceName: string) => void;
@@ -15,16 +15,17 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>OUR SPECIALTIES</span>
+          <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
+            <span className="text-[#1277ff] font-mono font-bold">02</span>
+            <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
+            <span>Detailing Capabilities</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight text-balance">
             Premium Car Detailing
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-neutral-400">
+          <p className="mt-4 text-base sm:text-lg text-neutral-400 text-pretty">
             Crafted for connoisseurs of automotive excellence. We restore gloss, eliminate defects, and protect every surface with industry-leading precision.
           </p>
         </div>
@@ -34,7 +35,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
           {SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group relative flex flex-col justify-between rounded-2xl bg-[#14151a] border border-white/10 overflow-hidden hover:border-[#e30613]/50 hover:shadow-2xl hover:shadow-[#e30613]/10 transition-all duration-300"
+              className="group relative flex flex-col justify-between rounded-2xl bg-[#14151a] border border-white/10 overflow-hidden hover:border-[#1277ff]/50 hover:shadow-2xl hover:shadow-[#1277ff]/10 transition-all duration-300"
             >
               <div>
                 {/* Image Container */}
@@ -48,7 +49,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#14151a] via-transparent to-transparent" />
 
                   {/* Number Badge */}
-                  <div className="absolute top-4 left-4 rounded-md bg-[#e30613] px-3 py-1 text-xs font-black text-white shadow-lg">
+                  <div className="absolute top-4 left-4 rounded-md bg-[#1277ff] px-3 py-1 text-xs font-black text-white shadow-lg">
                     {service.number}
                   </div>
 
@@ -60,7 +61,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#ff3341] transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-[#4da3ff] transition-colors">
                     {service.title}
                   </h3>
 
@@ -73,7 +74,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                     <div className="mt-5 space-y-2 border-t border-white/5 pt-4">
                       {service.features.map((feat) => (
                         <div key={feat} className="flex items-center gap-2 text-xs text-neutral-300">
-                          <Check className="w-3.5 h-3.5 text-[#e30613]" />
+                          <Check className="w-3.5 h-3.5 text-[#1277ff]" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -86,7 +87,7 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
               <div className="p-6 pt-0">
                 <button
                   onClick={() => onSelectService(service.title)}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 hover:bg-[#e30613] hover:text-white border border-white/10 hover:border-[#e30613] py-3 text-sm font-bold text-neutral-200 transition-all cursor-pointer group-hover:bg-[#e30613] group-hover:text-white"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 hover:border-[#1277ff] py-3 text-sm font-bold text-neutral-200 transition-all cursor-pointer group-hover:bg-[#1277ff] group-hover:text-white"
                 >
                   <span>Book This Service</span>
                   <ArrowRight className="w-4 h-4" />

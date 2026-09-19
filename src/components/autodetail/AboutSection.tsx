@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 interface AboutSectionProps {
   onOpenBooking: () => void;
@@ -53,8 +53,8 @@ export function AboutSection({ onOpenBooking }: AboutSectionProps) {
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:-left-6 rounded-xl bg-[#e30613] p-5 shadow-2xl text-white flex items-center gap-4 z-20 border border-white/20">
-              <div className="text-3xl sm:text-4xl font-black">20+</div>
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:-left-6 rounded-xl bg-[#1277ff] p-5 shadow-2xl text-white flex items-center gap-4 z-20 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-black tabular-nums">20+</div>
               <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider leading-tight">
                 Years Of <br />Excellence
               </div>
@@ -63,12 +63,13 @@ export function AboutSection({ onOpenBooking }: AboutSectionProps) {
 
           {/* Right: Copy & Highlights */}
           <div className="flex flex-col items-start lg:pl-4">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#e30613] mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>ABOUT US</span>
+            <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
+              <span className="text-[#1277ff] font-mono font-bold">01</span>
+              <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
+              <span>Heritage &amp; Workflow</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-balance">
               Restoring Lasting Shine, Inside and Out
             </h2>
 
@@ -84,7 +85,7 @@ export function AboutSection({ onOpenBooking }: AboutSectionProps) {
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#e30613] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
                   <span className="text-sm font-medium text-neutral-200">{item}</span>
                 </div>
               ))}
@@ -94,7 +95,7 @@ export function AboutSection({ onOpenBooking }: AboutSectionProps) {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center gap-2 rounded-md bg-[#e30613] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#e30613]/25 hover:bg-[#c5040f] hover:shadow-xl transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-md bg-[#1277ff] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1277ff]/25 hover:bg-[#0d62d6] hover:shadow-xl transition-all cursor-pointer"
               >
                 <span>Read More & Book</span>
                 <ArrowRight className="w-4 h-4" />

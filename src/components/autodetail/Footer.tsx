@@ -35,7 +35,7 @@ export function Footer() {
                   key={network}
                   href="#"
                   aria-label={network}
-                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#e30613] hover:text-white border border-white/10 flex items-center justify-center text-neutral-300 transition-all"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 flex items-center justify-center text-neutral-300 transition-all"
                 >
                   <span className="text-xs font-bold">{network[0]}</span>
                 </a>
@@ -62,7 +62,7 @@ export function Footer() {
                     href={item.href}
                     className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#e30613] transition-colors" />
+                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] transition-colors" />
                     <span>{item.label}</span>
                   </a>
                 </li>
@@ -89,7 +89,7 @@ export function Footer() {
                     href="#services"
                     className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#e30613] transition-colors" />
+                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] transition-colors" />
                     <span>{service}</span>
                   </a>
                 </li>
@@ -104,23 +104,23 @@ export function Footer() {
             </h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#e30613] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
                 <span>123 Luxury Auto Way, Beverly Hills, CA 90210</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#e30613] flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#1277ff] flex-shrink-0" />
                 <a href="tel:+1234567890" className="hover:text-white transition-colors font-medium">
                   +1 (234) 567-890
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#e30613] flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#1277ff] flex-shrink-0" />
                 <a href="mailto:info@autodetail.com" className="hover:text-white transition-colors">
                   info@autodetail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#e30613] flex-shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-neutral-200">Mon - Sat: 8:00 AM - 6:00 PM</p>
                   <p className="text-neutral-500 text-xs mt-0.5">Sunday: By Appointment Only</p>
