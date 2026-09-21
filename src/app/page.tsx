@@ -8,7 +8,7 @@ import { BrandPartners } from "@/components/autodetail/BrandPartners";
 import { AboutSection } from "@/components/autodetail/AboutSection";
 import { StatsCounters } from "@/components/autodetail/StatsCounters";
 import { ServicesSection } from "@/components/autodetail/ServicesSection";
-import { WhyChooseUs } from "@/components/autodetail/WhyChooseUs";
+import { TestimonialsSection } from "@/components/autodetail/TestimonialsSection";
 import { CockpitBanner } from "@/components/autodetail/CockpitBanner";
 import { CtaBanner } from "@/components/autodetail/CtaBanner";
 import { FaqSection } from "@/components/autodetail/FaqSection";
@@ -16,6 +16,7 @@ import { InstagramGallery } from "@/components/autodetail/InstagramGallery";
 import { Footer } from "@/components/autodetail/Footer";
 import { AppointmentModal } from "@/components/autodetail/AppointmentModal";
 import { BackToTop } from "@/components/autodetail/BackToTop";
+import { ScrollProgressBar } from "@/components/autodetail/ScrollProgressBar";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -34,6 +35,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#0a0a0c] text-white overflow-x-hidden selection:bg-[#1277ff] selection:text-white">
+      {/* Dynamic Scroll Progress Bar */}
+      <ScrollProgressBar />
+
       {/* Top Notice Bar */}
       <NoticeBar onOpenBooking={() => handleOpenBooking("Ceramic Coating Protection")} />
 
@@ -55,8 +59,8 @@ export default function Home() {
       {/* 6 Premium Detailing Services */}
       <ServicesSection onSelectService={(s) => handleOpenBooking(s)} />
 
-      {/* Why Choose Us 4-Card Grid */}
-      <WhyChooseUs />
+      {/* Testimonials / Reviews Section matching Homepage 2 */}
+      <TestimonialsSection />
 
       {/* Parallax Cockpit Interior Break */}
       <CockpitBanner onOpenBooking={() => handleOpenBooking("Interior Deep Cleaning")} />

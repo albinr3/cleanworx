@@ -3,16 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
 export function Footer() {
   return (
     <footer id="contact" className="relative bg-[#070709] border-t border-white/10 text-neutral-400">
       {/* Main Footer Container */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-10 sm:pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16">
           
           {/* Column 1: Brand & Bio */}
-          <div className="space-y-6">
+          <ScrollReveal animation="fade-up" delay={0} duration={700} className="space-y-5 sm:space-y-6">
             <Link href="#" className="inline-block">
               <div className="relative w-44 h-10">
                 <Image
@@ -29,26 +30,26 @@ export function Footer() {
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 sm:gap-3 pt-1">
               {["Facebook", "Instagram", "YouTube", "Twitter"].map((network) => (
                 <a
                   key={network}
                   href="#"
                   aria-label={network}
-                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 flex items-center justify-center text-neutral-300 transition-all"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 flex items-center justify-center text-neutral-300 transition-all hover:scale-105 active:scale-95 cursor-pointer"
                 >
                   <span className="text-xs font-bold">{network[0]}</span>
                 </a>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-base font-bold text-white uppercase tracking-wider mb-6">
+          <ScrollReveal animation="fade-up" delay={100} duration={700}>
+            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
               Company
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 sm:space-y-3 text-sm">
               {[
                 { label: "Home", href: "#" },
                 { label: "About Us", href: "#about" },
@@ -60,22 +61,22 @@ export function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group"
+                    className="inline-flex items-center gap-2 py-0.5 text-neutral-400 hover:text-white transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] transition-colors" />
+                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] group-hover:translate-x-1 transition-all" />
                     <span>{item.label}</span>
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Column 3: Services */}
-          <div>
-            <h4 className="text-base font-bold text-white uppercase tracking-wider mb-6">
+          <ScrollReveal animation="fade-up" delay={200} duration={700}>
+            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
               Our Services
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 sm:space-y-3 text-sm">
               {[
                 "Exterior Hand Wash & Wax",
                 "Interior Deep Cleaning",
@@ -87,22 +88,22 @@ export function Footer() {
                 <li key={service}>
                   <a
                     href="#services"
-                    className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group"
+                    className="inline-flex items-center gap-2 py-0.5 text-neutral-400 hover:text-white transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] transition-colors" />
+                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] group-hover:translate-x-1 transition-all" />
                     <span>{service}</span>
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Column 4: Contact Details */}
-          <div>
-            <h4 className="text-base font-bold text-white uppercase tracking-wider mb-6">
+          <ScrollReveal animation="fade-up" delay={300} duration={700}>
+            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
               Contact Us
             </h4>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3.5 sm:space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
                 <span>123 Luxury Auto Way, Beverly Hills, CA 90210</span>
@@ -127,19 +128,21 @@ export function Footer() {
                 </div>
               </li>
             </ul>
-          </div>
+          </ScrollReveal>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
-          <p>© 2026 AutoDetail. All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+        <ScrollReveal animation="fade" delay={350} duration={700}>
+          <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
+            <p>© 2026 AutoDetail. All Rights Reserved.</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+              <a href="#" className="hover:text-white transition-colors py-1">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors py-1">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors py-1">Sitemap</a>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </footer>
   );

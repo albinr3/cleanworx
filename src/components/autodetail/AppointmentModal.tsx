@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, Calendar, CheckCircle2, Shield } from "lucide-react";
 import { SERVICES } from "@/data/autodetailData";
 
@@ -26,6 +26,18 @@ export function AppointmentModal({
     notes: "",
   });
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,21 +51,24 @@ export function AppointmentModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Dark Blur Backdrop */}
       <div
         className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
 
-      {/* Modal Dialog */}
-      <div className="relative w-full max-w-xl rounded-2xl bg-[#13141a] border border-white/15 p-6 sm:p-8 shadow-2xl z-10 my-8 animate-in fade-in zoom-in-95 duration-200">
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 text-neutral-400 hover:text-white p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
-        >
-          <X className="w-5 h-5" />
-        </button>
+      {/* Centering wrapper with min-h-full to prevent clipping on mobile */}
+      <div className="min-h-full flex items-center justify-center p-3 sm:p-4 text-center">
+        {/* Modal Dialog */}
+        <div className="relative w-full max-w-xl rounded-2xl bg-[#13141a] border border-white/15 p-5 sm:p-8 shadow-2xl z-10 my-4 sm:my-8 text-left animate-in fade-in zoom-in-95 duration-200 max-h-[calc(100dvh-2rem)] sm:max-h-none overflow-y-auto">
+          <button
+            onClick={onClose}
+            aria-label="Close modal"
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 flex items-center justify-center text-neutral-400 hover:text-white rounded-lg bg-white/5 hover:bg-white/10 active:scale-95 transition-colors cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
         {!submitted ? (
           <div>
@@ -81,7 +96,7 @@ export function AppointmentModal({
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. John Doe"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
 
@@ -95,7 +110,7 @@ export function AppointmentModal({
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+1 (234) 567-890"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
               </div>
@@ -111,7 +126,7 @@ export function AppointmentModal({
                     value={formData.vehicle}
                     onChange={(e) => setFormData({ ...formData, vehicle: e.target.value })}
                     placeholder="e.g. 2024 Porsche 911 GT3"
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                   />
                 </div>
 
@@ -122,7 +137,7 @@ export function AppointmentModal({
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
+                    className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-base sm:text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
                   >
                     {SERVICES.map((s) => (
                       <option key={s.id} value={s.title} className="bg-[#14151a] text-white">
@@ -144,7 +159,7 @@ export function AppointmentModal({
                   type="date"
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
+                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2.5 text-base sm:text-sm text-white focus:outline-none focus:border-[#1277ff] transition-colors"
                 />
               </div>
 
@@ -157,17 +172,25 @@ export function AppointmentModal({
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   placeholder="Mention paint swirls, pet hair, or any specific concerns..."
-                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors resize-none"
+                  className="w-full rounded-lg bg-black/50 border border-white/10 px-4 py-2 text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors resize-none"
                 />
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 space-y-2.5">
                 <button
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white shadow-xl hover:bg-[#0d62d6] hover:shadow-2xl active:scale-[0.98] transition-all cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Confirm Appointment Request</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="w-full sm:hidden inline-flex items-center justify-center py-2.5 text-xs font-semibold text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                >
+                  Cancel and Return
                 </button>
               </div>
 
@@ -196,13 +219,14 @@ export function AppointmentModal({
             <div className="mt-8">
               <button
                 onClick={handleReset}
-                className="rounded-lg bg-white/10 hover:bg-white/15 active:scale-[0.98] px-6 py-2.5 text-sm font-bold text-white transition-all cursor-pointer"
+                className="w-full sm:w-auto rounded-lg bg-white/10 hover:bg-white/15 active:scale-[0.98] px-6 py-3 text-sm font-bold text-white transition-all cursor-pointer"
               >
                 Close Window
               </button>
             </div>
           </div>
         )}
+        </div>
       </div>
     </div>
   );

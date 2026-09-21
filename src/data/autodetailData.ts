@@ -91,7 +91,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     author: "Jessica Lee",
     role: "Porsche 911 Owner",
     date: "22 Dec 2024",
-    rating: 5,
+    rating: 4,
     content: "My car looked brand new after their full detail service. Every inch was spotless! Great attention to detail and friendly staff.",
     avatar: "/images/autodetail/5-1.webp",
   },

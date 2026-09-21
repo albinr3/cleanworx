@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { BRAND_PARTNERS } from "@/data/autodetailData";
+import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
 export function BrandPartners() {
   // Triple array to ensure seamless infinite looping
@@ -51,52 +52,54 @@ export function BrandPartners() {
 
   return (
     <div
-      className="relative w-full border-y border-white/[0.08] bg-[#0d0e12] py-10 sm:py-14 overflow-hidden"
+      className="relative w-full border-y border-white/[0.08] bg-[#0d0e12] py-8 sm:py-14 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Left/Right Edge Fades */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#0d0e12] to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#0d0e12] to-transparent z-10" />
+      {/* Left/Right Edge Fades - slimmed on mobile to prevent obscuring logos */}
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-24 md:w-40 bg-gradient-to-r from-[#0d0e12] to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-24 md:w-40 bg-gradient-to-l from-[#0d0e12] to-transparent z-10" />
 
       {/* Header Eyebrow */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-8 text-center">
-        <p className="text-xs uppercase font-bold tracking-[0.25em] text-neutral-400 font-mono">
+      <ScrollReveal animation="fade-down" className="mx-auto max-w-7xl px-3 sm:px-6 mb-6 sm:mb-8 text-center">
+        <p className="text-[10px] sm:text-xs uppercase font-bold tracking-[0.2em] sm:tracking-[0.25em] text-neutral-400 font-mono">
           Trusted by owners of premium &amp; exotic vehicles worldwide
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Sliding Carousel Track */}
-      <div ref={containerRef} className="relative w-full overflow-hidden">
-        <div
-          onTransitionEnd={handleTransitionEnd}
-          style={{
-            transform: `translateX(-${currentIndex * stepWidth}px)`,
-            transition: isTransitioning
-              ? "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)"
-              : "none",
-          }}
-          className="flex items-center will-change-transform"
-        >
-          {displayPartners.map((partner, index) => (
-            <div
-              key={`${partner.id}-${index}`}
-              ref={index === 0 ? itemRef : null}
-              className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 px-4 sm:px-6 md:px-8 flex items-center justify-center"
-            >
-              <div className="relative h-14 sm:h-16 md:h-20 w-32 sm:w-36 md:w-44 flex items-center justify-center group cursor-pointer transition-transform duration-300 hover:scale-110">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  fill
-                  className="object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
-                  sizes="(max-width: 640px) 140px, (max-width: 1024px) 170px, 200px"
-                />
+      <ScrollReveal animation="fade-up" delay={150}>
+        <div ref={containerRef} className="relative w-full overflow-hidden">
+          <div
+            onTransitionEnd={handleTransitionEnd}
+            style={{
+              transform: `translateX(-${currentIndex * stepWidth}px)`,
+              transition: isTransitioning
+                ? "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)"
+                : "none",
+            }}
+            className="flex items-center will-change-transform"
+          >
+            {displayPartners.map((partner, index) => (
+              <div
+                key={`${partner.id}-${index}`}
+                ref={index === 0 ? itemRef : null}
+                className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 px-3 sm:px-6 md:px-8 flex items-center justify-center"
+              >
+                <div className="relative h-12 sm:h-16 md:h-20 w-28 sm:w-36 md:w-44 flex items-center justify-center group cursor-pointer transition-transform duration-300 hover:scale-110">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
+                    sizes="(max-width: 640px) 120px, (max-width: 1024px) 170px, 200px"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }

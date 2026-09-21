@@ -15,6 +15,18 @@ export function Header({ onOpenBooking }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Lock body scroll when mobile menu or search overlay is open
+  useEffect(() => {
+    if (isMobileMenuOpen || isSearchOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen, isSearchOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
@@ -23,7 +35,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
         setIsScrolled(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -93,8 +105,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              aria-label="Search"
-              className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-neutral-300 hover:text-white transition-colors cursor-pointer"
+              aria-label="Search services"
+              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-neutral-300 hover:text-white transition-colors cursor-pointer"
             >
               <Search className="w-4 h-4" />
             </button>
@@ -111,8 +123,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
             {/* Mobile menu trigger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle navigation"
-              className="lg:hidden w-10 h-10 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              className="lg:hidden w-11 h-11 rounded-md bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -130,7 +142,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
           />
 
           {/* Drawer content */}
-          <div className="relative ml-auto w-full max-w-xs bg-[#111216] border-l border-white/10 h-full p-6 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto">
+          <div className="relative ml-auto w-[85vw] max-w-xs bg-[#111216] border-l border-white/10 h-full p-6 flex flex-col justify-between shadow-2xl z-10 overflow-y-auto animate-in slide-in-from-right duration-300">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
                 <div className="relative w-36 h-8">
@@ -143,7 +155,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="rounded-md p-1.5 text-neutral-400 hover:text-white hover:bg-white/10"
+                  aria-label="Close menu"
+                  className="w-10 h-10 rounded-md flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -156,7 +169,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                     key={link.label}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-between px-3 py-3 rounded-md text-base font-medium text-neutral-200 hover:text-white hover:bg-white/5 transition-colors"
+                    className="flex items-center justify-between px-3.5 py-3 rounded-lg text-base font-medium text-neutral-200 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors"
                   >
                     <span>{link.label}</span>
                     <ChevronRight className="w-4 h-4 text-neutral-500" />
@@ -172,7 +185,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                   setIsMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#1277ff] py-3 text-sm font-bold text-white shadow-lg hover:bg-[#0d62d6] transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1277ff]/30 hover:bg-[#0d62d6] active:scale-[0.98] transition-all cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Make Appointment</span>
@@ -180,7 +193,9 @@ export function Header({ onOpenBooking }: HeaderProps) {
 
               <div className="text-center text-xs text-neutral-400">
                 <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
-                <p className="text-white font-medium mt-1">+1 (234) 567-890</p>
+                <a href="tel:+1234567890" className="inline-block text-white font-medium mt-1 hover:text-[#4da3ff] transition-colors">
+                  +1 (234) 567-890
+                </a>
               </div>
             </div>
           </div>
@@ -190,23 +205,24 @@ export function Header({ onOpenBooking }: HeaderProps) {
       {/* Search Overlay Modal */}
       {isSearchOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-xl rounded-xl bg-[#14151a] border border-white/10 p-6 shadow-2xl">
+          <div className="relative w-full max-w-xl rounded-xl bg-[#14151a] border border-white/10 p-5 sm:p-6 shadow-2xl">
             <button
               onClick={() => setIsSearchOpen(false)}
-              className="absolute top-4 right-4 text-neutral-400 hover:text-white p-1 rounded-md"
+              aria-label="Close search"
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center text-neutral-400 hover:text-white rounded-md hover:bg-white/10 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="text-lg font-bold text-white mb-4">Search Services & Packages</h3>
+            <h3 className="text-base sm:text-lg font-bold text-white mb-4 pr-8">Search Services &amp; Packages</h3>
             <div className="relative">
-              <Search className="absolute left-3.5 top-3.5 w-5 h-5 text-neutral-500" />
+              <Search className="absolute left-3.5 top-3.5 w-5 h-5 text-neutral-500 pointer-events-none" />
               <input
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="e.g. Ceramic coating, paint correction, interior..."
-                className="w-full rounded-lg bg-black/50 border border-white/10 pl-11 pr-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
+                placeholder="e.g. Ceramic coating, paint correction..."
+                className="w-full rounded-lg bg-black/50 border border-white/10 pl-11 pr-4 py-3 text-base sm:text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#1277ff] transition-colors"
                 autoFocus
               />
             </div>
@@ -217,7 +233,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
                 <button
                   key={tag}
                   onClick={() => setSearchQuery(tag)}
-                  className="rounded-md bg-white/5 hover:bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-neutral-300 hover:text-white transition-colors"
+                  className="rounded-md bg-white/5 hover:bg-white/10 border border-white/10 px-2.5 py-1 text-xs text-neutral-300 hover:text-white active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
