@@ -17,8 +17,8 @@ export function Footer() {
             <Link href="#" className="inline-block">
               <div className="relative w-44 h-10">
                 <Image
-                  src="/images/autodetail/logo-white.webp"
-                  alt="AutoDetail"
+                  src="/images/cleanworx-logo.webp"
+                  alt="CleanWorx"
                   fill
                   className="object-contain object-left"
                 />

@@ -63,8 +63,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
           <Link href="#" className="flex items-center gap-3 group">
             <div className="relative w-40 sm:w-48 h-10 transition-transform group-hover:scale-[1.02]">
               <Image
-                src="/images/autodetail/logo-white.webp"
-                alt="AutoDetail"
+                src="/images/cleanworx-logo.webp"
+                alt="CleanWorx"
                 fill
                 className="object-contain object-left"
                 priority
@@ -147,8 +147,8 @@ export function Header({ onOpenBooking }: HeaderProps) {
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
                 <div className="relative w-36 h-8">
                   <Image
-                    src="/images/autodetail/logo-white.webp"
-                    alt="AutoDetail"
+                    src="/images/cleanworx-logo.webp"
+                    alt="CleanWorx"
                     fill
                     className="object-contain object-left"
                   />

@@ -15,10 +15,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AutoDetail — Luxury Car Detailing & Restoration",
-  description: "Restoring lasting shine, inside and out. Professional auto detailing, multi-stage paint correction, 9H ceramic coating, and luxury interior deep cleaning.",
+  title: "CleanWorx — Professional Cleaning Services",
+  description: "Professional cleaning services focused on quality, care, and dependable results.",
   icons: {
-    icon: "/images/autodetail/logo-white.webp",
+    icon: "/images/cleanworx-logo.webp",
   },
 };
 
