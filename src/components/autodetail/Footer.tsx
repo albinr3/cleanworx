@@ -54,6 +54,7 @@ export function Footer() {
                 { label: "Home", href: "#" },
                 { label: "About Us", href: "#about" },
                 { label: "Our Services", href: "#services" },
+                { label: "Service Areas", href: "/service-areas" },
                 { label: "Why Choose Us", href: "#why-us" },
                 { label: "Testimonials", href: "#testimonials" },
                 { label: "Frequently Asked", href: "#faq" },
