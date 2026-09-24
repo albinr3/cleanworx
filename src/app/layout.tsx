@@ -15,10 +15,65 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CleanWorx — Professional Cleaning Services",
-  description: "Professional cleaning services focused on quality, care, and dependable results.",
+  metadataBase: new URL("https://www.cleanworxnj.com"),
+  title: {
+    default: "CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
+    template: "%s | CleanWorx Auto Detailing & Ceramic Coating",
+  },
+  description: "CleanWorx Auto Detailing & Ceramic Coating provides professional auto detailing in Basking Ridge, NJ, including ceramic coating, paint correction, interior & exterior detailing.",
+  keywords: [
+    "auto detailing Basking Ridge NJ",
+    "ceramic coating Basking Ridge NJ",
+    "paint correction Somerset County",
+    "mobile auto detailing NJ",
+    "interior car detailing",
+    "exterior car detailing hand wash",
+    "System X ceramic coating",
+    "CleanWorx NJ"
+  ],
+  alternates: {
+    canonical: "https://www.cleanworxnj.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  applicationName: "CleanWorx Auto Detailing & Ceramic Coating",
+  authors: [{ name: "CleanWorx Auto Detailing & Ceramic Coating", url: "https://www.cleanworxnj.com" }],
+  creator: "CleanWorx Auto Detailing & Ceramic Coating",
+  publisher: "CleanWorx Auto Detailing & Ceramic Coating",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.cleanworxnj.com",
+    siteName: "CleanWorx Auto Detailing & Ceramic Coating",
+    title: "CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
+    description: "Professional auto detailing and ceramic coating in Basking Ridge, NJ. Studio and mobile detailing appointments.",
+    images: [
+      {
+        url: "/images/cleanworx-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "CleanWorx Auto Detailing & Ceramic Coating",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
+    description: "Professional auto detailing and ceramic coating in Basking Ridge, NJ.",
+    images: ["/images/cleanworx-logo.webp"],
+  },
   icons: {
     icon: "/images/cleanworx-logo.webp",
+    apple: "/images/cleanworx-logo.webp",
   },
 };
 

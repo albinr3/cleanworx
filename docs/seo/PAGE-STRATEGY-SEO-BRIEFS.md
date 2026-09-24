@@ -1,7 +1,7 @@
 # CleanWorx — Page Strategy & SEO Briefs
 
 **Status:** Planning only — no site, code, configuration, schema, redirect, or live-content changes are authorized by this document.  
-**Business:** CleanWorx Auto Detailing & Ceramic Coatings  
+**Business:** CleanWorx Auto Detailing & Ceramic Coating  
 **Market:** Basking Ridge, NJ and verified nearby service area  
 **Source of keyword ownership:** [KEYWORD-URL-MAPPING.md](./KEYWORD-URL-MAPPING.md)  
 **Business-fact source rules:** [BUSINESS-FACTS-AND-SOURCE-RULES.md](./BUSINESS-FACTS-AND-SOURCE-RULES.md)  

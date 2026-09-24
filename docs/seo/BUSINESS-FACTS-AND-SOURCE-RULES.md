@@ -16,7 +16,7 @@
 
 | Fact | Confirmed value | Source |
 | --- | --- | --- |
-| Business name | CleanWorx Auto Detailing & Ceramic Coatings | Onboarding |
+| Business name | CleanWorx Auto Detailing & Ceramic Coating | Onboarding |
 | Address | 19 E. Henry Street, Basking Ridge, NJ | Onboarding |
 | Phone | 908-899-2832 | Onboarding |
 | Email | cleanworxnj@gmail.com | Onboarding |

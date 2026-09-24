@@ -13,11 +13,11 @@
 
 | Field | Value |
 | --- | --- |
-| Business name | CleanWorx Auto Detailing & Ceramic Coatings |
+| Business name | CleanWorx Auto Detailing & Ceramic Coating |
 | Website | [www.cleanworxnj.com](https://www.cleanworxnj.com) |
 | Business email | [cleanworxnj@gmail.com](mailto:cleanworxnj@gmail.com) |
 | Phone | 908-899-2832 |
-| Address | 19 E. Henry Street, Basking Ridge, NJ |
+| Address | 19 E. Henry Street, Basking Ridge, NJ, 07920 |
 | Primary contact | Vito J. DeGironimo Jr. |
 | Primary contact email | [cleanworxnj@gmail.com](mailto:cleanworxnj@gmail.com) |
 | Onboarding communication preference | Phone call |

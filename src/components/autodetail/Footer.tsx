@@ -1,149 +1,85 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
-import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
+
+const links = [["Home", "/"], ["Services", "/services"], ["Our Work", "/our-work"], ["About", "/about"], ["FAQ", "/faq"], ["Contact", "/contact"]] as const;
+const serviceLinks = [["Ceramic Coating", "/ceramic-coating"], ["Paint Correction", "/paint-correction"], ["Interior Detailing", "/interior-detailing"], ["Exterior Detailing", "/exterior-detailing"], ["Mobile Auto Detailing", "/mobile-auto-detailing"], ["Service Areas", "/service-areas"]] as const;
 
 export function Footer() {
   return (
-    <footer id="contact" className="relative bg-[#070709] border-t border-white/10 text-neutral-400">
-      {/* Main Footer Container */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-10 sm:pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 mb-12 sm:mb-16">
-          
-          {/* Column 1: Brand & Bio */}
-          <ScrollReveal animation="fade-up" delay={0} duration={700} className="space-y-5 sm:space-y-6">
-            <Link href="#" className="inline-block">
-              <div className="relative w-44 h-10">
-                <Image
-                  src="/images/cleanworx-logo.webp"
-                  alt="CleanWorx"
-                  fill
-                  className="object-contain object-left"
-                />
+    <footer className="border-t border-white/10 bg-[#070709] text-neutral-400">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+        <div>
+          <Link href="/" className="relative block h-10 w-44">
+            <Image src="/images/cleanworx-logo.webp" alt="CleanWorx Auto Detailing & Ceramic Coating" fill sizes="176px" className="object-contain object-left" />
+          </Link>
+          <p className="mt-5 text-sm leading-relaxed">CleanWorx Auto Detailing &amp; Ceramic Coating provides professional auto detailing in Basking Ridge, New Jersey, with studio and mobile appointment options confirmed for each request.</p>
+
+          {/* BBB Official Profile Badge */}
+          <div className="mt-6 pt-5 border-t border-white/10">
+            <a
+              href="https://www.bbb.org/us/nj/basking-ridge/profile/auto-detailing/cleanworx-llc-auto-detailing-0221-90237271"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 hover:border-[#005a9c] hover:bg-white/[0.06] transition-all group max-w-full"
+              title="CLEANWORX LLC AUTO DETAILING | Better Business Bureau Profile"
+            >
+              <div className="flex h-8 w-11 shrink-0 items-center justify-center rounded-lg bg-[#005a9c] font-black text-xs text-white shadow-sm tracking-wider">
+                BBB
               </div>
-            </Link>
-
-            <p className="text-sm leading-relaxed text-neutral-400">
-              At AutoDetail, we’re dedicated to providing professional, high-quality car detailing services. From routine hand washes to advanced ceramic coatings, we preserve your vehicle’s brilliance and value.
-            </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-2.5 sm:gap-3 pt-1">
-              {["Facebook", "Instagram", "YouTube", "Twitter"].map((network) => (
-                <a
-                  key={network}
-                  href="#"
-                  aria-label={network}
-                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 flex items-center justify-center text-neutral-300 transition-all hover:scale-105 active:scale-95 cursor-pointer"
-                >
-                  <span className="text-xs font-bold">{network[0]}</span>
-                </a>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* Column 2: Quick Links */}
-          <ScrollReveal animation="fade-up" delay={100} duration={700}>
-            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
-              Company
-            </h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm">
-              {[
-                { label: "Home", href: "#" },
-                { label: "About Us", href: "#about" },
-                { label: "Our Services", href: "#services" },
-                { label: "Service Areas", href: "/service-areas" },
-                { label: "Why Choose Us", href: "#why-us" },
-                { label: "Testimonials", href: "#testimonials" },
-                { label: "Frequently Asked", href: "#faq" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="inline-flex items-center gap-2 py-0.5 text-neutral-400 hover:text-white transition-colors group"
-                  >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] group-hover:translate-x-1 transition-all" />
-                    <span>{item.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-
-          {/* Column 3: Services */}
-          <ScrollReveal animation="fade-up" delay={200} duration={700}>
-            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
-              Our Services
-            </h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm">
-              {[
-                "Exterior Hand Wash & Wax",
-                "Interior Deep Cleaning",
-                "Paint Correction & Buffing",
-                "Ceramic Shield Coating",
-                "Engine Bay Detailing",
-                "Headlight Optical Restoration",
-              ].map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center gap-2 py-0.5 text-neutral-400 hover:text-white transition-colors group"
-                  >
-                    <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-[#1277ff] group-hover:translate-x-1 transition-all" />
-                    <span>{service}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-
-          {/* Column 4: Contact Details */}
-          <ScrollReveal animation="fade-up" delay={300} duration={700}>
-            <h4 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider mb-4 sm:mb-6">
-              Contact Us
-            </h4>
-            <ul className="space-y-3.5 sm:space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
-                <span>123 Luxury Auto Way, Beverly Hills, CA 90210</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#1277ff] flex-shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-white transition-colors font-medium">
-                  +1 (234) 567-890
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#1277ff] flex-shrink-0" />
-                <a href="mailto:info@autodetail.com" className="hover:text-white transition-colors">
-                  info@autodetail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#1277ff] flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-neutral-200">Mon - Sat: 8:00 AM - 6:00 PM</p>
-                  <p className="text-neutral-500 text-xs mt-0.5">Sunday: By Appointment Only</p>
-                </div>
-              </li>
-            </ul>
-          </ScrollReveal>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <ScrollReveal animation="fade" delay={350} duration={700}>
-          <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
-            <p>© 2026 AutoDetail. All Rights Reserved.</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-              <a href="#" className="hover:text-white transition-colors py-1">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors py-1">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors py-1">Sitemap</a>
-            </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-bold text-white group-hover:text-[#4da3ff] transition-colors leading-tight truncate">
+                  BBB Business Profile
+                </p>
+                <p className="text-[11px] text-neutral-400 leading-tight mt-0.5 truncate">
+                  CLEANWORX LLC · Basking Ridge
+                </p>
+              </div>
+              <span className="text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 transition-all text-xs shrink-0">
+                ↗
+              </span>
+            </a>
           </div>
-        </ScrollReveal>
+        </div>
+        <div><h2 className="text-sm font-bold uppercase tracking-wider text-white">Explore</h2><ul className="mt-5 space-y-3 text-sm">{links.map(([label, href]) => <li key={href}><Link href={href} className="hover:text-white">{label}</Link></li>)}</ul></div>
+        <div><h2 className="text-sm font-bold uppercase tracking-wider text-white">Services</h2><ul className="mt-5 space-y-3 text-sm">{serviceLinks.map(([label, href]) => <li key={href}><Link href={href} className="hover:text-white">{label}</Link></li>)}</ul></div>
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-white">Contact</h2>
+          <address itemScope itemType="https://schema.org/AutoRepair" className="mt-5 not-italic space-y-4 text-sm">
+            <div>
+              <p itemProp="name" className="text-sm font-bold text-white leading-snug">
+                CleanWorx Auto Detailing &amp; Ceramic Coating
+              </p>
+            </div>
+            <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress" className="flex gap-3">
+              <MapPin className="h-5 w-5 shrink-0 text-[#1277ff]" />
+              <span>
+                <span itemProp="streetAddress">19 E. Henry Street</span><br />
+                <span itemProp="addressLocality">Basking Ridge</span>, <span itemProp="addressRegion">NJ</span> <span itemProp="postalCode">07920</span>
+              </span>
+            </div>
+            <div className="flex gap-3">
+              <Phone className="h-5 w-5 shrink-0 text-[#1277ff]" />
+              <a href="tel:+19088992832" itemProp="telephone" className="hover:text-white">908-899-2832</a>
+            </div>
+            <div className="flex gap-3">
+              <Mail className="h-5 w-5 shrink-0 text-[#1277ff]" />
+              <a href="mailto:cleanworxnj@gmail.com" itemProp="email" className="hover:text-white">cleanworxnj@gmail.com</a>
+            </div>
+            <div className="flex gap-3">
+              <Clock className="h-5 w-5 shrink-0 text-[#1277ff]" />
+              <span>
+                <meta itemProp="openingHours" content="Mo-Sa 09:00-17:00" />
+                Monday–Saturday, 9:00 AM–5:00 PM<br />Closed Sunday
+              </span>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div className="border-t border-white/5 px-4 py-6 text-xs text-neutral-500">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <span>© 2026 CleanWorx Auto Detailing &amp; Ceramic Coating. All rights reserved.</span>
+        </div>
       </div>
     </footer>
   );

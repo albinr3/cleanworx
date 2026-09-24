@@ -15,7 +15,6 @@ export interface TestimonialItem {
   date: string;
   rating: number;
   content: string;
-  avatar: string;
 }
 
 export interface FaqItem {

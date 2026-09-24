@@ -2,13 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Calendar, ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
-interface HeroSectionProps {
-  onOpenBooking: () => void;
-}
-
-export function HeroSection({ onOpenBooking }: HeroSectionProps) {
+export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -65,35 +62,35 @@ export function HeroSection({ onOpenBooking }: HeroSectionProps) {
         {/* Floating Sub-eyebrow */}
         <ScrollReveal animation="fade-down" duration={700}>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-neutral-200 mb-5 sm:mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-[#1277ff]" />
-            <span>The Art of Automotive Detailing</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#1277ff]" />
+            <span>CleanWorx Auto Detailing &amp; Ceramic Coating</span>
           </div>
         </ScrollReveal>
 
         {/* Main Heading with Staggered Entrance */}
         <ScrollReveal animation="fade-up" delay={150} duration={850}>
           <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase max-w-5xl leading-[1.05] text-balance drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-            Luxury <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-100 to-neutral-400">Detail</span>
+            Auto Detailing &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-100 to-neutral-400">Ceramic Coating</span><br />in Basking Ridge, NJ
           </h1>
         </ScrollReveal>
 
         {/* Subtitle with Delay */}
         <ScrollReveal animation="fade-up" delay={300} duration={850}>
           <p className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg md:text-xl text-neutral-200 font-medium leading-relaxed text-pretty drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            AutoDetail offers efficient, reliable detailing that restores shine and preserves your vehicle. From multi-stage paint correction to permanent ceramic shields.
+            Dedicated studio and self-contained mobile detailing throughout Somerset County. Specializing in System X ceramic coatings, multi-stage paint correction, and deep interior restoration.
           </p>
         </ScrollReveal>
 
         {/* CTA Buttons with Delay */}
         <ScrollReveal animation="fade-up" delay={450} duration={850} className="w-full sm:w-auto">
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <button
-              onClick={onOpenBooking}
+            <Link
+              href="/booking"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-lg bg-[#1277ff] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-lg shadow-[#1277ff]/25 hover:bg-[#0d62d6] hover:shadow-xl hover:shadow-[#1277ff]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span>Make Appointment</span>
-            </button>
+              <span>Book Now</span>
+            </Link>
 
             <a
               href="#services"

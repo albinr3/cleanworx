@@ -1,155 +1,30 @@
-import { ServiceItem, TestimonialItem, FaqItem, BrandPartner } from "@/types/autodetail";
+import { BrandPartner, FaqItem, ServiceItem, TestimonialItem } from "@/types/autodetail";
 
-export const BRAND_PARTNERS: BrandPartner[] = [
-  { id: "1", name: "Mitsubishi", logo: "/images/autodetail/1.webp" },
-  { id: "2", name: "Peugeot", logo: "/images/autodetail/2.webp" },
-  { id: "3", name: "Mercedes-Benz", logo: "/images/autodetail/3-1.webp" },
-  { id: "4", name: "Renault", logo: "/images/autodetail/4.webp" },
-  { id: "5", name: "Rolls-Royce", logo: "/images/autodetail/5.webp" },
-  { id: "6", name: "Suzuki", logo: "/images/autodetail/6.webp" },
-  { id: "7", name: "Toyota", logo: "/images/autodetail/7.webp" },
-  { id: "8", name: "Nissan", logo: "/images/autodetail/8.webp" },
-  { id: "9", name: "Honda", logo: "/images/autodetail/9.webp" },
-  { id: "10", name: "Ford", logo: "/images/autodetail/10.webp" },
-  { id: "11", name: "BMW", logo: "/images/autodetail/11.webp" },
-  { id: "12", name: "Hyundai", logo: "/images/autodetail/12.webp" },
-  { id: "13", name: "Kia", logo: "/images/autodetail/13.webp" },
-  { id: "14", name: "Mazda", logo: "/images/autodetail/14.webp" },
-  { id: "15", name: "Porsche", logo: "/images/autodetail/15.webp" },
-  { id: "16", name: "Volkswagen", logo: "/images/autodetail/16.webp" },
-];
+export const BRAND_PARTNERS: BrandPartner[] = [];
 
 export const SERVICES: ServiceItem[] = [
-  {
-    id: "exterior-wash",
-    number: "01",
-    title: "Exterior Hand Wash & Wax",
-    description: "Two-bucket hand wash with pH-neutral snow foam, clay bar decontamination, wheel barrel degreasing, and premium carnauba protective wax sealant.",
-    image: "/images/autodetail/1-3.webp",
-    price: "From $89",
-    features: ["Foam cannon pre-soak", "Clay bar paint treatment", "Wheel & tire dressing", "Hydrophobic spray seal"],
-  },
-  {
-    id: "interior-cleaning",
-    number: "02",
-    title: "Interior Deep Cleaning",
-    description: "High-temperature steam sterilization, heated carpet shampoo extraction, leather deep cleanse & conditioning, and UV matte dashboard protection.",
-    image: "/images/autodetail/2-3.webp",
-    price: "From $149",
-    features: ["Deep steam sanitization", "Leather feed & UV shield", "Pet hair & odor removal", "Crystal-clear glass clean"],
-  },
-  {
-    id: "paint-correction",
-    number: "03",
-    title: "Paint Correction",
-    description: "Multi-stage rotary and dual-action machine compounding and polishing to eliminate up to 95% of swirl marks, light scratches, oxidation, and holograms.",
-    image: "/images/autodetail/5-3.webp",
-    price: "From $299",
-    features: ["Paint depth digital gauge", "2-stage compound & polish", "Swirl & haze elimination", "Mirror-finish gloss restore"],
-  },
-  {
-    id: "ceramic-coating",
-    number: "04",
-    title: "Ceramic Coating Protection",
-    description: "Professional grade 9H hardness nano-ceramic coating creating a permanent covalent bond for unmatched hydrophobicity, UV resistance, and chemical protection.",
-    image: "/images/autodetail/4-3.webp",
-    price: "From $499",
-    features: ["3 to 5-year warranty", "Extreme water beading", "Acid rain & UV protection", "Permanent candy gloss"],
-  },
-  {
-    id: "engine-bay",
-    number: "05",
-    title: "Engine Bay Detailing",
-    description: "Delicate engine compartment cleaning with specialized safe degreasers, low-pressure steam, electronics masking, and non-greasy satin thermal dressing.",
-    image: "/images/autodetail/3-4.webp",
-    price: "From $79",
-    features: ["Sensitive wire protection", "Safe steam degreasing", "Plastic & hose revitalization", "Prevents corrosion"],
-  },
-  {
-    id: "headlight-restoration",
-    number: "06",
-    title: "Headlight Restoration",
-    description: "Multi-grit wet sanding to strip cloudy yellow oxidation, followed by optical grade compounding and durable UV blocking clear coat sealant.",
-    image: "/images/autodetail/6-3.webp",
-    price: "From $69",
-    features: ["Multi-stage wet sanding", "Optical machine buffing", "UV inhibitor polymer sealant", "Restores beam clarity"],
-  },
-];
-
-export const TESTIMONIALS: TestimonialItem[] = [
-  {
-    id: "1",
-    author: "John Smith",
-    role: "Verified Client",
-    date: "22 Dec 2024",
-    rating: 5,
-    content: "Interior deep clean was amazing! All the stains and pet hair are gone. The car smells so fresh now. Highly recommended.",
-    avatar: "/images/autodetail/4-1.webp",
-  },
-  {
-    id: "2",
-    author: "Jessica Lee",
-    role: "Porsche 911 Owner",
-    date: "22 Dec 2024",
-    rating: 4,
-    content: "My car looked brand new after their full detail service. Every inch was spotless! Great attention to detail and friendly staff.",
-    avatar: "/images/autodetail/5-1.webp",
-  },
-  {
-    id: "3",
-    author: "Michael Brown",
-    role: "BMW M4 Enthusiast",
-    date: "22 Dec 2024",
-    rating: 5,
-    content: "Super clean interior and spotless engine bay. The team was fast, professional, and clearly passionate about what they do.",
-    avatar: "/images/autodetail/1-1.webp",
-  },
-  {
-    id: "4",
-    author: "Raseel Adam",
-    role: "Tesla Model S Plaid Owner",
-    date: "22 Dec 2024",
-    rating: 5,
-    content: "Loved how easy it was to book. The detailers were on time, courteous, and left my SUV shining inside and out.",
-    avatar: "/images/autodetail/9-1.webp",
-  },
+  { id: "ceramic-coating", number: "01", title: "Ceramic Coating Protection", description: "Lock in deep, wet-look gloss and shield your clear coat against UV rays, acid rain, road salt, and harsh contaminants with multi-year ceramic armor.", image: "/images/autodetail/4-3.webp", price: "From $325+", features: ["1, 3, & 5-year protection options", "Extreme hydrophobic water-beading", "UV & chemical oxidation defense"] },
+  { id: "paint-correction", number: "02", title: "Precision Paint Correction", description: "Eliminate 80–90%+ of swirl marks, light scratches, and dull haze. Multi-stage machine polishing safely restores true mirror reflection and depth.", image: "/images/autodetail/5-3.webp", price: "From $350", features: ["Swirl & scratch defect removal", "Clear-coat depth & safety inspected", "Flawless mirror-finish gloss"] },
+  { id: "interior-detailing", number: "03", title: "Deep Interior Restoration", description: "Restore that factory-fresh, clean-car feel. High-heat commercial steam extraction sanitizes surfaces, deep-cleans upholstery, and conditions delicate leather.", image: "/images/autodetail/2-3.webp", price: "From $225+", features: ["Hospital-grade steam sanitization", "Deep shampoo & stain extraction", "Premium leather clean & protect"] },
+  { id: "exterior-detailing", number: "04", title: "Complete Exterior Care", description: "Far beyond an ordinary wash. Safe two-bucket hand bath, chemical iron decontamination, clay-bar glass finish, and a 6-month ceramic wax seal.", image: "/images/autodetail/1-3.webp", price: "From $205+", features: ["Scratch-free two-bucket hand wash", "Iron decon & clay-bar smoothing", "6-month ceramic wax sealant"] },
+  { id: "mobile-auto-detailing", number: "05", title: "Mobile Detailing at Your Door", description: "Zero effort, zero waiting in a lounge. We bring our fully equipped professional detailing setup directly to your driveway or office while you work.", image: "/images/autodetail/3-4.webp", price: "Package + $35", features: ["We come to your home or office", "Zero downtime: detail while you work", "Flat $35 mobile setup fee"] },
+  { id: "supplemental-services", number: "06", title: "Specialized Add-On Services", description: "Target specific vehicle needs to boost safety, comfort, and resale value: crystal-clear headlight restoration, engine bay degreasing, and odor removal.", image: "/images/autodetail/6-3.webp", price: "Custom", features: ["Headlight restoration for night safety", "Engine bay detail & degreasing", "Odor removal & fabric protection"] },
 ];
 
 export const FAQS: FaqItem[] = [
-  {
-    id: "faq-1",
-    question: "What is car detailing?",
-    answer: "Car detailing is a meticulous, multi-step process of thoroughly cleaning, restoring, and protecting every surface of a vehicle, both inside and out. Unlike a standard automatic car wash, professional detailing uses precision hand techniques, specialized equipment, and premium coatings to restore showroom luster and prevent future degradation.",
-  },
-  {
-    id: "faq-2",
-    question: "How often should I get my car detailed?",
-    answer: "For optimal paint and interior longevity, we recommend a full comprehensive detail every 4 to 6 months. For daily driven vehicles in harsh weather conditions, a seasonal treatment followed by bi-weekly maintenance washes preserves ceramic coatings and leather suppleness.",
-  },
-  {
-    id: "faq-3",
-    question: "What’s included in a full detailing service?",
-    answer: "Our signature full detail encompasses a multi-stage exterior hand wash, clay decontamination, wheel well and caliper degreasing, single or two-stage machine paint polishing, deep steam interior extraction, leather conditioning, ozone odor neutralization, and exterior protective sealant.",
-  },
-  {
-    id: "faq-4",
-    question: "Will detailing remove scratches and stains?",
-    answer: "Yes. Our multi-stage machine paint correction eliminates up to 90-95% of micro-marring, swirl marks, wash scratches, and oxidation. Deep hot-water steam extraction removes difficult food, coffee, salt, and pet stains from carpets and upholstery.",
-  },
-  {
-    id: "faq-5",
-    question: "How long does a detailing session take?",
-    answer: "Express maintenance washes take approximately 1.5 to 2 hours. Full interior deep cleans or exterior enhancements take between 3 to 5 hours. Multi-stage paint correction and multi-layer ceramic coatings require 1 to 2 full days for meticulous prep and curing.",
-  },
+  { id: "faq-1", question: "What is included in a complete detail?", answer: "Our Full Exterior and Interior Detailing package starts at $405+. The interior receives deep steam cleaning, carpet extraction, and leather conditioning. The exterior receives a two-bucket hand wash, chemical iron decontamination, clay-bar smoothing, and a 6-month ceramic wax sealant. Final pricing depends on your vehicle size and surface condition." },
+  { id: "faq-2", question: "How is ceramic coating priced?", answer: "Ceramic coating packages start at $325+ for 1-year protection, $899.99+ for 3-year protection, and $1,099.99+ for 5-year protection. Every coating package includes thorough exterior decontamination and paint preparation before application." },
+  { id: "faq-3", question: "Can paint correction remove scratches?", answer: "Multi-stage paint correction removes 80% to 90%+ of swirl marks, light scratches, and clear-coat hazing. Deep scratches that penetrate through the clear coat into the primer cannot be polished out safely and require paint touch-up. Packages start at $350, and we take digital paint-depth measurements before polishing." },
+  { id: "faq-4", question: "Do you offer mobile detailing?", answer: "Yes. Mobile detailing is available with a flat $35 fee added to your chosen package. Our self-contained van brings water, power, and professional equipment directly to your driveway or office in Basking Ridge and nearby towns." },
+  { id: "faq-5", question: "What should I include when requesting an appointment?", answer: "Let us know your vehicle's year, make, and model, the service you need, your general location, and whether you prefer an in-shop appointment at our Basking Ridge studio or mobile service at your home." },
 ];
 
-export const INSTAGRAM_IMAGES = [
-  "/images/autodetail/1-2.webp",
-  "/images/autodetail/2-2.webp",
-  "/images/autodetail/3-3.webp",
-  "/images/autodetail/4-2.webp",
-  "/images/autodetail/5-2.webp",
-  "/images/autodetail/6-2.webp",
-  "/images/autodetail/7-1.webp",
-  "/images/autodetail/8-2.webp",
+export const TESTIMONIALS: TestimonialItem[] = [
+  { id: "google-david", author: "David", role: "Google review", date: "4 months ago", rating: 5, content: "“These gents are absolutely amazing… the price was fantastic and the job they did was excellent.”" },
+  { id: "google-yuval", author: "Yuval Wellisch", role: "Local Guide · Google review", date: "3 months ago", rating: 5, content: "“The service was absolutely excellent from start to finish… We highly recommend CleanWorx.”" },
+  { id: "google-jason", author: "Jason Roberts", role: "Google review", date: "7 months ago", rating: 5, content: "“To say the results are incredible doesn’t do it justice.”" },
+  { id: "google-megan", author: "Megan Gorman", role: "Google review", date: "2 months ago", rating: 5, content: "“Left my car looking as good as new! Extremely impressed with how spotless the interior was from the full detail.”" },
+  { id: "google-conor", author: "Conor O’Mara", role: "Google review", date: "1 year ago", rating: 5, content: "“CleanWorx left my car looking like it was brand new… the car is now looking spotless!”" },
 ];
+
+export const INSTAGRAM_IMAGES = ["/images/autodetail/1-2.webp", "/images/autodetail/2-2.webp", "/images/autodetail/3-3.webp", "/images/autodetail/4-2.webp", "/images/autodetail/5-2.webp", "/images/autodetail/6-2.webp", "/images/autodetail/7-1.webp", "/images/autodetail/8-2.webp"];

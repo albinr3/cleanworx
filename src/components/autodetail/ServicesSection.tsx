@@ -1,15 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { SERVICES } from "@/data/autodetailData";
 import { ArrowRight, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
-interface ServicesSectionProps {
-  onSelectService: (serviceName: string) => void;
-}
-
-export function ServicesSection({ onSelectService }: ServicesSectionProps) {
+export function ServicesSection() {
   return (
     <section id="services" className="relative py-16 sm:py-24 lg:py-32 bg-[#0c0d11]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -18,17 +15,17 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
         <ScrollReveal animation="fade-up" duration={750}>
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
-              <span className="text-[#1277ff] font-mono font-bold">02</span>
+              <span className="text-[#1277ff] font-mono font-bold">03</span>
               <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
-              <span>Detailing Capabilities</span>
+              <span>Precision Detailing &amp; Protection</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight text-balance">
-              Premium Car Detailing
+              Our Auto Detailing Services
             </h2>
 
-            <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-neutral-400 text-pretty">
-              Crafted for connoisseurs of automotive excellence. We restore gloss, eliminate defects, and protect every surface with industry-leading precision.
+            <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-neutral-300 text-pretty">
+              From multi-year ceramic coating to convenient mobile detailing at your driveway. Select a package below to view details and book:
             </p>
           </div>
         </ScrollReveal>
@@ -56,13 +53,8 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#14151a] via-transparent to-transparent" />
 
-                    {/* Number Badge */}
-                    <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 rounded-md bg-[#1277ff] px-2.5 py-1 text-[11px] sm:text-xs font-black text-white shadow-lg">
-                      {service.number}
-                    </div>
-
                     {/* Price Tag */}
-                    <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 rounded-md bg-black/70 backdrop-blur-md px-2.5 py-1 text-[11px] sm:text-xs font-bold text-neutral-200 border border-white/10">
+                    <div className="absolute top-3.5 right-3.5 rounded-lg border border-white/25 bg-[#1277ff]/95 px-3 py-1.5 text-xs font-black tracking-tight text-white shadow-lg shadow-[#1277ff]/35 backdrop-blur-md sm:top-4 sm:right-4 sm:text-sm">
                       {service.price}
                     </div>
                   </div>
@@ -93,13 +85,13 @@ export function ServicesSection({ onSelectService }: ServicesSectionProps) {
 
                 {/* Action Button */}
                 <div className="p-5 pt-0 sm:p-6 sm:pt-0">
-                  <button
-                    onClick={() => onSelectService(service.title)}
+                  <Link
+                    href={service.id === "supplemental-services" ? "/services" : `/${service.id}`}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 hover:border-[#1277ff] py-3.5 sm:py-3 text-sm font-bold text-neutral-200 transition-all cursor-pointer group-hover:bg-[#1277ff] group-hover:text-white active:scale-[0.98]"
                   >
-                    <span>Book This Service</span>
+                    <span>View Package &amp; Book</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>

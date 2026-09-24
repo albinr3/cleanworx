@@ -1,6 +1,6 @@
 # CleanWorx Keyword & URL Mapping
 
-**Business:** CleanWorx Auto Detailing & Ceramic Coatings  
+**Business:** CleanWorx Auto Detailing & Ceramic Coating  
 **Domain:** https://www.cleanworxnj.com  
 **Primary service area:** Basking Ridge, NJ, within a 20–25 mile radius  
 **Keyword source:** `keyword research CLEANWORX.csv` (115 keywords; 3,005,680 reported monthly searches)

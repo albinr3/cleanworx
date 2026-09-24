@@ -170,4 +170,19 @@
 
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
-}
+}
+/* Decorative, AI-generated portraits only; not images of the named reviewers. */
+.reviewer-portrait-one,
+.reviewer-portrait-two,
+.reviewer-portrait-three,
+.reviewer-portrait-four,
+.reviewer-portrait-five {
+  background-image: url("/images/autodetail/reviewer-portraits.webp");
+  background-size: 200% 200%;
+}
+
+.reviewer-portrait-one { background-position: left top; }
+.reviewer-portrait-two { background-position: right top; }
+.reviewer-portrait-three { background-position: left bottom; }
+.reviewer-portrait-four { background-position: center bottom; }
+.reviewer-portrait-five { background-position: right bottom; }
