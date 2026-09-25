@@ -402,6 +402,12 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
             ]
           }
         ]
+      },
+      {
+        title: "Mobile or In-Studio Exterior Detailing",
+        paragraphs: [
+          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or book our mobile detailing van to come directly to your driveway or workplace with a flat $35 mobile fee."
+        ]
       }
     ],
     faqs: [
