@@ -14,7 +14,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     h1: "Professional Ceramic Coating in Basking Ridge, NJ",
     eyebrow: "Certified System X Protection",
     summary: "Protect your vehicle's paint with certified System X ceramic coating in Basking Ridge, NJ. We deliver multi-year hydrophobic protection, high-gloss depth, and protection against NJ road salt and UV damage.",
-    image: "/images/autodetail/4-3.webp",
+    image: "/images/autodetail/ceramic-coating-hero.jpg",
     price: "From $325+",
     inclusions: [
       "1-year ceramic coating package from $325+",
@@ -31,19 +31,57 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ]
       },
       {
-        title: "Protection Benefits and Realistic Expectations",
+        title: "What Ceramic Coating Can Do For Your Car",
         paragraphs: [],
         subsections: [
           {
-            title: "Hydrophobic Defense and Gloss",
+            title: "More Protection. More Gloss. Less Maintenance.",
             paragraphs: [
-              "System X ceramic coatings deliver intense hydrophobic water-beading, making routine maintenance washes faster and easier while producing a deep, reflective candy-gloss finish."
+              "Your vehicle is exposed to the elements every day. Ceramic coating adds an extra layer of protection between your paint and the outside world while making your car easier to keep clean."
             ]
           },
           {
-            title: "Paint Preparation Requirements",
+            title: "Long-Lasting Paint Protection",
             paragraphs: [
-              "Ceramic coatings lock in whatever condition the paint is currently in. If your vehicle has swirl marks, spiderwebbing, or clear-coat scratches, we recommend pairing your coating with machine paint correction first to ensure a flawless finish underneath the ceramic layer."
+              "Helps protect your vehicle's finish from UV exposure, oxidation, road contaminants, bird droppings, bug residue, and other environmental contaminants."
+            ]
+          },
+          {
+            title: "Deep, High-Gloss Finish",
+            paragraphs: [
+              "Enhances the depth, clarity, and shine of your paint for a sleek, freshly detailed appearance that lasts."
+            ]
+          },
+          {
+            title: "Hydrophobic Water Repellency",
+            paragraphs: [
+              "Water beads up and rolls away more easily, helping reduce the amount of dirt and grime that sticks to your vehicle."
+            ]
+          },
+          {
+            title: "Easier Washing & Maintenance",
+            paragraphs: [
+              "Because contaminants have a harder time bonding to the coated surface, routine washing becomes faster and easier."
+            ]
+          },
+          {
+            title: "Helps Preserve Your Vehicle's Appearance",
+            paragraphs: [
+              "Ceramic coating helps protect the finish you already have, making it easier to maintain that clean, glossy appearance over time."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Paint Preparation Before Ceramic Coating",
+        paragraphs: [
+          "Ceramic coatings lock in whatever condition the paint is currently in. If your vehicle has swirl marks, spiderwebbing, or clear-coat scratches, we recommend pairing your coating with machine paint correction first to ensure a flawless finish underneath the ceramic layer."
+        ],
+        subsections: [
+          {
+            title: "When Paint Correction Is Recommended",
+            paragraphs: [
+              "Vehicles with visible micro-scratches, wash swirls, or oxidation benefit from machine polishing before ceramic installation. Applying ceramic coating over imperfect clear coat seals those defects underneath for years."
             ]
           }
         ]
@@ -55,7 +93,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ],
         subsections: [
           {
-            title: "Aftercare and Maintenance",
+            title: "Coverage and Care Requirements",
             paragraphs: [
               "Every ceramic coating installation includes simple aftercare guidance. Hand washing with pH-neutral shampoos and avoiding automated brush tunnels will keep your coating performing at its peak for years."
             ]
@@ -63,17 +101,17 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ]
       },
       {
-        title: "What Affects Ceramic Coating Pricing",
+        title: "What Affects Ceramic Coating Cost",
         paragraphs: [],
         subsections: [
           {
-            title: "Vehicle Size and Paint Condition",
+            title: "Vehicle Size and Condition",
             paragraphs: [
               "Compact cars require less product and time than three-row SUVs or full-size pickup trucks. Vehicles requiring extensive paint correction prior to coating installation are priced accordingly."
             ]
           },
           {
-            title: "Upfront Transparent Quotes",
+            title: "Preparation and Chosen Protection",
             paragraphs: [
               "We provide a clear scope of work and exact price before any work begins, so there are never surprises on pickup."
             ]
@@ -109,7 +147,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     h1: "Paint Correction & Car Scratch Removal in Basking Ridge, NJ",
     eyebrow: "Mirror clarity restoration",
     summary: "Eliminate swirl marks, oxidation, and scratches with multi-stage machine paint correction in Basking Ridge, NJ. We inspect your paint with digital depth gauges to safely restore true reflection and gloss.",
-    image: "/images/autodetail/5-3.webp",
+    image: "/images/autodetail/paint-correction-hero.jpg",
     price: "From $350",
     inclusions: [
       "Multi-stage machine paint correction from $350",

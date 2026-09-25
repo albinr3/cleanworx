@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
 export function AboutSection() {
@@ -83,7 +83,7 @@ export function AboutSection() {
 
             <ScrollReveal animation="fade-left" delay={150} duration={750}>
               <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-neutral-300 leading-relaxed">
-                Founded in 2019, CleanWorx handles daily drivers, family SUVs, and performance sports cars across Somerset County. We evaluate your vehicle's paint, interior surfaces, and wear before recommending a service package.
+                Founded in 2019, CleanWorx handles daily drivers, family SUVs, and performance sports cars across Somerset County. We evaluate your vehicle&apos;s paint, interior surfaces, and wear before recommending a service package.
               </p>
 
               <p className="mt-3 sm:mt-4 text-xs sm:text-base text-neutral-400 leading-relaxed">

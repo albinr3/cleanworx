@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Calendar, ArrowRight, Sparkles } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 

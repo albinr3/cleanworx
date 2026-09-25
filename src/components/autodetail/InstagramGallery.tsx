@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { INSTAGRAM_IMAGES } from "@/data/autodetailData";
-import { Sparkles } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
 function GalleryIcon({ className = "w-6 h-6" }: { className?: string }) {
