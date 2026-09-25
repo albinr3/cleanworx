@@ -188,7 +188,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ]
       },
       {
-        title: "Our Precision Multi-Stage Correction Process",
+        title: "Our Paint Correction Process",
         paragraphs: [],
         subsections: [
           {
@@ -208,7 +208,53 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Why Ceramic Coating Follows Paint Correction",
         paragraphs: [
-          "Once your paint is leveled and optically clear, locking in that finish with a System X ceramic coating or ceramic sealant ensures your investment is protected from future wash-induced scratches."
+          "Paint correction and ceramic coating work together for a complete, showroom-grade finish. While machine compounding and polishing eliminate swirls, scratches, and oxidation to reveal true paint reflection, they also remove prior protection, leaving the clear coat bare and exposed. Ceramic coating is a durable protective barrier applied immediately afterward to seal and protect the polished surface."
+        ],
+        subsections: [
+          {
+            title: "Never Lock In Paint Flaws Beneath Glass",
+            paragraphs: [
+              "Ceramic coatings do not fill or hide defects. If applied over uncorrected paint, the coating locks in existing swirl marks, water spots, and scratches under a hardened layer for years. Proper machine correction restores the clear coat first so only clean, defect-free paint is sealed."
+            ]
+          },
+          {
+            title: "Freshly Leveled Clear Coat Needs Immediate Defense",
+            paragraphs: [
+              "Compounding levels surface defects by removing a microscopic layer of clear coat. Without immediate protection, routine maintenance washing, road grime, and winter salts can quickly degrade the fresh finish, undoing hours of careful machine polishing."
+            ]
+          },
+          {
+            title: "Direct Molecular Bonding for Maximum Durability",
+            paragraphs: [
+              "A freshly polished, panel-wiped finish gives System X ceramic nano-particles the optimal pore structure for direct chemical cross-linking. This creates an ultra-slick, hydrophobic barrier that repels water and road grime, keeps washing virtually scratch-free, and preserves your clear coat's finite thickness for years."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Paint Correction Pricing",
+        paragraphs: [
+          "Every vehicle receives a thorough hands-on inspection before work begins. We evaluate your clear coat's condition, thickness, and defect severity to recommend the exact correction level needed."
+        ],
+        subsections: [
+          {
+            title: "Starting at USD 350",
+            paragraphs: [
+              "Single-stage paint enhancement starts at $350, ideal for newer vehicles or well-maintained paint seeking a substantial gloss boost and 50%–60% swirl reduction."
+            ]
+          },
+          {
+            title: "Scope Based on Vehicle Condition and Your Goals",
+            paragraphs: [
+              "Multi-stage corrections are quoted based on paint hardness, surface defect depth, and vehicle dimensions to safely eliminate 80% to 90%+ of imperfections."
+            ]
+          }
+        ]
+      },
+      {
+        title: "Paint Correction Results",
+        paragraphs: [
+          "See the transformation achieved through digital paint depth gauging, targeted compounding, and optical finishing polish. Our multi-stage process permanently levels micro-scratches without fillers."
         ]
       }
     ],
@@ -241,7 +287,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     h1: "Deep Interior Car Detailing in Basking Ridge, NJ",
     eyebrow: "Cabin deep restoration",
     summary: "CleanWorx provides deep interior car detailing in Basking Ridge, NJ. Commercial steam extraction, hot-water shampooing, and leather conditioning restore that fresh factory feeling.",
-    image: "/images/autodetail/2-3.webp",
+    image: "/videos/hero-interior-detailing-poster.webp",
     price: "From $225+",
     inclusions: [
       "Full Interior Detailing from $225+",
@@ -306,7 +352,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     ctaTitle: "Request an Interior Detailing Quote",
     related: [
       { label: "Mobile interior detailing", href: "/mobile-auto-detailing" },
-      { label: "Explore service areas", href: "/service-areas" },
+      { label: "Exterior car detailing", href: "/exterior-detailing" },
       { label: "View our detailing work", href: "/our-work" },
       ...commonLinks
     ]
@@ -445,7 +491,6 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     faqTitle: "Mobile Detailing FAQs",
     ctaTitle: "Check Mobile Detailing Availability",
     related: [
-      { label: "Verified service areas", href: "/service-areas" },
       { label: "Interior car detailing", href: "/interior-detailing" },
       { label: "Exterior car detailing", href: "/exterior-detailing" },
       { label: "Precision paint correction", href: "/paint-correction" },

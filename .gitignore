@@ -45,6 +45,10 @@ next-env.d.ts
 .claude/skills/customize/
 .claude/skills/release/
 
+# Locally installed agent skills and their command bridge
+.agents/skills/avoid-ai-writing/
+.claude/commands/avoid-ai-writing.md
+
 # Local temp files
 temp/
 

@@ -10,6 +10,9 @@ export interface BeforeAfterSliderProps {
   beforeAlt?: string;
   afterAlt?: string;
   ariaLabel?: string;
+  aspectRatio?: string;
+  className?: string;
+  fillContainer?: boolean;
 }
 
 export function BeforeAfterSlider({
@@ -18,20 +21,50 @@ export function BeforeAfterSlider({
   beforeAlt = "Blue vehicle panel with water sitting on the surface before ceramic protection",
   afterAlt = "Blue vehicle panel with water beading after ceramic protection",
   ariaLabel = "Drag to compare surface before and after treatment",
+  aspectRatio = "1 / 1",
+  className = "",
+  fillContainer = false,
 }: BeforeAfterSliderProps = {}) {
   const sliderRef = useRef<HTMLDivElement>(null);
 
+  const handlePosition = (val: string) => {
+    sliderRef.current?.style.setProperty("--comparison-position", `${val}%`);
+  };
+
   return (
-    <figure className="mx-auto w-full max-w-sm xl:flex xl:h-full xl:flex-col">
-      <div ref={sliderRef} className="before-after-slider xl:flex-1">
+    <figure className={`mx-auto w-full ${fillContainer ? "max-w-sm xl:flex xl:h-full xl:flex-col" : ""} ${className}`}>
+      <div
+        ref={sliderRef}
+        className={`before-after-slider ${fillContainer ? "before-after-slider--fill xl:flex-1" : ""}`}
+        style={{
+          "--comparison-position": "50%",
+          aspectRatio: fillContainer ? undefined : aspectRatio,
+        } as React.CSSProperties}
+      >
         <div className="before-after-slider__image">
-          <Image src={afterImage} alt={afterAlt} fill sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 90vw" className="object-cover" />
+          <Image
+            src={afterImage}
+            alt={afterAlt}
+            fill
+            sizes="(min-width: 1024px) 45vw, 90vw"
+            className="select-none object-cover object-center"
+            priority
+          />
         </div>
         <div className="before-after-slider__image before-after-slider__before">
-          <Image src={beforeImage} alt={beforeAlt} fill sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 90vw" className="object-cover" />
+          <Image
+            src={beforeImage}
+            alt={beforeAlt}
+            fill
+            sizes="(min-width: 1024px) 45vw, 90vw"
+            className="select-none object-cover object-center"
+            priority
+          />
         </div>
         <div aria-hidden="true" className="before-after-slider__divider">
-          <span className="before-after-slider__handle"><ArrowLeftRight className="h-4 w-4" strokeWidth={2} /></span>
+          <span className="before-after-slider__handle">
+            <ArrowLeftRight className="h-4 w-4" strokeWidth={2} />
+          </span>
         </div>
         <input
           aria-label={ariaLabel}
@@ -39,7 +72,8 @@ export function BeforeAfterSlider({
           defaultValue="50"
           max="100"
           min="0"
-          onInput={(event) => sliderRef.current?.style.setProperty("--comparison-position", `${event.currentTarget.value}%`)}
+          onInput={(event) => handlePosition(event.currentTarget.value)}
+          onChange={(event) => handlePosition(event.currentTarget.value)}
           type="range"
         />
       </div>

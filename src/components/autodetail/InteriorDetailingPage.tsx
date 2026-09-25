@@ -4,22 +4,25 @@ import {
   ArrowUpRight,
   Check,
   ChevronRight,
+  Sparkles,
+  MapPin,
+  Truck,
 } from "lucide-react";
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { BeforeAfterSlider } from "@/components/autodetail/BeforeAfterSlider";
-import { PaintCorrectionIcon } from "@/components/autodetail/PaintCorrectionIcon";
+import { InteriorDetailIcon } from "@/components/autodetail/InteriorDetailIcon";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
 
 const comparisonRows = [
-  ["Defect Removal Rate", "0% (Fills only)", "50%–60%", "80%–90%+"],
-  ["Swirl Mark Elimination", "Masked temporarily", "Light swirls removed", "Deeply corrected"],
-  ["Deep Scratch Reduction", "None", "Minor reduction", "Significant leveling"],
-  ["Paint Depth Inspection", "No", "Visual check", "Digital gauge verified"],
-  ["Mirror Clarity & Gloss", "★★★☆☆", "★★★★☆", "★★★★★"],
-  ["Clear Coat Safety", "Surface only", "Moderate pad", "Precision multi-stage"],
-  ["Permanence of Results", "Weeks (Washes off)", "Permanent level", "Permanent level"],
+  ["High-Heat Steam Sanitization", "None", "Surface wipe only", "220°F+ Commercial steam"],
+  ["Deep Carpet & Upholstery Extraction", "Dry vacuum only", "Basic surface shampoo", "Heated hot-water extractor"],
+  ["Leather Cleansing & Conditioning", "Silicone spray (greasy)", "Basic wipe-down", "pH-neutral scrub & UV shield"],
+  ["Pet Hair & Crevice Removal", "Not included", "Partial surface vacuum", "Pneumatic air & rubber blades"],
+  ["Dashboard, Console & Air Vents", "Surface dusting", "Quick wipe", "Detail brushes & streak-free"],
+  ["Cabin Chemical & Odor Level", "Heavy synthetic scents", "Lingering cleaners", "Non-toxic, odor-neutralized"],
+  ["Fabric & Carpet Dry Time", "Often left soaking", "12–24 hours", "Rapid extraction (dry in ~2h)"],
 ] as const;
 
 function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
@@ -34,8 +37,8 @@ function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
   );
 }
 
-export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
-  const [intro, defects, process, protection, pricing, results] = data.sections;
+export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
+  const [intro, services, delivery] = data.sections;
 
   const schema = {
     "@context": "https://schema.org",
@@ -84,17 +87,16 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
           loop
           playsInline
           preload="auto"
-          poster="/videos/hero-paint-correction-poster.webp"
+          poster="/videos/hero-interior-detailing-poster.webp"
           className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
           aria-hidden="true"
         >
-          <source src="/videos/hero-paint-correction.webm" type="video/webm" />
-          <source src="/videos/hero-paint-correction.mp4" type="video/mp4" />
+          <source src="/videos/hero-interior-detailing.webm" type="video/webm" />
+          <source src="/videos/hero-interior-detailing.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,#08090c_0%,rgba(8,9,12,.91)_35%,rgba(8,9,12,.42)_68%,rgba(8,9,12,.68)_100%)]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_77%_24%,rgba(18,119,255,.4),transparent_26%),linear-gradient(0deg,#08090c_0%,transparent_42%)]" />
-        <div className="absolute -bottom-24 -right-20 h-80 w-80 rounded-full border border-white/15 bg-white/[0.025] sm:h-[30rem] sm:w-[30rem]" />
-        <div className="absolute bottom-12 right-[8%] hidden h-32 w-32 rounded-full border border-[#4da3ff]/30 lg:block" />
+        {/* Subtle overlays: ensures crisp text readability on the left while keeping the video clear and bright */}
+        <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[#08090c]/80 via-[#08090c]/40 to-transparent" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#08090c] via-transparent to-black/20" />
 
         <div className="mx-auto flex min-h-[500px] max-w-7xl flex-col justify-between px-4 pb-8 pt-6 sm:px-6 sm:pb-10 lg:min-h-[560px] lg:px-8">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-neutral-400">
@@ -148,8 +150,8 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-[4/5] overflow-hidden bg-[#111827]">
               <Image
-                src="/images/autodetail/paint-correction-5050.jpg"
-                alt="50/50 paint correction comparison showing oxidation removal and mirror clarity"
+                src="/images/autodetail/interior-leather-extraction.webp"
+                alt="Professional deep interior vacuum extraction on red leather automotive seats at CleanWorx"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
                 className="object-cover"
@@ -175,49 +177,49 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Defects Bento Grid Section */}
+      {/* Services Included Bento Grid Section */}
       <section className="relative overflow-hidden bg-[#080a0e] py-20 sm:py-28">
         <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:4rem_4rem]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up" className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[.28em] text-[#70b5ff]">{data.eyebrow}</p>
             <h2 className="mt-4 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-              {defects.title}
+              {services.title}
             </h2>
           </ScrollReveal>
           <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center xl:gap-14">
             <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-[540px] lg:mx-0 lg:max-w-none">
-              {/* Soft ambient blue glow behind the diagram */}
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/15 blur-2xl" />
-
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
                 <Image
-                  src="/images/autodetail/paint-defects-diagram.jpg"
-                  alt="Common paint defect examples: swirl marks, deep marring, scratches, etching, holograms and clear coat cross section"
+                  src="/images/autodetail/interior-steam-extraction.jpg"
+                  alt="CleanWorx detailer extracting dirt and shampoo from vehicle rear upholstery seats with commercial extractor"
                   fill
                   priority
                   sizes="(min-width: 1024px) 50vw, 90vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080a0e]/85 via-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-white/10 bg-black/75 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm sm:px-5 sm:py-3 sm:text-xs">
-                  <span>Defect Cross-Section</span>
-                  <span className="text-[#8ec7ff]">Paint Depth Anatomy</span>
+                  <span>CleanWorx In Action</span>
+                  <span className="text-[#8ec7ff]">Deep Cabin Restoration</span>
                 </div>
               </div>
             </ScrollReveal>
+
             <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2">
-              {defects.subsections?.map((defect, index) => (
+              {services.subsections?.map((service, index) => (
                 <ScrollReveal
-                  key={defect.title}
+                  key={service.title}
                   animation="fade-up"
                   delay={index * 70}
                   className={`bg-[#080a0e] p-7 transition duration-300 hover:bg-[#101723] sm:p-8 ${index === 2 ? "md:col-span-2" : ""}`}
                 >
                   <div className="flex items-start justify-between gap-5">
-                    <h3 className="max-w-sm text-xl font-bold leading-tight text-white">{defect.title}</h3>
-                    <PaintCorrectionIcon index={index} className="h-8 w-8 shrink-0 text-[#4da3ff]" />
+                    <h3 className="max-w-sm text-xl font-bold leading-tight text-white">{service.title}</h3>
+                    <InteriorDetailIcon index={index} className="h-8 w-8 shrink-0 text-[#4da3ff]" />
                   </div>
-                  <Paragraphs paragraphs={defect.paragraphs} />
+                  <Paragraphs paragraphs={service.paragraphs} />
                 </ScrollReveal>
               ))}
             </div>
@@ -234,19 +236,19 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
                 <thead>
                   <tr className="border-b border-white/10 text-sm font-bold uppercase tracking-[.18em] text-neutral-400 sm:text-base">
                     <th scope="col" className="p-5 sm:p-6">Feature</th>
-                    <th scope="col" className="p-5 sm:p-6">Hand Glaze / Wax</th>
-                    <th scope="col" className="p-5 sm:p-6">1-Stage Enhancement</th>
-                    <th scope="col" className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 text-[#8ec7ff] sm:p-6">Multi-Stage Correction</th>
+                    <th scope="col" className="p-5 sm:p-6">Standard Car Wash</th>
+                    <th scope="col" className="p-5 sm:p-6">Basic Interior Detail</th>
+                    <th scope="col" className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 text-[#8ec7ff] sm:p-6">CleanWorx Deep Restoration</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonRows.map(([feature, wax, stage1, multiStage]) => (
+                  {comparisonRows.map(([feature, wash, basic, cleanworx]) => (
                     <tr key={feature} className="border-b border-white/[.07] last:border-b-0">
                       <th scope="row" className="p-5 font-semibold text-white sm:p-6">{feature}</th>
-                      <td className="p-5 text-neutral-400 sm:p-6">{wax}</td>
-                      <td className="p-5 text-neutral-300 sm:p-6">{stage1}</td>
+                      <td className="p-5 text-neutral-400 sm:p-6">{wash}</td>
+                      <td className="p-5 text-neutral-300 sm:p-6">{basic}</td>
                       <td className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 font-mono font-bold tracking-[.08em] text-[#8ec7ff] sm:p-6">
-                        {multiStage}
+                        {cleanworx}
                       </td>
                     </tr>
                   ))}
@@ -257,187 +259,182 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Process & Protection Section */}
+      {/* Mobile or In-Studio Section */}
       <section className="bg-[#0b0d12] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:items-center">
             <ScrollReveal animation="fade-right">
               <span className="block h-px w-20 bg-[#4da3ff]" />
               <h2 className="mt-6 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                {process.title}
+                {delivery.title}
               </h2>
-              <Paragraphs paragraphs={process.paragraphs} />
+              <Paragraphs paragraphs={delivery.paragraphs} />
+
               <div className="mt-9 space-y-6">
-                {process.subsections?.map((section, idx) => (
-                  <div key={section.title} className="border-l-2 border-[#4da3ff] pl-5">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
-                      Step 0{idx + 1}
-                    </span>
-                    <h3 className="mt-1 text-xl font-bold text-white">{section.title}</h3>
-                    <Paragraphs paragraphs={section.paragraphs} />
+                <div className="border-l-2 border-[#4da3ff] pl-5">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
+                    <MapPin className="h-3.5 w-3.5" />
+                    <span>Studio Drop-Off Option</span>
                   </div>
-                ))}
+                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
+                  <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
+                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ. Our studio provides a fully controlled workspace with industrial extraction equipment and dedicated drying fans.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-[#4da3ff] pl-5">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
+                    <Truck className="h-3.5 w-3.5" />
+                    <span>Convenient Mobile Service</span>
+                  </div>
+                  <h3 className="mt-1 text-xl font-bold text-white">Mobile Van Directly to Your Driveway</h3>
+                  <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
+                    Prefer zero downtime? Our self-contained mobile detailing van comes directly to your home or workplace throughout Basking Ridge, Bernardsville, Bedminster, and Far Hills for a flat $35 mobile fee.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
 
-            {/* Action Image */}
-            <ScrollReveal animation="fade-left" className="relative mx-auto w-full max-w-[420px] lg:mx-0">
+            {/* Visual Feature Card */}
+            <ScrollReveal animation="fade-left" className="relative mx-auto w-full max-w-[440px] lg:mx-0">
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/20 blur-3xl" />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/15 bg-[#111722] shadow-2xl">
-                <Image
-                  src="/images/autodetail/cleanworx-paint-correction-action.jpg"
-                  alt="CleanWorx detailer performing precision paint correction on vehicle"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 35vw, 90vw"
-                  className="object-cover object-center"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 via-transparent" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-4 flex items-center justify-between px-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
-                  <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 backdrop-blur-md">CleanWorx in action</span>
-                  <span className="rounded-full border border-[#4da3ff]/40 bg-[#1277ff]/30 px-2.5 py-1 text-[#8ec7ff] backdrop-blur-md">Multi-Stage Machine Polish</span>
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#111722] p-6 shadow-2xl sm:p-8">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#4da3ff]/30 bg-[#1277ff]/10 px-3 py-1 text-xs font-semibold text-[#8ec7ff]">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  The CleanWorx Standard
+                </div>
+                <h3 className="mt-4 text-2xl font-bold text-white">Hospital-Grade Clean. Zero Greasy Residues.</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-300">
+                  Every cabin we detail receives thorough hand care, safe steam sanitation, and strict attention to detail:
+                </p>
+
+                <ul className="mt-6 space-y-3.5 text-xs text-neutral-300 sm:text-sm">
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
+                    <span><strong>High-Heat Steam Sanitization:</strong> 220°F+ steam eliminates bacteria, dust mites, and stubborn cabin allergens.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
+                    <span><strong>Heated Extraction:</strong> Hot-water extraction pulls out embedded dirt and stains while recovering 90%+ of moisture.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
+                    <span><strong>pH-Neutral Leather Care:</strong> Cleans and replenishes natural oils without artificial shine or slick residues.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
+                    <span><strong>Streak-Free Optical Glass:</strong> Interior windshield and tinted windows cleaned crystal clear with zero haze.</span>
+                  </li>
+                </ul>
+
+                <div className="mt-8 border-t border-white/10 pt-5">
+                  <Link
+                    href="/mobile-auto-detailing"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
+                  >
+                    Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-2 text-center text-xs text-neutral-400">
+                    Flat $35 mobile dispatch fee anywhere in our service area.
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
           </div>
-
-          {/* Why Ceramic Coating Follows Paint Correction */}
-          <ScrollReveal animation="fade-up" delay={120} className="relative mt-16 overflow-hidden border border-white/10 bg-[#121722] p-8 sm:p-10 lg:mt-20">
-            <div className="absolute right-0 top-0 h-24 w-24 border-b border-l border-[#4da3ff]/40" />
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,.8fr)] lg:items-start">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-[.25em] text-[#70b5ff]">Recommended Next Step</span>
-                <h2 className="mt-2 text-3xl font-black leading-[.98] tracking-[-.04em] text-white sm:text-4xl">
-                  {protection.title}
-                </h2>
-                <Paragraphs paragraphs={protection.paragraphs} />
-                {protection.subsections?.map((section) => (
-                  <div key={section.title} className="mt-6 border-t border-white/10 pt-5">
-                    <h3 className="text-lg font-bold text-white">{section.title}</h3>
-                    <Paragraphs paragraphs={section.paragraphs} />
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col justify-between rounded-xl border border-[#4da3ff]/20 bg-[#0d121c] p-6 lg:p-8">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#4da3ff]/30 bg-[#1277ff]/10 px-3 py-1 text-xs font-semibold text-[#8ec7ff]">
-                    The CleanWorx Standard
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold text-white">Correction Restores Clarity. Ceramic Locks It In.</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                    A machine-corrected finish reaches peak gloss, but the bare clear coat is also completely unprotected. Locking it in immediately provides:
-                  </p>
-                  <ul className="mt-5 space-y-3 text-xs text-neutral-300 sm:text-sm">
-                    <li className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                      <span><strong>Permanent 9H Glass Shield:</strong> Cross-links molecularly with clear coat, unlike carnauba waxes that wash off in weeks.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                      <span><strong>Swirl & Scratch Resistance:</strong> Drastically reduces friction and wash-induced spiderwebbing during future maintenance.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                      <span><strong>Hydrophobic Self-Cleaning:</strong> Extreme water-beading sheds road grime, salt, and fallout effortlessly.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                      <span><strong>Protects Finite Clear Coat:</strong> Prevents paint degradation so you never have to aggressively compound your vehicle again.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-6 border-t border-white/10 pt-5">
-                  <Link
-                    href="/ceramic-coating"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
-                  >
-                    Explore Ceramic Coating Packages <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                  <p className="mt-2 text-center text-xs text-neutral-400">
-                    Ask about bundling paint correction with System X Ceramic Protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
-      {/* Paint Correction Pricing */}
+      {/* Transparent Pricing Section */}
       <section className="relative overflow-hidden bg-[#0e61ce] py-20 sm:py-28">
         <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(255,255,255,.42)_1px,transparent_1px)] [background-size:1.2rem_1.2rem]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal animation="fade-up" className="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,340px)] lg:items-center xl:gap-16">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[.25em] text-[#bde0ff]">Transparent Rates</p>
-              <h2 className="mt-2 max-w-md text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                {pricing?.title ?? "Paint Correction Pricing"}
-              </h2>
-              {pricing?.paragraphs?.map((paragraph) => (
-                <p key={paragraph} className="mt-4 max-w-md text-sm leading-7 text-white/90 sm:text-base">
-                  {paragraph}
+              <ScrollReveal animation="fade-up">
+                <p className="text-xs font-bold uppercase tracking-[.25em] text-[#bde0ff]">Transparent Rates</p>
+                <h2 className="mt-2 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
+                  Full Interior Detailing
+                </h2>
+                <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
+                  Final rates depend on vehicle size, seat count, and cabin condition, confirmed with you before work begins.
                 </p>
-              ))}
+              </ScrollReveal>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <ScrollReveal animation="fade-up" delay={80} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
+                  <h3 className="text-xl font-bold text-white">{data.price}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/85">
+                    Complete cabin restoration including commercial steam sanitization, hot-water carpet extraction, and leather conditioning.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
+                  <h3 className="text-xl font-bold text-white">Studio or Mobile ($35 Fee)</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/85">
+                    Choose in-studio drop-off at 19 E. Henry Street in Basking Ridge or have our self-contained mobile detailing van come right to your door.
+                  </p>
+                </ScrollReveal>
+              </div>
+
+              <ScrollReveal animation="fade-up" delay={200} className="mt-6 flex flex-wrap items-center gap-4">
+                <BookingLink label="Book Now" className="bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
+                  Self-contained van or studio drop-off
+                </span>
+              </ScrollReveal>
             </div>
-            <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
-              {pricing?.subsections ? (
-                pricing.subsections.map((section) => (
-                  <div key={section.title} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                    <h3 className="text-xl font-bold text-white">{section.title}</h3>
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph} className="mt-4 text-sm leading-7 text-white/85">{paragraph}</p>
-                    ))}
-                  </div>
-                ))
-              ) : (
-                <>
-                  <div className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                    <h3 className="text-xl font-bold text-white">Starting at USD 350</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/85">
-                      Single-stage paint enhancement starts at $350, ideal for newer vehicles or well-maintained paint seeking a substantial gloss boost and 50%–60% swirl reduction.
-                    </p>
-                  </div>
-                  <div className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                    <h3 className="text-xl font-bold text-white">Scope Based on Vehicle Condition and Your Goals</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/85">
-                      Multi-stage corrections are quoted based on paint hardness, surface defect depth, and vehicle dimensions to safely eliminate 80% to 90%+ of imperfections.
-                    </p>
-                  </div>
-                </>
-              )}
-              <BookingLink label="Book Now" className="self-start bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
-            </div>
-          </ScrollReveal>
+
+            <ScrollReveal animation="fade-left" delay={150} className="relative mx-auto w-full max-w-[340px] lg:mx-0">
+              <div className="absolute -inset-3 rounded-3xl bg-black/25 blur-xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-white/25 bg-[#091b38] shadow-2xl shadow-black/40">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  poster="/videos/full-interior-detailing-poster.webp"
+                  className="aspect-[9/16] h-full w-full object-cover"
+                  aria-label="Full Interior Detailing deep cabin restoration"
+                >
+                  <source src="/videos/full-interior-detailing.webm" type="video/webm" />
+                  <source src="/videos/full-interior-detailing.mp4" type="video/mp4" />
+                </video>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+                  <span>Full Interior In Action</span>
+                  <span className="rounded-full border border-white/30 bg-black/40 px-2.5 py-0.5 text-[#bde0ff]">CleanWorx</span>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
-      {/* Paint Correction Results */}
+      {/* Interior Detailing Results */}
       <section className="relative overflow-hidden bg-[#080a0e] py-12 sm:py-16 lg:py-20">
         <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:4rem_4rem]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up" className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[.28em] text-[#70b5ff]">Verified Clarity</p>
+            <p className="text-xs font-bold uppercase tracking-[.28em] text-[#70b5ff]">Verified Transformation</p>
             <h2 className="mt-2 text-3xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-4xl lg:text-5xl">
-              {results?.title ?? "Paint Correction Results"}
+              Interior Detailing Results
             </h2>
-            {results?.paragraphs?.map((p) => (
-              <p key={p} className="mt-3 text-sm leading-6 text-neutral-300 sm:text-base sm:leading-7">
-                {p}
-              </p>
-            ))}
+            <p className="mt-3 text-sm leading-6 text-neutral-300 sm:text-base sm:leading-7">
+              Commercial steam extraction, high-lift shampooing, and targeted carpet restoration lift ground-in dirt, winter road salt, food spills, and embedded pet hair from deep within vehicle fibers.
+            </p>
           </ScrollReveal>
 
           <div className="mt-8 grid gap-8 lg:mt-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-12">
-            <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-[380px] sm:max-w-[420px] lg:mx-0">
+            <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-[440px] sm:max-w-[480px] lg:mx-0">
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/15 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#111722] p-2.5 shadow-2xl">
                 <BeforeAfterSlider
-                  beforeImage="/images/autodetail/paint-swirls-before-v2.jpg"
-                  afterImage="/images/autodetail/paint-mirror-after.jpg"
-                  beforeAlt="Vehicle clear coat with circular swirl marks and spiderweb scratches before correction"
-                  afterAlt="Vehicle clear coat with flawless swirl-free mirror clarity after multi-stage correction"
-                  ariaLabel="Drag to compare paint surface before and after machine paint correction"
-                  aspectRatio="4 / 5"
+                  beforeImage="/images/autodetail/interior-carpet-before.jpg"
+                  afterImage="/images/autodetail/interior-carpet-after.jpg"
+                  beforeAlt="Vehicle floor carpet stained with ground-in mud, road salt, and debris before deep extraction detailing"
+                  afterAlt="Vehicle floor carpet pristine, deep-extracted, and sanitized after CleanWorx interior detailing"
+                  ariaLabel="Drag to compare vehicle interior carpet before and after CleanWorx deep extraction detailing"
+                  aspectRatio="4 / 3"
                   className="w-full"
                 />
               </div>
@@ -447,24 +444,24 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-left" delay={80} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    80%+
+                    220°F
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Permanent Defect Elimination</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Commercial Steam Sanitization</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Swirl marks, spiderwebbing, and oxidation are safely leveled out of the clear coat rather than masked with cosmetic glazes or heavy waxes.
+                  High-temperature pressurized steam penetrates deep into carpet weave and upholstery fibers to break down heavy road salt, grease, and bacteria without leaving chemical residues.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-left" delay={140} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    µm
+                    90%+
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Clear-Coat Preserved</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Moisture Extracted Instantly</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Every pass is verified with digital paint depth gauges, ensuring only microscopic clear coat is removed to maximize paint longevity and safety.
+                  Our commercial hot-water extraction vacuum recovers over 90% of injected moisture on contact, allowing carpets and cloth seats to dry naturally in 2 to 4 hours with no mold or mildew risk.
                 </p>
               </ScrollReveal>
 
@@ -473,10 +470,10 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
                     100%
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Ceramic Ready Surface</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Pet Hair & Crevice Extraction</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Optically level paint creates the ideal foundation for ceramic coating bonds, sealing in mirror gloss for 1 to 5+ years.
+                  Pneumatic air tools, rubber static blades, and fine horsehair brushes dislodge deeply embedded pet hair and sand from seat tracks, pedals, and tight carpet borders.
                 </p>
               </ScrollReveal>
 
@@ -485,7 +482,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
                   href="/our-work"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#70b5ff] transition hover:text-white sm:text-sm"
                 >
-                  View more paint correction gallery photos <ArrowUpRight className="h-4 w-4" />
+                  View more interior detailing gallery photos <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -493,7 +490,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* FAQs, CTA Banner, & Related Links */}
+      {/* FAQs Section */}
       <section className="bg-[#0a0b0f] py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up">
@@ -519,6 +516,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
             ))}
           </div>
 
+          {/* CTA Banner */}
           <ScrollReveal animation="zoom-in" className="mt-16 bg-[#1277ff] p-7 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-10">
             <div>
               <h2 className="text-3xl font-black leading-tight text-white">{data.ctaTitle}</h2>

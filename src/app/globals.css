@@ -252,9 +252,7 @@
   outline-offset: 4px;
 }
 
-@media (min-width: 1280px) {
-  .before-after-slider {
-    height: 100%;
-    aspect-ratio: auto;
-  }
+.before-after-slider--fill {
+  height: 100%;
+  aspect-ratio: auto;
 }

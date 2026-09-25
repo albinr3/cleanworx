@@ -209,7 +209,7 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
             <Paragraphs paragraphs={options.paragraphs} />
             {options.subsections?.map((section) => <div key={section.title} className="mt-8 border-t border-white/10 pt-7"><h3 className="text-lg font-bold text-white">{section.title}</h3><Paragraphs paragraphs={section.paragraphs} /></div>)}
           </ScrollReveal>
-          <ScrollReveal animation="zoom-in" delay={80} className="xl:h-full"><BeforeAfterSlider /></ScrollReveal>
+          <ScrollReveal animation="zoom-in" delay={80} className="xl:h-full"><BeforeAfterSlider fillContainer /></ScrollReveal>
         </div>
       </section>
 
@@ -240,7 +240,7 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
             <div><h2 className="text-3xl font-black leading-tight text-white">{data.ctaTitle}</h2><p className="mt-3 max-w-xl text-sm leading-6 text-white/85">Tell us about your vehicle, its condition, and the service you are considering.</p></div>
             <BookingLink label="Book Now" className="mt-6 shrink-0 bg-[#080a0e] hover:bg-black sm:mt-0" />
           </ScrollReveal>
-          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm">{data.related.map((link) => <Link key={link.href} href={link.href} className="inline-flex items-center gap-1 font-semibold text-[#70b5ff] transition hover:text-white">{link.label}<ArrowUpRight className="h-4 w-4" /></Link>)}</div>
+          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm">{data.related.map((link) => <Link key={`${link.href}-${link.label}`} href={link.href} className="inline-flex items-center gap-1 font-semibold text-[#70b5ff] transition hover:text-white">{link.label}<ArrowUpRight className="h-4 w-4" /></Link>)}</div>
         </div>
       </section>
     </SiteShell>
