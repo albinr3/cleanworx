@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import { StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "Auto Detailing FAQs | CleanWorx Auto Detailing & Ceramic Coating",
-  description: "Find answers about CleanWorx Auto Detailing & Ceramic Coating services, quotes, ceramic coating, paint correction, mobile availability, service areas, and booking.",
-  alternates: { canonical: "/faq" }
+  title: {
+    absolute: "Auto Detailing FAQs | CleanWorx Basking Ridge",
+  },
+  description:
+    "Answers to frequently asked questions about CleanWorx auto detailing, ceramic coating pricing, paint correction, mobile van appointments & bookings.",
+  alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "Auto Detailing FAQs | CleanWorx Basking Ridge",
+    description:
+      "Answers to frequently asked questions about CleanWorx auto detailing, ceramic coating pricing, paint correction, mobile van appointments & bookings.",
+    url: "https://www.cleanworxnj.com/faq",
+    images: [
+      {
+        url: "/images/cleanworx-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "CleanWorx Auto Detailing FAQs Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto Detailing FAQs | CleanWorx Basking Ridge",
+    description:
+      "Answers to frequently asked questions about CleanWorx auto detailing, ceramic coating pricing, paint correction, mobile van appointments & bookings.",
+    images: ["/images/cleanworx-logo.webp"],
+  },
 };
 
 export default function Page() {

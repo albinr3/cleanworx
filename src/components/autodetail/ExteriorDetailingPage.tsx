@@ -87,11 +87,12 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
           loop
           playsInline
           preload="auto"
-          poster="/images/autodetail/showroom-detail-poster.webp"
+          poster="/videos/hero-exterior-detailing-poster.webp"
           className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
           aria-hidden="true"
         >
-          <source src="/videos/showroom-detail.mp4" type="video/mp4" />
+          <source src="/videos/hero-exterior-detailing.webm" type="video/webm" />
+          <source src="/videos/hero-exterior-detailing.mp4" type="video/mp4" />
         </video>
         {/* Subtle overlays: ensures crisp text readability on the left while keeping the video clear and bright */}
         <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[#08090c]/85 via-[#08090c]/45 to-transparent" />
@@ -147,13 +148,13 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,.78fr)_minmax(0,1.22fr)] lg:gap-20 lg:px-8">
           <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
-            <div className="relative aspect-[4/5] overflow-hidden bg-[#111827]">
+            <div className="relative aspect-square overflow-hidden bg-[#111827]">
               <Image
-                src="/images/autodetail/1-3.webp"
-                alt="Professional scratch-free foam cannon wash and exterior detailing on sports car at CleanWorx"
+                src="/images/autodetail/cleanworx-hand-wash-lotus.webp"
+                alt="CleanWorx detailers performing scratch-free foam cannon hand wash on red Lotus sports car"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 via-transparent" />
             </div>
@@ -283,7 +284,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ. Our studio features spot-free deionized water filtration, indoor climate control, and high-CRI inspection lights.
+                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ for your exterior-detailing appointment.
                   </p>
                 </div>
 
@@ -292,9 +293,9 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                     <Truck className="h-3.5 w-3.5" />
                     <span>Convenient Mobile Service</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">Mobile Van Directly to Your Driveway</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">Ask About a Mobile Appointment</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Prefer zero downtime? Our self-contained mobile detailing van carries onboard spot-free water, power, and equipment directly to your home or office across Basking Ridge, Bernardsville, Bedminster, and Far Hills for a flat $35 mobile fee.
+                    Mobile detailing is available at your home or workplace. We confirm availability for your location and service, then add one flat $35 mobile fee per appointment to the applicable in-shop package price.
                   </p>
                 </div>
               </div>
@@ -340,7 +341,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                     Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    Flat $35 mobile dispatch fee anywhere in our service area.
+                    One flat $35 mobile fee per appointment.
                   </p>
                 </div>
               </div>
@@ -349,7 +350,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Transparent Pricing Section */}
+      {/* Timing and Pricing Section */}
       <section className="relative overflow-hidden bg-[#0e61ce] py-20 sm:py-28">
         <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(255,255,255,.42)_1px,transparent_1px)] [background-size:1.2rem_1.2rem]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -358,10 +359,10 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up">
                 <p className="text-xs font-bold uppercase tracking-[.25em] text-[#bde0ff]">Transparent Rates</p>
                 <h2 className="mt-2 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                  Full Exterior Detailing
+                  Exterior Detailing Cost &amp; Timing
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  Final rates depend on vehicle size and exterior paint condition, confirmed with you before work begins.
+                  Full Exterior Detailing starts at $205 and is published as a 1 hour 30 minute service or longer. Square lists the service as price varies, so we confirm the final total after reviewing your vehicle and selected service.
                 </p>
               </ScrollReveal>
 
@@ -369,13 +370,13 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <ScrollReveal animation="fade-up" delay={80} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">{data.price}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Complete exterior hand bath, wheel barrels, iron decon, clay-bar glass finish, and 6-month ceramic wax sealant.
+                    Hand wash, chemical decontamination, clay-bar service, cleaned and dressed wheels and tires, plus a 6-month ceramic wax sealant.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">Studio or Mobile ($35 Fee)</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose in-studio drop-off at 19 E. Henry Street in Basking Ridge or have our self-contained mobile detailing van come right to your door.
+                    Choose an in-studio appointment in Basking Ridge or ask about mobile availability at your home or workplace. The mobile fee is charged once per appointment.
                   </p>
                 </ScrollReveal>
               </div>
@@ -383,7 +384,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up" delay={200} className="mt-6 flex flex-wrap items-center gap-4">
                 <BookingLink label="Book Now" className="bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                  Self-contained van or studio drop-off
+                  Studio drop-off or mobile availability check
                 </span>
               </ScrollReveal>
             </div>
@@ -424,7 +425,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               Exterior Detailing Results
             </h2>
             <p className="mt-3 text-sm leading-6 text-neutral-300 sm:text-base sm:leading-7">
-              Chemical iron decontamination, clay-bar smoothing, and a durable ceramic wax seal restore glass-like smoothness and extreme hydrophobic water beading to every exterior panel.
+              Chemical iron decontamination, clay-bar smoothing, deep wheel cleaning, and high-gloss wax sealant restore showroom clarity and protection to every exterior panel and wheel.
             </p>
           </ScrollReveal>
 
@@ -433,11 +434,11 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/15 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#111722] p-2.5 shadow-2xl">
                 <BeforeAfterSlider
-                  beforeImage="/images/autodetail/ceramic-water-before.png"
-                  afterImage="/images/autodetail/ceramic-water-after.png"
-                  beforeAlt="Vehicle paint surface with flat, standing water prior to decontamination and ceramic wax protection"
-                  afterAlt="Vehicle paint surface exhibiting high-contact angle hydrophobic water beading after CleanWorx exterior detailing"
-                  ariaLabel="Drag to compare vehicle paint surface water beading before and after CleanWorx exterior detailing"
+                  beforeImage="/images/autodetail/exterior-detail-before.webp"
+                  afterImage="/images/autodetail/exterior-detail-after.webp"
+                  beforeAlt="Vehicle wheel, tire and exterior panels covered in road grime and brake dust before detailing"
+                  afterAlt="Vehicle wheel, dressed tire, and glossy paint finish after CleanWorx complete exterior hand wash and decontamination detail"
+                  ariaLabel="Drag to compare vehicle wheel and exterior paint before and after CleanWorx exterior detailing"
                   aspectRatio="4 / 3"
                   className="w-full"
                 />
@@ -474,10 +475,10 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
                     6 Mos
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Ceramic Hydrophobic Shield</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Protective Wax Sealant</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Advanced ceramic wax creates a durable polymer barrier that repels water, road salt, bird droppings, and UV damage for months.
+                  High-grade ceramic wax sealant creates a slick barrier that enhances paint gloss, eases future washing, and shields against UV rays and road contaminants.
                 </p>
               </ScrollReveal>
 

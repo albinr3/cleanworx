@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import { ContactDetails, StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "About CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
-  description: "Learn about CleanWorx Auto Detailing & Ceramic Coating in Basking Ridge, NJ. Certified System X installer operating since 2019 at 19 E. Henry Street.",
-  alternates: { canonical: "/about" }
+  title: {
+    absolute: "About CleanWorx Auto Detailing | Basking Ridge, NJ",
+  },
+  description:
+    "Learn about CleanWorx Auto Detailing in Basking Ridge, NJ. Certified System X installer, boutique detailing studio & mobile service operating since 2019.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About CleanWorx Auto Detailing | Basking Ridge, NJ",
+    description:
+      "Learn about CleanWorx Auto Detailing in Basking Ridge, NJ. Certified System X installer, boutique detailing studio & mobile service operating since 2019.",
+    url: "https://www.cleanworxnj.com/about",
+    images: [
+      {
+        url: "/images/autodetail/1-2.webp",
+        width: 1200,
+        height: 630,
+        alt: "About CleanWorx Auto Detailing Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About CleanWorx Auto Detailing | Basking Ridge, NJ",
+    description:
+      "Learn about CleanWorx Auto Detailing in Basking Ridge, NJ. Certified System X installer, boutique detailing studio & mobile service operating since 2019.",
+    images: ["/images/autodetail/1-2.webp"],
+  },
 };
 
 export default function Page() {

@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import { StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "Auto Detailing Service Areas in NJ | CleanWorx Auto Detailing & Ceramic Coating",
-  description: "See the New Jersey communities CleanWorx Auto Detailing & Ceramic Coating serves from Basking Ridge and confirm studio or mobile appointment options for your vehicle.",
-  alternates: { canonical: "/service-areas" }
+  title: {
+    absolute: "Auto Detailing Service Areas in NJ | CleanWorx",
+  },
+  description:
+    "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+  alternates: { canonical: "/service-areas" },
+  openGraph: {
+    title: "Auto Detailing Service Areas in NJ | CleanWorx",
+    description:
+      "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+    url: "https://www.cleanworxnj.com/service-areas",
+    images: [
+      {
+        url: "/images/cleanworx-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "CleanWorx Service Areas Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto Detailing Service Areas in NJ | CleanWorx",
+    description:
+      "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+    images: ["/images/cleanworx-logo.webp"],
+  },
 };
 
 export default function Page() {

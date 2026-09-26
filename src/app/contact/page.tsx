@@ -3,9 +3,33 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { ContactDetails, StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "Contact CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
-  description: "Contact CleanWorx Auto Detailing & Ceramic Coating in Basking Ridge, NJ to request an appointment, ask about service availability, or get directions to our studio.",
-  alternates: { canonical: "/contact" }
+  title: {
+    absolute: "Contact CleanWorx Auto Detailing | Basking Ridge, NJ",
+  },
+  description:
+    "Contact CleanWorx Auto Detailing in Basking Ridge, NJ. Book studio drop-off at 19 E. Henry Street or request mobile detailing to your driveway.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact CleanWorx Auto Detailing | Basking Ridge, NJ",
+    description:
+      "Contact CleanWorx Auto Detailing in Basking Ridge, NJ. Book studio drop-off at 19 E. Henry Street or request mobile detailing to your driveway.",
+    url: "https://www.cleanworxnj.com/contact",
+    images: [
+      {
+        url: "/images/cleanworx-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact CleanWorx Auto Detailing Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact CleanWorx Auto Detailing | Basking Ridge, NJ",
+    description:
+      "Contact CleanWorx Auto Detailing in Basking Ridge, NJ. Book studio drop-off at 19 E. Henry Street or request mobile detailing to your driveway.",
+    images: ["/images/cleanworx-logo.webp"],
+  },
 };
 
 export default function Page() {

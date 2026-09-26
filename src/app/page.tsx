@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AboutSection } from "@/components/autodetail/AboutSection";
 import { CockpitBanner } from "@/components/autodetail/CockpitBanner";
 import { CtaBanner } from "@/components/autodetail/CtaBanner";
@@ -10,6 +11,15 @@ import { SiteShell } from "@/components/autodetail/SiteShell";
 import { StatsCounters } from "@/components/autodetail/StatsCounters";
 import { TestimonialsSection } from "@/components/autodetail/TestimonialsSection";
 import { FAQS } from "@/data/autodetailData";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Auto Detailing in Basking Ridge, NJ | CleanWorx",
+  },
+  description:
+    "Professional auto detailing in Basking Ridge, NJ: certified ceramic coating, paint correction, deep interior cleaning & exterior hand care. Studio or mobile.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   const schema = {

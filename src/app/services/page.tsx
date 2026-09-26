@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import { StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "Auto Detailing Services in Basking Ridge, NJ | CleanWorx Auto Detailing & Ceramic Coating",
-  description: "Explore CleanWorx Auto Detailing & Ceramic Coating services in Basking Ridge, NJ, from ceramic coating and paint correction to interior, exterior, and mobile detailing.",
-  alternates: { canonical: "/services" }
+  title: {
+    absolute: "Auto Detailing Services in Basking Ridge, NJ | CleanWorx",
+  },
+  description:
+    "Explore CleanWorx auto detailing services in Basking Ridge, NJ: ceramic coating, paint correction, deep interior, exterior care & mobile detailing.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Auto Detailing Services in Basking Ridge, NJ | CleanWorx",
+    description:
+      "Explore CleanWorx auto detailing services in Basking Ridge, NJ: ceramic coating, paint correction, deep interior, exterior care & mobile detailing.",
+    url: "https://www.cleanworxnj.com/services",
+    images: [
+      {
+        url: "/images/autodetail/c1-scaled.webp",
+        width: 1200,
+        height: 630,
+        alt: "CleanWorx Auto Detailing Services Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto Detailing Services in Basking Ridge, NJ | CleanWorx",
+    description:
+      "Explore CleanWorx auto detailing services in Basking Ridge, NJ: ceramic coating, paint correction, deep interior, exterior care & mobile detailing.",
+    images: ["/images/autodetail/c1-scaled.webp"],
+  },
 };
 
 export default function Page() {

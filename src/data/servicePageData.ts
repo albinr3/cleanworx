@@ -363,7 +363,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     h1: "Professional Exterior Detailing in Basking Ridge, NJ",
     eyebrow: "Hand wash & paint decontamination",
     summary: "Choose professional exterior detailing in Basking Ridge, NJ with scratch-free two-bucket hand washes, chemical iron decontamination, clay-bar smoothing, and durable ceramic wax protection.",
-    image: "/images/autodetail/1-3.webp",
+    image: "/images/autodetail/cleanworx-hand-wash-lotus.webp",
     price: "From $205+",
     inclusions: [
       "Full Exterior Detailing from $205+",
@@ -406,7 +406,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Mobile or In-Studio Exterior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or book our mobile detailing van to come directly to your driveway or workplace with a flat $35 mobile fee."
+          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. Mobile appointments add one flat $35 fee per appointment to the applicable in-shop package price."
         ]
       }
     ],
@@ -422,6 +422,14 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         question: "When should I choose paint correction over exterior detailing?",
         answer: "If your paint already has visible swirl marks, spiderwebbing, or dull haze, exterior detailing will clean it, but paint correction is required to polish out the defects and restore mirror clarity."
+      },
+      {
+        question: "How long does exterior detailing take?",
+        answer: "Full Exterior Detailing is published as a 1 hour 30 minute service or longer. We confirm the timing after reviewing your vehicle and selected service."
+      },
+      {
+        question: "How much does exterior detailing cost?",
+        answer: "Full Exterior Detailing starts at $205. Square lists the service as price varies, so we confirm the final total after reviewing your vehicle and selected service."
       }
     ],
     faqTitle: "Exterior Detailing FAQs",

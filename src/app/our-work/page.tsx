@@ -3,9 +3,33 @@ import Image from "next/image";
 import { StandardPage } from "@/components/autodetail/StandardPage";
 
 export const metadata: Metadata = {
-  title: "Auto Detailing Portfolio | CleanWorx Auto Detailing & Ceramic Coating",
-  description: "View CleanWorx Auto Detailing & Ceramic Coating imagery across ceramic coating, paint correction, interior, exterior, and mobile service work.",
-  alternates: { canonical: "/our-work" }
+  title: {
+    absolute: "Auto Detailing Portfolio | CleanWorx Basking Ridge",
+  },
+  description:
+    "View CleanWorx detailing results: certified ceramic coatings, paint correction mirror finishes, interior steam restorations, and mobile details.",
+  alternates: { canonical: "/our-work" },
+  openGraph: {
+    title: "Auto Detailing Portfolio | CleanWorx Basking Ridge",
+    description:
+      "View CleanWorx detailing results: certified ceramic coatings, paint correction mirror finishes, interior steam restorations, and mobile details.",
+    url: "https://www.cleanworxnj.com/our-work",
+    images: [
+      {
+        url: "/images/autodetail/4-2.webp",
+        width: 1200,
+        height: 630,
+        alt: "CleanWorx Detailing Portfolio Basking Ridge NJ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto Detailing Portfolio | CleanWorx Basking Ridge",
+    description:
+      "View CleanWorx detailing results: certified ceramic coatings, paint correction mirror finishes, interior steam restorations, and mobile details.",
+    images: ["/images/autodetail/4-2.webp"],
+  },
 };
 const images = ["/images/autodetail/4-2.webp", "/images/autodetail/4-1.webp", "/images/autodetail/5-2.webp", "/images/autodetail/5-1.webp", "/images/autodetail/2-2.webp", "/images/autodetail/2.webp", "/images/autodetail/1-2.webp", "/images/autodetail/3-3.webp"];
 

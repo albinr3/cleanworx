@@ -3,9 +3,12 @@ import { Mail, Phone } from "lucide-react";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 
 export const metadata: Metadata = {
-  title: "Book Your Appointment | CleanWorx Auto Detailing & Ceramic Coating",
-  description: "Online booking for CleanWorx Auto Detailing & Ceramic Coating is coming soon. Contact CleanWorx directly to discuss your appointment.",
-  robots: { index: false, follow: false }
+  title: {
+    absolute: "Book Your Appointment | CleanWorx",
+  },
+  description:
+    "Book your auto detailing, ceramic coating, or mobile appointment with CleanWorx in Basking Ridge, NJ. Simple booking and upfront pricing.",
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {
