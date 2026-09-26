@@ -10,19 +10,19 @@ import {
 } from "lucide-react";
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { BeforeAfterSlider } from "@/components/autodetail/BeforeAfterSlider";
-import { ExteriorDetailIcon } from "@/components/autodetail/ExteriorDetailIcon";
+import { MobileDetailIcon } from "@/components/autodetail/MobileDetailIcon";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
 
 const comparisonRows = [
-  ["Contact Wash Method", "Abrasive nylon brushes", "Single dirty bucket & sponge", "Two-bucket wash + grit guards"],
-  ["Clear Coat Swirl Safety", "Heavy swirl marks & scratches", "Moderate-to-high swirl risk", "100% scratch-free microfiber"],
-  ["Wheel & Brake Dust Scrub", "Superficial wheel face rinse", "Acidic spray on faces only", "Deep barrel, caliper & tire scrub"],
-  ["Chemical Iron Decontamination", "Not included", "Not included", "pH-neutral iron dissolver"],
-  ["Paint Smoothness (Clay Bar)", "Rough & gritty contamination", "Surface dirt removed only", "Synthetic clay bar (smooth as glass)"],
-  ["Hydrophobic Paint Protection", "Weak rinse aid wax (~24-48 hrs)", "Basic liquid wax (1–2 weeks)", "6-Month ceramic wax sealant"],
-  ["Drying Method & Spotting", "High-velocity blower spots", "Reused coarse towels", "Filtered warm air & 1200 GSM towels"],
+  ["Water & Power Supply", "Requires your home hose & power outlets", "Plugs into customer spigots & cords", "100% self-contained van & generator"],
+  ["Water Quality & Spotting", "Hard tap water leaves mineral spots", "Untreated municipal tap water", "Deionized spot-free filtered water"],
+  ["Equipment & Chemical Grade", "Over-the-counter soaps & dirty sponges", "Basic shop-vac & harsh degreasers", "Commercial steam & pH-neutral chemistry"],
+  ["Customer Time & Effort", "3–5 hours of heavy physical labor", "Managing cords & waiting around", "Zero downtime — relax or work inside"],
+  ["Service Location Flexibility", "Restricted strictly to garden hose range", "Requires outdoor hookups nearby", "Driveway, office lot, or private road"],
+  ["Paint & Clear Coat Safety", "Severe swirl risk from improper washing", "High swirl risk from rapid wiping", "Scratch-free two-bucket wash with grit guards"],
+  ["Pricing Transparency", "Uncalculated equipment & chemical costs", "Surprise travel fees & hidden add-ons", "Flat $35 mobile fee + clear upfront pricing"],
 ] as const;
 
 function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
@@ -37,7 +37,7 @@ function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
   );
 }
 
-export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
+export function MobileDetailingPage({ data }: { data: ServicePageData }) {
   const [intro, services, delivery] = data.sections;
 
   const schema = {
@@ -87,12 +87,11 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
           loop
           playsInline
           preload="auto"
-          poster="/videos/hero-exterior-detailing-poster.webp"
+          poster={data.image || "/images/autodetail/3-4.webp"}
           className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
           aria-hidden="true"
         >
-          <source src="/videos/hero-exterior-detailing.webm" type="video/webm" />
-          <source src="/videos/hero-exterior-detailing.mp4" type="video/mp4" />
+          <source src="/images/autodetail/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Subtle overlays: ensures crisp text readability on the left while keeping the video clear and bright */}
         <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[#08090c]/85 via-[#08090c]/45 to-transparent" />
@@ -150,8 +149,8 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-square overflow-hidden bg-[#111827]">
               <Image
-                src="/images/autodetail/cleanworx-hand-wash-lotus.webp"
-                alt="CleanWorx detailers performing scratch-free foam cannon hand wash on red Lotus sports car"
+                src={data.image || "/images/autodetail/3-4.webp"}
+                alt="CleanWorx mobile auto detailing setup ready to detail at customer driveway"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
                 className="object-cover object-center"
@@ -193,7 +192,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
                 <Image
                   src="/images/autodetail/1-2.webp"
-                  alt="CleanWorx exterior detailing process with foam wash, wheel degreasing, and ceramic wax protection"
+                  alt="CleanWorx mobile detailing van fully equipped with water, power and tools"
                   fill
                   priority
                   sizes="(min-width: 1024px) 50vw, 90vw"
@@ -202,7 +201,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080a0e]/85 via-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-white/10 bg-black/75 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm sm:px-5 sm:py-3 sm:text-xs">
                   <span>CleanWorx In Action</span>
-                  <span className="text-[#8ec7ff]">Hand Craftsmanship</span>
+                  <span className="text-[#8ec7ff]">Self-Contained Rig</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -217,7 +216,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 >
                   <div className="flex items-start justify-between gap-5">
                     <h3 className="max-w-sm text-xl font-bold leading-tight text-white">{service.title}</h3>
-                    <ExteriorDetailIcon index={index} className="h-8 w-8 shrink-0 text-[#4da3ff]" />
+                    <MobileDetailIcon index={index} className="h-8 w-8 shrink-0 text-[#4da3ff]" />
                   </div>
                   <Paragraphs paragraphs={service.paragraphs} />
                 </ScrollReveal>
@@ -236,17 +235,17 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <thead>
                   <tr className="border-b border-white/10 text-sm font-bold uppercase tracking-[.18em] text-neutral-400 sm:text-base">
                     <th scope="col" className="p-5 sm:p-6">Feature</th>
-                    <th scope="col" className="p-5 sm:p-6">Drive-Through Tunnel Wash</th>
-                    <th scope="col" className="p-5 sm:p-6">Standard Quick Wash</th>
-                    <th scope="col" className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 text-[#8ec7ff] sm:p-6">CleanWorx Hand Exterior Detail</th>
+                    <th scope="col" className="p-5 sm:p-6">Driveway DIY Wash</th>
+                    <th scope="col" className="p-5 sm:p-6">Standard Mobile Detailer</th>
+                    <th scope="col" className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 text-[#8ec7ff] sm:p-6">CleanWorx Self-Contained Van</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonRows.map(([feature, wash, basic, cleanworx]) => (
+                  {comparisonRows.map(([feature, diy, standard, cleanworx]) => (
                     <tr key={feature} className="border-b border-white/[.07] last:border-b-0">
                       <th scope="row" className="p-5 font-semibold text-white sm:p-6">{feature}</th>
-                      <td className="p-5 text-neutral-400 sm:p-6">{wash}</td>
-                      <td className="p-5 text-neutral-300 sm:p-6">{basic}</td>
+                      <td className="p-5 text-neutral-400 sm:p-6">{diy}</td>
+                      <td className="p-5 text-neutral-300 sm:p-6">{standard}</td>
                       <td className="border-x border-[#4da3ff]/25 bg-[#1277ff]/10 p-5 font-mono font-bold tracking-[.08em] text-[#8ec7ff] sm:p-6">
                         {cleanworx}
                       </td>
@@ -259,14 +258,14 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Mobile or In-Studio Section */}
+      {/* Service Area Coverage & Delivery Section */}
       <section className="bg-[#0b0d12] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:items-center">
             <ScrollReveal animation="fade-right">
               <span className="block h-px w-20 bg-[#4da3ff]" />
               <h2 className="mt-6 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                {delivery?.title ?? "Mobile or In-Studio Exterior Detailing"}
+                {delivery?.title ?? "Service Area Coverage"}
               </h2>
               {delivery?.paragraphs ? (
                 <Paragraphs paragraphs={delivery.paragraphs} />
@@ -279,23 +278,23 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <div className="mt-9 space-y-6">
                 <div className="border-l-2 border-[#4da3ff] pl-5">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
-                    <MapPin className="h-3.5 w-3.5" />
-                    <span>Studio Drop-Off Option</span>
+                    <Truck className="h-3.5 w-3.5" />
+                    <span>Direct To Your Driveway</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">Mobile Detailing Unit</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ for your exterior-detailing appointment.
+                    We bring our fully self-contained detailing van directly to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. Flat $35 mobile fee added per appointment.
                   </p>
                 </div>
 
                 <div className="border-l-2 border-[#4da3ff] pl-5">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
-                    <Truck className="h-3.5 w-3.5" />
-                    <span>Convenient Mobile Service</span>
+                    <MapPin className="h-3.5 w-3.5" />
+                    <span>Studio Drop-Off Option</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">Ask About a Mobile Appointment</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Mobile detailing is available at your home or workplace. We confirm availability for your location and service, then add one flat $35 mobile fee per appointment to the applicable in-shop package price.
+                    Prefer studio drop-off? You can also bring your vehicle directly to our detailing facility at 19 E. Henry Street in Basking Ridge, NJ.
                   </p>
                 </div>
               </div>
@@ -309,39 +308,37 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   <Sparkles className="h-3.5 w-3.5" />
                   The CleanWorx Standard
                 </div>
-                <h3 className="mt-4 text-2xl font-bold text-white">Safe Washing. True Decontamination. Lasting Protection.</h3>
+                <h3 className="mt-4 text-2xl font-bold text-white">Zero Utilities Required. Showroom Care at Home.</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-300">
-                  Every vehicle receives dedicated two-bucket hand washing, pH-neutral chemicals, and high-lubricity ceramic surface protection:
+                  Our dedicated mobile detailing van brings professional-grade care directly to your vehicle without using your utilities:
                 </p>
 
                 <ul className="mt-6 space-y-3.5 text-xs text-neutral-300 sm:text-sm">
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Scratch-Free Two-Bucket Method:</strong> Dual grit guards isolate dirt at the bottom of the bucket so mitts remain spotless.</span>
+                    <span><strong>100% Self-Contained:</strong> Built-in ultra-quiet commercial generator powers all steam machines and extractors.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Chemical Iron Neutralization:</strong> Active color-changing dissolver safely removes embedded brake dust and rail fallout.</span>
+                    <span><strong>Deionized Spot-Free Water:</strong> Onboard pure filtered water tank ensures zero mineral spots or hard-water residue.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Synthetic Clay-Bar Smoothing:</strong> Gently glides over clear coat to pull out bonded tree sap and environmental fallout.</span>
+                    <span><strong>Driveway &amp; Office Ready:</strong> Compact footprint fits comfortably in standard driveways and business parking bays.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>6-Month Ceramic Wax Seal:</strong> High-lubricity polymer shield locks in deep gloss and repels road salt and summer UV rays.</span>
+                    <span><strong>Transparent Flat $35 Fee:</strong> One simple setup fee per appointment added to your selected detailing package.</span>
                   </li>
                 </ul>
 
                 <div className="mt-8 border-t border-white/10 pt-5">
-                  <Link
-                    href="/mobile-auto-detailing"
+                  <BookingLink
+                    label="Schedule Mobile Detailing"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
-                  >
-                    Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
-                  </Link>
+                  />
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    One flat $35 mobile fee per appointment.
+                    Flat $35 mobile setup fee per appointment.
                   </p>
                 </div>
               </div>
@@ -359,10 +356,10 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up">
                 <p className="text-xs font-bold uppercase tracking-[.25em] text-[#bde0ff]">Transparent Rates</p>
                 <h2 className="mt-2 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                  Exterior Detailing Cost &amp; Timing
+                  Mobile Detailing Rates &amp; Scheduling
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  Full Exterior Detailing starts at $205 and typically takes between 1.5 to 2.5 hours. Final pricing is confirmed upfront based on your vehicle&apos;s size and current exterior condition.
+                  We charge a simple, flat $35 mobile setup fee added to whichever detailing package you choose (interior detail, exterior detail, or complete package). Final pricing is confirmed upfront before any work begins.
                 </p>
               </ScrollReveal>
 
@@ -370,13 +367,13 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <ScrollReveal animation="fade-up" delay={80} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">{data.price}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Hand wash, chemical decontamination, clay-bar service, cleaned and dressed wheels and tires, plus a 6-month ceramic wax sealant.
+                    Choose any of our interior, exterior, or full detailing services, and our self-contained van comes directly to your driveway or workplace.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-white">Studio or Mobile ($35 Fee)</h3>
+                  <h3 className="text-xl font-bold text-white">Self-Contained Rig Included</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose an in-studio appointment in Basking Ridge or ask about mobile availability at your home or workplace. The mobile fee is charged once per appointment.
+                    All electricity, deionized water, commercial steam extraction, and high-lubricity foam equipment are completely self-supplied by our van.
                   </p>
                 </ScrollReveal>
               </div>
@@ -400,13 +397,13 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   preload="auto"
                   poster="/images/autodetail/showroom-detail-poster.webp"
                   className="aspect-[9/16] h-full w-full object-cover"
-                  aria-label="Exterior Detailing showroom finish in action"
+                  aria-label="CleanWorx mobile auto detailing in action"
                 >
                   <source src="/videos/showroom-detail.mp4" type="video/mp4" />
                 </video>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between p-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
-                  <span>Exterior Care In Action</span>
+                  <span>Mobile Care In Action</span>
                   <span className="rounded-full border border-white/30 bg-black/40 px-2.5 py-0.5 text-[#bde0ff]">CleanWorx</span>
                 </div>
               </div>
@@ -415,17 +412,17 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Exterior Detailing Results */}
+      {/* Results Section */}
       <section className="relative overflow-hidden bg-[#080a0e] py-12 sm:py-16 lg:py-20">
         <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:4rem_4rem]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up" className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[.28em] text-[#70b5ff]">Verified Transformation</p>
             <h2 className="mt-2 text-3xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-4xl lg:text-5xl">
-              Exterior Detailing Results
+              Mobile Detailing Results
             </h2>
             <p className="mt-3 text-sm leading-6 text-neutral-300 sm:text-base sm:leading-7">
-              Chemical iron decontamination, clay-bar smoothing, deep wheel cleaning, and high-gloss wax sealant restore showroom clarity and protection to every exterior panel and wheel.
+              Experience showroom-grade clarity and cleanliness right in your driveway. From deep interior carpet extraction to scratch-free hand washing and ceramic wax protection, our mobile setup delivers complete results.
             </p>
           </ScrollReveal>
 
@@ -436,9 +433,9 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <BeforeAfterSlider
                   beforeImage="/images/autodetail/exterior-detail-before.webp"
                   afterImage="/images/autodetail/exterior-detail-after.webp"
-                  beforeAlt="Vehicle wheel, tire and exterior panels covered in road grime and brake dust before detailing"
-                  afterAlt="Vehicle wheel, dressed tire, and glossy paint finish after CleanWorx complete exterior hand wash and decontamination detail"
-                  ariaLabel="Drag to compare vehicle wheel and exterior paint before and after CleanWorx exterior detailing"
+                  beforeAlt="Vehicle wheel, tire and exterior panels covered in road grime and brake dust before mobile detailing"
+                  afterAlt="Vehicle wheel, dressed tire, and glossy paint finish after CleanWorx complete mobile detailing service"
+                  ariaLabel="Drag to compare vehicle condition before and after CleanWorx mobile detailing"
                   aspectRatio="4 / 3"
                   className="w-full"
                 />
@@ -451,34 +448,34 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
                     100%
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Scratch-Free Hand Washing</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Self-Contained Water &amp; Power</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Pre-wash lubricating foam and grit-guarded two-bucket hand baths lift surface grit without creating wash swirls or micro-scratches.
+                  Commercial generator and deionized pure water supply mean we never need to plug into your home&apos;s water spigot or electrical outlets.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-left" delay={140} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    0%
+                    $35
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Embedded Fallout Remaining</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Simple Flat Mobile Setup Fee</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Chemical iron dissolver and synthetic clay bar safely lift bonded brake dust and industrial fallout, restoring a silky finish ready for protection.
+                  One predictable flat fee per appointment across Basking Ridge and surrounding Somerset &amp; Morris County towns—no mileage markups.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-left" delay={200} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    6 Mos
+                    0 Hrs
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Protective Wax Sealant</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Zero Travel or Waiting Room Time</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  High-grade ceramic wax sealant creates a slick barrier that enhances paint gloss, eases future washing, and shields against UV rays and road contaminants.
+                  No Saturday traffic, rides to coordinate, or lobby waiting rooms. Relax at home or keep working while we detail your vehicle outside.
                 </p>
               </ScrollReveal>
 
@@ -487,7 +484,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   href="/our-work"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#70b5ff] transition hover:text-white sm:text-sm"
                 >
-                  View more exterior detailing gallery photos <ArrowUpRight className="h-4 w-4" />
+                  View more mobile detailing gallery photos <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -531,6 +528,20 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
             </div>
             <BookingLink label="Book Now" className="mt-6 shrink-0 bg-[#080a0e] hover:bg-black sm:mt-0" />
           </ScrollReveal>
+
+          {/* Related Links */}
+          <div className="mt-12 flex flex-wrap gap-x-7 gap-y-4 border-t border-white/10 pt-8 text-sm">
+            {data.related.map((link) => (
+              <Link
+                key={`${link.href}-${link.label}`}
+                href={link.href}
+                className="inline-flex items-center gap-1 font-semibold text-[#70b5ff] transition hover:text-white"
+              >
+                {link.label}
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </SiteShell>

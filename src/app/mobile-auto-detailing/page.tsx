@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/autodetail/ServicePage";
+import { MobileDetailingPage } from "@/components/autodetail/MobileDetailingPage";
 import { servicePages } from "@/data/servicePageData";
 export const metadata: Metadata = {
   title: {
@@ -30,4 +30,4 @@ export const metadata: Metadata = {
     images: ["/images/autodetail/1-2.webp"],
   },
 };
-export default function Page() { return <ServicePage data={servicePages["mobile-auto-detailing"]} />; }
+export default function Page() { return <MobileDetailingPage data={servicePages["mobile-auto-detailing"]} />; }

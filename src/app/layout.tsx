@@ -71,10 +71,6 @@ export const metadata: Metadata = {
     description: "Professional auto detailing and ceramic coating in Basking Ridge, NJ.",
     images: ["/images/cleanworx-logo.webp"],
   },
-  icons: {
-    icon: "/images/cleanworx-logo.webp",
-    apple: "/images/cleanworx-logo.webp",
-  },
 };
 
 export default function RootLayout({

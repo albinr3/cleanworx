@@ -376,7 +376,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Far Beyond an Ordinary Tunnel Car Wash",
         paragraphs: [
-          "Automated car washes use harsh acidic soaps and spinning brushes contaminated with grit from previous cars that scour swirl marks into your clear coat. Our exterior detail is a thorough, multi-step process designed to clean and decontaminate your paint without introducing micro-scratches."
+          "Automatic car washes use abrasive brushes and recycled grit that scour swirl marks into your clear coat. We wash every vehicle by hand using lubricating foam, dedicated microfiber mitts, and chemical dissolvers that lift road film safely before any contact wash begins."
         ]
       },
       {
@@ -392,7 +392,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "Chemical Iron Decon & Clay-Bar Smoothing",
             paragraphs: [
-              "Brake dust and industrial fallout embed into clear coats and cannot be washed off with soap. We spray an iron dissolver and glide a synthetic clay bar across the paint until it feels as smooth as new glass."
+              "Brake dust and industrial fallout embed into clear coats and cannot be washed off with soap. We apply a pH-neutral iron dissolver and glide a synthetic clay bar across the panels to lift bonded contaminants, leaving your paint completely clean and smooth to the touch."
             ]
           },
           {
@@ -425,11 +425,11 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "How long does exterior detailing take?",
-        answer: "Full Exterior Detailing is published as a 1 hour 30 minute service or longer. We confirm the timing after reviewing your vehicle and selected service."
+        answer: "Exterior detailing typically takes between 1.5 and 2.5 hours, depending on your vehicle's size and the condition of the paint and wheels."
       },
       {
         question: "How much does exterior detailing cost?",
-        answer: "Full Exterior Detailing starts at $205. Square lists the service as price varies, so we confirm the final total after reviewing your vehicle and selected service."
+        answer: "Full Exterior Detailing starts at $205. Final pricing depends on vehicle size and surface condition, confirmed upfront before we start any work."
       }
     ],
     faqTitle: "Exterior Detailing FAQs",
@@ -477,6 +477,12 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
             title: "Services Offered Mobiles",
             paragraphs: [
               "We provide full interior detailing, exterior hand wash and decontamination packages, and ceramic wax sealants on a mobile basis. Complex multi-stage paint correction and multi-year ceramic coatings are best performed in our climate-controlled Basking Ridge studio."
+            ]
+          },
+          {
+            title: "Self-Contained Power & Spot-Free Water",
+            paragraphs: [
+              "Our custom mobile detailing van carries an onboard pure water tank and quiet generator. We bring all electricity and spot-free water needed for a complete detail without using your home utilities."
             ]
           }
         ]
