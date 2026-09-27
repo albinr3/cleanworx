@@ -18,8 +18,8 @@ export interface BeforeAfterSliderProps {
 export function BeforeAfterSlider({
   beforeImage = "/images/autodetail/ceramic-water-before.png",
   afterImage = "/images/autodetail/ceramic-water-after.png",
-  beforeAlt = "Blue vehicle panel with water sitting on the surface before ceramic protection",
-  afterAlt = "Blue vehicle panel with water beading after ceramic protection",
+  beforeAlt = "Unprotected vehicle paint panel showing flat water pooling before CleanWorx ceramic coating",
+  afterAlt = "Extreme hydrophobic water-beading on vehicle paint protected with CleanWorx System X ceramic coating",
   ariaLabel = "Drag to compare surface before and after treatment",
   aspectRatio = "1 / 1",
   className = "",

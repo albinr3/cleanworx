@@ -109,7 +109,7 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
           <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-[4/5] overflow-hidden bg-[#111827]">
-              <Image src="/images/autodetail/ceramic-coating-application.png" alt="Ceramic coating protection" fill sizes="(min-width: 1024px) 35vw, 90vw" className="object-cover" />
+              <Image src="/images/autodetail/ceramic-coating-application.png" alt="CleanWorx specialist applying certified System X ceramic coating layer on vehicle clear coat in Basking Ridge studio" fill sizes="(min-width: 1024px) 35vw, 90vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 via-transparent" />
             </div>
           </ScrollReveal>

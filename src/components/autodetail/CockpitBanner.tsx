@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { BOOKING_URL } from "@/data/autodetailData";
 
 const detailPhases = [
   {
@@ -106,14 +106,14 @@ export function CockpitBanner() {
 
             <ScrollReveal animation="zoom-in" delay={320} duration={650}>
               <div className="mt-7">
-                <Link
-                  href="/booking"
+                <a
+                  href={BOOKING_URL}
                   className="group inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-lg bg-[#0a0a0c] px-7 py-4 text-sm font-bold text-white shadow-2xl transition-all hover:-translate-y-0.5 hover:bg-neutral-900 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] active:scale-[0.98] sm:w-auto"
                 >
                   <Calendar className="h-4 w-4 text-[#1277ff]" />
                   <span>Get My Detail Recommendation</span>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </a>
               </div>
             </ScrollReveal>
           </div>

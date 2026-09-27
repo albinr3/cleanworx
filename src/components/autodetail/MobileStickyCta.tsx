@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Calendar, Phone } from "lucide-react";
+import { BOOKING_URL } from "@/data/autodetailData";
 
 export function MobileStickyCta() {
   const [visible, setVisible] = useState(false);
@@ -39,13 +39,13 @@ export function MobileStickyCta() {
           <span className="text-[10px] font-semibold text-neutral-300">Call</span>
         </a>
 
-        <Link
-          href="/booking"
+        <a
+          href={BOOKING_URL}
           className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-[#1277ff] px-5 text-sm font-black uppercase tracking-wider text-white shadow-lg shadow-[#1277ff]/30 active:scale-[0.98] transition-all"
         >
           <Calendar className="h-4 w-4" />
           <span>Book Now</span>
-        </Link>
+        </a>
       </div>
     </div>
   );

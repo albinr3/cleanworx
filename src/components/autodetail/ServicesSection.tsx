@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SERVICES } from "@/data/autodetailData";
 import { ArrowRight, Check } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { cn } from "@/lib/utils";
 
 export function ServicesSection() {
   return (
@@ -46,10 +47,13 @@ export function ServicesSection() {
                   <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-neutral-900">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`CleanWorx ${service.title} in Basking Ridge, NJ`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-108"
+                      className={cn(
+                        "object-cover transition-transform duration-700 group-hover:scale-108",
+                        service.imageClassName
+                      )}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#14151a] via-transparent to-transparent" />
 

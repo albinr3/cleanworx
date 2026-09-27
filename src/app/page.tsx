@@ -50,9 +50,10 @@ export default function Home() {
           latitude: 40.7050942,
           longitude: -74.5482277
         },
-        hasMap: "https://www.google.com/maps?cid=15973418579450373920",
+        hasMap: "https://share.google/UwkPd2O0H8zeL4M37",
         sameAs: [
           "https://www.bbb.org/us/nj/basking-ridge/profile/auto-detailing/cleanworx-llc-auto-detailing-0221-90237271",
+          "https://share.google/UwkPd2O0H8zeL4M37",
           "https://www.google.com/maps?cid=15973418579450373920"
         ],
         aggregateRating: {

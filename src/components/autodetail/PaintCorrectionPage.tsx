@@ -149,7 +149,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
             <div className="relative aspect-[4/5] overflow-hidden bg-[#111827]">
               <Image
                 src="/images/autodetail/paint-correction-5050.jpg"
-                alt="50/50 paint correction comparison showing oxidation removal and mirror clarity"
+                alt="CleanWorx 50/50 paint correction comparison showing swirl mark and oxidation removal with mirror clarity"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
                 className="object-cover"
@@ -286,7 +286,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/15 bg-[#111722] shadow-2xl">
                 <Image
                   src="/images/autodetail/cleanworx-paint-correction-action.jpg"
-                  alt="CleanWorx detailer performing precision paint correction on vehicle"
+                  alt="CleanWorx certified specialist performing dual-action machine polishing and paint correction in Basking Ridge studio"
                   fill
                   priority
                   sizes="(min-width: 1024px) 35vw, 90vw"

@@ -56,7 +56,8 @@ Do not begin production work until these inputs are available and approved:
 | P0 | `/interior-detailing` | Cabin-cleaning service page | Hero → catalog-confirmed inclusions → material/condition assessment → realistic outcomes → mobile/studio suitability → results → FAQs → quote CTA. |
 | P0 | `/exterior-detailing` | Professional exterior-care page | Hero → distinction from a car wash → inclusions → condition options → protection → results → FAQs → booking CTA. |
 | P0 | `/mobile-auto-detailing` | Mobile service and availability page | Hero → how it works → eligible services → studio-only/suited services → coverage → preparation → FAQs → availability CTA. State the one-time USD 35 mobile fee per appointment plus the applicable in-shop package price. |
-| P1 | `/services` | Service-discovery hub | Intro → five concise service cards → catalog-confirmed supplementary services → service-choice guide → mobile/studio note → work proof → booking CTA. |
+| P0 | `/window-tinting` | Studio window tinting & removal service page | Hero → benefits & heat/UV rejection → ceramic vs. carbon technology → VLT shade guide → NJ tint law compliance → 5-stage installation process → pricing factors → dedicated H2 window tint removal ($50/window) → curing & aftercare → studio/service area → FAQs → quote CTA. |
+| P1 | `/services` | Service-discovery hub | Intro → six concise service cards → catalog-confirmed supplementary services → service-choice guide → mobile/studio note → work proof → booking CTA. |
 | P1 | `/service-areas` | Coverage and qualification hub | Coverage intro → verified-town list → mobile/studio availability process → FAQs → contact CTA. |
 | P1 | `/our-work` | Portfolio/trust page | Intro → service-grouped original projects → factual project captions → matching service links → booking CTA. |
 | P1 | `/about` | Business trust/E-E-A-T page | Origin/team → real studio/process → verified credentials → local context → work proof → booking CTA. |
@@ -87,6 +88,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
   - **H3:** Interior Detailing
   - **H3:** Exterior Detailing
   - **H3:** Mobile Auto Detailing
+  - **H3:** Window Tinting
 - **H2:** What a Complete Car Detail Can Include
   - **H3:** Interior Care
   - **H3:** Exterior Care
@@ -189,6 +191,47 @@ These outlines define the title tag and visible heading hierarchy for implementa
 - **H2:** Mobile Detailing FAQs
 - **H2:** Check Mobile Detailing Availability
 
+#### `/window-tinting`
+
+- **Title tag:** Window Tint Installation in Basking Ridge, NJ | CleanWorx
+- **H1:** Professional Window Tint Installation in Basking Ridge, NJ
+- **H2:** Drive in Comfort: With Our Window Tinting Service
+  - **H3:** Solar Heat Rejection
+  - **H3:** 99% UV Ray Protection for Leather and Interiors
+  - **H3:** Glare Reduction and Driving Safety
+- **H2:** Premium Film Technology: Ceramic vs. Carbon Window Tint
+  - **H3:** Nano-Ceramic Window Film
+  - **H3:** High-Performance Carbon Film
+- **H2:** Choosing Your Shade: Visible Light Transmission (VLT) Options
+  - **H3:** 70%, 50%, 35%, 20%, and 5% VLT Shading Options
+- **H2:** Window Tint Laws in New Jersey: Legal Compliance & VLT Rules
+  - **H3:** Windshield and AS-1 Line Restrictions
+  - **H3:** Front Side Windows and Medical Exemption Requirements
+  - **H3:** Legal Rear Window and Back Glass Tinting
+- **H2:** Precision Window Tint Installation: Our 5-Stage Process
+  - **H3:** Vehicle and Glass Preparation
+  - **H3:** Computer-Cut Precision and Heat Contouring
+  - **H3:** Dust-Free Bay Application and Edge Inspection
+- **H2:** Windows Tinted Price Guide: How Much Does It Cost to Get Windows Tinted?
+  - **H3:** Vehicle Class Estimates (Coupe, Sedan, Truck, SUV)
+  - **H3:** Key Factors That Influence Window Tinting Cost
+
+- **H2:** Window Tint Curing and Aftercare Guidelines
+- **H2:** Where Can I Get My Car Windows Tinted in New Jersey? CleanWorx Studio
+  - **H3:** Dedicated Dust-Free Studio in Basking Ridge
+  - **H3:** Serving Somerset and Morris County Communities
+- **H2:** Professional Windows Tint Removal in Basking Ridge, NJ
+  - **H3:** Safe Steam Extraction and Defroster Grid Protection
+  - **H3:** Window Tint Removal Cost: USD 50.00 per Window
+- **H2:** Frequently Asked Questions About Windows Tint in New Jersey
+  - **H3:** How Much Does It Cost to Get Windows Tinted?
+  - **H3:** Is Window Tint Legal in New Jersey?
+  - **H3:** Where Can I Get My Windows Tinted by Certified Installers?
+  - **H3:** What Is the Difference Between Ceramic and Carbon Film?
+  - **H3:** Can You Remove Old, Bubbling, or Purple Tint?
+  - **H3:** How Much Does Window Tint Removal Cost?
+- **H2:** Schedule Your Window Tint Installation in Basking Ridge, NJ
+
 #### `/services`
 
 - **Title tag:** Auto Detailing Services in Basking Ridge, NJ | CleanWorx
@@ -199,6 +242,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
   - **H3:** Interior Detailing
   - **H3:** Exterior Detailing
   - **H3:** Mobile Auto Detailing
+  - **H3:** Window Tinting
 - **H2:** Mobile or Studio Appointments
 - **H2:** Supplementary Services Available With or Alongside Detailing
 - **H2:** View Our Detailing Work

@@ -6,6 +6,7 @@ export interface ServiceItem {
   image: string;
   price: string;
   features?: string[];
+  imageClassName?: string;
 }
 
 export interface TestimonialItem {

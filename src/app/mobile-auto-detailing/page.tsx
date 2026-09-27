@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://www.cleanworxnj.com/mobile-auto-detailing",
     images: [
       {
-        url: "/images/autodetail/1-2.webp",
+        url: "/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp",
         width: 1200,
         height: 630,
         alt: "CleanWorx Mobile Auto Detailing Basking Ridge NJ",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx",
     description:
       "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. Fully equipped van with spot-free water & power. Flat $35 fee.",
-    images: ["/images/autodetail/1-2.webp"],
+    images: ["/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp"],
   },
 };
 export default function Page() { return <MobileDetailingPage data={servicePages["mobile-auto-detailing"]} />; }

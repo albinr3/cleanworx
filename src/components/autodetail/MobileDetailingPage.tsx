@@ -87,7 +87,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
           loop
           playsInline
           preload="auto"
-          poster={data.image || "/images/autodetail/3-4.webp"}
+          poster={data.image || "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp"}
           className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
           aria-hidden="true"
         >
@@ -149,7 +149,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-square overflow-hidden bg-[#111827]">
               <Image
-                src={data.image || "/images/autodetail/3-4.webp"}
+                src={data.image || "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp"}
                 alt="CleanWorx mobile auto detailing setup ready to detail at customer driveway"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
@@ -191,7 +191,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/15 blur-2xl" />
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
                 <Image
-                  src="/images/autodetail/1-2.webp"
+                  src="/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp"
                   alt="CleanWorx mobile detailing van fully equipped with water, power and tools"
                   fill
                   priority

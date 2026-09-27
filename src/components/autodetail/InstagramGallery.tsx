@@ -60,24 +60,20 @@ export function InstagramGallery() {
               delay={(index % 4) * 80 + Math.floor(index / 4) * 120}
               duration={600}
             >
-              <div className="group relative aspect-square rounded-xl overflow-hidden bg-neutral-900 border border-white/10 cursor-pointer shadow-lg hover:border-[#1277ff]/50 transition-colors">
+              <Link
+                href="/our-work"
+                className="group relative block aspect-square rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 shadow-lg hover:border-[#1277ff]/60 transition-all duration-300"
+              >
                 <Image
                   src={src}
-                  alt={`CleanWorx detailing visual ${index + 1}`}
+                  alt={`CleanWorx real detailing project ${index + 1}`}
                   fill
                   sizes="(max-width: 640px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                 />
-                {/* Hover Dark Overlay with Icon */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#1277ff] text-white flex items-center justify-center shadow-lg transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <GalleryIcon className="w-6 h-6" />
-                  </div>
-                  <span className="mt-3 text-xs font-bold text-white uppercase tracking-wider">
-                    View gallery
-                  </span>
-                </div>
-              </div>
+                {/* Subtle sheen on hover without any text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </Link>
             </ScrollReveal>
           ))}
         </div>

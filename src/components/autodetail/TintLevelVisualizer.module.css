@@ -1,0 +1,22 @@
+@keyframes window-outline-flash {
+  0%,
+  22% {
+    stroke-opacity: 1;
+    stroke-width: 3px;
+  }
+
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 1px;
+  }
+}
+
+.windowOutline {
+  animation: window-outline-flash 800ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .windowOutline {
+    animation-duration: 1ms;
+  }
+}

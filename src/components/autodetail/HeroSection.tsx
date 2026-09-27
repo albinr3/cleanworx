@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Calendar, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { BOOKING_URL } from "@/data/autodetailData";
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -84,13 +84,13 @@ export function HeroSection() {
         {/* CTA Buttons with Delay */}
         <ScrollReveal animation="fade-up" delay={450} duration={850} className="w-full sm:w-auto">
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <Link
-              href="/booking"
+            <a
+              href={BOOKING_URL}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-lg bg-[#1277ff] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-lg shadow-[#1277ff]/25 hover:bg-[#0d62d6] hover:shadow-xl hover:shadow-[#1277ff]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>Book Now</span>
-            </Link>
+            </a>
 
             <a
               href="#services"
@@ -98,6 +98,26 @@ export function HeroSection() {
             >
               <span>Explore Services</span>
               <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Google Business Profile Trust Pill */}
+          <div className="mt-5 flex items-center justify-center">
+            <a
+              href="https://share.google/UwkPd2O0H8zeL4M37"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/40 backdrop-blur-md px-4 py-1.5 text-xs text-neutral-200 transition-all hover:border-[#1277ff] hover:bg-black/60 group shadow-lg"
+            >
+              <div className="flex gap-0.5 text-[#FFB800]">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-[13px] leading-none">★</span>
+                ))}
+              </div>
+              <span className="font-bold text-white">5.0</span>
+              <span className="text-neutral-400">·</span>
+              <span className="text-neutral-300">220+ Google Reviews</span>
+              <span className="text-[#4da3ff] group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
             </a>
           </div>
         </ScrollReveal>

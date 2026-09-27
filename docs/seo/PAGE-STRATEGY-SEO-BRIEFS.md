@@ -43,13 +43,13 @@ This document completes the page-strategy brief for every currently prioritized 
 | Page goal | Convert broad local detailing demand into booked appointments, calls, and routing to the right specialist service. |
 | Audience / need | Nearby vehicle owners who need a trustworthy local detailer and have not yet decided whether they need a full detail, coating, paint correction, interior work, exterior work, or mobile service. |
 | Primary CTA | `Book your detailing appointment` → future on-site booking process (destination pending). |
-| Supporting CTAs | `Call 908-899-2832`; `Explore ceramic coating`; `View all services`; service-card CTAs to all five P0 service pages. |
+| Supporting CTAs | `Call 908-899-2832`; `Explore ceramic coating`; `View all services`; service-card CTAs to all six P0 service pages. |
 
 **Required sections**
 
 1. Local hero: service, Basking Ridge, concise value proposition, booking and call CTAs.
 2. Trust snapshot: verified years in business, studio address, genuine review summary, certifications/brand partnerships only when validated.
-3. Service chooser: concise cards for ceramic coating, paint correction, interior detailing, exterior detailing, and mobile auto detailing; include catalog-confirmed supplemental services separately.
+3. Service chooser: concise cards for ceramic coating, paint correction, interior detailing, exterior detailing, mobile auto detailing, and window tinting; include catalog-confirmed supplemental services separately.
 4. “Complete car detailing” overview: what a full detail can include and a clear route to the right service; do not create a second full-detail URL.
 5. Why CleanWorx: process, craftsmanship, products, and care standards backed by evidence.
 6. Original-work gallery / selected before-and-after results linking to `/our-work` and matching services.
@@ -58,9 +58,9 @@ This document completes the page-strategy brief for every currently prioritized 
 
 **Internal links**
 
-- **Include:** all five P0 service pages, `/services`, `/our-work`, `/service-areas`, `/faq`, `/about`, and `/contact`.
+- **Include:** all six P0 service pages, `/services`, `/our-work`, `/service-areas`, `/faq`, `/about`, and `/contact`.
 - **Receive links from:** all service pages, `/services`, `/our-work`, `/about`, `/faq`, `/contact`, and global navigation/footer.
-- **Anchor examples:** “ceramic coating,” “paint correction,” “interior detailing,” “mobile auto detailing,” “exterior detailing,” and “complete car detailing.”
+- **Anchor examples:** “ceramic coating,” “paint correction,” “interior detailing,” “mobile auto detailing,” “exterior detailing,” “window tint installation,” and “complete car detailing.”
 
 **FAQ / proof needs**
 
@@ -231,7 +231,45 @@ This document completes the page-strategy brief for every currently prioritized 
 - FAQs: Which towns do you serve? Do I need water or power? Can you detail at my workplace? What happens in bad weather? Which services require the studio? How do I check availability?
 - Proof: verified coverage rules, actual mobile-work photos, documented access requirements, reviews that mention convenience/reliability, and clear studio-versus-mobile eligibility guidance.
 
-### 7. Services Hub — `/services` (P1)
+### 7. Window Tinting — `/window-tinting` (P0)
+
+| Field | Brief |
+| --- | --- |
+| Primary keyword | `window tint installation` |
+| Supporting keywords | `windows tinted price`; `how much does it cost to get windows tinted`; `windows tint new jersey`; `window tint in new jersey`; `window tint laws in new jersey`; `window tint laws new jersey`; `where can i get my car windows tinted`; `where can i get my windows tinted`; `windows tint removal`; `window tint removal cost` |
+| Suggested title / H1 | **Title:** Window Tint Installation in Basking Ridge, NJ \| CleanWorx. **H1:** Professional Window Tint Installation in Basking Ridge, NJ. |
+| Page goal | Turn local demand for automotive window tinting into qualified quote requests and appointments while routing window tint removal inquiries to the dedicated sub-service section. |
+| Audience / need | Vehicle owners seeking cabin heat reduction, UV defense (99%), glare reduction, and refined privacy, plus owners needing safe removal of degraded, bubbling, or non-compliant window tint. |
+| Primary CTA | `Request a window tint quote` → future on-site booking process (destination pending). |
+| Supporting CTAs | `Call 908-899-2832`; `Explore ceramic window film`; `Schedule tint removal`; on-page `View tint pricing & options`. |
+
+**Required sections & semantic heading outline**
+
+1. Hero: **H1: Professional Window Tint Installation in Basking Ridge, NJ**. Local value proposition, studio address, heat/UV protection highlights, quote/call CTAs.
+2. Value & benefits: **H2: Drive in Comfort: Solar Heat Rejection, UV Defense, and Glare Reduction**. Solar heat rejection (infrared block), 99% UV radiation defense (skin & interior leather/trim protection), glare reduction, driving privacy, and theft deterrence.
+3. Film technology comparison: **H2: Premium Film Technology: Ceramic vs. Carbon Window Tint**. Nano-Ceramic film (premium infrared heat rejection, maximum clarity, zero electronic/GPS interference) versus High-Performance Carbon film (matte finish, color-stable, zero purpling).
+4. VLT shade guide: **H2: Choosing Your Shade: Visible Light Transmission (VLT) Options**. 70%, 50%, 35%, 20%, and 5% Visible Light Transmission visual/practical guide.
+5. Legal compliance: **H2: Window Tint Laws in New Jersey: Legal Compliance & VLT Rules** (targets `window tint laws in new jersey` and `window tint laws new jersey`). N.J.S.A. 39:3-74 guidelines explaining windshield visor limits (top 6 inches / AS-1 line), front side window restrictions (medical exemption requirement), and legal rear side/back glass darkness rules.
+6. Installation process: **H2: Precision Window Tint Installation: Our 5-Stage Process** (targets `window tint installation`). Glass preparation, intensive decontamination, computerized/hand pattern contouring, dust-free indoor bay application, and edge inspection.
+7. Pricing & cost factors: **H2: Windows Tinted Price Guide: How Much Does It Cost to Get Windows Tinted?** (targets `windows tinted price` and `how much does it cost to get windows tinted`). Assessment-led pricing by vehicle class (coupe, sedan, SUV, truck) and film grade. Transparent cost factors.
+8. **Dedicated sub-service section near the end: H2: Professional Windows Tint Removal in Basking Ridge, NJ** (targets `windows tint removal`). Emphasize the critical risk of DIY razor-blade removal damaging rear defroster grid lines and integrated glass antennas. Present CleanWorx's safe thermal steam removal method. Subheading: **H3: Window Tint Removal Cost: USD 50.00 per Window** (targets `window tint removal cost`). Published Square catalog price: USD 50.00 per window (30 mins). Dedicated removal CTA.
+9. Curing & aftercare: **H2: Window Tint Curing and Aftercare Guidelines**. 3–5 day window curing timeline, moisture dissipation guidance, and ammonia-free cleaning protocol.
+10. Studio facility: **H2: Where Can I Get My Car Windows Tinted in New Jersey? CleanWorx Studio** (targets `where can i get my car windows tinted`, `where can i get my windows tinted`, and `window tint in new jersey`). Why window tinting is strictly a studio-performed service at 19 E. Henry Street, Basking Ridge, NJ.
+11. FAQ accordion: **H2: Frequently Asked Questions About Windows Tint in New Jersey** (targets `windows tint new jersey`). Target conversational questions: "How Much Does It Cost to Get Windows Tinted?", "Is Window Tint Legal in New Jersey?", "Where Can I Get My Windows Tinted by Certified Installers?", "How Much Does Window Tint Removal Cost?".
+12. Final CTA: **H2: Schedule Your Window Tint Installation in Basking Ridge, NJ**. Booking and consultation conversion block.
+
+**Internal links**
+
+- **Include:** `/ceramic-coating` (pairing window tint with paint ceramic coating for complete thermal/UV protection), `/interior-detailing` (protecting conditioned interiors), `/services`, `/service-areas`, `/faq`, `/contact`, and `/`.
+- **Receive links from:** homepage, `/services`, ceramic coating page, interior detailing page, relevant portfolio projects, `/faq`, and global navigation/footer.
+- **Anchor examples:** “window tint installation,” “automotive window tinting,” “ceramic window tint,” and “window tint removal.”
+
+**FAQ / proof needs**
+
+- FAQs: How much does it cost to tint car windows? Is window tint legal in New Jersey? What is the difference between ceramic and carbon tint? Can you remove old bubbling tint? How much does tint removal cost? How long does tint take to cure? Will tint removal damage my rear defrosters? Can tinting be done mobile?
+- Proof: original studio installation photos, cleanroom/indoor bay proof, authentic customer reviews citing heat reduction or flawless finish, clear NJ legal citations, and catalog-verified USD 50/window removal pricing.
+
+### 8. Services Hub — `/services` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -246,7 +284,7 @@ This document completes the page-strategy brief for every currently prioritized 
 **Required sections**
 
 1. Short discovery hero and service-selection guidance.
-2. Five concise service cards: ceramic coating, paint correction, interior detailing, exterior detailing, and mobile auto detailing; each gets a short description, sourceable starting-price/status, and one direct service-page CTA. Add catalog-confirmed supplemental services separately.
+2. Six concise service cards: ceramic coating, paint correction, interior detailing, exterior detailing, mobile auto detailing, and window tinting; each gets a short description, sourceable starting-price/status, and one direct service-page CTA. Add catalog-confirmed supplemental services separately.
 3. Simple “which service is right?” decision guide that links—not duplicates—specialist-page content.
 4. Mobile-versus-studio note, including the one-time USD 35 mobile fee per appointment, project-gallery link, and final booking CTA.
 
@@ -261,7 +299,7 @@ This document completes the page-strategy brief for every currently prioritized 
 - FAQs: Which service should I choose? Do you offer mobile detailing? How do prices work? Which services need a studio? How do I book?
 - Proof: verified starting prices only, original thumbnails/results, concise service-inclusion facts, and a clear link to the correct detail page.
 
-### 8. Service Areas — `/service-areas` (P1)
+### 9. Service Areas — `/service-areas` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -282,7 +320,7 @@ This document completes the page-strategy brief for every currently prioritized 
 
 **Internal links**
 
-- **Include:** `/mobile-auto-detailing`, `/contact`, `/services`, `/ceramic-coating`, `/paint-correction`, `/faq`, and `/`.
+- **Include:** `/mobile-auto-detailing`, `/contact`, `/services`, `/ceramic-coating`, `/paint-correction`, `/window-tinting`, `/faq`, and `/`.
 - **Receive links from:** homepage, mobile-detailing page, `/services`, `/contact`, global footer, and relevant service pages.
 - **Avoid:** links to individual towns until a town page meets the mapped uniqueness criteria (600+ useful words, original local proof/testimonial, 60%+ unique copy).
 
@@ -291,7 +329,7 @@ This document completes the page-strategy brief for every currently prioritized 
 - FAQs: Do you serve my town? Is mobile service available at my home/work? Which services require the studio? Is there a travel fee? How do I confirm an appointment?
 - Proof: verified studio address, current coverage list, factual availability/access policy, and no unsupported radius or travel-time claims.
 
-### 9. Our Work — `/our-work` (P1)
+### 10. Our Work — `/our-work` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -301,7 +339,7 @@ This document completes the page-strategy brief for every currently prioritized 
 | Page goal | Build confidence with evidence, then move visitors to the relevant approved service page or on-site booking process. |
 | Audience / need | Prospects who want proof of workmanship before choosing a detailer, particularly for premium coating and detailing decisions. |
 | Primary CTA | `Request a quote` → future on-site booking process (destination pending). |
-| Supporting CTAs | Project-specific links to the matching service page, including paint correction and mobile work when the project supports it. |
+| Supporting CTAs | Project-specific links to the matching service page, including paint correction, mobile, and window tint work when the project supports it. |
 
 **Required sections**
 
@@ -315,14 +353,14 @@ This document completes the page-strategy brief for every currently prioritized 
 
 - **Include:** matching service page and `/contact` on every project; also `/services`, `/about`, `/faq`, and `/` at page level.
 - **Receive links from:** homepage, all service pages, `/services`, `/about`, global navigation/footer.
-- **Anchor examples:** “ceramic coating for this Porsche,” “paint correction on this SUV,” rather than repetitive generic anchors.
+- **Anchor examples:** “ceramic coating for this Porsche,” “paint correction on this SUV,” “ceramic window tint on this BMW,” rather than repetitive generic anchors.
 
 **FAQ / proof needs**
 
 - FAQs: Are these your original projects? Which service produced this result? Can you achieve the same result on my vehicle? How do I request a quote?
 - Proof: unedited original imagery where practical, accurate job captions, customer permission, before/after context, and no outcome claims beyond what the documented job shows.
 
-### 10. About — `/about` (P1)
+### 11. About — `/about` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -352,7 +390,7 @@ This document completes the page-strategy brief for every currently prioritized 
 - FAQs: Where is CleanWorx located? How long have you been in business? Who works on my vehicle? Are you certified? Which towns do you serve?
 - Proof: real team and studio imagery, verified business history, licenses/certifications where applicable, address/phone consistency, and authentic review sources.
 
-### 11. FAQ — `/faq` (P1)
+### 12. FAQ — `/faq` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -366,23 +404,23 @@ This document completes the page-strategy brief for every currently prioritized 
 
 **Required sections**
 
-1. Short introduction and topic navigation: booking, ceramic coating, paint correction, interior, exterior, mobile/service areas, and care.
+1. Short introduction and topic navigation: booking, ceramic coating, paint correction, interior, exterior, mobile/service areas, window tinting, and care.
 2. Concise, fact-checked answers with contextual links to the appropriate canonical page.
-3. Pricing answers must explain variables and direct to the ceramic-coating page or quote process; do not invent price ranges.
+3. Pricing answers must explain variables and direct to the ceramic-coating or window tint page or quote process; do not invent price ranges.
 4. Final booking/contact block.
 
 **Internal links**
 
-- **Include:** `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/service-areas`, `/services`, `/our-work`, `/contact`, and `/`.
+- **Include:** `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/window-tinting`, `/service-areas`, `/services`, `/our-work`, `/contact`, and `/`.
 - **Receive links from:** homepage, all service pages, `/services`, `/service-areas`, `/about`, `/contact`, and global footer.
 - **Avoid:** a new FAQPage schema implementation for commercial rich-result gain; decide any structured data separately and document its user purpose.
 
 **FAQ / proof needs**
 
-- Core questions: What is included in a full detail? How much does ceramic coating cost? Can paint correction remove scratches? Can you remove pet hair/stains? Do you offer mobile detailing? What is the mobile fee? Which towns do you serve? How long will my service take? How do I book?
+- Core questions: What is included in a full detail? How much does ceramic coating cost? Can paint correction remove scratches? Can you remove pet hair/stains? Do you offer mobile detailing? What is the mobile fee? Can you install ceramic window tint? Can you remove bubbling window tint? Which towns do you serve? How long will my service take? How do I book?
 - Proof: every answer needs an owner-approved operational source; change the answer when policy, services, pricing, or service area changes.
 
-### 12. Contact / Booking — `/contact` (P1)
+### 13. Contact / Booking — `/contact` (P1)
 
 | Field | Brief |
 | --- | --- |
@@ -427,7 +465,7 @@ Before a brief moves from planning to production, confirm all of the following f
 
 ## Implementation sequence (when separately authorized)
 
-1. Homepage and the five P0 service pages.
+1. Homepage and the six P0 service pages.
 2. `/services`, `/service-areas`, `/our-work`, `/about`, `/faq`, and `/contact`.
 3. Only then: mapped redirects, navigation/breadcrumb work, approved schema, analytics, and technical launch checks.
 

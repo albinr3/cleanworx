@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { BOOKING_URL } from "@/data/autodetailData";
 
 interface AnimatedNumberProps {
   target: number;
@@ -93,7 +93,7 @@ export function StatsCounters() {
     {
       number: "01",
       badgeLabel: "ON-DEMAND FLEET",
-      image: "/images/autodetail/p2.webp",
+      image: "/images/autodetail/cleanworx-on-demand-mobile-auto-detailing-fleet.webp",
       imagePosition: "object-center",
       title: "MOBILE AUTO DETAILING IN NJ",
       tagline: "Driveway and workplace appointments",
@@ -109,7 +109,7 @@ export function StatsCounters() {
     {
       number: "02",
       badgeLabel: "PRECISION CRAFT",
-      image: "/images/autodetail/p1.webp",
+      image: "/images/autodetail/cleanworx-precision-machine-polishing-paint-correction.webp",
       imagePosition: "object-center",
       title: "MACHINE POLISHING & PAINT CORRECTION",
       tagline: "Operating in Basking Ridge since 2019",
@@ -126,7 +126,7 @@ export function StatsCounters() {
       number: "03",
       badgeLabel: "HIGH-TICKET SHIELD",
       featuredBadge: "FLAGSHIP PROTECTION",
-      image: "/images/autodetail/8-2.webp",
+      image: "/images/autodetail/cleanworx-system-x-ceramic-coating-flagship-shield.webp",
       imagePosition: "object-center",
       title: "CERTIFIED SYSTEM X CERAMIC COATING",
       tagline: "Multi-year hydrophobic paint protection",
@@ -250,7 +250,7 @@ export function StatsCounters() {
                         <div className="relative h-full w-full transition-transform duration-700 group-hover:scale-[1.03]">
                           <Image
                             src={pillar.image}
-                            alt={`CleanWorx ${pillar.title.toLowerCase()}`}
+                            alt={`CleanWorx ${pillar.title.toLowerCase()} service in Basking Ridge, NJ`}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className={`object-cover ${pillar.imagePosition}`}
@@ -288,8 +288,8 @@ export function StatsCounters() {
 
                     {/* Action Button Link */}
                     <div className="mt-6 pt-4 border-t border-white/10">
-                      <Link
-                        href="/booking"
+                      <a
+                        href={BOOKING_URL}
                         className={`inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${
                           isFeatured
                             ? "bg-[#1277ff] hover:bg-[#0066ee] text-white shadow-lg shadow-[#1277ff]/30"
@@ -298,7 +298,7 @@ export function StatsCounters() {
                       >
                         <span>Book this service</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

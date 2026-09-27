@@ -1,8 +1,8 @@
 "use client";
 
 import { Calendar, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
+import { BOOKING_URL } from "@/data/autodetailData";
 
 export function CtaBanner() {
   return (
@@ -22,14 +22,14 @@ export function CtaBanner() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-left" delay={150} duration={750} className="w-full sm:w-auto flex-shrink-0 flex justify-center">
-            <Link
-              href="/booking"
+            <a
+              href={BOOKING_URL}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-lg bg-[#0a0a0c] px-7 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-2xl hover:bg-neutral-900 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] active:scale-[0.98] transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#1277ff]" />
               <span>Book Now</span>
               <ArrowRight className="w-4 h-4 text-white" />
-            </Link>
+            </a>
           </ScrollReveal>
         </div>
       </div>

@@ -26,7 +26,7 @@ export function AboutSection() {
                 <div className="relative h-[260px] sm:h-[420px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
                   <Image
                     src="/images/autodetail/paint-correction.webp"
-                    alt="CleanWorx paint correction visual"
+                    alt="CleanWorx multi-stage machine paint correction restoring clear coat gloss in Basking Ridge studio"
                     fill
                     sizes="(max-width: 639px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -42,8 +42,8 @@ export function AboutSection() {
               <ScrollReveal animation="fade-right" delay={180} duration={850}>
                 <div className="relative h-[260px] sm:h-[420px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl mt-0 sm:mt-12 group">
                   <Image
-                    src="/images/autodetail/p2.webp"
-                    alt="CleanWorx interior-detailing visual"
+                    src="/images/autodetail/interior-leather-extraction.webp"
+                    alt="CleanWorx interior leather extraction and deep steam upholstery restoration in Basking Ridge NJ"
                     fill
                     sizes="(max-width: 639px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -61,7 +61,7 @@ export function AboutSection() {
               <div className="rounded-xl bg-[#1277ff] p-3.5 sm:p-5 shadow-2xl text-white flex items-center gap-3 sm:gap-4 border border-white/20 hover:scale-105 transition-transform duration-300">
                 <div className="text-2xl sm:text-4xl font-black tabular-nums">2019</div>
                 <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider leading-tight">
-                  Basking Ridge<br />since
+                  Detailing<br />since
                 </div>
               </div>
             </ScrollReveal>
@@ -73,21 +73,21 @@ export function AboutSection() {
               <div className="inline-flex items-center gap-2.5 text-xs font-bold tracking-widest text-neutral-400 uppercase mb-3">
                 <span className="text-[#1277ff] font-mono font-bold">01</span>
                 <span className="w-1 h-1 rounded-full bg-[#1277ff]" />
-                <span>Heritage &amp; Workflow</span>
+                <span>Our Background</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-balance">
-                Detail Your Vehicle With Care
+                Professional Detailing in Studio or Mobile
               </h2>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-left" delay={150} duration={750}>
               <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-neutral-300 leading-relaxed">
-                Founded in 2019, CleanWorx handles daily drivers, family SUVs, and performance sports cars across Somerset County. We evaluate your vehicle&apos;s paint, interior surfaces, and wear before recommending a service package.
+                Founded in 2019, CleanWorx handles daily drivers, family SUVs, and performance sports cars across Somerset, Morris, and Union counties. We evaluate your vehicle&apos;s paint, interior surfaces, and wear before recommending a service package.
               </p>
 
               <p className="mt-3 sm:mt-4 text-xs sm:text-base text-neutral-400 leading-relaxed">
-                You can drop your car off at our dedicated Basking Ridge studio or have our fully equipped mobile rig come directly to your driveway or workplace.
+                You can drop your car off at our dedicated Basking Ridge studio at 19 E. Henry Street or have our self-contained mobile rig come directly to your driveway.
               </p>
               <h3 className="mt-5 text-lg font-bold text-white">Studio and Mobile Appointments Available</h3>
             </ScrollReveal>
@@ -113,10 +113,10 @@ export function AboutSection() {
             <ScrollReveal animation="fade-up" delay={450} duration={700} className="w-full">
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full">
                 <Link
-                  href="/booking"
+                  href="/about"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-md bg-[#1277ff] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1277ff]/25 hover:bg-[#0d62d6] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all cursor-pointer"
                 >
-                  <span>Read More &amp; Book</span>
+                  <span>Our Story &amp; Team</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 

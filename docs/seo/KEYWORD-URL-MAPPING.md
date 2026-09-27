@@ -3,7 +3,7 @@
 **Business:** CleanWorx Auto Detailing & Ceramic Coating  
 **Domain:** https://www.cleanworxnj.com  
 **Primary service area:** Basking Ridge, NJ, within a 20–25 mile radius  
-**Keyword source:** `keyword research CLEANWORX.csv` (115 keywords; 3,005,680 reported monthly searches)
+**Keyword source:** `keyword research CLEANWORX v2.csv` (141 keywords; 3,855,000+ reported monthly searches)
 **Business-fact source rules:** [BUSINESS-FACTS-AND-SOURCE-RULES.md](./BUSINESS-FACTS-AND-SOURCE-RULES.md)
 
 ## Mapping rules
@@ -26,11 +26,12 @@
 | P0 | `/interior-detailing` | New | car interior cleaning | auto interior detailing; car carpet cleaning; upholstery cleaning; steam cleaning | Cover extraction, stains, seats, carpets, upholstery, pet hair, and steam cleaning in one comprehensive service page. |
 | P0 | `/exterior-detailing` | New | exterior detailing | exterior car detailing; car detailing exterior; car exterior cleaning; car waxing | Make clear this is professional detailing—not a standard car wash. Cover hand wash, decontamination, wax/sealant, and protection. |
 | P0 | `/mobile-auto-detailing` | New | mobile auto detailing | mobile car detailing; mobile interior car detailing; mobile detailing service; mobile car cleaning | Approved service. Price is the applicable in-shop package price plus one one-time USD 35 mobile fee per appointment. Confirm coverage, eligible packages, access needs, and weather policy before publishing those operational details. |
+| P0 | `/window-tinting` | New | window tint installation | windows tinted price; how much does it cost to get windows tinted; windows tint new jersey; window tint in new jersey; window tint laws in new jersey; window tint laws new jersey; windows tint removal; window tint removal cost; where can i get my car windows tinted | Core service landing page covering window tint installation (Carbon & Ceramic heat-rejection films, NJ legal compliance, shade options) and an integrated dedicated H2 section near the end for professional window tint removal ($50.00/window per Square catalog). All tint work is studio-performed at 19 E. Henry Street, Basking Ridge. |
 | P1 | `/services` | New; structural hub | — | Service discovery and price-entry navigation | A non-competing overview page. Use concise cards and catalog-sourced pricing/status only. It may surface supplementary catalog services without creating separate SEO URLs; do not duplicate full pricing tables or target a broad service keyword. |
 | P1 | `/service-areas` | New; structural location hub | — | Service-area coverage and availability | Indexable hub for verified towns currently served around Basking Ridge. Explain that mobile availability is confirmed per appointment; do not invent coverage, eligible-package, access, weather, or travel-policy details. Do not link to city URLs. This route reserves the future child pattern `/service-areas/[town]-nj`. |
 | P1 | `/contact` | New; utility page | — | Contact, booking interface, phone, and service-area access | Preserve the established contact intent. Include phone, email, hours, address, LocalBusiness NAP details, and the future on-site booking interface. No booking URL has been assigned. |
 | P1 | `/about` | New; trust / E-E-A-T page | — | Business history, team, experience, and certification | Preserve CleanWorx’s 2019 origin story, Basking Ridge shop history, team, original work photos, and System X certification. |
-| P1 | `/our-work` | New; portfolio / trust page | — | Project gallery, before-and-after proof, detailing craftsmanship | Publish original, labeled project galleries for current approved services. Add paint-correction or mobile projects only after their services/routes are approved. Each project should link to its matching service page and include a concise, factual description of the vehicle, service performed, and outcome. This is a proof page, not a keyword-target landing page. |
+| P1 | `/our-work` | New; portfolio / trust page | — | Project gallery, before-and-after proof, detailing craftsmanship | Publish original, labeled project galleries for current approved services. Add paint-correction, mobile, and window tint projects only after their services/routes are approved. Each project should link to its matching service page and include a concise, factual description of the vehicle, service performed, and outcome. This is a proof page, not a keyword-target landing page. |
 | P1 | `/faq` | New | — | pricing, turnaround, service-process questions | Support conversion and user decision-making; link answers to the relevant service page rather than trying to rank it for a broad service term. Do not add commercial `FAQPage` schema for Google rich-result benefit. |
 
 ## Complete service-keyword-to-URL ledger
@@ -45,6 +46,7 @@ Only service/topic keywords are assigned below. `near me` query variants are del
 | `/paint-correction` | scratch removal car; paint polishing; car polishing; car polish; paint restoration car; paint correction; auto paint correction; paint correction service; car paint correction. Approved standalone service from USD 350; final scope/price depend on vehicle condition, multi-step process, and customer goals. |
 | `/interior-detailing` | car upholstery cleaning; car carpet cleaning; car seat stain removal; auto interior cleaning; car interior cleaning; car shampoo service; professional car interior cleaning; interior car detailing; car seat cleaning; deep car cleaning; auto interior detailing; car steam cleaning; deep clean car interior; pet hair removal car; steam cleaning car interior |
 | `/exterior-detailing` | car waxing; car detailing exterior; car exterior cleaning; exterior auto detailing; exterior car detailing; exterior detailing |
+| `/window-tinting` | window tint installation; windows tinted price; how much does it cost to get windows tinted; windows tint new jersey; window tint in new jersey; window tint laws in new jersey; window tint laws new jersey; where can i get my car windows tinted; where can i get my windows tinted; windows tint removal (dedicated H2 section); window tint removal cost (dedicated H2 section, Square catalog USD 50.00/window). |
 | Catalog-confirmed supplemental services — no standalone URL in this phase | engine bay detailing; engine detailing; car engine cleaning; engine bay cleaning; engine cleaning service; professional headlight restoration; car headlight restoration; headlight polishing; headlight restoration; car smell removal; car odor removal; smoke smell removal car; mold removal car; mold cleaning car; cigarette smell removal car; mold removal car interior; auto odor removal. Engine-bay cleaning and headlight restoration are offered in Square, but do not create their URLs in this phase. Air purification is also offered, but do not make mold-remediation or guaranteed odor-removal claims. |
 | Not targeted | premium car wash — excluded by brand positioning; do not use in page titles, H1s, service navigation, or paid/organic targeting. |
 
@@ -60,6 +62,7 @@ These phrases may appear in third-party keyword tools because searchers use them
 | Paint correction | paint correction near me |
 | Interior detailing | car upholstery cleaning near me; car interior cleaning near me; car carpet cleaning near me; car interior detailing near me; car deep cleaning near me; car seat cleaning near me; interior detailing near me |
 | Exterior detailing | exterior car detailing near me |
+| Window tinting | windows tint near me; tint car windows near me; car windows tint near me; windows tint nearby; window tint service near me; window tint prices near me; window tint removal near me; window tint installation near me; window tint companies near me; auto window tinting near me prices; car windows tint near me prices; car window tint service near me; professional window tint near me; where can i get my windows tinted near me; car window tint removal near me |
 | Catalog-confirmed supplemental services | engine detailing near me; engine bay cleaning near me; headlight restoration near me |
 
 `/services`, `/service-areas`, `/contact`, `/about`, and `/our-work` are structural / conversion URLs, not keyword-target landing pages. They deliberately receive no primary keyword from this research set and must not duplicate service-page copy.
@@ -75,7 +78,8 @@ These phrases may appear in third-party keyword tools because searchers use them
 │   ├── /paint-correction
 │   ├── /interior-detailing
 │   ├── /exterior-detailing
-│   └── /mobile-auto-detailing
+│   ├── /mobile-auto-detailing
+│   └── /window-tinting
 ├── /service-areas
 │   └── Future: /service-areas/[town]-nj
 ├── /our-work
@@ -84,7 +88,7 @@ These phrases may appear in third-party keyword tools because searchers use them
 └── /contact
 ```
 
-`/services` is the service-discovery hub; the five service URLs are individual canonical landing pages. The relationship is navigational and internal-link based rather than a URL-nesting requirement, so the short canonical slugs above must be retained.
+`/services` is the service-discovery hub; the six service URLs are individual canonical landing pages. The relationship is navigational and internal-link based rather than a URL-nesting requirement, so the short canonical slugs above must be retained.
 
 `/service-areas` is a coverage hub, not a city-page directory at launch. It may name only the verified locations currently covered: Basking Ridge, Bernardsville, Bernards, Far Hills, Bedminster, Peapack-Gladstone, Liberty Corner, Warren, Bridgewater, Westfield, Martinsville, Morristown, Mendham, Chester, Somerville, Berkeley Heights, Watchung, Scotch Plains, Madison, New Providence, Morris Plains, Morris Township, Parsippany, Florham Park, Whippany, Stirling, Somerset, and Gillette. Do not link these names until the corresponding city route is published.
 
@@ -94,7 +98,7 @@ Keep the primary navigation intentionally compact:
 
 | Placement | Item | Behavior |
 | --- | --- | --- |
-| Main navigation | `Services` | Dropdown / mega-menu listing the five approved services: Ceramic Coating, Paint Correction, Interior Detailing, Exterior Detailing, and Mobile Auto Detailing. The parent link leads to `/services`. |
+| Main navigation | `Services` | Dropdown / mega-menu listing the six approved services: Ceramic Coating, Paint Correction, Interior Detailing, Exterior Detailing, Mobile Auto Detailing, and Window Tinting. The parent link leads to `/services`. |
 | Main navigation | `Our Work` | Direct link to `/our-work`. |
 | Main navigation | `Book Now` | High-visibility CTA opening the future on-site booking process. No booking URL, anchor, or fallback route has been assigned; do not point it to `/contact` by assumption. |
 | Persistent CTA | `908-899-2832` | Click-to-call phone CTA, visible in the header on desktop and in the mobile navigation. |
@@ -110,14 +114,15 @@ Use visible breadcrumbs on every service page in this pattern: `Home > Services 
 
 | From | Link to | Anchor guidance |
 | --- | --- | --- |
-| Homepage | All P0 service pages | Use descriptive service anchors: “ceramic coating,” “paint correction,” “interior detailing,” “mobile auto detailing,” and “exterior detailing.” |
+| Homepage | All P0 service pages | Use descriptive service anchors: “ceramic coating,” “paint correction,” “interior detailing,” “mobile auto detailing,” “exterior detailing,” and “window tint installation.” |
 | Services hub | Every current service page | Use cards with a single short description, sourceable price/status, and a direct link to the service page. |
-| Ceramic coating | Paint correction | “paint correction before ceramic coating”; retain same-page “ceramic coating pricing” anchors. |
-| Interior detailing | Homepage | “complete car detailing.” |
+| Ceramic coating | Paint correction; Window tinting | “paint correction before ceramic coating”; retain same-page “ceramic coating pricing” anchors; link to “ceramic window tinting” for full vehicle thermal and UV protection. |
+| Interior detailing | Homepage; Window tinting | “complete car detailing”; link to “window tinting” for leather and upholstery UV protection. |
 | Exterior detailing | Paint correction; ceramic coating; homepage | Use “paint correction,” “ceramic paint protection,” and “full detail.” |
-| Mobile auto detailing | Interior, exterior, full detail, and service-areas hub | Explain the one-time USD 35 mobile fee per appointment plus the applicable in-shop package price. Confirm operational details per appointment until coverage, package, access, and weather policies are documented. |
+| Mobile auto detailing | Interior, exterior, full detail, and service-areas hub | Explain the one-time USD 35 mobile fee per appointment plus the applicable in-shop package price. Confirm operational details per appointment until coverage, package, access, and weather policies are documented. Note: window tinting is studio-only. |
+| Window tinting | Ceramic coating; interior detailing; services hub; homepage | Use “System X ceramic coating” (exterior protection synergy), “interior car detailing” (interior UV care), and breadcrumbs to `/services` and `/`. Highlight dedicated H2 for “window tint removal” ($50/window). |
 | Service-areas hub | Mobile auto detailing; contact/booking; future town pages | Link to the mobile-service explanation and availability CTA. Add links to town pages only after publishing qualified, original local pages. |
-| Our Work | Matching service page; contact/booking | Every portfolio project should link to the relevant service page and a booking CTA; use project-specific anchors such as “ceramic coating for this Porsche,” not generic repeated anchors. |
+| Our Work | Matching service page; contact/booking | Every portfolio project should link to the relevant service page and a booking CTA; use project-specific anchors such as “ceramic coating for this Porsche” or “ceramic window tint on this BMW,” not generic repeated anchors. |
 | Every service page | Homepage; services hub; contact/booking; FAQ | Include Basking Ridge service-area context and one direct booking CTA. |
 
 ## Migration redirects from the current Squarespace site
@@ -134,7 +139,7 @@ Implement these as single-hop, permanent (301) redirects when the replacement ro
 
 ## Build order and acceptance criteria
 
-1. Optimize `/` and publish `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/services`, `/service-areas`, `/our-work`, `/contact`, and `/about` first.
+1. Optimize `/` and publish `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/window-tinting`, `/services`, `/service-areas`, `/our-work`, `/contact`, and `/about` first.
 2. Keep ceramic-coating service and cost content together on `/ceramic-coating`; use clear pricing sections and page anchors rather than a second URL.
 3. Defer engine-bay, headlight-restoration, and air-purification/odor URLs. These are catalog-confirmed supplemental services, not unoffered services. Do not make mold-remediation or guaranteed odor-removal claims.
 4. After publishing the new routes, configure and test every 301 redirect in the table above; confirm that each resolves in one hop to a 200 page.

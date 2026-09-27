@@ -83,15 +83,15 @@ export function TestimonialsSection() {
               Over 220 vehicle owners across Basking Ridge and Somerset County have rated CleanWorx 5.0 stars on Google. We take pride in honest advice, thorough workmanship, and dependable results on every appointment.
             </p>
 
-            {/* External Google Maps Link */}
+            {/* External Google Business Profile Link */}
             <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between">
               <a
-                href="https://www.google.com/maps?cid=15973418579450373920"
+                href="https://share.google/UwkPd2O0H8zeL4M37"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 hover:text-[#4da3ff] transition-colors group/link"
               >
-                <span>Read all 220+ reviews on Google</span>
+                <span>Read all 220+ reviews on Google Business Profile</span>
                 <span className="text-[#1277ff] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">↗</span>
               </a>
             </div>

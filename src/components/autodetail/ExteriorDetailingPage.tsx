@@ -192,7 +192,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <div className="absolute -inset-4 rounded-3xl bg-[#1277ff]/15 blur-2xl" />
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
                 <Image
-                  src="/images/autodetail/1-2.webp"
+                  src="/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp"
                   alt="CleanWorx exterior detailing process with foam wash, wheel degreasing, and ceramic wax protection"
                   fill
                   priority

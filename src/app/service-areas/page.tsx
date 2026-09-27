@@ -37,7 +37,7 @@ export default function Page() {
       title="Service Areas"
       h1="Auto Detailing Service Areas in New Jersey"
       description="CleanWorx Auto Detailing & Ceramic Coating is based in Basking Ridge and serves nearby New Jersey communities through studio and eligible mobile appointment options."
-      image="/images/autodetail/c1-2048x767.webp"
+      image="/images/autodetail/cleanworx-service-areas-somerset-county-nj.webp"
       ctaTitle="Confirm an Appointment"
       sections={[
         {

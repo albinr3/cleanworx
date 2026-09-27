@@ -51,6 +51,19 @@ La corrección de pintura es un servicio independiente confirmado por el propiet
 
 CleanWorx ofrece mobile detailing. El precio de una cita móvil es el precio del paquete equivalente realizado en taller **más una tarifa única de USD 35.00 por cita**. La tarifa no es por vehículo, hora ni servicio. La cobertura, paquetes elegibles, requisitos de acceso y política por clima se confirmarán antes de publicar contenido operativo.
 
+## Polarizado automotriz / Window Tinting
+
+CleanWorx incorpora el servicio especializado de instalación y retiro de polarizado automotriz (*Window Tinting*), alojado canónicamente en `/window-tinting`:
+
+| Servicio | Modalidad | Precio | Duración |
+| --- | --- | ---: | ---: |
+| Instalación de Window Tint (Películas Carbon / Ceramic) | Servicio en estudio | Precio variable según tipo de vehículo y ventanas | 2 horas – 4 horas |
+| Retiro de polarizado (*Tint Removal*) | Por ventana (independiente o complemento) | USD 50.00 | 30 minutos |
+
+### Alcance y consideraciones técnicas
+- **Instalación:** Aplicación de películas de nano-cerámica (rechazo superior de calor infrarrojo, 99% bloqueo UV, cero interferencia con GPS/celular) y películas de carbono (acabado mate de gran estabilidad de color sin virar a morado). El servicio se realiza estrictamente en el estudio cerrado de Basking Ridge (19 E. Henry Street) para garantizar un ambiente libre de polvo y viento. Los precios se cotizan tras evaluación del vehículo y selección del tono (VLT) conforme a las leyes de New Jersey (N.J.S.A. 39:3-74).
+- **Retiro de polarizado (*Tint Removal*):** Servicio confirmado en el catálogo público de Square a **USD 50.00 por ventana** (30 minutos). Diseñado para remover películas viejas, cuarteadas, moradas o que presenten burbujas. Se realiza mediante extracción controlada por vapor térmico que disuelve el adhesivo sin dañar los filamentos térmicos del desempañador trasero (*defroster grid*) ni las antenas integradas en el vidrio.
+
 ## Servicios adicionales y complementos
 
 | Servicio | Modalidad | Precio | Duración |
