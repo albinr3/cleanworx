@@ -4,22 +4,37 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const links = [
   ["Home", "/"],
-  ["Services", "/services"],
+  ["Add-Ons & Extras", "/add-ons"],
   ["Our Work", "/our-work"],
   ["About", "/about"],
   ["FAQ", "/faq"],
   ["Contact", "/contact"],
   ["Sitemap", "/sitemap.xml"],
 ] as const;
-const serviceLinks = [["Ceramic Coating", "/ceramic-coating"], ["Paint Correction", "/paint-correction"], ["Window Tinting", "/window-tinting"], ["Interior Detailing", "/interior-detailing"], ["Exterior Detailing", "/exterior-detailing"], ["Mobile Auto Detailing", "/mobile-auto-detailing"], ["Service Areas", "/service-areas"]] as const;
+const serviceLinks = [
+  ["Ceramic Coating", "/ceramic-coating"],
+  ["Paint Correction", "/paint-correction"],
+  ["Window Tinting", "/window-tinting"],
+  ["Interior Detailing", "/interior-detailing"],
+  ["Exterior Detailing", "/exterior-detailing"],
+  ["Mobile Auto Detailing", "/mobile-auto-detailing"],
+  ["Specialized Add-Ons", "/add-ons"],
+  ["Service Areas", "/service-areas"],
+] as const;
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#070709] text-neutral-400">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <Link href="/" className="relative block h-10 w-44">
-            <Image src="/images/cleanworx-logo.webp" alt="CleanWorx Auto Detailing & Ceramic Coating" fill sizes="176px" className="object-contain object-left" />
+          <Link href="/" className="inline-block">
+            <Image
+              src="/images/cleanworx-logo.webp"
+              alt="CleanWorx Auto Detailing & Ceramic Coating"
+              width={176}
+              height={40}
+              className="h-10 w-44 object-contain object-left"
+            />
           </Link>
           <p className="mt-5 text-sm leading-relaxed">CleanWorx Auto Detailing &amp; Ceramic Coating provides professional auto detailing in Basking Ridge, New Jersey, with studio and mobile appointment options confirmed for each request.</p>
 

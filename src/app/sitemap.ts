@@ -11,10 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/services`,
-      lastModified: new Date("2026-09-26T16:02:00.000Z"),
-      changeFrequency: "monthly",
-      priority: 0.9,
+      url: `${baseUrl}/add-ons`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/ceramic-coating`,

@@ -27,7 +27,7 @@
 | P0 | `/exterior-detailing` | New | exterior detailing | exterior car detailing; car detailing exterior; car exterior cleaning; car waxing | Make clear this is professional detailing—not a standard car wash. Cover hand wash, decontamination, wax/sealant, and protection. |
 | P0 | `/mobile-auto-detailing` | New | mobile auto detailing | mobile car detailing; mobile interior car detailing; mobile detailing service; mobile car cleaning | Approved service. Price is the applicable in-shop package price plus one one-time USD 35 mobile fee per appointment. Confirm coverage, eligible packages, access needs, and weather policy before publishing those operational details. |
 | P0 | `/window-tinting` | New | window tint installation | windows tinted price; how much does it cost to get windows tinted; windows tint new jersey; window tint in new jersey; window tint laws in new jersey; window tint laws new jersey; windows tint removal; window tint removal cost; where can i get my car windows tinted | Core service landing page covering window tint installation (Carbon & Ceramic heat-rejection films, NJ legal compliance, shade options) and an integrated dedicated H2 section near the end for professional window tint removal ($50.00/window per Square catalog). All tint work is studio-performed at 19 E. Henry Street, Basking Ridge. |
-| P1 | `/services` | New; structural hub | — | Service discovery and price-entry navigation | A non-competing overview page. Use concise cards and catalog-sourced pricing/status only. It may surface supplementary catalog services without creating separate SEO URLs; do not duplicate full pricing tables or target a broad service keyword. |
+| P1 | `/add-ons` | New; structural add-on hub | — | Specialized add-ons, restoration, and supplemental service navigation | Houses catalog-confirmed supplementary & add-on services: headlight restoration ($75 add-on / $125 standalone), engine bay cleaning ($75 / $125), air purification ($75 / $125), 1-step machine polish ($123.99+), interior surface protection ($55), tint removal ($50/window), and pet hair extraction ($50–$150). Prevents keyword cannibalization with `/`. `/services` has a 301 permanent redirect to `/`. |
 | P1 | `/service-areas` | New; structural location hub | — | Service-area coverage and availability | Indexable hub for verified towns currently served around Basking Ridge. Explain that mobile availability is confirmed per appointment; do not invent coverage, eligible-package, access, weather, or travel-policy details. Do not link to city URLs. This route reserves the future child pattern `/service-areas/[town]-nj`. |
 | P1 | `/contact` | New; utility page | — | Contact, booking interface, phone, and service-area access | Preserve the established contact intent. Include phone, email, hours, address, LocalBusiness NAP details, and the future on-site booking interface. No booking URL has been assigned. |
 | P1 | `/about` | New; trust / E-E-A-T page | — | Business history, team, experience, and certification | Preserve CleanWorx’s 2019 origin story, Basking Ridge shop history, team, original work photos, and System X certification. |
@@ -47,7 +47,7 @@ Only service/topic keywords are assigned below. `near me` query variants are del
 | `/interior-detailing` | car upholstery cleaning; car carpet cleaning; car seat stain removal; auto interior cleaning; car interior cleaning; car shampoo service; professional car interior cleaning; interior car detailing; car seat cleaning; deep car cleaning; auto interior detailing; car steam cleaning; deep clean car interior; pet hair removal car; steam cleaning car interior |
 | `/exterior-detailing` | car waxing; car detailing exterior; car exterior cleaning; exterior auto detailing; exterior car detailing; exterior detailing |
 | `/window-tinting` | window tint installation; windows tinted price; how much does it cost to get windows tinted; windows tint new jersey; window tint in new jersey; window tint laws in new jersey; window tint laws new jersey; where can i get my car windows tinted; where can i get my windows tinted; windows tint removal (dedicated H2 section); window tint removal cost (dedicated H2 section, Square catalog USD 50.00/window). |
-| Catalog-confirmed supplemental services — no standalone URL in this phase | engine bay detailing; engine detailing; car engine cleaning; engine bay cleaning; engine cleaning service; professional headlight restoration; car headlight restoration; headlight polishing; headlight restoration; car smell removal; car odor removal; smoke smell removal car; mold removal car; mold cleaning car; cigarette smell removal car; mold removal car interior; auto odor removal. Engine-bay cleaning and headlight restoration are offered in Square, but do not create their URLs in this phase. Air purification is also offered, but do not make mold-remediation or guaranteed odor-removal claims. |
+| Catalog-confirmed supplemental services — housed on `/add-ons` | engine bay detailing; engine detailing; car engine cleaning; engine bay cleaning; engine cleaning service; professional headlight restoration; car headlight restoration; headlight polishing; headlight restoration; car smell removal; car odor removal; smoke smell removal car; mold removal car; mold cleaning car; cigarette smell removal car; mold removal car interior; auto odor removal. Engine-bay cleaning and headlight restoration are offered in Square ($75 add-on / $125 standalone). Air purification is also offered ($75 add-on / $125 standalone), but do not make mold-remediation or guaranteed odor-removal claims. |
 | Not targeted | premium car wash — excluded by brand positioning; do not use in page titles, H1s, service navigation, or paid/organic targeting. |
 
 ## Observed proximity-query variants — not keyword targets
@@ -65,7 +65,7 @@ These phrases may appear in third-party keyword tools because searchers use them
 | Window tinting | windows tint near me; tint car windows near me; car windows tint near me; windows tint nearby; window tint service near me; window tint prices near me; window tint removal near me; window tint installation near me; window tint companies near me; auto window tinting near me prices; car windows tint near me prices; car window tint service near me; professional window tint near me; where can i get my windows tinted near me; car window tint removal near me |
 | Catalog-confirmed supplemental services | engine detailing near me; engine bay cleaning near me; headlight restoration near me |
 
-`/services`, `/service-areas`, `/contact`, `/about`, and `/our-work` are structural / conversion URLs, not keyword-target landing pages. They deliberately receive no primary keyword from this research set and must not duplicate service-page copy.
+`/add-ons`, `/service-areas`, `/contact`, `/about`, and `/our-work` are structural / conversion URLs, not keyword-target landing pages. They deliberately receive no primary keyword from this research set and must not duplicate service-page copy.
 
 ## Page hierarchy, navigation, and breadcrumbs
 
@@ -73,13 +73,13 @@ These phrases may appear in third-party keyword tools because searchers use them
 
 ```text
 /
-├── /services
-│   ├── /ceramic-coating
-│   ├── /paint-correction
-│   ├── /interior-detailing
-│   ├── /exterior-detailing
-│   ├── /mobile-auto-detailing
-│   └── /window-tinting
+├── /ceramic-coating
+├── /paint-correction
+├── /window-tinting
+├── /interior-detailing
+├── /exterior-detailing
+├── /mobile-auto-detailing
+├── /add-ons
 ├── /service-areas
 │   └── Future: /service-areas/[town]-nj
 ├── /our-work

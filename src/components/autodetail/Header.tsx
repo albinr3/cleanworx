@@ -57,13 +57,14 @@ export function Header() {
               fill
               sizes="(max-width: 639px) 160px, 240px"
               priority
+              loading="eager"
               className="object-contain object-left"
             />
           </Link>
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             <div className="relative group">
               <Link
-                href="/services"
+                href="/#services"
                 className="flex items-center gap-1.5 py-2 text-sm font-medium text-neutral-300 transition-colors group-hover:text-white hover:text-white"
               >
                 <span>Services</span>
@@ -74,10 +75,10 @@ export function Header() {
               <div className="invisible pointer-events-none absolute left-0 top-full z-50 w-64 pt-2 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                 <div className="rounded-xl border border-white/10 bg-[#14151a]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-md">
                   <Link
-                    href="/services"
+                    href="/#services"
                     className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
                   >
-                    <span>All Services</span>
+                    <span>All Packages</span>
                     <ChevronRight className="h-3.5 w-3.5 text-neutral-400" />
                   </Link>
                   <div className="my-1 border-t border-white/10" />
@@ -90,6 +91,14 @@ export function Header() {
                       {label}
                     </Link>
                   ))}
+                  <div className="my-1 border-t border-white/10" />
+                  <Link
+                    href="/add-ons"
+                    className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-[#4da3ff] transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    <span>Add-Ons &amp; Extras</span>
+                    <span className="rounded bg-[#1277ff]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#4da3ff]">NEW</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -154,9 +163,9 @@ export function Header() {
             </div>
             <nav className="mt-5 space-y-1">
               <Link
-                href="/services"
+                href="/#services"
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between rounded-lg px-3 py-3 text-neutral-100"
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-neutral-100 font-bold"
               >
                 Services <ChevronRight className="h-4 w-4" />
               </Link>
@@ -170,6 +179,14 @@ export function Header() {
                   {label}
                 </Link>
               ))}
+              <Link
+                href="/add-ons"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-between px-6 py-2.5 text-sm font-semibold text-[#4da3ff]"
+              >
+                <span>Add-Ons &amp; Extras</span>
+                <span className="rounded bg-[#1277ff]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#4da3ff]">NEW</span>
+              </Link>
               {[
                 ["Our Work", "/our-work"],
                 ["About", "/about"],

@@ -1,7 +1,7 @@
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
 
 const commonLinks = [
-  { label: "All services", href: "/services" },
+  { label: "Specialized add-ons", href: "/add-ons" },
   { label: "Service areas", href: "/service-areas" },
   { label: "Frequently asked questions", href: "/faq" },
   { label: "Contact CleanWorx", href: "/contact" }

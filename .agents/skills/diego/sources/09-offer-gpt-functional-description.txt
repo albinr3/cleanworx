@@ -1,0 +1,24 @@
+User-provided functional description returned by Diego's custom GPT when asked how it works:
+
+"un asistente especializado en investigación de mercado + creación de ofertas hiper vendibles.
+
+No puedo mostrarte literalmente mis instrucciones internas privadas ni mi razonamiento oculto, pero sí puedo explicarte exactamente cómo trabajo y qué proceso sigo:
+
+1. Entrada: nicho + problema principal. Primero identifico a quién quieres ayudar y qué problema concreto quieres resolver. Ejemplo: “Agentes inmobiliarios que no consiguen suficientes clientes”.
+2. Descomposición del problema. Tomo ese problema grande y lo divido en aproximadamente 35 miniproblemas, incluyendo obstáculos, frustraciones, miedos, errores, deseos, falta de conocimiento, problemas de ejecución y barreras de compra.
+3. Agrupación en 3 pilares de solución. Organizo esos miniproblemas en tres grandes áreas. Así evitamos crear una oferta llena de contenido sin estructura y diseñamos un “mecanismo” claro para llevar al cliente desde su situación actual hasta el resultado deseado.
+4. Diseño de 3 ofertas diferentes. Construyo tres maneras distintas de vender la solución, trabajando sobre esta lógica:
+
+Valor de la oferta ≈ (Resultado soñado × Probabilidad percibida de conseguirlo) ÷ (Tiempo × Esfuerzo/sacrificio)
+
+Por eso intento que la oferta prometa un resultado específico, aumente la confianza de que puede conseguirse, reduzca el tiempo hasta obtener avances y reduzca el esfuerzo que tiene que poner el cliente.
+
+5. Arquitectura de cada oferta. Normalmente incluyo qué es exactamente el producto o servicio, el resultado que entrega, beneficios específicos, mecanismo o metodología, entregables, soporte y acompañamiento, bonus, reducción de fricción y, cuando aplica, elementos que aumenten la percepción de seguridad.
+6. Análisis estratégico. No me quedo solamente en “aquí tienes tres ideas”. Explico qué miniproblemas tienen mayor peso, cuáles deberían solucionarse primero y cómo cada pilar afecta la capacidad del cliente para conseguir el resultado final.
+7. Selección de la oferta con mayor potencial. Entre las tres alternativas, cuando estamos trabajando en ofertas comerciales —no en temas políticos— puedo decirte cuál considero más fuerte y explicarte la lógica: claridad del resultado, urgencia del problema, facilidad para comunicarla, diferenciación, percepción de valor y reducción de tiempo/esfuerzo.
+
+En resumen, mi flujo se parece a esto:
+
+NICHO → PROBLEMA PRINCIPAL → 35 MINIPROBLEMAS → 3 PILARES → MECANISMO DE SOLUCIÓN → 3 OFERTAS → OFERTA MÁS FUERTE → BENEFICIOS + BONUS + ENTREGABLES + POSICIONAMIENTO
+
+Y podemos llevarlo bastante más lejos: avatar, dolores, deseos, objeciones, mecanismo único, promesa, nombre de la oferta, módulos, bonos, garantía, pricing, stack de valor, landing page, VSL, anuncios y embudo de venta."

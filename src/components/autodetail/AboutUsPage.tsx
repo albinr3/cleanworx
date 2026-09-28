@@ -590,8 +590,8 @@ export function AboutUsPage() {
               <span>19 E. Henry Street, Basking Ridge, NJ 07920</span>
             </div>
             <div className="flex flex-wrap items-center gap-5">
-              <Link href="/services" className="hover:text-white transition-colors">
-                Explore Services →
+              <Link href="/add-ons" className="hover:text-white transition-colors">
+                Specialized Add-Ons →
               </Link>
               <Link href="/our-work" className="hover:text-white transition-colors">
                 View Portfolio →

@@ -90,10 +90,10 @@ export function ServicesSection() {
                 {/* Action Button */}
                 <div className="p-5 pt-0 sm:p-6 sm:pt-0">
                   <Link
-                    href={service.id === "supplemental-services" ? "/services" : `/${service.id}`}
+                    href={service.id === "supplemental-services" ? "/add-ons" : `/${service.id}`}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-white/5 hover:bg-[#1277ff] hover:text-white border border-white/10 hover:border-[#1277ff] py-3.5 sm:py-3 text-sm font-bold text-neutral-200 transition-all cursor-pointer group-hover:bg-[#1277ff] group-hover:text-white active:scale-[0.98]"
                   >
-                    <span>View Package &amp; Book</span>
+                    <span>{service.id === "supplemental-services" ? "View Add-Ons & Book" : "View Package & Book"}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

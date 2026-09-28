@@ -176,8 +176,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cleanworxnj.com/" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://www.cleanworxnj.com/services" },
-          { "@type": "ListItem", position: 3, name: data.name, item: `https://www.cleanworxnj.com/${data.slug}` },
+          { "@type": "ListItem", position: 2, name: data.name, item: `https://www.cleanworxnj.com/${data.slug}` },
         ],
       },
       {
@@ -219,10 +218,6 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Home
             </Link>
             <ChevronRight className="h-3 w-3" />
-            <Link href="/services" className="transition hover:text-white">
-              Services
-            </Link>
-            <ChevronRight className="h-3 w-3" />
             <span aria-current="page" className="text-neutral-200">
               {data.name}
             </span>
@@ -241,10 +236,10 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <BookingLink />
                   <Link
-                    href="/services"
+                    href="/add-ons"
                     className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/10 active:scale-95"
                   >
-                    Compare services
+                    Explore Add-Ons
                   </Link>
                 </div>
               </ScrollReveal>

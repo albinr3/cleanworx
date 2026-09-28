@@ -93,7 +93,7 @@ export default function Page() {
       ]}
       links={[
         { label: "Mobile auto detailing", href: "/mobile-auto-detailing" },
-        { label: "All services", href: "/services" },
+        { label: "Specialized add-ons", href: "/add-ons" },
         { label: "Contact CleanWorx", href: "/contact" },
         { label: "Frequently asked questions", href: "/faq" }
       ]}

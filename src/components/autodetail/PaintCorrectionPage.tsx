@@ -65,8 +65,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.cleanworxnj.com/" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://www.cleanworxnj.com/services" },
-          { "@type": "ListItem", position: 3, name: data.name, item: `https://www.cleanworxnj.com/${data.slug}` },
+          { "@type": "ListItem", position: 2, name: data.name, item: `https://www.cleanworxnj.com/${data.slug}` },
         ],
       },
     ],
@@ -100,8 +99,6 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-neutral-400">
             <Link href="/" className="transition hover:text-white">Home</Link>
             <ChevronRight className="h-3 w-3" />
-            <Link href="/services" className="transition hover:text-white">Services</Link>
-            <ChevronRight className="h-3 w-3" />
             <span aria-current="page" className="text-neutral-200">{data.name}</span>
           </nav>
 
@@ -118,10 +115,10 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <BookingLink />
                   <Link
-                    href="/services"
+                    href="/add-ons"
                     className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/20 active:translate-y-0"
                   >
-                    Compare services
+                    Explore Add-Ons
                   </Link>
                 </div>
               </ScrollReveal>

@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/services",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/addons",
+        destination: "/add-ons",
+        permanent: true,
+      },
+      {
         source: "/booking",
         destination: "https://cleanworx-llc.square.site/",
         permanent: false,
