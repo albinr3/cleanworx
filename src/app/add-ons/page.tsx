@@ -101,11 +101,29 @@ export default function AddOnsPage() {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Window Tint Removal",
+                name: "Window Tint Removal · Per Window",
                 description:
                   "High-temperature steam film removal and adhesive cleaning with zero defroster damage.",
               },
+              price: "20.00",
+              priceCurrency: "USD",
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Window Tint Removal · Front or Rear Windshield" },
               price: "50.00",
+              priceCurrency: "USD",
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Window Tint Removal · Whole Vehicle, Excluding Front Windshield" },
+              price: "100.00",
+              priceCurrency: "USD",
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Window Tint Removal · Large Van or SUV, Excluding Front Windshield" },
+              price: "150.00",
               priceCurrency: "USD",
             },
             {

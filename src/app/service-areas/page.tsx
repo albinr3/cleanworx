@@ -75,7 +75,7 @@ export default function Page() {
         {
           title: "Mobile and Studio Appointment Options",
           content: [
-            "A mobile appointment adds a flat $35 mobile fee to your chosen detailing package. We confirm mobile availability and scheduling directly."
+            "One $50 mobile fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee. We confirm mobile availability and scheduling directly."
           ]
         },
         {

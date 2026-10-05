@@ -8,6 +8,7 @@ import {
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { BeforeAfterSlider } from "@/components/autodetail/BeforeAfterSlider";
 import { CeramicBenefitIcon } from "@/components/autodetail/CeramicBenefitIcon";
+import { HorizontalScrollRegion } from "@/components/autodetail/HorizontalScrollRegion";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
@@ -170,7 +171,8 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
       <section className="overflow-hidden bg-[#111722] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up">
-            <div className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)]">
+            <p className="mb-3 text-xs font-semibold text-[#70b5ff] lg:hidden">Swipe sideways to compare all columns →</p>
+            <HorizontalScrollRegion label="Ceramic coating comparison table" className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)] focus-visible:outline-2 focus-visible:outline-[#70b5ff]">
               <table className="min-w-[720px] w-full border-collapse text-left text-base sm:text-lg">
                 <thead>
                   <tr className="border-b border-white/10 text-sm font-bold uppercase tracking-[.18em] text-neutral-400 sm:text-base">
@@ -189,7 +191,7 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
                   </tr>)}
                 </tbody>
               </table>
-            </div>
+            </HorizontalScrollRegion>
           </ScrollReveal>
         </div>
       </section>

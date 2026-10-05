@@ -41,7 +41,7 @@ Do not begin production work until these inputs are available and approved:
 - Use the Square catalog for service packages, prices, durations, inclusions, and whether an item is standalone or an add-on. It currently lists coating packages at 1, 3, and 6 years; the 6-year package description says 5 years, so no duration/warranty copy may be published until that conflict is resolved.
 - The onboarding confirms `cleanworxnj@gmail.com`, Monday–Saturday 9:00 AM–5:00 PM (closed Sunday), and the business's System X Ceramic Coating certification declaration. Retain current credential evidence before publishing the certification.
 - Do not publish a CleanWorx guarantee or warranty until the exact product, package, eligibility, registration, inspection/maintenance requirements, exclusions, and warranty process are approved in writing.
-- Paint Correction and Mobile Auto Detailing are owner-confirmed offers absent from the current Square catalog. Paint correction starts at USD 350 and uses an assessment-led multiple-step process; final price depends on vehicle condition and customer goals. Mobile price is the applicable in-shop package price plus a one-time USD 35 fee per appointment. Both routes are approved; do not invent a fixed correction-stage matrix or unconfirmed mobile coverage/package/access/weather rules.
+- Paint Correction and Mobile Auto Detailing are owner-confirmed offers. Paint correction starts at USD 350 and uses an assessment-led multiple-step process; final price depends on vehicle condition and customer goals. One USD 50 mobile fee applies when the pre-fee appointment subtotal is below USD 400. Do not invent a fixed correction-stage matrix or unconfirmed mobile coverage/package/access/weather rules.
 - Engine-bay cleaning, headlight restoration, and air purification are catalog-confirmed supplemental services. They may be represented factually in a supplementary area, but no dedicated SEO URL is planned in this phase. Do not make mold-remediation, sanitization, or guaranteed odor-elimination claims.
 
 ## Phase 1 — IA and wireframes (`TSK-01594`)
@@ -55,7 +55,7 @@ Do not begin production work until these inputs are available and approved:
 | P0 | `/paint-correction` | Paint-defect and inspection page | Hero → defect education/limits → inspection → correction stages → protection next step → results → FAQs → inspection CTA. State USD 350 starting price and assessment-led final pricing. |
 | P0 | `/interior-detailing` | Cabin-cleaning service page | Hero → catalog-confirmed inclusions → material/condition assessment → realistic outcomes → mobile/studio suitability → results → FAQs → quote CTA. |
 | P0 | `/exterior-detailing` | Professional exterior-care page | Hero → distinction from a car wash → inclusions → condition options → protection → results → FAQs → booking CTA. |
-| P0 | `/mobile-auto-detailing` | Mobile service and availability page | Hero → how it works → eligible services → studio-only/suited services → coverage → preparation → FAQs → availability CTA. State the one-time USD 35 mobile fee per appointment plus the applicable in-shop package price. |
+| P0 | `/mobile-auto-detailing` | Mobile service and availability page | Hero → how it works → eligible services → studio-only/suited services → coverage → preparation → FAQs → availability CTA. State the one-time USD 50 mobile fee when the pre-fee appointment subtotal is below USD 400. |
 | P1 | `/add-ons` | Specialized add-ons & upgrades hub | Intro → category filter (Restoration, Interior, Exterior) → seven catalog-confirmed add-ons with add-on & standalone pricing → booking flexibility guide → FAQs → booking CTA. |
 | P1 | `/service-areas` | Coverage and qualification hub | Coverage intro → verified-town list → mobile/studio availability process → FAQs → contact CTA. |
 | P1 | `/our-work` | Portfolio/trust page | Intro → service-grouped original projects → factual project captions → matching service links → booking CTA. |
@@ -185,7 +185,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
   - **H3:** Paint Correction
   - **H3:** Ceramic Coating
 - **H2:** Mobile Detailing Pricing
-  - **H3:** In-Shop Package Price Plus a One-Time USD 35 Fee per Appointment
+  - **H3:** One USD 50 Mobile Fee for Appointment Subtotals Below USD 400
 - **H2:** Areas We Serve
 - **H2:** Mobile Detailing FAQs
 - **H2:** Check Mobile Detailing Availability
@@ -194,42 +194,13 @@ These outlines define the title tag and visible heading hierarchy for implementa
 
 - **Title tag:** Window Tint Installation in Basking Ridge, NJ | CleanWorx
 - **H1:** Professional Window Tint Installation in Basking Ridge, NJ
-- **H2:** Drive in Comfort: With Our Window Tinting Service
-  - **H3:** Solar Heat Rejection
-  - **H3:** 99% UV Ray Protection for Leather and Interiors
-  - **H3:** Glare Reduction and Driving Safety
-- **H2:** Premium Film Technology: Ceramic vs. Carbon Window Tint
-  - **H3:** Nano-Ceramic Window Film
-  - **H3:** High-Performance Carbon Film
-- **H2:** Choosing Your Shade: Visible Light Transmission (VLT) Options
-  - **H3:** 70%, 50%, 35%, 20%, and 5% VLT Shading Options
-- **H2:** Window Tint Laws in New Jersey: Legal Compliance & VLT Rules
-  - **H3:** Windshield and AS-1 Line Restrictions
-  - **H3:** Front Side Windows and Medical Exemption Requirements
-  - **H3:** Legal Rear Window and Back Glass Tinting
-- **H2:** Precision Window Tint Installation: Our 5-Stage Process
-  - **H3:** Vehicle and Glass Preparation
-  - **H3:** Computer-Cut Precision and Heat Contouring
-  - **H3:** Dust-Free Bay Application and Edge Inspection
-- **H2:** Windows Tinted Price Guide: How Much Does It Cost to Get Windows Tinted?
-  - **H3:** Vehicle Class Estimates (Coupe, Sedan, Truck, SUV)
-  - **H3:** Key Factors That Influence Window Tinting Cost
-
-- **H2:** Window Tint Curing and Aftercare Guidelines
-- **H2:** Where Can I Get My Car Windows Tinted in New Jersey? CleanWorx Studio
-  - **H3:** Dedicated Dust-Free Studio in Basking Ridge
-  - **H3:** Serving Somerset and Morris County Communities
-- **H2:** Professional Windows Tint Removal in Basking Ridge, NJ
-  - **H3:** Safe Steam Extraction and Defroster Grid Protection
-  - **H3:** Window Tint Removal Cost: USD 50.00 per Window
-- **H2:** Frequently Asked Questions About Windows Tint in New Jersey
-  - **H3:** How Much Does It Cost to Get Windows Tinted?
-  - **H3:** Is Window Tint Legal in New Jersey?
-  - **H3:** Where Can I Get My Windows Tinted by Certified Installers?
-  - **H3:** What Is the Difference Between Ceramic and Carbon Film?
-  - **H3:** Can You Remove Old, Bubbling, or Purple Tint?
-  - **H3:** How Much Does Window Tint Removal Cost?
-- **H2:** Schedule Your Window Tint Installation in Basking Ridge, NJ
+- Film benefits and Carbon versus Ceramic comparison with 2-year and 10-year warranties.
+- VLT shade visualizer without legal-status badges.
+- Installation process with studio and mobile options.
+- Price matrix: eight installation services for both films, using [approved prices](./SERVICIOS-OFRECIDOS.md#polarizado-automotriz--window-tinting). Front windshield priced separately.
+- Removal prices: USD 20/window, USD 50/front or rear windshield, USD 100/whole vehicle, USD 150/large van or SUV. Whole-vehicle rates exclude the front windshield.
+- Mobile fee: one USD 50 fee per appointment when the pre-fee subtotal is below USD 400.
+- Aftercare, studio/mobile availability, FAQ, and booking CTA. No legal-advice section or general compliance claim.
 
 #### `/services`
 
@@ -352,7 +323,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
 | Paint correction | Ceramic coating, exterior detailing, work, service hub, FAQ, contact | Use outcome/service context, not repeated exact-match anchors. |
 | Interior detailing | Mobile detailing, work, areas, service hub, FAQ, contact, homepage | Link visitors to the appropriate service scope. |
 | Exterior detailing | Paint correction, ceramic coating, mobile detailing where applicable, work, FAQ, contact | Maintain the professional-detailing distinction. |
-| Mobile detailing | Interior, exterior, paint correction, ceramic coating, areas, work, FAQ, contact | State the USD 35 one-time fee per appointment plus the applicable in-shop package price; confirm remaining operational details per appointment. |
+| Mobile detailing | Interior, exterior, tinting, areas, work, FAQ, contact | State the one-time USD 50 fee when the pre-fee appointment subtotal is below USD 400; confirm remaining operational details per appointment. |
 | Service areas | Mobile detailing, contact, service hub, appropriate services | Do not link town names until qualifying pages are published. |
 | Our work | Matching service page and contact per project | Use project-specific context. |
 | About / FAQ / Contact | Relevant service pages, service hub, areas, work, homepage | Route visitors to the most useful canonical destination. |
@@ -380,7 +351,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
 | `/paint-correction` | Paint Correction in Basking Ridge, NJ \| CleanWorx | Paint Correction & Car Scratch Removal in Basking Ridge, NJ | Improve paint clarity with professional paint correction in Basking Ridge, NJ. Services start at USD 350; an inspection defines the right multi-step process. |
 | `/interior-detailing` | Interior Car Detailing in Basking Ridge, NJ \| CleanWorx | Deep Interior Car Detailing in Basking Ridge, NJ | CleanWorx provides deep interior car detailing in Basking Ridge, NJ for seats, carpets, upholstery, pet hair, and everyday vehicle care. |
 | `/exterior-detailing` | Exterior Car Detailing in Basking Ridge, NJ \| CleanWorx | Professional Exterior Detailing in Basking Ridge, NJ | Choose professional exterior car detailing in Basking Ridge, NJ with hand care, decontamination, paint protection options, and booking support. |
-| `/mobile-auto-detailing` | Mobile Auto Detailing in Basking Ridge, NJ \| CleanWorx | Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx brings mobile auto detailing to eligible Basking Ridge area locations. Mobile appointments add a one-time USD 35 fee to the applicable in-shop package price. |
+| `/mobile-auto-detailing` | Mobile Auto Detailing in Basking Ridge, NJ \| CleanWorx | Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx brings mobile auto detailing to eligible Basking Ridge area locations. One USD 50 fee applies when the pre-fee appointment subtotal is below USD 400. |
 | `/services` | Auto Detailing Services in Basking Ridge, NJ \| CleanWorx | Auto Detailing Services | Explore CleanWorx auto detailing services in Basking Ridge, NJ, from ceramic coating and paint correction to interior, exterior, and mobile detailing. |
 | `/service-areas` | Auto Detailing Service Areas in NJ \| CleanWorx | Auto Detailing Service Areas in New Jersey | See the New Jersey communities CleanWorx serves from Basking Ridge and confirm the best studio or mobile appointment option for your vehicle. |
 | `/our-work` | Auto Detailing Portfolio \| CleanWorx Basking Ridge | Our Detailing Work | View original CleanWorx detailing projects, including ceramic coating, paint correction, interior, exterior, and mobile service work. |

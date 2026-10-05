@@ -330,7 +330,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Mobile or In-Studio Interior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or book our mobile detailing van to come directly to your driveway or workplace with a flat $35 mobile fee."
+          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or book our mobile detailing van to come to your driveway or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
         ]
       }
     ],
@@ -345,7 +345,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "Is mobile interior detailing available in my town?",
-        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns for a flat $35 mobile fee."
+        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
       }
     ],
     faqTitle: "Interior Detailing FAQs",
@@ -406,7 +406,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Mobile or In-Studio Exterior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. Mobile appointments add one flat $35 fee per appointment to the applicable in-shop package price."
+          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
         ]
       }
     ],
@@ -446,11 +446,11 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     name: "Mobile Auto Detailing",
     h1: "Mobile Auto Detailing in Basking Ridge & Somerset County, NJ",
     eyebrow: "We come to your driveway",
-    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. Flat $35 mobile fee added to your selected package.",
+    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400.",
     image: "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp",
-    price: "In-shop package + $35",
+    price: "Package + up to $50",
     inclusions: [
-      "Flat $35 mobile setup fee per appointment",
+      "$50 mobile fee only when the appointment subtotal is under $400",
       "Fully self-contained detailing van with onboard water and power",
       "Mobile interior detailing, exterior hand washes, and sealants",
       "Available across Basking Ridge, Bernardsville, Bedminster & beyond",
@@ -501,7 +501,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "What is the fee for mobile detailing?",
-        answer: "We charge a simple, flat $35 mobile setup fee added to whichever detailing package you choose (interior detail, exterior detail, or complete package)."
+        answer: "One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee, even when they include multiple services."
       },
       {
         question: "Which towns in New Jersey do you travel to?",
@@ -523,23 +523,23 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     slug: "window-tinting",
     name: "Window Tinting",
     h1: "Professional Window Tint Installation in Basking Ridge, NJ",
-    eyebrow: "Precision Studio Installation & Removal",
-    summary: "Protect your vehicle interior, keep your cabin cool, and add privacy with professional window tint in Basking Ridge, NJ. We install color-stable carbon and advanced nano-ceramic films, computer-cut to your vehicle's exact glass dimensions inside our climate-controlled studio.",
+    eyebrow: "Studio & Mobile Installation and Removal",
+    summary: "Protect your vehicle interior, keep your cabin cool, and add privacy with professional window tint in Basking Ridge, NJ. Choose carbon film with a 2-year warranty or ceramic film with a 10-year warranty, installed at our studio or through a mobile appointment.",
     image: "/images/autodetail/window-tint-hero.jpg",
-    price: "From $199+",
+    price: "Sedan / coupe from $300",
     inclusions: [
       "High-performance nano-ceramic and carbon film options",
       "99% UV ray rejection protecting leather, dash, and passengers",
       "Up to 88% infrared heat rejection for significantly cooler cabin temps",
       "Computer-cut plotter precision tailored to exact factory glass edges",
-      "Safe defroster-friendly window tint removal available at $50 per window",
-      "Installed exclusively inside our climate-controlled Basking Ridge studio"
+      "Tint removal from $20 per window",
+      "Studio and mobile appointments available"
     ],
     sections: [
       {
         title: "Drive in Comfort with Professional Window Tint",
         paragraphs: [
-          "Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our studio-installed window films keep your interior significantly cooler, cut blinding road glare, and block harmful UV rays across Somerset and Morris counties."
+          "Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties."
         ],
         subsections: [
           {
@@ -565,7 +565,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Film Technology: Nano-Ceramic vs. Carbon Tint",
         paragraphs: [
-          "Choosing the right window tint in New Jersey comes down to heat rejection performance, optical clarity, and budget. At CleanWorx, we work exclusively with premium color-stable carbon and advanced nano-ceramic films that will never turn purple or bubble."
+          "Choosing the right window tint comes down to heat rejection, optical clarity, and budget. CleanWorx offers carbon and ceramic films with 2-year and 10-year warranties respectively."
         ],
         subsections: [
           {
@@ -591,39 +591,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "70%, 55%, 30%, 20%, and 5% VLT Shading Options",
             paragraphs: [
-              "From nearly invisible 70% windshield visor strips to balanced 30% side glass, popular 20% factory-matching rear shades, and deep 5% limousine privacy tint, we help you select the ideal darkness level tailored to your driving style and legal compliance."
-            ]
-          }
-        ]
-      },
-      {
-        title: "Window Tint Laws in New Jersey: Legal Compliance & VLT Rules",
-        paragraphs: [
-          "New Jersey has stricter window tint laws than many other states, especially for the windshield and front windows. We help you understand your options before installation so you can choose a tint that delivers the look, privacy, and heat protection you want without unnecessary compliance issues."
-        ],
-        subsections: [
-          {
-            title: "Windshield (Restricted in New Jersey)",
-            paragraphs: [
-              "Aftermarket windshield tint is generally restricted in New Jersey. Additional sun-screening may be permitted for drivers with an approved NJ MVC medical exemption. Ask us about the options available for your vehicle before installation."
-            ]
-          },
-          {
-            title: "Front Driver & Passenger Windows (Medical Exemption Required)",
-            paragraphs: [
-              "New Jersey generally does not permit aftermarket tint on the driver and front passenger windows unless the vehicle owner has an approved medical exemption from the NJ MVC. If you have an approved exemption, we can help you select film that meets the applicable requirements."
-            ]
-          },
-          {
-            title: "Rear Side Windows (Tinting Permitted)",
-            paragraphs: [
-              "Rear passenger windows can be tinted, giving you more flexibility to increase privacy, reduce interior heat, block UV rays, and create a darker appearance. We offer multiple shade options depending on the look and level of privacy you want."
-            ]
-          },
-          {
-            title: "Rear Windshield (Tinting Permitted)",
-            paragraphs: [
-              "The rear windshield can also be tinted, subject to New Jersey visibility and mirror requirements. Pairing the rear windshield with the rear side windows creates a cleaner, more uniform finish while improving comfort and privacy."
+              "Compare nearly invisible 70% film, balanced 30% shading, popular 20% factory-matching shades, and deep 5% privacy tint to find the look you prefer."
             ]
           }
         ]
@@ -631,7 +599,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Precision Window Tint Installation: Our 3-Stage Process",
         paragraphs: [
-          "Unlike mobile tinting done on driveways where dust and wind compromise quality, every window tint installation at CleanWorx takes place inside our dedicated, climate-controlled studio bay."
+          "Choose an appointment at our Basking Ridge studio or ask about mobile installation at your home or workplace."
         ],
         subsections: [
           {
@@ -647,9 +615,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
             ]
           },
           {
-            title: "Dust-Free Bay Application and Edge Inspection",
+            title: "Film Application and Edge Inspection",
             paragraphs: [
-              "Inside our cleanroom environment, the film is positioned, squeegeed with slip solutions to expel moisture, and hand-inspected along every micro-edge to ensure zero bubbling or peeling."
+              "The film is positioned, squeegeed with slip solutions to expel moisture, and inspected along every edge before delivery."
             ]
           }
         ]
@@ -657,19 +625,19 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Window Tint Pricing: What Does Installation Cost?",
         paragraphs: [
-          "We believe in transparent, upfront pricing. Window tinting costs depend primarily on the number of glass panes, vehicle body style, and whether you choose carbon or nano-ceramic film technology."
+          "Carbon film carries a 2-year warranty and ceramic film carries a 10-year warranty. Prices are listed for each installation service."
         ],
         subsections: [
           {
-            title: "Vehicle Class Estimates (Coupe, Sedan, Truck, SUV)",
+            title: "Window Tint Installation Prices",
             paragraphs: [
-              "Two-door coupes and single-cab trucks typically start around $199–$275 for standard carbon packages. Four-door sedans range from $275–$399. Larger SUVs, crossovers, and minivans with extensive rear cargo glass range between $350–$550 for full vehicle coverage."
+              "Full sedan or coupe tint is $300 with carbon or $400 with ceramic. Full SUV, wagon, truck or minivan tint is $350 with carbon or $480 with ceramic. Other window packages are listed on this page. The front windshield is priced separately."
             ]
           },
           {
             title: "Key Factors That Influence Window Tinting Cost",
             paragraphs: [
-              "Key cost variables include film grade (Nano-Ceramic vs. Carbon), presence of old tint that requires removal, steep rear windshield curvature, and specialty visor or sunroof additions. We inspect every vehicle upon arrival at our Basking Ridge studio and provide an exact, itemized quote before work begins."
+              "One $50 mobile fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee."
             ]
           }
         ]
@@ -683,13 +651,13 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Where to Get Your Windows Tinted in New Jersey",
         paragraphs: [
-          "CleanWorx provides professional, studio-backed window tint installation from our dedicated facility at 19 E. Henry Street in Basking Ridge, NJ. By tinting inside a clean, climate-controlled bay, we eliminate the airborne dust, wind, and imperfections common in mobile driveway installations."
+          "Visit our studio at 19 E. Henry Street in Basking Ridge, NJ, or ask about a mobile appointment at your home or workplace."
         ],
         subsections: [
           {
             title: "Dedicated Dust-Free Studio in Basking Ridge",
             paragraphs: [
-              "Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility eliminates wind-blown debris, temperature fluctuations, and environmental contaminants that ruin mobile driveway tint jobs."
+              "Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility offers a climate-controlled space for tint installation."
             ]
           },
           {
@@ -713,9 +681,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
             ]
           },
           {
-            title: "Window Tint Removal Pricing: $50.00 per Window",
+            title: "Window Tint Removal Pricing",
             paragraphs: [
-              "Professional window tint removal is priced at $50.00 per window (approximately 30 minutes per window), including complete adhesive residue dissolution and glass polish."
+              "Removal is $20 per window, $50 for the front or rear windshield, $100 for a whole vehicle, or $150 for a large van or SUV. Whole-vehicle prices exclude the front windshield."
             ]
           }
         ]
@@ -724,19 +692,15 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     faqs: [
       {
         question: "How Much Does It Cost to Get Windows Tinted?",
-        answer: "Window tinting typically ranges from $199 to $550 depending on your vehicle size (coupe, sedan, truck, or SUV) and whether you select carbon or premium nano-ceramic film. We provide transparent upfront quotes tailored to your vehicle."
-      },
-      {
-        question: "Is Window Tint Legal in New Jersey?",
-        answer: "Under New Jersey state tint laws, rear side windows and the back windshield can be tinted to any shade (including 5% limo tint) as long as dual side mirrors are present. Front side windows require an approved New Jersey MVC medical exemption, while the windshield is restricted to a 6-inch top visor strip along the AS-1 line."
+        answer: "Full sedan or coupe tint is $300 with carbon film or $400 with ceramic film. Full SUV, wagon, truck or minivan tint is $350 with carbon or $480 with ceramic. Front windshields and smaller window packages are priced separately on this page."
       },
       {
         question: "Where Can I Get My Windows Tinted by Certified Installers?",
-        answer: "CleanWorx installs high-performance window tint inside our dedicated, dust-controlled studio at 19 E. Henry Street in Basking Ridge, NJ. We serve drivers throughout Somerset and Morris counties who demand flawless edges and zero bubbling."
+        answer: "CleanWorx offers tint installation at our studio at 19 E. Henry Street in Basking Ridge, NJ, and through mobile appointments across our service area."
       },
       {
         question: "What Is the Difference Between Ceramic and Carbon Film?",
-        answer: "Carbon tint provides great heat resistance, a non-reflective matte finish, and lifetime color stability. Nano-ceramic film is the highest tier of film technology: it uses non-metallic ceramic particles to block up to 88%+ of infrared heat without interfering with GPS, cellular, or radio signals."
+        answer: "Carbon film has a matte finish and a 2-year warranty. Ceramic film provides stronger infrared heat rejection and carries a 10-year warranty."
       },
       {
         question: "Can You Remove Old, Bubbling, or Purple Tint?",
@@ -744,7 +708,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "How Much Does Window Tint Removal Cost?",
-        answer: "Professional window tint removal is $50.00 per window. Each window takes approximately 30 minutes to safely steam-strip, clean, and deglaze back to crystal-clear factory glass."
+        answer: "Tint removal is $20 per window, $50 for the front or rear windshield, $100 for a whole vehicle, or $150 for a large van or SUV. Whole-vehicle removal excludes the front windshield."
       }
     ],
     faqTitle: "Frequently Asked Questions About Windows Tint in New Jersey",

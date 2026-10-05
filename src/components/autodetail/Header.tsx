@@ -122,15 +122,16 @@ export function Header() {
             </a>
             <a
               href={BOOKING_URL}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[#1277ff] px-3 py-2 text-xs font-bold text-white shadow-lg shadow-[#1277ff]/25 transition hover:bg-[#0d62d6] active:scale-95 sm:px-5 sm:py-2.5 sm:text-sm"
+              aria-label="Book Now"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg bg-[#1277ff] px-3 py-2 text-xs font-bold text-white shadow-lg shadow-[#1277ff]/25 transition hover:bg-[#0d62d6] active:scale-95 sm:px-5 sm:py-2.5 sm:text-sm"
             >
               <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              <span>Book Now</span>
+              <span className="hidden min-[360px]:inline">Book Now</span>
             </a>
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation menu"
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white sm:p-2.5 lg:hidden"
+              className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white sm:p-2.5 lg:hidden"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -144,7 +145,7 @@ export function Header() {
             onClick={() => setMenuOpen(false)}
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
           />
-          <div className="relative ml-auto flex h-full w-[85vw] max-w-xs flex-col bg-[#111216] p-6">
+          <div className="relative ml-auto flex h-full w-[85vw] max-w-xs flex-col overflow-y-auto overscroll-contain bg-[#111216] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
             <div className="flex items-center justify-between border-b border-white/10 pb-6">
               <Image
                 src="/images/cleanworx-logo.webp"

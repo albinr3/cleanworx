@@ -11,6 +11,7 @@ import {
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { BeforeAfterSlider } from "@/components/autodetail/BeforeAfterSlider";
 import { MobileDetailIcon } from "@/components/autodetail/MobileDetailIcon";
+import { HorizontalScrollRegion } from "@/components/autodetail/HorizontalScrollRegion";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
@@ -22,7 +23,7 @@ const comparisonRows = [
   ["Customer Time & Effort", "3–5 hours of heavy physical labor", "Managing cords & waiting around", "Zero downtime — relax or work inside"],
   ["Service Location Flexibility", "Restricted strictly to garden hose range", "Requires outdoor hookups nearby", "Driveway, office lot, or private road"],
   ["Paint & Clear Coat Safety", "Severe swirl risk from improper washing", "High swirl risk from rapid wiping", "Scratch-free two-bucket wash with grit guards"],
-  ["Pricing Transparency", "Uncalculated equipment & chemical costs", "Surprise travel fees & hidden add-ons", "Flat $35 mobile fee + clear upfront pricing"],
+  ["Pricing Transparency", "Uncalculated equipment & chemical costs", "Surprise travel fees & hidden add-ons", "$50 fee only below a $400 appointment subtotal"],
 ] as const;
 
 function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
@@ -227,7 +228,8 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
       <section className="overflow-hidden bg-[#111722] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up">
-            <div className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)]">
+            <p className="mb-3 text-xs font-semibold text-[#70b5ff] lg:hidden">Swipe sideways to compare all columns →</p>
+            <HorizontalScrollRegion label="Mobile detailing comparison table" className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)] focus-visible:outline-2 focus-visible:outline-[#70b5ff]">
               <table className="min-w-[720px] w-full border-collapse text-left text-base sm:text-lg">
                 <thead>
                   <tr className="border-b border-white/10 text-sm font-bold uppercase tracking-[.18em] text-neutral-400 sm:text-base">
@@ -250,7 +252,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </HorizontalScrollRegion>
           </ScrollReveal>
         </div>
       </section>
@@ -280,7 +282,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Mobile Detailing Unit</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    We bring our fully self-contained detailing van directly to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. Flat $35 mobile fee added per appointment.
+                    We bring our fully self-contained detailing van to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400.
                   </p>
                 </div>
 
@@ -325,7 +327,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Transparent Flat $35 Fee:</strong> One simple setup fee per appointment added to your selected detailing package.</span>
+                    <span><strong>Transparent mobile pricing:</strong> One $50 fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee.</span>
                   </li>
                 </ul>
 
@@ -335,7 +337,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
                   />
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    Flat $35 mobile setup fee per appointment.
+                    One $50 mobile fee only when the appointment subtotal is under $400.
                   </p>
                 </div>
               </div>
@@ -356,7 +358,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   Mobile Detailing Rates &amp; Scheduling
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  We charge a simple, flat $35 mobile setup fee added to whichever detailing package you choose (interior detail, exterior detail, or complete package). Final pricing is confirmed upfront before any work begins.
+                  One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee, even when they include multiple services. Final pricing is confirmed upfront before work begins.
                 </p>
               </ScrollReveal>
 
@@ -455,12 +457,12 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-left" delay={140} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    $35
+                    $50
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Simple Flat Mobile Setup Fee</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Mobile Fee Below $400</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  One predictable flat fee per appointment across Basking Ridge and surrounding Somerset &amp; Morris County towns—no mileage markups.
+                  One $50 fee per appointment when the pre-fee service subtotal is below $400. No mobile fee applies at $400 or more.
                 </p>
               </ScrollReveal>
 

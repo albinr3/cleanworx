@@ -11,6 +11,7 @@ import {
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { BeforeAfterSlider } from "@/components/autodetail/BeforeAfterSlider";
 import { ExteriorDetailIcon } from "@/components/autodetail/ExteriorDetailIcon";
+import { HorizontalScrollRegion } from "@/components/autodetail/HorizontalScrollRegion";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
@@ -228,7 +229,8 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
       <section className="overflow-hidden bg-[#111722] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up">
-            <div className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)]">
+            <p className="mb-3 text-xs font-semibold text-[#70b5ff] lg:hidden">Swipe sideways to compare all columns →</p>
+            <HorizontalScrollRegion label="Exterior detailing comparison table" className="overflow-x-auto border border-white/10 bg-[#0b0e14] shadow-[0_24px_80px_rgba(0,0,0,.28)] focus-visible:outline-2 focus-visible:outline-[#70b5ff]">
               <table className="min-w-[720px] w-full border-collapse text-left text-base sm:text-lg">
                 <thead>
                   <tr className="border-b border-white/10 text-sm font-bold uppercase tracking-[.18em] text-neutral-400 sm:text-base">
@@ -251,7 +253,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </HorizontalScrollRegion>
           </ScrollReveal>
         </div>
       </section>
@@ -292,7 +294,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Ask About a Mobile Appointment</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Mobile detailing is available at your home or workplace. We confirm availability for your location and service, then add one flat $35 mobile fee per appointment to the applicable in-shop package price.
+                    Mobile detailing is available at your home or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee.
                   </p>
                 </div>
               </div>
@@ -338,7 +340,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                     Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    One flat $35 mobile fee per appointment.
+                    One $50 mobile fee only when the appointment subtotal is under $400.
                   </p>
                 </div>
               </div>
@@ -371,9 +373,9 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-white">Studio or Mobile ($35 Fee)</h3>
+                  <h3 className="text-xl font-bold text-white">Studio or Mobile</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose an in-studio appointment in Basking Ridge or ask about mobile availability at your home or workplace. The mobile fee is charged once per appointment.
+                    Choose an in-studio appointment in Basking Ridge or ask about mobile availability at your home or workplace. A $50 fee is charged once when the pre-fee appointment subtotal is below $400.
                   </p>
                 </ScrollReveal>
               </div>

@@ -13,6 +13,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { BookingLink } from "@/components/autodetail/BookingLink";
+import { HorizontalScrollRegion } from "@/components/autodetail/HorizontalScrollRegion";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import { TintLevelVisualizer } from "@/components/autodetail/TintLevelVisualizer";
@@ -25,15 +26,15 @@ const filmComparisonRows = [
   ["UV Ray Protection", "99% UVA / UVB", "99% UVA / UVB"],
   ["Optical Clarity", "Rich matte black finish", "High-definition clarity, zero haze"],
   ["Signal Interference (GPS/Cell)", "0% (Zero interference)", "0% (Zero interference)"],
-  ["Color Stability", "Guaranteed color-stable", "Lifetime color stability"],
-  ["Starting Price Point", "Entry-level luxury ($199+)", "Premium high-performance ($325+)"],
+  ["Warranty", "2 years", "10 years"],
+  ["Full sedan or coupe", "$300", "$400"],
 ] as const;
 
 const vltShades = [
   {
     vlt: "70% VLT",
     label: "Clear Thermal Shield",
-    desc: "Nearly invisible on glass. Ideal for windshields (AS-1 line or medical waiver) and drivers seeking high heat rejection without darkening the interior.",
+    desc: "Nearly invisible on glass for drivers seeking heat rejection without noticeably darkening the interior.",
     badge: "Maximum Clarity",
     darknessClass: "bg-neutral-800/30 border-white/20",
   },
@@ -68,42 +69,29 @@ const vltShades = [
   {
     vlt: "5% VLT",
     label: "Limousine Dark Tint",
-    desc: "Maximum privacy shade allowing only 5% of light transmission. Legal for rear side and back glass in NJ. Ultimate privacy and security for personal belongings.",
+    desc: "Maximum privacy shade allowing only 5% of light transmission. Deep shading for a more private cabin.",
     badge: "Maximum Privacy",
     darknessClass: "bg-black border-white/30",
   },
 ];
 
-const vehiclePricingTiers = [
-  {
-    category: "Coupe / 2-Door",
-    models: "Porsche 911, Corvette, Mustang, BMW M4, Miata",
-    carbonRange: "$199 – $249",
-    ceramicRange: "$299 – $375",
-    windows: "2 side roll-downs + small quarter / rear glass",
-  },
-  {
-    category: "Sedan / 4-Door",
-    models: "BMW 3/5 Series, Mercedes C/E-Class, Tesla Model 3/S, Audi A4/A6",
-    carbonRange: "$275 – $349",
-    ceramicRange: "$399 – $485",
-    windows: "4 roll-down doors + rear windshield",
-  },
-  {
-    category: "Truck / Cab",
-    models: "Ford F-150, Ram 1500, Chevy Silverado, Rivian R1T",
-    carbonRange: "$225 – $299",
-    ceramicRange: "$325 – $425",
-    windows: "Cab configuration (regular, super, or crew cab)",
-  },
-  {
-    category: "SUV / Crossover",
-    models: "Porsche Cayenne, BMW X5, Tesla Model Y/X, Range Rover, Tahoe",
-    carbonRange: "$325 – $425",
-    ceramicRange: "$449 – $550",
-    windows: "Full vehicle coverage including rear cargo glass",
-  },
-];
+const tintPackages = [
+  { service: "Sedan or coupe · full vehicle", carbon: 300, ceramic: 400 },
+  { service: "Sedan or coupe · back half", carbon: 250, ceramic: 300 },
+  { service: "SUV, wagon, truck or minivan · full vehicle", carbon: 350, ceramic: 480 },
+  { service: "SUV, wagon, truck or minivan · back half", carbon: 300, ceramic: 380 },
+  { service: "Front two windows", carbon: 150, ceramic: 200 },
+  { service: "Front two windows + quarter windows", carbon: 200, ceramic: 250 },
+  { service: "Front windshield", carbon: 150, ceramic: 200 },
+  { service: "Windshield stripe", carbon: 50, ceramic: 80 },
+] as const;
+
+const tintRemovalPrices = [
+  { service: "Each window", price: 20 },
+  { service: "Front or rear windshield", price: 50 },
+  { service: "Whole vehicle (excluding front windshield)", price: 100 },
+  { service: "Large van or SUV (excluding front windshield)", price: 150 },
+] as const;
 
 const fiveStageProcess = [
   {
@@ -122,10 +110,10 @@ const fiveStageProcess = [
   },
   {
     step: "03",
-    title: "Dust-Free Bay Application and Edge Inspection",
-    subtitle: "Studio cleanroom installation",
+    title: "Film Application and Edge Inspection",
+    subtitle: "Careful film application",
     description:
-      "Inside our climate-controlled Basking Ridge studio bay, the film is positioned, squeegeed with specialized slip solutions to expel moisture, and hand-inspected along every micro-edge to guarantee zero peeling.",
+      "The film is positioned, squeegeed with specialized slip solutions to expel moisture, and inspected along each edge before delivery.",
   },
 ];
 
@@ -164,13 +152,18 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
         ],
         url: `https://www.cleanworxnj.com/${data.slug}`,
         description: data.summary,
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "USD",
-          lowPrice: "50.00",
-          highPrice: "550.00",
-          offerCount: "6",
-        },
+        offers: [
+          ...tintPackages.flatMap((tintPackage) => ([
+            { "@type": "Offer", name: `${tintPackage.service} · Carbon film`, price: tintPackage.carbon, priceCurrency: "USD" },
+            { "@type": "Offer", name: `${tintPackage.service} · Ceramic film`, price: tintPackage.ceramic, priceCurrency: "USD" },
+          ])),
+          ...tintRemovalPrices.map((removal) => ({
+            "@type": "Offer",
+            name: `Tint removal · ${removal.service}`,
+            price: removal.price,
+            priceCurrency: "USD",
+          })),
+        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -250,7 +243,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2.5 text-xs leading-5 text-neutral-300">
-                  Window tint installation from $199+ based on vehicle class. Safe steam tint removal available at $50 per window.
+                  Full sedan or coupe tint from $300. Tint removal from $20 per window. Carbon film carries a 2-year warranty; ceramic film carries a 10-year warranty.
                 </p>
                 <div className="mt-4 flex items-center gap-2 border-t border-white/10 pt-3 text-xs text-neutral-300">
                   <MapPin className="h-3.5 w-3.5 text-[#1277ff]" />
@@ -261,11 +254,11 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
           </div>
 
           <div className="border-t border-white/10 pt-4">
-            <ul className="grid grid-cols-2 gap-2 text-xs text-neutral-300 sm:grid-cols-3 lg:grid-cols-6">
+            <ul className="grid grid-cols-1 gap-2 text-xs text-neutral-300 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
               {data.inclusions.map((inc) => (
-                <li key={inc} className="flex items-center gap-1.5">
-                  <Check className="h-3.5 w-3.5 shrink-0 text-[#1277ff]" />
-                  <span className="truncate">{inc}</span>
+                <li key={inc} className="flex items-start gap-1.5">
+                  <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1277ff]" />
+                  <span className="leading-5">{inc}</span>
                 </li>
               ))}
             </ul>
@@ -284,7 +277,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 Drive in Comfort with Professional Window Tint
               </h2>
               <p className="mt-5 text-sm leading-7 text-neutral-300 sm:text-base">
-                Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our studio-installed window films keep your interior significantly cooler, cut blinding road glare, and block harmful UV rays across Somerset and Morris counties.
+                Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -351,7 +344,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Film Technology: Nano-Ceramic vs. Carbon Tint
             </h2>
             <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-              Choosing the right window tint in New Jersey comes down to heat rejection performance, optical clarity, and budget. At CleanWorx, we work exclusively with premium color-stable carbon and advanced nano-ceramic films that will never turn purple or bubble.
+              Choosing the right window tint comes down to heat rejection, optical clarity, and budget. CleanWorx offers carbon and ceramic films with 2-year and 10-year warranties respectively.
             </p>
           </ScrollReveal>
 
@@ -382,7 +375,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-[#1277ff]" />
-                  <span>Lifetime manufacturer color stability against purple fade</span>
+                  <span>10-year ceramic film warranty</span>
                 </li>
               </ul>
             </ScrollReveal>
@@ -413,14 +406,15 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-[#1277ff]" />
-                  <span>Outstanding durability at an accessible price point</span>
+                  <span>2-year carbon film warranty</span>
                 </li>
               </ul>
             </ScrollReveal>
           </div>
 
           {/* Film Comparison Table */}
-          <div className="mt-12 overflow-x-auto border border-white/10 bg-[#0d1017]">
+          <p className="mb-3 mt-12 text-xs font-semibold text-[#70b5ff] min-[360px]:hidden">Swipe sideways to see the full comparison →</p>
+          <HorizontalScrollRegion label="Window film comparison table" className="overflow-x-auto border border-white/10 bg-[#0d1017] focus-visible:outline-2 focus-visible:outline-[#70b5ff] min-[360px]:mt-12">
             <table className="w-full text-left text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-white/10 bg-[#131722] text-neutral-300">
@@ -439,7 +433,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 ))}
               </tbody>
             </table>
-          </div>
+          </HorizontalScrollRegion>
         </div>
       </section>
 
@@ -459,7 +453,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 Interactive Tint Level Simulator &amp; 70% to 5% VLT Shading Options
               </h3>
               <p className="mt-2 text-sm leading-6 text-neutral-400">
-                Test different tint shades on our interactive vehicle simulator below. From nearly invisible 70% windshield visor strips to balanced 30% side glass, popular 20% factory-matching rear shades, and deep 5% limousine privacy tint, select the ideal darkness level tailored to your driving style and legal compliance.
+                Test different tint shades on our interactive vehicle simulator below. Compare nearly invisible 70% film, balanced 30% shading, popular 20% factory-matching shades, and deep 5% privacy tint to find the look you prefer.
               </p>
             </div>
           </ScrollReveal>
@@ -499,136 +493,6 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Section 4: Window Tint Laws in New Jersey */}
-      <section className="relative overflow-hidden bg-[#0c0e16] py-16 sm:py-24">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal animation="fade-up" className="max-w-3xl">
-            <span className="block h-px w-20 bg-[#4da3ff]" />
-            <h2 className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-[#4da3ff] sm:text-sm">
-              Window Tint Laws in New Jersey: Legal Compliance &amp; VLT Rules
-            </h2>
-            <p className="mt-3 text-3xl font-black leading-[1.05] tracking-[-.045em] text-white sm:text-4xl lg:text-5xl">
-              Stay Legal. Stay Cool. Choose the Right Tint for Your Vehicle.
-            </p>
-            <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-              New Jersey has stricter window tint laws than many other states, especially for the windshield and front windows. We help you understand your options before installation so you can choose a tint that delivers the look, privacy, and heat protection you want without unnecessary compliance issues.
-            </p>
-          </ScrollReveal>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <ScrollReveal animation="fade-up" delay={60} className="flex flex-col justify-between border border-white/10 bg-[#121622] p-6 transition hover:border-white/20">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded border border-rose-500/30 bg-rose-500/15 px-2 py-0.5 text-xs font-bold text-rose-300">
-                    Restricted in New Jersey
-                  </span>
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-white">Windshield</h3>
-                <p className="mt-3 text-xs leading-6 text-neutral-300 sm:text-sm">
-                  Aftermarket windshield tint is generally restricted in New Jersey. Additional sun-screening may be permitted for drivers with an approved NJ MVC medical exemption.
-                </p>
-              </div>
-              <div className="mt-4 border-t border-white/10 pt-3 text-xs leading-5 text-neutral-400">
-                Ask us about the options available for your vehicle before installation.
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal animation="fade-up" delay={120} className="flex flex-col justify-between border border-white/10 bg-[#121622] p-6 transition hover:border-white/20">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-xs font-bold text-amber-300">
-                    Medical Exemption Required
-                  </span>
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-white">Front Driver &amp; Passenger Windows</h3>
-                <p className="mt-3 text-xs leading-6 text-neutral-300 sm:text-sm">
-                  New Jersey generally does not permit aftermarket tint on the driver and front passenger windows unless the vehicle owner has an approved medical exemption from the NJ MVC.
-                </p>
-              </div>
-              <div className="mt-4 border-t border-white/10 pt-3 text-xs leading-5 text-neutral-400">
-                If you have an approved exemption, we can help you select film that meets the applicable requirements.
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal animation="fade-up" delay={180} className="flex flex-col justify-between border border-white/10 bg-[#121622] p-6 transition hover:border-white/20">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-xs font-bold text-emerald-300">
-                    Tinting Permitted
-                  </span>
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-white">Rear Side Windows</h3>
-                <p className="mt-3 text-xs leading-6 text-neutral-300 sm:text-sm">
-                  Rear passenger windows can be tinted, giving you more flexibility to increase privacy, reduce interior heat, block UV rays, and create a darker appearance.
-                </p>
-              </div>
-              <div className="mt-4 border-t border-white/10 pt-3 text-xs leading-5 text-neutral-400">
-                We offer multiple shade options depending on the look and level of privacy you want.
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal animation="fade-up" delay={240} className="flex flex-col justify-between border border-white/10 bg-[#121622] p-6 transition hover:border-white/20">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="rounded border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-xs font-bold text-emerald-300">
-                    Tinting Permitted
-                  </span>
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-white">Rear Windshield</h3>
-                <p className="mt-3 text-xs leading-6 text-neutral-300 sm:text-sm">
-                  The rear windshield can also be tinted, subject to New Jersey visibility and mirror requirements.
-                </p>
-              </div>
-              <div className="mt-4 border-t border-white/10 pt-3 text-xs leading-5 text-neutral-400">
-                Pairing the rear windshield with the rear side windows creates a cleaner, more uniform finish while improving comfort and privacy.
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Consultation & Quote Box */}
-          <ScrollReveal animation="fade-up" delay={200} className="mt-12">
-            <div className="relative overflow-hidden rounded-2xl border border-[#1277ff]/30 bg-gradient-to-br from-[#121626] via-[#0f121d] to-[#0a0c14] p-6 shadow-2xl sm:p-8 lg:p-10">
-              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#1277ff]/10 blur-3xl" />
-              <div className="relative grid items-center gap-8 lg:grid-cols-[1.3fr_minmax(0,0.7fr)]">
-                <div>
-                  <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">
-                    Not Sure Which Tint to Choose?
-                  </h3>
-                  <p className="mt-2 text-base font-semibold text-[#70b5ff]">
-                    You do not need to figure it out alone.
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-300 sm:text-base">
-                    Tell us the look you want, how much privacy you prefer, and how much heat rejection matters to you. We will walk you through the available film options and explain which areas of your vehicle can be tinted under current New Jersey regulations.
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-2.5 text-xs font-semibold text-neutral-200 sm:text-sm">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
-                      <Check className="h-3.5 w-3.5 text-[#1277ff]" />
-                      Professional Installation
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
-                      <Check className="h-3.5 w-3.5 text-[#1277ff]" />
-                      Multiple Tint Shades
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
-                      <Check className="h-3.5 w-3.5 text-[#1277ff]" />
-                      Clean OEM-Style Finish
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-start gap-3 lg:items-end">
-                  <BookingLink label="Get a Window Tint Quote" className="w-full justify-center px-8 py-4 text-base font-bold sm:w-auto" />
-                  <p className="text-xs text-neutral-400">
-                    Compliant NJ Tinting · Studio Bay in Basking Ridge, NJ
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Section 5: 3-Stage Precision Process */}
       <section className="relative overflow-hidden bg-[#08090d] py-16 sm:py-24">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -638,7 +502,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Precision Window Tint Installation: Our 3-Stage Process
             </h2>
             <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-              Unlike mobile tinting done on driveways where dust and wind compromise quality, every window tint installation at CleanWorx takes place inside our dedicated, climate-controlled studio bay.
+              Choose an appointment at our Basking Ridge studio or ask about mobile installation at your home or workplace. We prepare the glass, fit the film, and inspect the finished edges for either appointment type.
             </p>
           </ScrollReveal>
 
@@ -701,56 +565,41 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Window Tint Pricing: What Does Installation Cost?
             </h2>
             <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-              We believe in transparent, upfront pricing. Window tinting costs depend primarily on the number of glass panes, vehicle body style, and whether you choose carbon or nano-ceramic film technology.
+              Choose carbon film with a 2-year warranty or ceramic film with a 10-year warranty. Prices below are for each listed installation service.
             </p>
           </ScrollReveal>
 
-          <div className="mt-10">
-            <ScrollReveal animation="fade-up">
-              <h3 className="text-2xl font-bold text-white">
-                Vehicle Class Estimates (Coupe, Sedan, Truck, SUV)
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-neutral-400">
-                Two-door coupes and single-cab trucks typically start around $199–$275 for standard carbon packages. Four-door sedans range from $275–$399. Larger SUVs, crossovers, and minivans with extensive rear cargo glass range between $350–$550 for full vehicle coverage.
-              </p>
-            </ScrollReveal>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {vehiclePricingTiers.map((tier, idx) => (
-                <ScrollReveal
-                  key={tier.category}
-                  animation="fade-up"
-                  delay={idx * 70}
-                  className="border border-white/10 bg-[#121622] p-5 sm:p-6"
-                >
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#70b5ff]">{tier.category}</p>
-                  <p className="mt-1 text-xs text-neutral-400 truncate" title={tier.models}>
-                    {tier.models}
-                  </p>
-                  <div className="mt-5 space-y-3 border-t border-white/10 pt-4">
-                    <div>
-                      <p className="text-[11px] text-neutral-400">High-Performance Carbon</p>
-                      <p className="font-mono text-xl font-bold text-white">{tier.carbonRange}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#4da3ff]">Nano-Ceramic IR Film</p>
-                      <p className="font-mono text-xl font-bold text-[#70b5ff]">{tier.ceramicRange}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 border-t border-white/5 pt-3 text-[11px] leading-relaxed text-neutral-400">
-                    {tier.windows}
-                  </p>
-                </ScrollReveal>
-              ))}
-            </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {tintPackages.map((tintPackage, idx) => (
+              <ScrollReveal
+                key={tintPackage.service}
+                animation="fade-up"
+                delay={idx * 50}
+                className="border border-white/10 bg-[#121622] p-5 sm:p-6"
+              >
+                <h3 className="min-h-12 text-sm font-bold leading-6 text-white">{tintPackage.service}</h3>
+                <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4 text-sm">
+                  <span className="text-neutral-300">Carbon</span>
+                  <span className="font-mono text-lg font-bold text-white">${tintPackage.carbon}</span>
+                </div>
+                <div className="mt-2 flex items-center justify-between text-sm">
+                  <span className="text-[#70b5ff]">Ceramic</span>
+                  <span className="font-mono text-lg font-bold text-[#70b5ff]">${tintPackage.ceramic}</span>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
+
+          <p className="mt-5 text-sm leading-6 text-neutral-300">
+            Full vehicle covers the side windows and rear windshield. Back half covers the rear side windows and rear windshield. The front windshield is priced separately.
+          </p>
 
           <ScrollReveal animation="fade-up" className="mt-12 border border-white/10 bg-[#10141d] p-6 sm:p-8">
             <h3 className="text-xl font-bold text-white">
               Key Factors That Influence Window Tinting Cost
             </h3>
             <p className="mt-3 text-sm leading-7 text-neutral-300">
-              Key cost variables include film grade (Nano-Ceramic vs. Carbon), presence of old tint that requires removal, steep rear windshield curvature, and specialty visor or sunroof additions. We inspect every vehicle upon arrival at our Basking Ridge studio and provide an exact, itemized quote before work begins.
+              Studio and mobile appointments are available. One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee. We confirm the service total before work begins.
             </p>
           </ScrollReveal>
         </div>
@@ -813,7 +662,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   Where to Get Your Windows Tinted in New Jersey
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-                  CleanWorx provides professional, studio-backed window tint installation from our dedicated facility at 19 E. Henry Street in Basking Ridge, NJ. By tinting inside a clean, climate-controlled bay, we eliminate the airborne dust, wind, and imperfections common in mobile driveway installations.
+                  Visit our dedicated studio at 19 E. Henry Street in Basking Ridge, NJ, or ask about a mobile appointment at your home or workplace. We confirm availability and your total before booking.
                 </p>
               </ScrollReveal>
 
@@ -826,7 +675,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                     Dedicated Dust-Free Studio in Basking Ridge
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-neutral-300">
-                    Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility eliminates wind-blown debris, temperature fluctuations, and environmental contaminants that ruin mobile driveway tint jobs.
+                    Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility offers a climate-controlled space for tint installation.
                   </p>
                   <div className="mt-6 space-y-2 text-xs text-neutral-300">
                     <p className="flex items-center gap-2">
@@ -876,9 +725,9 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <BookingLink label="Book Studio Appointment" className="w-full sm:w-auto" />
+                <BookingLink label="Book Window Tinting" className="w-full sm:w-auto" />
                 <span className="text-xs text-neutral-400">
-                  19 E. Henry Street, Basking Ridge, NJ · Dust-Free Bay
+                  Studio and mobile appointments available
                 </span>
               </div>
             </div>
@@ -929,7 +778,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
             <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
               <div className="max-w-3xl">
                 <span className="inline-block rounded-full bg-[#1277ff]/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#4da3ff]">
-                  Catalog Service &bull; Removal Sub-Service
+                  Tint Removal Options
                 </span>
                 <h2 className="mt-4 text-3xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-4xl lg:text-5xl">
                   Professional Window Tint Removal in Basking Ridge, NJ
@@ -965,20 +814,29 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                       <Clock className="h-5 w-5" />
                     </div>
                     <span className="rounded bg-white/10 px-2.5 py-0.5 font-mono text-xs text-neutral-300">
-                      ~30 min / window
+                      Time varies by scope
                     </span>
                   </div>
-                  <h3 className="mt-3 text-xl font-bold text-white">
-                    Window Tint Removal Pricing: $50.00 per Window
-                  </h3>
+                  <h3 className="mt-3 text-xl font-bold text-white">Window Tint Removal Pricing</h3>
                   <p className="mt-2 text-xs leading-6 text-neutral-300 sm:text-sm">
-                    Professional window tint removal is priced at $50.00 per window (approximately 30 minutes per window), including complete adhesive residue dissolution and glass polish.
+                    Remove old film and adhesive at the studio or through a mobile appointment.
+                  </p>
+                  <dl className="mt-4 space-y-2 border-t border-white/10 pt-4 text-sm">
+                    {tintRemovalPrices.map((removal) => (
+                      <div key={removal.service} className="flex items-center justify-between gap-4 text-neutral-200">
+                        <dt>{removal.service}</dt>
+                        <dd className="font-mono font-bold text-emerald-400">${removal.price}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="mt-3 text-xs leading-5 text-neutral-400">
+                    Whole-vehicle and large van or SUV removal exclude the front windshield.
                   </p>
                 </div>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
                   <div>
-                    <span className="block text-xs text-neutral-400">Transparent Pricing:</span>
-                    <span className="font-mono text-lg font-bold text-emerald-400">$50.00 / window</span>
+                    <span className="block text-xs text-neutral-400">Starting at</span>
+                    <span className="font-mono text-lg font-bold text-emerald-400">$20 / window</span>
                   </div>
                   <BookingLink label="Book Now" className="text-xs px-4 py-2.5" />
                 </div>
@@ -1023,7 +881,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 Schedule Your Window Tint Installation in Basking Ridge, NJ
               </h2>
               <p className="mt-3 max-w-xl text-xs leading-6 text-white/90 sm:text-sm">
-                Reserve your dedicated studio slot at 19 E. Henry Street, Basking Ridge. Select your vehicle class and choose between high-performance carbon or nano-ceramic film.
+                Choose a studio appointment at 19 E. Henry Street, Basking Ridge, or request mobile service. Select your vehicle class and choose between carbon or ceramic film.
               </p>
             </div>
             <div className="mt-6 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">

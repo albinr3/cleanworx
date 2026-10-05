@@ -104,7 +104,7 @@ export function TestimonialsSection() {
             <div className="-mx-2 overflow-hidden select-none sm:-mx-3" onTouchStart={(event) => setTouchStartX(event.touches[0].clientX)} onTouchEnd={handleTouchEnd}>
               <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${safeIndex * (isDesktop ? 50 : 100)}%)` }}>
                 {TESTIMONIALS.map((item) => (
-                  <article key={item.id} className="flex w-full shrink-0 px-2 sm:w-1/2 sm:px-3">
+                  <article key={item.id} className="flex w-full shrink-0 px-2 md:w-1/2 sm:px-3">
                     <div className="flex w-full flex-col justify-between rounded-2xl border border-white/[0.06] bg-[#1c1c1c] p-5 shadow-2xl transition-transform duration-300 hover:-translate-y-1 sm:p-7 md:p-8">
                       <div>
                         <div className="mb-4 flex items-start justify-between gap-3 sm:mb-5">

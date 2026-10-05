@@ -8,8 +8,6 @@ import {
   Sun,
   ThermometerSun,
   Eye,
-  CheckCircle2,
-  AlertTriangle,
   ArrowRight,
   Phone,
 } from "lucide-react";
@@ -26,11 +24,6 @@ export interface TintLevelData {
   glareReduction: string;
   privacyRating: number; // 1 to 5
   privacyLabel: string;
-  njLegal: {
-    status: "legal" | "conditional";
-    badgeText: string;
-    description: string;
-  };
   bestFor: string;
   summary: string;
 }
@@ -46,12 +39,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "95% Total Glare Block",
     privacyRating: 5,
     privacyLabel: "Maximum Blackout / 100% Privacy",
-    njLegal: {
-      status: "conditional",
-      badgeText: "100% Legal on Rear Windows in NJ",
-      description:
-        "Fully legal under New Jersey Title 39 for rear side windows and back windshield with dual side-view mirrors. Not permitted on front side windows without approved medical waiver.",
-    },
     bestFor:
       "VIP privacy, high-value tool/cargo security in rear cabin, and sleek blacked-out aesthetic.",
     summary:
@@ -67,12 +54,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "88% Glare Cut",
     privacyRating: 4.5,
     privacyLabel: "High Privacy / Heavy Silhouette",
-    njLegal: {
-      status: "conditional",
-      badgeText: "100% Legal on Rear Windows in NJ",
-      description:
-        "Legal on all rear doors and back glass in NJ. Front side windows require MVC medical certificate for aftermarket installation.",
-    },
     bestFor:
       "Drivers desiring deep privacy with slightly more night driving visibility than 5% limo film.",
     summary:
@@ -88,12 +69,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "82% Glare Cut",
     privacyRating: 4,
     privacyLabel: "Strong Privacy / Factory SUV Match",
-    njLegal: {
-      status: "conditional",
-      badgeText: "100% Legal on Rear Windows in NJ",
-      description:
-        "Matches factory-dyed rear glass on SUVs and pickups. Legal for all rear vehicle glass in New Jersey.",
-    },
     bestFor:
       "Matching factory rear tinted glass on luxury SUVs, crossovers, and trucks, or full-vehicle uniform styling.",
     summary:
@@ -109,12 +84,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "70% Blinding Glare Cut",
     privacyRating: 3,
     privacyLabel: "Moderate Daytime Privacy",
-    njLegal: {
-      status: "conditional",
-      badgeText: "Legal Rear / Medical Front",
-      description:
-        "100% compliant on rear glass. Front roll-downs require medical exemption in NJ, or kept at 70% clear ceramic.",
-    },
     bestFor:
       "Optimal balance of aggressive aesthetics, clear night driving confidence, and powerful climate control.",
     summary:
@@ -130,12 +99,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "45% Glare Cut",
     privacyRating: 2,
     privacyLabel: "Light Smoke / High Visibility",
-    njLegal: {
-      status: "conditional",
-      badgeText: "Discreet Aesthetic / Legal Rear",
-      description:
-        "Soft aesthetic shading that looks OEM. Fully approved on rear windows in NJ.",
-    },
     bestFor:
       "Drivers seeking reduced glare and UV defense while maintaining an elegant, subtle OEM profile.",
     summary:
@@ -151,12 +114,6 @@ export const tintLevels: TintLevelData[] = [
     glareReduction: "25% Glare Cut",
     privacyRating: 1,
     privacyLabel: "Nearly Invisible Glass",
-    njLegal: {
-      status: "legal",
-      badgeText: "100% Legal on All Windows & AS-1",
-      description:
-        "Completely legal across New Jersey. Standard for windshield AS-1 visor strips and drivers with medical waivers.",
-    },
     bestFor:
       "Windshields, nighttime drivers, luxury cars wanting heat block without darkening glass.",
     summary:
@@ -356,35 +313,6 @@ export function TintLevelVisualizer() {
               </p>
             </div>
 
-            <div
-              className={cn(
-                "mt-5 border-l-2 p-4",
-                activeLevel.njLegal.status === "legal"
-                  ? "border-emerald-400 bg-emerald-400/[0.07]"
-                  : "border-amber-400 bg-amber-400/[0.07]"
-              )}
-            >
-              <div className="flex flex-wrap items-center gap-2">
-                <span
-                  className={cn(
-                    "inline-flex items-center gap-1.5 text-xs font-bold",
-                    activeLevel.njLegal.status === "legal"
-                      ? "text-emerald-300"
-                      : "text-amber-300"
-                  )}
-                >
-                  {activeLevel.njLegal.status === "legal" ? (
-                    <CheckCircle2 className="h-3.5 w-3.5" />
-                  ) : (
-                    <AlertTriangle className="h-3.5 w-3.5" />
-                  )}
-                  {activeLevel.njLegal.badgeText}
-                </span>
-              </div>
-              <p className="mt-2 text-xs leading-5 text-neutral-400">
-                {activeLevel.njLegal.description}
-              </p>
-            </div>
           </article>
 
           <aside className="border border-white/10 bg-[#0b0e12] p-4 sm:p-5">

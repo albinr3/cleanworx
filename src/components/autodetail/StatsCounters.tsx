@@ -102,7 +102,7 @@ export function StatsCounters() {
       highlights: [
         "We come directly to your home or office",
         "Complete self-powered mobile detailing rig",
-        "Transparent $35 flat-rate mobile fee",
+        "$50 mobile fee only for appointments under $400",
       ],
       featured: false,
     },

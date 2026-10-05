@@ -15,7 +15,7 @@ This document completes the page-strategy brief for every currently prioritized 
 - `near me` is not a keyword target. It is a proximity/local-pack query modifier: do not place it in titles, H1s, headings, anchors, or copy. Local visibility comes from a clear service topic, accurate Basking Ridge and verified-service-area context, consistent GBP/NAP data, legitimate reviews, prominence, and proximity to the searcher.
 - Do not create city-service pages, a ceramic-coating pricing URL, or engine-bay, headlight-restoration, odor, or mold URLs in this phase.
 - Do not use `premium car wash` in SEO targeting or service positioning. Exterior detailing must clearly differentiate CleanWorx from a routine car wash.
-- Square is the primary operational source for current services, packages, prices, durations, inclusions, and add-on/standalone status. Two owner-confirmed catalog omissions are approved: standalone paint correction from USD 350 and mobile detailing at the in-shop package price plus a one-time USD 35 fee per appointment. Keyword research does not create an offer.
+- Owner-confirmed 2026-10-05 tint and mobile prices supersede the historical Square snapshot. Other service prices remain catalog-based. Mobile appointments add one USD 50 fee when the pre-fee subtotal is below USD 400. Keyword research does not create an offer.
 - System X certification is confirmed in the onboarding record. Do not publish a CleanWorx warranty or guarantee claim until the exact product, package, registration, inspection/maintenance conditions, exclusions, and terms are supplied. Original work photos and factual project details are required wherever called for below.
 - `Book now` means the future on-site booking process. No booking URL, route, anchor, or documentary fallback has been assigned; do not assume `/contact` is that destination.
 
@@ -199,7 +199,7 @@ This document completes the page-strategy brief for every currently prioritized 
 
 ### 6. Mobile Auto Detailing — `/mobile-auto-detailing` (P0)
 
-**Commercial rule:** Mobile detailing is approved. Price each appointment as the applicable in-shop package price plus one one-time USD 35.00 mobile fee per appointment. Do not present the fee as per vehicle, hour, or service. Confirm coverage, eligible packages, access requirements, and weather policy before making those specific operational claims.
+**Commercial rule:** Mobile detailing is approved. Price each appointment as the applicable in-shop package price plus one USD 50 mobile fee per appointment when the pre-fee subtotal is below USD 400. Do not present the fee as per vehicle, hour, or service. Confirm coverage, eligible packages, access requirements, and weather policy before making those specific operational claims.
 
 | Field | Brief |
 | --- | --- |
@@ -236,38 +236,29 @@ This document completes the page-strategy brief for every currently prioritized 
 | Field | Brief |
 | --- | --- |
 | Primary keyword | `window tint installation` |
-| Supporting keywords | `windows tinted price`; `how much does it cost to get windows tinted`; `windows tint new jersey`; `window tint in new jersey`; `window tint laws in new jersey`; `window tint laws new jersey`; `where can i get my car windows tinted`; `where can i get my windows tinted`; `windows tint removal`; `window tint removal cost` |
+| Supporting keywords | `windows tinted price`; `how much does it cost to get windows tinted`; `windows tint new jersey`; `window tint removal`; `window tint removal cost`; `mobile window tinting` |
 | Suggested title / H1 | **Title:** Window Tint Installation in Basking Ridge, NJ \| CleanWorx. **H1:** Professional Window Tint Installation in Basking Ridge, NJ. |
-| Page goal | Turn local demand for automotive window tinting into qualified quote requests and appointments while routing window tint removal inquiries to the dedicated sub-service section. |
-| Audience / need | Vehicle owners seeking cabin heat reduction, UV defense (99%), glare reduction, and refined privacy, plus owners needing safe removal of degraded, bubbling, or non-compliant window tint. |
-| Primary CTA | `Request a window tint quote` → future on-site booking process (destination pending). |
-| Supporting CTAs | `Call 908-899-2832`; `Explore ceramic window film`; `Schedule tint removal`; on-page `View tint pricing & options`. |
+| Page goal | Show approved Carbon and Ceramic installation prices, warranties, removal prices, and studio/mobile booking options. |
+| Primary CTA | Current Square booking link; confirm catalog prices match before publication. |
 
-**Required sections & semantic heading outline**
+**Required sections**
 
-1. Hero: **H1: Professional Window Tint Installation in Basking Ridge, NJ**. Local value proposition, studio address, heat/UV protection highlights, quote/call CTAs.
-2. Value & benefits: **H2: Drive in Comfort: Solar Heat Rejection, UV Defense, and Glare Reduction**. Solar heat rejection (infrared block), 99% UV radiation defense (skin & interior leather/trim protection), glare reduction, driving privacy, and theft deterrence.
-3. Film technology comparison: **H2: Premium Film Technology: Ceramic vs. Carbon Window Tint**. Nano-Ceramic film (premium infrared heat rejection, maximum clarity, zero electronic/GPS interference) versus High-Performance Carbon film (matte finish, color-stable, zero purpling).
-4. VLT shade guide: **H2: Choosing Your Shade: Visible Light Transmission (VLT) Options**. 70%, 50%, 35%, 20%, and 5% Visible Light Transmission visual/practical guide.
-5. Legal compliance: **H2: Window Tint Laws in New Jersey: Legal Compliance & VLT Rules** (targets `window tint laws in new jersey` and `window tint laws new jersey`). N.J.S.A. 39:3-74 guidelines explaining windshield visor limits (top 6 inches / AS-1 line), front side window restrictions (medical exemption requirement), and legal rear side/back glass darkness rules.
-6. Installation process: **H2: Precision Window Tint Installation: Our 5-Stage Process** (targets `window tint installation`). Glass preparation, intensive decontamination, computerized/hand pattern contouring, dust-free indoor bay application, and edge inspection.
-7. Pricing & cost factors: **H2: Windows Tinted Price Guide: How Much Does It Cost to Get Windows Tinted?** (targets `windows tinted price` and `how much does it cost to get windows tinted`). Assessment-led pricing by vehicle class (coupe, sedan, SUV, truck) and film grade. Transparent cost factors.
-8. **Dedicated sub-service section near the end: H2: Professional Windows Tint Removal in Basking Ridge, NJ** (targets `windows tint removal`). Emphasize the critical risk of DIY razor-blade removal damaging rear defroster grid lines and integrated glass antennas. Present CleanWorx's safe thermal steam removal method. Subheading: **H3: Window Tint Removal Cost: USD 50.00 per Window** (targets `window tint removal cost`). Published Square catalog price: USD 50.00 per window (30 mins). Dedicated removal CTA.
-9. Curing & aftercare: **H2: Window Tint Curing and Aftercare Guidelines**. 3–5 day window curing timeline, moisture dissipation guidance, and ammonia-free cleaning protocol.
-10. Studio facility: **H2: Where Can I Get My Car Windows Tinted in New Jersey? CleanWorx Studio** (targets `where can i get my car windows tinted`, `where can i get my windows tinted`, and `window tint in new jersey`). Why window tinting is strictly a studio-performed service at 19 E. Henry Street, Basking Ridge, NJ.
-11. FAQ accordion: **H2: Frequently Asked Questions About Windows Tint in New Jersey** (targets `windows tint new jersey`). Target conversational questions: "How Much Does It Cost to Get Windows Tinted?", "Is Window Tint Legal in New Jersey?", "Where Can I Get My Windows Tinted by Certified Installers?", "How Much Does Window Tint Removal Cost?".
-12. Final CTA: **H2: Schedule Your Window Tint Installation in Basking Ridge, NJ**. Booking and consultation conversion block.
+1. Hero with full-vehicle sedan/coupe pricing from USD 300 and removal from USD 20/window.
+2. Film comparison with Carbon 2-year and Ceramic 10-year warranties; no lifetime warranty claim.
+3. Interactive VLT shade guide without legal-status badges.
+4. Installation process for studio and mobile appointments.
+5. Installation price table with eight services and both films, using [the approved price matrix](./SERVICIOS-OFRECIDOS.md#polarizado-automotriz--window-tinting). Full vehicle covers sides and rear windshield; back half covers rear sides and rear windshield; front windshield is separate.
+6. Removal table: USD 20/window, USD 50/front or rear windshield, USD 100/whole vehicle, USD 150/large van or SUV. Whole-vehicle removal excludes the front windshield.
+7. Mobile fee: one USD 50 fee per appointment when the pre-fee subtotal is below USD 400; no fee at USD 400 or more.
+8. Aftercare, studio and mobile options, FAQ, and booking CTA. Do not publish a legal-advice section or unqualified compliance claims.
 
 **Internal links**
 
-- **Include:** `/ceramic-coating` (pairing window tint with paint ceramic coating for complete thermal/UV protection), `/interior-detailing` (protecting conditioned interiors), `/services`, `/service-areas`, `/faq`, `/contact`, and `/`.
-- **Receive links from:** homepage, `/services`, ceramic coating page, interior detailing page, relevant portfolio projects, `/faq`, and global navigation/footer.
-- **Anchor examples:** “window tint installation,” “automotive window tinting,” “ceramic window tint,” and “window tint removal.”
+- Link to ceramic coating, interior detailing, services, service areas, FAQ, contact, and home. Receive links from homepage, services, relevant portfolio projects, and global navigation.
 
-**FAQ / proof needs**
+**Proof needs**
 
-- FAQs: How much does it cost to tint car windows? Is window tint legal in New Jersey? What is the difference between ceramic and carbon tint? Can you remove old bubbling tint? How much does tint removal cost? How long does tint take to cure? Will tint removal damage my rear defrosters? Can tinting be done mobile?
-- Proof: original studio installation photos, cleanroom/indoor bay proof, authentic customer reviews citing heat reduction or flawless finish, clear NJ legal citations, and catalog-verified USD 50/window removal pricing.
+- Original installation and removal photos, verified customer reviews, and a synchronized Square booking catalog.
 
 ### 8. Services Hub — `/services` (P1)
 
@@ -286,7 +277,7 @@ This document completes the page-strategy brief for every currently prioritized 
 1. Short discovery hero and service-selection guidance.
 2. Six concise service cards: ceramic coating, paint correction, interior detailing, exterior detailing, mobile auto detailing, and window tinting; each gets a short description, sourceable starting-price/status, and one direct service-page CTA. Add catalog-confirmed supplemental services separately.
 3. Simple “which service is right?” decision guide that links—not duplicates—specialist-page content.
-4. Mobile-versus-studio note, including the one-time USD 35 mobile fee per appointment, project-gallery link, and final booking CTA.
+4. Mobile-versus-studio note, including the USD 50 mobile fee per appointment when the pre-fee subtotal is below USD 400, project-gallery link, and final booking CTA.
 
 **Internal links**
 
@@ -315,7 +306,7 @@ This document completes the page-strategy brief for every currently prioritized 
 
 1. Basking Ridge base and coverage explanation.
 2. Verified town list only: Basking Ridge, Bernardsville, Bernards, Far Hills, Bedminster, Peapack-Gladstone, Liberty Corner, Warren, Bridgewater, Westfield, Martinsville, Morristown, Mendham, Chester, Somerville, Berkeley Heights, Watchung, Scotch Plains, Madison, New Providence, Morris Plains, Morris Township, Parsippany, Florham Park, Whippany, Stirling, Somerset, and Gillette.
-3. Mobile versus studio eligibility and location/access conditions; state the one-time USD 35 mobile fee per appointment, but do not invent coverage/access/weather policy details.
+3. Mobile versus studio eligibility and location/access conditions; state the USD 50 mobile fee per appointment when the pre-fee subtotal is below USD 400, but do not invent coverage/access/weather policy details.
 4. How availability is confirmed, FAQ, and contact CTA.
 
 **Internal links**
@@ -437,7 +428,7 @@ This document completes the page-strategy brief for every currently prioritized 
 1. Direct call and appointment-request hero.
 2. Contact form / booking interface requesting only the practical details needed: name, preferred contact method, vehicle, desired service, condition/concern, town, timing, and optional photos only with appropriate privacy handling.
 3. Phone, email (`cleanworxnj@gmail.com`), address, and hours (Monday–Saturday, 9:00 AM–5:00 PM; closed Sunday). Add a response-time expectation only if separately confirmed.
-4. Basking Ridge studio location and link to `/service-areas`; explain that mobile availability is confirmed per appointment and the mobile fee is USD 35.00 once per appointment, added to the applicable in-shop package price.
+4. Basking Ridge studio location and link to `/service-areas`; explain that mobile availability is confirmed per appointment and the mobile fee is USD 50 once per appointment when the pre-fee subtotal is below USD 400.
 5. Short service links, trust cues, and FAQ links for common booking objections.
 
 **Internal links**

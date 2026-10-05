@@ -24,7 +24,7 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#070709] text-neutral-400">
+    <footer className="border-t border-white/10 bg-[#070709] pb-[calc(5rem+env(safe-area-inset-bottom))] text-neutral-400 sm:pb-0">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <Link href="/" className="inline-block">

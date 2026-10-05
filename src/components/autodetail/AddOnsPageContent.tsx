@@ -17,7 +17,6 @@ import {
   Phone,
   HelpCircle,
   ArrowRight,
-  Shield,
   Dog,
   Calendar,
   CheckCircle2,
@@ -173,9 +172,9 @@ const ADDONS_CATALOG: AddonItem[] = [
     badge: "Defroster Safe",
     title: "Professional Window Tint Removal",
     tagline: "Steam-assisted peeling & adhesive stripping with zero defroster damage",
-    addonPrice: "$50.00 / window",
-    standalonePrice: "$50.00 / window",
-    duration: "30 mins / window",
+    addonPrice: "From $20 / window",
+    standalonePrice: "From $20 / window",
+    duration: "Varies by scope",
     icon: <Layers className="h-6 w-6 text-[#1277ff]" />,
     image: "/images/autodetail/window-tint-process.webp",
     imageAlt: "CleanWorx precision automotive window tint removal Basking Ridge",
@@ -188,8 +187,8 @@ const ADDONS_CATALOG: AddonItem[] = [
       "Streak-free glass cleaning inside and out",
       "Prepares glass for fresh Carbon or Ceramic tint installation",
     ],
-    bestFor: "Vehicles with bubbling, purple, peeling, or non-compliant window tint.",
-    bookingNote: "Priced transparently at $50.00 per window. All tint work performed at our Basking Ridge studio.",
+    bestFor: "Vehicles with bubbling, purple, peeling, or damaged window tint.",
+    bookingNote: "$20 per window; $50 for a front or rear windshield; $100 for a whole vehicle; $150 for a large van or SUV. Whole-vehicle prices exclude the front windshield. Studio and mobile appointments available; one $50 mobile fee applies when the pre-fee appointment subtotal is below $400.",
   },
   {
     id: "pet-hair-removal",
@@ -510,7 +509,7 @@ export function AddOnsPageContent() {
             {[
               {
                 q: "Can I book an add-on service by itself without getting a full detail?",
-                a: "Yes! Services like Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal ($50/window) can be booked as standalone studio appointments at 19 E. Henry St in Basking Ridge. When paired with any main detail, you receive the discounted $75 add-on rate.",
+                a: "Yes. Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal (from $20 per window) can be booked separately. Ask about studio or mobile availability for your service."
               },
               {
                 q: "What is the difference between a 1-step polish and full paint correction?",

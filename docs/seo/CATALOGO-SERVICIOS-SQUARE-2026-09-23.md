@@ -4,6 +4,8 @@
 **Fecha de consulta:** 23 de septiembre de 2026.  
 **Alcance:** transcripción de los 20 servicios publicados, sus descripciones, duración y precios visibles. No se inició ni se confirmó ninguna reserva.
 
+**Nota de vigencia (2026-10-05):** Este archivo conserva la captura histórica del 23 de septiembre. Los precios actuales de polarizado, retiro y recargo móvil confirmados posteriormente están en [SERVICIOS-OFRECIDOS.md](./SERVICIOS-OFRECIDOS.md#polarizado-automotriz--window-tinting). Se debe sincronizar Square antes de publicar la web actualizada.
+
 ## Cómo leer los precios
 
 - **Precio en la web:** importe que muestra la ficha del sitio. Un `+` forma parte de la publicación y significa que se parte de ese importe.
