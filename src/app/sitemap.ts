@@ -53,6 +53,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/car-odor-treatment`,
+      lastModified: new Date("2026-10-06T00:00:00.000Z"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/headlight-restoration`,
+      lastModified: new Date("2026-10-06T00:00:00.000Z"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/service-areas`,
       lastModified: new Date("2026-09-26T16:00:00.000Z"),
       changeFrequency: "monthly",

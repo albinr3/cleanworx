@@ -99,7 +99,7 @@ const ADDONS_CATALOG: AddonItem[] = [
     category: "interior",
     badge: "Odor Neutralization",
     title: "Cabin Air Purification & Odor Treatment",
-    tagline: "High-output ozone treatment destroying stubborn odors at the source",
+    tagline: "30 to 40 minute ozone treatment for lingering vehicle odors",
     addonPrice: "$75.00",
     standalonePrice: "$125.00",
     duration: "45 mins",
@@ -107,16 +107,16 @@ const ADDONS_CATALOG: AddonItem[] = [
     image: "/images/autodetail/cleanworx-interior-steam-leather-restoration.webp",
     imageAlt: "CleanWorx deep interior air purification and steam treatment",
     description:
-      "Masking bad smells with air fresheners only covers the problem temporarily. Our commercial 30–40 minute ozone generator treatment saturates the cabin air and circulates through the HVAC climate control system, chemically neutralizing odor-causing molecules from tobacco smoke, wet pets, sour spills, food, and mildew.",
+      "Air fresheners only change the scent in a vehicle. Our standalone ozone air purification appointment runs for approximately 30 to 40 minutes and is intended for lingering cabin odor concerns. Results depend on the odor source, affected materials, and vehicle condition.",
     inclusions: [
-      "30–40 minute commercial-grade ozone cycle",
-      "HVAC system & ductwork circulation to eliminate trapped smells",
-      "Deep fabric and headliner odor molecule neutralization",
-      "Safe multi-point post-treatment fresh air purge",
-      "Pairs seamlessly with our Full Interior Detail for a total cabin reset",
+      "30 to 40 minute ozone generator treatment",
+      "45-minute standalone studio appointment",
+      "USD 125 standalone appointment",
+      "USD 75 add-on to a Full Interior Detail",
+      "Optional pairing with Full Interior Detailing for cabin cleaning",
     ],
-    bestFor: "Vehicles with persistent smoke, pet, sour milk, mildew, or food odor.",
-    bookingNote: "Add to any Full Interior Detail for $75, or schedule standalone at our studio for $125.",
+    bestFor: "Vehicles with lingering smoke, pet, food, spill, or musty cabin odors after the underlying concern has been addressed.",
+    bookingNote: "Add to a Full Interior Detail for $75, or schedule a standalone Basking Ridge studio appointment for $125.",
   },
   {
     id: "one-step-polish",
@@ -262,7 +262,7 @@ export function AddOnsPageContent() {
                 Auto Detailing <span className="text-[#4da3ff]">Add-Ons</span> &amp; Restoration
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-300 sm:text-lg">
-                Targeted vehicle enhancements that eliminate odors, restore nighttime headlight clarity, deep-clean neglected engine bays, and protect delicate surfaces. Available as convenient add-ons to any detail or as standalone studio appointments in Basking Ridge, NJ.
+                Targeted vehicle enhancements for lingering cabin odors, headlight clarity, engine-bay cleaning, and interior or exterior protection. Services are available as applicable add-ons or standalone studio appointments in Basking Ridge, NJ.
               </p>
 
               {/* Value Pills */}
@@ -417,6 +417,24 @@ export function AddOnsPageContent() {
                     <span className="font-semibold text-white">Ideal for: </span>
                     {item.bestFor}
                   </div>
+
+                  {item.id === "headlight-restoration" && (
+                    <Link
+                      href="/headlight-restoration"
+                      className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-[#70b5ff] transition hover:text-white"
+                    >
+                      Learn about headlight restoration <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
+
+                  {item.id === "air-purification" && (
+                    <Link
+                      href="/car-odor-treatment"
+                      className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-[#70b5ff] transition hover:text-white"
+                    >
+                      Learn about car odor treatment <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
 
                   {/* Card Action Button */}
                   <div className="mt-6 pt-2">

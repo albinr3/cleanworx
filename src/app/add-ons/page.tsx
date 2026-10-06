@@ -92,7 +92,7 @@ export default function AddOnsPage() {
                 "@type": "Service",
                 name: "Cabin Air Purification & Odor Treatment",
                 description:
-                  "30-40 minute ozone air purification treating interior fabric and HVAC ductwork to neutralize stubborn odor molecules.",
+                  "30 to 40 minute ozone air purification treatment for lingering vehicle odors. Results depend on the odor source and vehicle condition.",
               },
               price: "75.00",
               priceCurrency: "USD",

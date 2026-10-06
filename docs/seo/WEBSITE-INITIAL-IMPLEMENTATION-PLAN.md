@@ -1,5 +1,7 @@
 # CleanWorx — Website Initial Implementation Plan
 
+> **Actualización del 5 de octubre de 2026:** la exclusión del sitio anterior en este plan era una premisa de planificación inicial. La migración ahora debe incorporar el inventario y las señales de Search Console descritos en [Legacy URL Migration Plan](./LEGACY-URL-MIGRATION-PLAN.md). No se deben activar los redirects ni reemplazar el sitio antiguo sin resolver ese plan.
+
 **Status:** Planning only. This document does not authorize or represent any change to the website, source code, CMS, Google Business Profile, analytics, redirects, schema, or deployment.  
 **Bonsai parent task:** `WEBSITE INITIAL IMPLEMENTATION` (`TSK-01593`)  
 **Scope source:** Bonsai subtasks `TSK-01594` through `TSK-01602`  
@@ -42,7 +44,7 @@ Do not begin production work until these inputs are available and approved:
 - The onboarding confirms `cleanworxnj@gmail.com`, Monday–Saturday 9:00 AM–5:00 PM (closed Sunday), and the business's System X Ceramic Coating certification declaration. Retain current credential evidence before publishing the certification.
 - Do not publish a CleanWorx guarantee or warranty until the exact product, package, eligibility, registration, inspection/maintenance requirements, exclusions, and warranty process are approved in writing.
 - Paint Correction and Mobile Auto Detailing are owner-confirmed offers. Paint correction starts at USD 350 and uses an assessment-led multiple-step process; final price depends on vehicle condition and customer goals. One USD 50 mobile fee applies when the pre-fee appointment subtotal is below USD 400. Do not invent a fixed correction-stage matrix or unconfirmed mobile coverage/package/access/weather rules.
-- Engine-bay cleaning, headlight restoration, and air purification are catalog-confirmed supplemental services. They may be represented factually in a supplementary area, but no dedicated SEO URL is planned in this phase. Do not make mold-remediation, sanitization, or guaranteed odor-elimination claims.
+- Engine-bay cleaning and headlight restoration are catalog-confirmed supplemental services. Air purification is now represented by `/car-odor-treatment` as a studio-only dedicated service page. Do not make mold-remediation, sanitization, or guaranteed odor-elimination claims.
 
 ## Phase 1 — IA and wireframes (`TSK-01594`)
 
@@ -56,6 +58,7 @@ Do not begin production work until these inputs are available and approved:
 | P0 | `/interior-detailing` | Cabin-cleaning service page | Hero → catalog-confirmed inclusions → material/condition assessment → realistic outcomes → mobile/studio suitability → results → FAQs → quote CTA. |
 | P0 | `/exterior-detailing` | Professional exterior-care page | Hero → distinction from a car wash → inclusions → condition options → protection → results → FAQs → booking CTA. |
 | P0 | `/mobile-auto-detailing` | Mobile service and availability page | Hero → how it works → eligible services → studio-only/suited services → coverage → preparation → FAQs → availability CTA. State the one-time USD 50 mobile fee when the pre-fee appointment subtotal is below USD 400. |
+| P1 | `/car-odor-treatment` | Studio air-purification service page | Hero → 30 to 40 minute ozone treatment → standalone/add-on options → realistic limits → FAQs → booking CTA. Do not claim guaranteed odor elimination, sanitization, or mold remediation. |
 | P1 | `/add-ons` | Specialized add-ons & upgrades hub | Intro → category filter (Restoration, Interior, Exterior) → seven catalog-confirmed add-ons with add-on & standalone pricing → booking flexibility guide → FAQs → booking CTA. |
 | P1 | `/service-areas` | Coverage and qualification hub | Coverage intro → verified-town list → mobile/studio availability process → FAQs → contact CTA. |
 | P1 | `/our-work` | Portfolio/trust page | Intro → service-grouped original projects → factual project captions → matching service links → booking CTA. |
@@ -88,7 +91,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
   - **H3:** Exterior Detailing
   - **H3:** Mobile Auto Detailing
   - **H3:** Window Tinting
-- **H2:** What a Complete Car Detail Can Include
+- **H2:** What a Full Car Detail Can Include
   - **H3:** Interior Care
   - **H3:** Exterior Care
 - **H2:** See Our Recent Work
@@ -303,7 +306,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
 1. `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, and `/mobile-auto-detailing`.
 2. `/services` and `/service-areas` once the service destinations exist.
 3. `/our-work`, `/about`, `/faq`, and `/contact` as the conversion/trust layer.
-4. Do not create city-service, ceramic-coating-cost, engine-bay, headlight-restoration, air-purification/odor, or mold pages in this phase. The latter three services may still appear factually as catalog-confirmed supplementary services.
+4. Do not create city-service, ceramic-coating-cost, engine-bay, headlight-restoration, or mold pages in this phase. `/car-odor-treatment` is the approved dedicated air-purification page; engine-bay and headlight services may still appear factually as catalog-confirmed supplementary services.
 
 ### Minimum page-quality rules
 
@@ -352,6 +355,7 @@ These outlines define the title tag and visible heading hierarchy for implementa
 | `/interior-detailing` | Interior Car Detailing in Basking Ridge, NJ \| CleanWorx | Deep Interior Car Detailing in Basking Ridge, NJ | CleanWorx provides deep interior car detailing in Basking Ridge, NJ for seats, carpets, upholstery, pet hair, and everyday vehicle care. |
 | `/exterior-detailing` | Exterior Car Detailing in Basking Ridge, NJ \| CleanWorx | Professional Exterior Detailing in Basking Ridge, NJ | Choose professional exterior car detailing in Basking Ridge, NJ with hand care, decontamination, paint protection options, and booking support. |
 | `/mobile-auto-detailing` | Mobile Auto Detailing in Basking Ridge, NJ \| CleanWorx | Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx brings mobile auto detailing to eligible Basking Ridge area locations. One USD 50 fee applies when the pre-fee appointment subtotal is below USD 400. |
+| `/car-odor-treatment` | Car Odor Treatment in Basking Ridge, NJ \| CleanWorx | Car Odor Treatment in Basking Ridge, NJ | Ozone air purification for lingering vehicle odors. Studio appointments are USD 125 or USD 75 with Full Interior Detailing. |
 | `/services` | Auto Detailing Services in Basking Ridge, NJ \| CleanWorx | Auto Detailing Services | Explore CleanWorx auto detailing services in Basking Ridge, NJ, from ceramic coating and paint correction to interior, exterior, and mobile detailing. |
 | `/service-areas` | Auto Detailing Service Areas in NJ \| CleanWorx | Auto Detailing Service Areas in New Jersey | See the New Jersey communities CleanWorx serves from Basking Ridge and confirm the best studio or mobile appointment option for your vehicle. |
 | `/our-work` | Auto Detailing Portfolio \| CleanWorx Basking Ridge | Our Detailing Work | View original CleanWorx detailing projects, including ceramic coating, paint correction, interior, exterior, and mobile service work. |
@@ -406,7 +410,7 @@ The implementation should make the iframe responsive while retaining `loading="l
 
 ## Launch acceptance checklist
 
-- [ ] All 12 approved canonical routes exist or are intentionally deferred according to this plan.
+- [ ] All 13 approved canonical routes exist or are intentionally deferred according to this plan.
 - [ ] No template copy, placeholder business data, fictitious reviews, unverified claims, or unapproved services remain.
 - [ ] Every page matches its assigned service topic and does not use `near me` as a keyword target.
 - [ ] Page title, meta description, canonical URL, H1, headings, visible content, and JSON-LD agree.

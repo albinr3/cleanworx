@@ -1,5 +1,7 @@
 # CleanWorx Website Architecture & Sitemap Documentation
 
+> **Estado: arquitectura objetivo del proyecto nuevo, no auditoría de producción.** El sitemap publicado en el dominio el 5 de octubre de 2026 contiene 132 URL del sitio anterior. Las 13 URL y los estados “PASSED” de este documento describen la implementación prevista y requieren verificación después del despliegue. Ver [plan de migración de URL antiguas](./LEGACY-URL-MIGRATION-PLAN.md) antes de publicar.
+
 **Domain:** https://www.cleanworxnj.com  
 **Sitemap URL:** https://www.cleanworxnj.com/sitemap.xml  
 **Robots.txt:** https://www.cleanworxnj.com/robots.txt  
@@ -12,7 +14,7 @@
 
 This document outlines the canonical URL structure, XML sitemap specifications, and crawl governance rules for CleanWorx.
 
-- **Total Canonical URLs in Sitemap:** 13
+- **Total Canonical URLs in Sitemap:** 14
 - **Excluded / Disallowed Routes:** 1 (`/booking` redirected to Square booking engine; disallowed in `robots.txt` to prevent index dilution and duplicate content)
 - **Sitemap Protocol:** Sitemaps XML protocol 0.9 (`xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"`)
 - **Generation Method:** Dynamic Next.js App Router metadata route (`src/app/sitemap.ts`)
@@ -35,6 +37,7 @@ This document outlines the canonical URL structure, XML sitemap specifications, 
 | **0.8** | `/interior-detailing` | P0 | Interior Detailing: Deep steam cleaning, hot-water extraction, leather/carpet stain removal | monthly | 2026-09-26 |
 | **0.8** | `/exterior-detailing` | P0 | Exterior Detailing: Multi-stage hand wash, clay bar decontamination, sealant & gloss protection | monthly | 2026-09-26 |
 | **0.8** | `/mobile-auto-detailing` | P0 | Mobile Detailing: On-site van detailing across Somerset/Morris counties (appointment confirmed) | monthly | 2026-09-26 |
+| **0.8** | `/car-odor-treatment` | P1 | Studio ozone air purification for lingering vehicle odors; USD 125 standalone or USD 75 with Full Interior Detailing | monthly | 2026-10-05 |
 | **0.9** | `/services` | P1 | Services Discovery Hub: Catalog overview and transparent pricing entry point | monthly | 2026-09-26 |
 | **0.8** | `/service-areas` | P1 | Service Areas Hub: Verified coverage across Basking Ridge, Bernardsville, Bedminster, etc. | monthly | 2026-09-26 |
 | **0.8** | `/our-work` | P1 | Portfolio & Proof: Genuine before-and-after vehicle gallery, real craftsmanship proof | monthly | 2026-09-26 |
@@ -62,7 +65,7 @@ This document outlines the canonical URL structure, XML sitemap specifications, 
 
 ## 4. Technical Implementation
 
-1. **`src/app/sitemap.ts`**: Provides the type-safe Next.js `MetadataRoute.Sitemap` generator returning the 13 canonical objects with realistic `lastModified`, `priority`, and `changeFrequency`.
+1. **`src/app/sitemap.ts`**: Provides the type-safe Next.js `MetadataRoute.Sitemap` generator returning the 14 canonical objects with realistic `lastModified`, `priority`, and `changeFrequency`.
 2. **`src/app/robots.ts`**: Declares user agent rules, allows `/`, disallows `/booking`, and points search crawlers to `https://www.cleanworxnj.com/sitemap.xml`.
 3. **`next.config.ts`**: Manages permanent redirect from `/sitemap` to `/sitemap.xml`.
 4. **`src/components/autodetail/Footer.tsx`**: Renders direct anchor links to `/sitemap.xml` in both the Explore section and the bottom legal/copyright bar.

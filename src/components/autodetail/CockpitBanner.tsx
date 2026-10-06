@@ -49,7 +49,7 @@ export function CockpitBanner() {
 
             <ScrollReveal animation="fade-up" delay={120} duration={750}>
               <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/80">
-                What a Complete Car Detail Can Include
+                What a Full Car Detail Can Include
               </h2>
               <p className="mt-3 text-balance text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
                 Bring Your Vehicle Back to Showroom Condition

@@ -13,6 +13,8 @@ const services = [
   ["Interior Detailing", "/interior-detailing"],
   ["Exterior Detailing", "/exterior-detailing"],
   ["Mobile Auto Detailing", "/mobile-auto-detailing"],
+  ["Headlight Restoration", "/headlight-restoration"],
+  ["Car Odor Treatment", "/car-odor-treatment"],
 ] as const;
 
 export function Header() {
