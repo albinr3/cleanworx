@@ -8,7 +8,6 @@ import {
   Phone,
   Mail,
   Send,
-  CheckCircle2,
   Car,
   Sparkles,
 } from "lucide-react";
@@ -34,15 +33,21 @@ export function ContactPageContent() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-    }, 500);
+    const subject = `CleanWorx inquiry: ${formData.service}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Vehicle: ${formData.vehicle || "Not provided"}`,
+      `Service: ${formData.service}`,
+      "",
+      formData.message,
+    ].join("\n");
+    window.location.href = `mailto:cleanworxnj@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   };
 
   const handleReset = () => {
@@ -79,11 +84,11 @@ export function ContactPageContent() {
               {submitted ? (
                 <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-8 text-center">
                   <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
-                    <CheckCircle2 className="h-8 w-8" />
+                    <Mail className="h-8 w-8" />
                   </div>
-                  <h2 className="text-xl font-bold text-white">Message Sent Successfully!</h2>
+                  <h2 className="text-xl font-bold text-white">Finish Sending Your Email</h2>
                   <p className="mt-2 text-sm text-neutral-300">
-                    Thank you, <span className="font-semibold text-white">{formData.name}</span>. We have received your inquiry and will contact you shortly.
+                    Your email app should open with your inquiry ready. Press Send there to contact us. If it did not open, email <a href="mailto:cleanworxnj@gmail.com" className="underline">cleanworxnj@gmail.com</a>.
                   </p>
                   <div className="mt-6">
                     <button
@@ -91,7 +96,7 @@ export function ContactPageContent() {
                       onClick={handleReset}
                       className="rounded-lg bg-white/10 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
                     >
-                      Send Another Message
+                      Compose Another Message
                     </button>
                   </div>
                 </div>
@@ -192,17 +197,10 @@ export function ContactPageContent() {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
                     className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1277ff] px-6 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-[#1277ff]/20 transition-all hover:bg-[#0e62d4] hover:shadow-[#1277ff]/30 active:scale-[0.99] disabled:opacity-60 cursor-pointer"
                   >
-                    {isSubmitting ? (
-                      <span>Sending...</span>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" />
-                        <span>Send Message</span>
-                      </>
-                    )}
+                    <Send className="h-4 w-4" />
+                    <span>Open Email App</span>
                   </button>
                 </form>
               )}

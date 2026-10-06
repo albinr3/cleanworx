@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     absolute: "Car Odor & Smoke Smell Removal, Basking Ridge | CleanWorx",
   },
   description:
-    "Car smell and smoke odor removal in Basking Ridge, NJ. Book a USD 125 ozone treatment or add car air purification to an interior detail.",
+    "Smoke odor and car smell removal in Basking Ridge, NJ. Cigarette, cigar, and marijuana smoke odor removal with ozone air purification at our studio.",
   alternates: { canonical: "/car-odor-treatment" },
   openGraph: {
     title: "Car Odor & Smoke Smell Removal, Basking Ridge | CleanWorx",
     description:
-      "Car smell and smoke odor removal with ozone treatment at the CleanWorx Basking Ridge studio.",
+      "Smoke odor and car smell removal in Basking Ridge, NJ. Cigarette, cigar, and marijuana smoke removal with ozone treatment.",
     url: "https://www.cleanworxnj.com/car-odor-treatment",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Car Odor & Smoke Smell Removal, Basking Ridge | CleanWorx",
     description:
-      "Car smell and smoke odor removal with ozone treatment at the CleanWorx Basking Ridge studio.",
+      "Smoke odor and car smell removal in Basking Ridge, NJ. Cigarette, cigar, and marijuana smoke removal with ozone treatment.",
     images: ["/images/autodetail/car-odor-treatment-hero.png"],
   },
 };

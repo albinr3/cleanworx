@@ -98,7 +98,7 @@ const ADDONS_CATALOG: AddonItem[] = [
     id: "air-purification",
     category: "interior",
     badge: "Odor Neutralization",
-    title: "Cabin Air Purification & Odor Treatment",
+    title: "Cabin Air Purification & Odor Removal",
     tagline: "30 to 40 minute ozone treatment for lingering vehicle odors",
     addonPrice: "$75.00",
     standalonePrice: "$125.00",
@@ -432,7 +432,7 @@ export function AddOnsPageContent() {
                       href="/car-odor-treatment"
                       className="mt-5 inline-flex items-center gap-2 text-xs font-bold text-[#70b5ff] transition hover:text-white"
                     >
-                      Learn about car odor treatment <ArrowRight className="h-3.5 w-3.5" />
+                      Learn about car odor removal <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   )}
 
