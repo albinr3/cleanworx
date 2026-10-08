@@ -54,7 +54,7 @@ Google recomienda redirecciones permanentes del servidor hacia la URL nueva equi
 ## Bloqueadores detectados en este repositorio
 
 - `src/app/sitemap.ts` anuncia 13 URL de la **web nueva**, no describe el sitemap actualmente publicado. `docs/seo/STRUCTURE.md` las presenta como si ya se hubieran verificado en producción; debe leerse como especificación objetivo.
-- `next.config.ts` redirige `/services` a `/`, mientras `docs/seo/KEYWORD-URL-MAPPING.md` asigna al menos dos URL antiguas a `/services` y otros documentos planifican un hub `/services`. Hay que decidir si se construye ese hub o se corrigen todos los destinos documentados antes de desplegar.
+- El conflicto de `/services` se resolvió el 7 de octubre de 2026: existe un índice navegable con `noindex, follow`, fuera del sitemap y sin redirecciones entrantes en el mapa final. La redirección anterior a `/` se retiró.
 - La página de `/add-ons` contiene descripciones, precios y resultados en JSON-LD que deben cotejarse con el catálogo aprobado antes de recibir redirecciones de las páginas antiguas de faros, engine bay y olores.
 - El plan de implementación inicial decía explícitamente que no se analizaría la web existente. **Esa exclusión ya no aplica a la migración** después de descubrir y medir las URL actuales; los hechos comerciales verificados del plan siguen vigentes.
 
@@ -67,4 +67,4 @@ Google recomienda redirecciones permanentes del servidor hacia la URL nueva equi
 5. **Lanzamiento:** desplegar páginas y redirects juntos, actualizar enlaces internos/GBP/perfiles controlados, enviar el sitemap nuevo a GSC y conservar una copia del inventario/mediciones previas.
 6. **Seguimiento:** revisar a diario durante la primera semana y semanalmente durante 3 meses las respuestas 3xx/4xx, indexación, canonicals y consultas/páginas en GSC; comparar grupos de intención, no solo el total del sitio. Corregir enseguida URL con tráfico que caigan en 404 o en destinos no equivalentes. Esperar fluctuaciones temporales mientras Google procesa el cambio.
 
-**Puerta de publicación:** no sustituir el sitio anterior hasta que exista el registro completo de URL, los destinos de alto tráfico estén publicados y aprobados, el conflicto `/services` esté resuelto y las 132 rutas del sitemap pasen la prueba de redirección/retirada prevista. Este documento decide el método; el mapa final y su implementación pertenecen al trabajo de migración previo al despliegue.
+**Puerta de publicación:** no sustituir el sitio anterior hasta que exista el registro completo de URL, los destinos de alto tráfico estén publicados y aprobados, y las 132 rutas del sitemap pasen la prueba de redirección/retirada prevista. Este documento decide el método; el mapa final y su implementación pertenecen al trabajo de migración previo al despliegue.

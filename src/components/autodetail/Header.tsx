@@ -17,7 +17,7 @@ const services = [
   ["Car Odor Removal", "/car-odor-treatment"],
 ] as const;
 
-export function Header() {
+export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -66,7 +66,7 @@ export function Header() {
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             <div className="relative group">
               <Link
-                href="/#services"
+                href="/services"
                 className="flex items-center gap-1.5 py-2 text-sm font-medium text-neutral-300 transition-colors group-hover:text-white hover:text-white"
               >
                 <span>Services</span>
@@ -77,10 +77,10 @@ export function Header() {
               <div className="invisible pointer-events-none absolute left-0 top-full z-50 w-64 pt-2 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:opacity-100">
                 <div className="rounded-xl border border-white/10 bg-[#14151a]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-md">
                   <Link
-                    href="/#services"
+                    href="/services"
                     className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
                   >
-                    <span>All Packages</span>
+                    <span>All Services</span>
                     <ChevronRight className="h-3.5 w-3.5 text-neutral-400" />
                   </Link>
                   <div className="my-1 border-t border-white/10" />
@@ -104,9 +104,11 @@ export function Header() {
                 </div>
               </div>
             </div>
-            <Link href="/our-work" className="text-sm font-medium text-neutral-300 hover:text-white">
-              Our Work
-            </Link>
+            {!hideOurWork && (
+              <Link href="/our-work" className="text-sm font-medium text-neutral-300 hover:text-white">
+                Our Work
+              </Link>
+            )}
             <Link href="/about" className="text-sm font-medium text-neutral-300 hover:text-white">
               About
             </Link>
@@ -166,7 +168,7 @@ export function Header() {
             </div>
             <nav className="mt-5 space-y-1">
               <Link
-                href="/#services"
+                href="/services"
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-between rounded-lg px-3 py-3 text-neutral-100 font-bold"
               >
@@ -196,7 +198,7 @@ export function Header() {
                 ["Service Areas", "/service-areas"],
                 ["FAQ", "/faq"],
                 ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              ].filter(([, href]) => !hideOurWork || href !== "/our-work").map(([label, href]) => (
                 <Link
                   key={href}
                   href={href}

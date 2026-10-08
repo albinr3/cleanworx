@@ -10,7 +10,9 @@
 - La cuenta de servicio permite consultar rendimiento, sitemaps e inspecciones. No expone el informe de **Acciones manuales** ni un inventario de enlaces externos; la agencia debe revisarlos en la interfaz antes de aplicar el mapa. El `indexed: 0` de la API de Sitemaps no es una señal de desindexación: [ese campo está obsoleto](https://developers.google.com/webmaster-tools/v1/sitemaps).
 - Una `301` de la tabla es una **decisión de destino**, no una autorización para activarla ahora. Las páginas nuevas y sus bloques de servicio deben estar publicadas, verificadas y responder 200 antes del cambio. Google recomienda mapear las URL y evitar redirecciones a destinos no equivalentes: [guía de migración](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes). Si se descubre una URL sin sustituto real, se cambia su fila a **410** antes del lanzamiento, con motivo documentado; [Google indica 404/410 para contenido retirado sin reemplazo](https://developers.google.com/search/docs/crawling-indexing/troubleshoot-crawling-errors).
 
-## Fase 1 — Congelar la línea base
+## Fase 1 — Congelar la línea base ✅ Completada
+
+**Estado:** completada el 7 de octubre de 2026.
 
 **Responsable:** agencia SEO. **Salida:** inventario de URL y medición pre-migración archivados.
 
@@ -21,7 +23,9 @@
 
 **Puerta de salida:** inventario archivado, métricas reproducibles y cualquier URL nueva añadida al anexo con `301` o `410` y motivo.
 
-## Fase 2 — Validar negocio y pruebas locales
+## Fase 2 — Validar negocio y pruebas locales ✅ Completada
+
+**Estado:** completada el 7 de octubre de 2026.
 
 **Responsables:** CleanWorx aporta hechos y permisos; agencia documenta y revisa. **Salida:** expediente de contenidos aprobados.
 
@@ -36,10 +40,10 @@
 
 **Responsables:** agencia redacta y aprueba; desarrollo implementará después en una tarea separada. **Salida:** destinos listos para recibir usuarios y Googlebot.
 
-1. Completar en `/` una sección sustancial de full/complete detailing, orientación sobre precios reales o variables y enlaces a servicios. La home recibirá URL antiguas de detailing general, full detail y pricing; no basta una mención breve.
-2. Preparar `/car-odor-treatment` y `/headlight-restoration` como páginas generales de servicios reales. Mantener `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/add-ons`, `/faq`, `/about`, `/contact` y `/our-work` con contenido correspondiente al mapa.
-3. Preparar `/services` como índice navegable con `noindex, follow`, sin entrada en el sitemap y **sin redirecciones entrantes del anexo**. Resolver la redirección actual de `/services` a `/` cuando se ejecute la nueva web; actualizar los documentos que aún lo describen de otra manera.
-4. Preparar las cinco páginas indexables con canonical propio, una sola H1 natural, datos de cobertura correctos, casos autorizados y enlaces a servicios generales. Cada una debe tratar de forma útil los temas que recibirá:
+1. ✅ **Completado el 7 de octubre de 2026.** Completar en `/` una sección sustancial de full/complete detailing, orientación sobre precios reales o variables y enlaces a servicios. La home recibirá URL antiguas de detailing general, full detail y pricing; no basta una mención breve.
+2. ✅ **Completado el 7 de octubre de 2026.** Preparar `/car-odor-treatment` y `/headlight-restoration` como páginas generales de servicios reales. Mantener `/ceramic-coating`, `/paint-correction`, `/interior-detailing`, `/exterior-detailing`, `/mobile-auto-detailing`, `/add-ons`, `/faq`, `/about`, `/contact` y `/our-work` con contenido correspondiente al mapa.
+3. ✅ **Completado el 7 de octubre de 2026.** `/services` es un índice navegable con `noindex, follow`, sin entrada en el sitemap y **sin redirecciones entrantes del anexo**. Se retiró la redirección de `/services` a `/` y se actualizaron los documentos que la describían.
+4. ✅ **Completado el 7 de octubre de 2026.** Se prepararon las cinco páginas indexables con canonical propio, una H1 natural, ocho secciones de servicio, datos de cobertura y enlaces a las páginas generales. Cada una trata los temas que recibirá:
 
 | Destino de ciudad | Contenidos mínimos derivados de las URL antiguas |
 | --- | --- |
@@ -50,6 +54,8 @@
 | `/service-areas/bridgewater-nj` | Full, interior y exterior detailing; faros, vano motor, ceramic coating, paint correction y olores. Conservar la intención amplia de las páginas `best car detailing`. |
 
 Las secciones locales deben responder la intención específica y enlazar a `/car-odor-treatment`, `/headlight-restoration` o la página general adecuada. No duplicar párrafos entre ciudades ni trasladar promesas o reseñas del sitio viejo sin verificación. **La preferencia acordada es que incluso las URL antiguas de humo Woodbridge y faros Cranford redirijan a su página de ciudad**; por eso esas secciones son condición de publicación.
+
+Las cinco fotos de cada página son imágenes distintas del portafolio, incluida una foto del estudio y la unidad móvil. Se reparten entre los servicios que documentan, con un máximo de dos fotos por sección. Cada foto acompaña una historia **marcada como ejemplo ilustrativo** en voz de CleanWorx, con motivo, contacto y desarrollo del servicio; no se atribuye esa historia al vehículo fotografiado. Sus pies conservan la ubicación real registrada y no enlazan a `/our-work`: **las fotos no prueban un trabajo realizado en la ciudad de la página**. Las calles de los escenarios móviles son referencias geográficas reales, no direcciones documentadas de clientes; 19 E. Henry St es la dirección del estudio.
 
 **Puerta de salida:** todos los destinos del anexo devuelven 200, son accesibles en HTML y explican el servicio o propósito que heredarán; las páginas indexables tienen canonical propio y `/services` es `noindex, follow` y queda fuera del sitemap.
 

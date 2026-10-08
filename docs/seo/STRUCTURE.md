@@ -6,7 +6,7 @@
 **Sitemap URL:** https://www.cleanworxnj.com/sitemap.xml  
 **Robots.txt:** https://www.cleanworxnj.com/robots.txt  
 **Business:** CleanWorx Auto Detailing & Ceramic Coating (Basking Ridge, NJ)  
-**Last Updated:** September 26, 2026  
+**Last Updated:** October 7, 2026
 
 ---
 
@@ -14,8 +14,8 @@
 
 This document outlines the canonical URL structure, XML sitemap specifications, and crawl governance rules for CleanWorx.
 
-- **Total Canonical URLs in Sitemap:** 14
-- **Excluded / Disallowed Routes:** 1 (`/booking` redirected to Square booking engine; disallowed in `robots.txt` to prevent index dilution and duplicate content)
+- **Total Canonical URLs in Sitemap:** 20
+- **Excluded / Disallowed Routes:** `/services` is a navigable `noindex, follow` page excluded from the sitemap; `/booking` redirects to Square booking and is disallowed in `robots.txt`.
 - **Sitemap Protocol:** Sitemaps XML protocol 0.9 (`xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"`)
 - **Generation Method:** Dynamic Next.js App Router metadata route (`src/app/sitemap.ts`)
 - **Discovery Vectors:**
@@ -38,8 +38,14 @@ This document outlines the canonical URL structure, XML sitemap specifications, 
 | **0.8** | `/exterior-detailing` | P0 | Exterior Detailing: Multi-stage hand wash, clay bar decontamination, sealant & gloss protection | monthly | 2026-09-26 |
 | **0.8** | `/mobile-auto-detailing` | P0 | Mobile Detailing: On-site van detailing across Somerset/Morris counties (appointment confirmed) | monthly | 2026-09-26 |
 | **0.8** | `/car-odor-treatment` | P1 | Studio ozone air purification for lingering vehicle odors; USD 125 standalone or USD 75 with Full Interior Detailing | monthly | 2026-10-05 |
-| **0.9** | `/services` | P1 | Services Discovery Hub: Catalog overview and transparent pricing entry point | monthly | 2026-09-26 |
+| **0.85** | `/add-ons` | P1 | Specialized add-ons, including engine bay cleaning | weekly | 2026-10-07 |
+| **0.8** | `/headlight-restoration` | P1 | Headlight restoration service | monthly | 2026-10-06 |
 | **0.8** | `/service-areas` | P1 | Service Areas Hub: Verified coverage across Basking Ridge, Bernardsville, Bedminster, etc. | monthly | 2026-09-26 |
+| **0.7** | `/service-areas/woodbridge-nj` | P1 | Woodbridge service guide; studio and eligible mobile appointments | monthly | 2026-10-07 |
+| **0.7** | `/service-areas/edison-nj` | P1 | Edison service guide; studio and eligible mobile appointments | monthly | 2026-10-07 |
+| **0.7** | `/service-areas/westfield-nj` | P1 | Westfield service guide; studio and eligible mobile appointments | monthly | 2026-10-07 |
+| **0.7** | `/service-areas/cranford-nj` | P1 | Cranford service guide; studio and eligible mobile appointments | monthly | 2026-10-07 |
+| **0.7** | `/service-areas/bridgewater-nj` | P1 | Bridgewater service guide; studio and eligible mobile appointments | monthly | 2026-10-07 |
 | **0.8** | `/our-work` | P1 | Portfolio & Proof: Genuine before-and-after vehicle gallery, real craftsmanship proof | monthly | 2026-09-26 |
 | **0.8** | `/about` | P1 | About & E-E-A-T: Company origin (2019), shop history, team (Vito, Melqui, Hemza), certifications | monthly | 2026-09-26 |
 | **0.8** | `/faq` | P1 | FAQ: Customer decision-making, prep instructions, warranty, and process details | monthly | 2026-09-26 |
@@ -65,7 +71,7 @@ This document outlines the canonical URL structure, XML sitemap specifications, 
 
 ## 4. Technical Implementation
 
-1. **`src/app/sitemap.ts`**: Provides the type-safe Next.js `MetadataRoute.Sitemap` generator returning the 14 canonical objects with realistic `lastModified`, `priority`, and `changeFrequency`.
+1. **`src/app/sitemap.ts`**: Provides the type-safe Next.js `MetadataRoute.Sitemap` generator returning 20 canonical objects with `lastModified`, `priority`, and `changeFrequency`.
 2. **`src/app/robots.ts`**: Declares user agent rules, allows `/`, disallows `/booking`, and points search crawlers to `https://www.cleanworxnj.com/sitemap.xml`.
 3. **`next.config.ts`**: Manages permanent redirect from `/sitemap` to `/sitemap.xml`.
 4. **`src/components/autodetail/Footer.tsx`**: Renders direct anchor links to `/sitemap.xml` in both the Explore section and the bottom legal/copyright bar.

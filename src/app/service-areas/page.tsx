@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { StandardPage } from "@/components/autodetail/StandardPage";
+import { cityPages, citySlugs } from "@/data/cityServicePages";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Auto Detailing Service Areas in NJ | CleanWorx",
   },
   description:
-    "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+    "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
   alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
     url: "https://www.cleanworxnj.com/service-areas",
     images: [
       {
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "CleanWorx serves Basking Ridge, Bernardsville, Bedminster, Far Hills, Bridgewater & Somerset County with studio and mobile auto detailing.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
     images: ["/images/cleanworx-logo.webp"],
   },
 };
@@ -39,6 +41,8 @@ export default function Page() {
       description="CleanWorx Auto Detailing & Ceramic Coating is based in Basking Ridge and serves nearby New Jersey communities through studio and eligible mobile appointment options."
       image="/images/autodetail/cleanworx-service-areas-somerset-county-nj.webp"
       ctaTitle="Confirm an Appointment"
+      childrenPosition="before"
+      containerMaxWidth="max-w-7xl"
       sections={[
         {
           title: "Based in Basking Ridge, Serving Nearby Communities",
@@ -67,7 +71,13 @@ export default function Page() {
             {
               title: "Union County and Nearby Communities",
               paragraphs: [
-                "Westfield, Berkeley Heights, Watchung, Scotch Plains, New Providence, and Gillette."
+                "Westfield, Cranford, Berkeley Heights, Watchung, Scotch Plains, New Providence, and Gillette."
+              ]
+            },
+            {
+              title: "Middlesex County and Nearby Communities",
+              paragraphs: [
+                "Woodbridge and Edison. Confirm the requested service and any mobile appointment details before scheduling."
               ]
             }
           ]
@@ -97,6 +107,28 @@ export default function Page() {
         { label: "Contact CleanWorx", href: "/contact" },
         { label: "Frequently asked questions", href: "/faq" }
       ]}
-    />
+    >
+      <section aria-labelledby="city-guides" className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">Local service guides</p>
+          <h2 id="city-guides" className="mt-3 text-3xl font-black text-white sm:text-4xl">Explore Your Area</h2>
+          <p className="mt-4 text-sm leading-7 text-neutral-400">
+            Compare available services and appointment options for these New Jersey communities.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {citySlugs.map((slug) => (
+            <Link
+              key={slug}
+              href={`/service-areas/${slug}`}
+              className="rounded-xl border border-white/10 bg-[#14151a] p-5 hover:border-[#4da3ff]"
+            >
+              <span className="text-lg font-bold text-white">{cityPages[slug].city}, NJ</span>
+              <span className="mt-2 block text-sm text-neutral-400">Detailing and specialist service guide →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </StandardPage>
   );
 }

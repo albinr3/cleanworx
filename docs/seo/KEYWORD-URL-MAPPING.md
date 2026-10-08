@@ -12,7 +12,7 @@
 - `near me` is a proximity/local-pack query modifier, **not** a target keyword. It is not assigned to a page, title, H1, heading, anchor, or body-copy target. Local relevance is earned through the service topic, Basking Ridge and verified service-area information, consistent NAP/GBP data, legitimate reviews, prominence, and proximity to the searcher.
 - The primary target for each service page is therefore the unmodified service topic. A geographic modifier such as “in Basking Ridge, NJ” may be used naturally where it improves clarity; it is not a substitute for proximity.
 - The homepage owns broad local detailing intent. Each service gets one canonical landing page; variants are covered with headings, service copy, FAQs, and internal anchors rather than thin duplicate pages.
-- Use Basking Ridge and the verified service area in title tags, copy, LocalBusiness schema, Google Business Profile, and internal links. Do not produce city pages until each has 600+ words and genuinely unique local proof.
+- Use Basking Ridge and the verified service area in title tags, copy, LocalBusiness schema, Google Business Profile, and internal links. The five city guides created on October 7, 2026 use distinct service guidance; their portfolio photos keep their recorded locations and are not local case proof. Add verified city-specific projects when available, and do not create more thin city pages by swapping place names.
 - Do not target **premium car wash**: CleanWorx explicitly differentiates itself from a regular car wash. The phrase `car waxing` is permissible only as a secondary feature of an exterior-detailing service.
 - Keyword research identifies search demand; it does **not** authorize an offer. Current service availability, prices, durations, inclusions, and add-on/standalone status must come from the Square catalog except for documented owner-confirmed catalog omissions in the business-facts source rules.
 
@@ -27,7 +27,8 @@
 | P0 | `/exterior-detailing` | New | exterior detailing | exterior car detailing; car detailing exterior; car exterior cleaning; car waxing | Make clear this is professional detailing—not a standard car wash. Cover hand wash, decontamination, wax/sealant, and protection. |
 | P0 | `/mobile-auto-detailing` | New | mobile auto detailing | mobile car detailing; mobile interior car detailing; mobile detailing service; mobile car cleaning | Approved service. Add one USD 50 mobile fee per appointment when the pre-fee subtotal is below USD 400; no fee at USD 400 or more. Confirm availability and coverage per appointment. |
 | P0 | `/window-tinting` | New | window tint installation | windows tinted price; how much does it cost to get windows tinted; windows tint new jersey; window tint in new jersey; window tint removal; window tint removal cost; where can i get my car windows tinted | Carbon and Ceramic installation with approved fixed price matrix and 2-year/10-year warranties, plus four removal prices. Studio and mobile appointments. No legal-status section or compliance claims. |
-| P1 | `/add-ons` | New; structural add-on hub | — | Specialized add-ons, restoration, and supplemental service navigation | Includes tint removal from USD 20/window plus the approved windshield and whole-vehicle prices. Other add-on prices remain catalog-based. `/services` has a 301 permanent redirect to `/`. |
+| P1 | `/add-ons` | New; structural add-on hub | — | Specialized add-ons, restoration, and supplemental service navigation | Includes tint removal from USD 20/window plus the approved windshield and whole-vehicle prices. Other add-on prices remain catalog-based. |
+| P1 | `/services` | Navigable discovery hub; `noindex, follow`; excluded from sitemap | — | Service comparison and navigation | Links directly to the service pages. Receives no redirects from the final URL ledger. |
 | P1 | `/service-areas` | New; structural location hub | — | Service-area coverage and availability | Indexable hub for verified towns currently served around Basking Ridge. Explain that mobile availability is confirmed per appointment; do not invent coverage, eligible-package, access, weather, or travel-policy details. Do not link to city URLs. This route reserves the future child pattern `/service-areas/[town]-nj`. |
 | P1 | `/contact` | New; utility page | — | Contact, booking interface, phone, and service-area access | Preserve the established contact intent. Include phone, email, hours, address, LocalBusiness NAP details, and the future on-site booking interface. No booking URL has been assigned. |
 | P1 | `/about` | New; trust / E-E-A-T page | — | Business history, team, experience, and certification | Preserve CleanWorx’s 2019 origin story, Basking Ridge shop history, team, original work photos, and System X certification. |
@@ -91,7 +92,7 @@ These phrases may appear in third-party keyword tools because searchers use them
 
 `/services` is the service-discovery hub; the six service URLs are individual canonical landing pages. The relationship is navigational and internal-link based rather than a URL-nesting requirement, so the short canonical slugs above must be retained.
 
-`/service-areas` is a coverage hub, not a city-page directory at launch. It may name only the verified locations currently covered: Basking Ridge, Bernardsville, Bernards, Far Hills, Bedminster, Peapack-Gladstone, Liberty Corner, Warren, Bridgewater, Westfield, Martinsville, Morristown, Mendham, Chester, Somerville, Berkeley Heights, Watchung, Scotch Plains, Madison, New Providence, Morris Plains, Morris Township, Parsippany, Florham Park, Whippany, Stirling, Somerset, and Gillette. Do not link these names until the corresponding city route is published.
+`/service-areas` links to the five city guides created on October 7, 2026: Woodbridge, Edison, Westfield, Cranford, and Bridgewater. Each guide links to the general service pages. Its portfolio photos retain their documented project locations and do not by themselves establish that a project took place in the city described. Other towns remain coverage mentions until their own pages are prepared.
 
 ### Primary navigation
 
@@ -132,8 +133,8 @@ Implement these as single-hop, permanent (301) redirects when the replacement ro
 
 | Current public URL | New canonical URL | Reason |
 | --- | --- | --- |
-| `/basking-ridge-nj-auto-detailing-services` | `/services` | The legacy page is a mixed service overview; the new services hub retains the same navigation intent. |
-| `/auto-detailing-basking-ridge-pricing` | `/services` | The legacy pricing page covers several service categories. The hub routes users to their individual service-price sections without creating a duplicate pricing page. |
+| `/basking-ridge-nj-auto-detailing-services` | `/` | The final migration ledger assigns broad detailing intent to the homepage, which links to the service pages. |
+| `/auto-detailing-basking-ridge-pricing` | `/` | The final migration ledger assigns general detailing and pricing intent to the homepage. |
 | `/contact-detailing-basking-ridge-nj` | `/contact` | Preserves direct contact and booking intent. |
 | `/about-us-detailing-basking-ridge-nj` | `/about` | Preserves business-history and trust intent. |
 | `http://cleanworxnj.com/*`, `https://cleanworxnj.com/*`, and `http://www.cleanworxnj.com/*` | `https://www.cleanworxnj.com/*` | Enforce one HTTPS + www canonical hostname while preserving the path. |
@@ -148,7 +149,7 @@ Implement these as single-hop, permanent (301) redirects when the replacement ro
 6. The homepage should use LocalBusiness + Organization schema. Do not publish scaled city-service pages without the local uniqueness requirements in the SEO plan.
 7. Track calls, booking-form submissions, appointments, organic landing-page sessions, and local-pack visibility per canonical URL. Review search-query overlap after 60–90 days and consolidate only if URLs clearly compete.
 8. Publish the approved navigation: Services (with only current approved service links), Our Work, Book Now, and the click-to-call `908-899-2832` CTA. The Book Now control must point to the approved on-site booking process, not a guessed URL. Add matching footer links and breadcrumbs before launch.
-9. Keep `/service-areas` as the only location URL at launch. It must include the verified coverage list, mobile/studio availability guidance, a contact CTA, and no town links. Publish `/service-areas/[town]-nj` only after that town has 600+ words of useful content, original local work or testimonials, and at least 60% unique copy; do not create 30+ location pages without a uniqueness audit.
+9. Link the five prepared city guides from `/service-areas` while keeping coverage and mobile/studio guidance on the hub. Their portfolio photos are labeled with actual project locations. Before adding further town pages or claiming local case studies, obtain useful distinct content and verified local work or testimonials; do not scale location pages by swapping place names.
 
 ## Data quality notes
 

@@ -4,6 +4,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const links = [
   ["Home", "/"],
+  ["Services", "/services"],
   ["Add-Ons & Extras", "/add-ons"],
   ["Our Work", "/our-work"],
   ["About", "/about"],
@@ -24,7 +25,7 @@ const serviceLinks = [
   ["Service Areas", "/service-areas"],
 ] as const;
 
-export function Footer() {
+export function Footer({ hideOurWork = false }: { hideOurWork?: boolean }) {
   return (
     <footer className="border-t border-white/10 bg-[#070709] pb-[calc(5rem+env(safe-area-inset-bottom))] text-neutral-400 sm:pb-0">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
@@ -95,9 +96,9 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-wider text-white">Explore</h2>
+          <p className="text-sm font-bold uppercase tracking-wider text-white">Explore</p>
           <ul className="mt-5 space-y-3 text-sm">
-            {links.map(([label, href]) => (
+            {links.filter(([, href]) => !hideOurWork || href !== "/our-work").map(([label, href]) => (
               <li key={href}>
                 {href.endsWith(".xml") ? (
                   <a href={href} className="hover:text-white transition-colors">
@@ -112,9 +113,9 @@ export function Footer() {
             ))}
           </ul>
         </div>
-        <div><h2 className="text-sm font-bold uppercase tracking-wider text-white">Services</h2><ul className="mt-5 space-y-3 text-sm">{serviceLinks.map(([label, href]) => <li key={href}><Link href={href} className="hover:text-white">{label}</Link></li>)}</ul></div>
+        <div><p className="text-sm font-bold uppercase tracking-wider text-white">Services</p><ul className="mt-5 space-y-3 text-sm">{serviceLinks.map(([label, href]) => <li key={href}><Link href={href} className="hover:text-white">{label}</Link></li>)}</ul></div>
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-wider text-white">Contact</h2>
+          <p className="text-sm font-bold uppercase tracking-wider text-white">Contact</p>
           <address itemScope itemType="https://schema.org/AutoRepair" className="mt-5 not-italic space-y-4 text-sm">
             <div>
               <p itemProp="name" className="text-sm font-bold text-white leading-snug">

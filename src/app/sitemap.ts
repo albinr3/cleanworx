@@ -72,6 +72,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...[
+      "woodbridge-nj",
+      "edison-nj",
+      "westfield-nj",
+      "cranford-nj",
+      "bridgewater-nj",
+    ].map((slug) => ({
+      url: `${baseUrl}/service-areas/${slug}`,
+      lastModified: new Date("2026-10-07T00:00:00.000Z"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${baseUrl}/our-work`,
       lastModified: new Date("2026-09-26T20:15:00.000Z"),

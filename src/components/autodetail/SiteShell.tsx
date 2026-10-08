@@ -4,13 +4,13 @@ import { Header } from "@/components/autodetail/Header";
 import { MobileStickyCta } from "@/components/autodetail/MobileStickyCta";
 import { ScrollProgressBar } from "@/components/autodetail/ScrollProgressBar";
 
-export function SiteShell({ children }: { children: React.ReactNode }) {
+export function SiteShell({ children, hideOurWork = false }: { children: React.ReactNode; hideOurWork?: boolean }) {
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-white">
       <ScrollProgressBar />
-      <Header />
+      <Header hideOurWork={hideOurWork} />
       <main className="overflow-x-clip">{children}</main>
-      <Footer />
+      <Footer hideOurWork={hideOurWork} />
       <BackToTop />
       <MobileStickyCta />
     </div>
