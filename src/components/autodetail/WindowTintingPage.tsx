@@ -12,7 +12,7 @@ import {
   Clock,
   ShieldCheck,
 } from "lucide-react";
-import { BookingLink } from "@/components/autodetail/BookingLink";
+import { CallLink } from "@/components/autodetail/BookingLink";
 import { HorizontalScrollRegion } from "@/components/autodetail/HorizontalScrollRegion";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
@@ -55,7 +55,7 @@ const vltShades = [
   {
     vlt: "20% VLT",
     label: "Factory Privacy Match",
-    desc: "Matches the deep privacy glass found on factory rear SUV, truck, and crossover windows. Excellent heat insulation and strong cabin privacy.",
+    desc: "Matches the deep privacy glass found on factory rear SUV, truck, and crossover windows. Excellent heat insulation and strong interior privacy.",
     badge: "SUV / Rear Match",
     darknessClass: "bg-black/85 border-[#1277ff]/40",
   },
@@ -69,7 +69,7 @@ const vltShades = [
   {
     vlt: "5% VLT",
     label: "Limousine Dark Tint",
-    desc: "Maximum privacy shade allowing only 5% of light transmission. Deep shading for a more private cabin.",
+    desc: "Maximum privacy shade allowing only 5% of light transmission. Deep shading for a more private interior.",
     badge: "Maximum Privacy",
     darknessClass: "bg-black border-white/30",
   },
@@ -187,14 +187,14 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
   };
 
   return (
-    <SiteShell>
+    <SiteShell contactMode="call">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero Section */}
       <section className="relative isolate min-h-[500px] overflow-hidden border-b border-white/10 lg:min-h-[580px]">
         <Image
           src={data.image}
-          alt="Professional window tint installation at CleanWorx Auto Detailing & Ceramic Coating studio in Basking Ridge, NJ"
+          alt="Professional window tint installation at the CleanWorx Auto Detailing & Ceramic Coating shop in Basking Ridge, NJ"
           fill
           priority
           sizes="100vw"
@@ -227,7 +227,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   {data.summary}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <BookingLink />
+                  <CallLink label="Call for Window Tinting" />
                   <Link
                     href="/add-ons"
                     className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/10 active:scale-95"
@@ -240,7 +240,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
 
             <ScrollReveal animation="fade-up" delay={150} className="w-full">
               <div className="border border-white/15 bg-[#0b0d13]/85 p-5 shadow-2xl shadow-black/40 backdrop-blur-md sm:p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2.5 text-xs leading-5 text-neutral-300">
                   Full sedan or coupe tint from $300. Tint removal from $20 per window. Carbon film carries a 2-year warranty; ceramic film carries a 10-year warranty.
@@ -277,7 +277,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 Drive in Comfort with Professional Window Tint
               </h2>
               <p className="mt-5 text-sm leading-7 text-neutral-300 sm:text-base">
-                Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties.
+                Summer heat can turn your vehicle interior into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -287,7 +287,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-3 text-base font-bold text-white">Solar Heat Rejection</h3>
                   <p className="mt-2 text-xs leading-5 text-neutral-400">
-                    Blocks intense infrared thermal radiation, reducing vehicle cabin heat by up to 30°F during humid New Jersey summers.
+                    Blocks intense infrared thermal radiation, reducing vehicle interior heat by up to 30°F during humid New Jersey summers.
                   </p>
                 </div>
 
@@ -318,14 +318,14 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               <div className="relative aspect-square sm:aspect-[4/3.6] overflow-hidden bg-[#111827]">
                 <Image
                   src="/images/autodetail/window-tint-comfort.jpg"
-                  alt="CleanWorx technician precision window tint squeegee installation in Basking Ridge studio"
+                  alt="CleanWorx technician precision window tint squeegee installation in the Basking Ridge shop"
                   fill
                   sizes="(min-width: 1024px) 35vw, 90vw"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080a0e]/90 via-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#70b5ff]">Precision Studio Craft</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#70b5ff]">Precision In-Shop Craft</p>
                   <p className="text-sm font-bold text-white">Computer-Cut Edge Alignment Inside Dust-Free Bay</p>
                 </div>
               </div>
@@ -502,17 +502,17 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Precision Window Tint Installation: Our 3-Stage Process
             </h2>
             <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-              Choose an appointment at our Basking Ridge studio or ask about mobile installation at your home or workplace. We prepare the glass, fit the film, and inspect the finished edges for either appointment type.
+              Window tinting is installed in our Basking Ridge shop. We prepare the glass, fit the film, and inspect every finished edge before delivery.
             </p>
           </ScrollReveal>
 
-          {/* Studio Process Showcase Image */}
+          {/* In-shop Process Showcase Image */}
           <ScrollReveal animation="fade-up" delay={80} className="mt-10">
             <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#10141e] shadow-2xl shadow-black/60">
               <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full">
                 <Image
                   src="/images/autodetail/window-tint-process.webp"
-                  alt="Precision automotive window tint installation on luxury BMW M4 coupe at CleanWorx studio in Basking Ridge NJ"
+                  alt="Precision automotive window tint installation on luxury BMW M4 coupe at the CleanWorx shop in Basking Ridge NJ"
                   fill
                   sizes="(max-width: 1280px) 100vw, 1280px"
                   className="object-cover object-center transition duration-700 hover:scale-[1.02]"
@@ -521,7 +521,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap items-end justify-between gap-3">
                   <div className="rounded-xl border border-white/15 bg-black/65 px-4 py-2.5 backdrop-blur-md">
                     <p className="text-xs font-bold uppercase tracking-wider text-[#4da3ff]">
-                      CleanWorx Studio Bay &bull; Basking Ridge, NJ
+                      CleanWorx Shop Bay &bull; Basking Ridge, NJ
                     </p>
                     <p className="mt-0.5 text-sm font-bold text-white">
                       Dust-Free Cleanroom Installation Environment
@@ -599,7 +599,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               Key Factors That Influence Window Tinting Cost
             </h3>
             <p className="mt-3 text-sm leading-7 text-neutral-300">
-              Studio and mobile appointments are available. One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee. We confirm the service total before work begins.
+              Window tinting is available in shop only. Call us to confirm your vehicle, selected film, and service total before work begins.
             </p>
           </ScrollReveal>
         </div>
@@ -662,7 +662,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   Where to Get Your Windows Tinted in New Jersey
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-neutral-300 sm:text-base">
-                  Visit our dedicated studio at 19 E. Henry Street in Basking Ridge, NJ, or ask about a mobile appointment at your home or workplace. We confirm availability and your total before booking.
+                  Visit our dedicated shop at 19 E. Henry Street in Basking Ridge, NJ. Call us to confirm availability and your total.
                 </p>
               </ScrollReveal>
 
@@ -672,7 +672,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-xl font-bold text-white sm:text-2xl">
-                    Dedicated Dust-Free Studio in Basking Ridge
+                    Dedicated Dust-Free Shop in Basking Ridge
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-neutral-300">
                     Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility offers a climate-controlled space for tint installation.
@@ -684,7 +684,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                     </p>
                     <p className="flex items-center gap-2">
                       <Check className="h-4 w-4 text-[#1277ff]" />
-                      <span>Studio appointments booked Monday through Saturday</span>
+                      <span>In-shop appointments available Monday through Saturday</span>
                     </p>
                     <p className="flex items-center gap-2">
                       <Check className="h-4 w-4 text-[#1277ff]" />
@@ -701,7 +701,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                     Serving Somerset and Morris County Communities
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-neutral-300">
-                    We proudly serve clients throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, Peapack-Gladstone, Warren, Bridgewater, Morristown, and neighboring communities.
+                    We proudly serve customers throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, Peapack-Gladstone, Warren, Bridgewater, Morristown, and neighboring communities.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2 text-xs">
                     {[
@@ -725,14 +725,14 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <BookingLink label="Book Window Tinting" className="w-full sm:w-auto" />
+                <CallLink label="Call for Window Tinting" className="w-full sm:w-auto" />
                 <span className="text-xs text-neutral-400">
-                  Studio and mobile appointments available
+                  In-shop installation only
                 </span>
               </div>
             </div>
 
-            {/* Video Demonstration Card in Studio Section */}
+            {/* Video Demonstration Card in Shop Section */}
             <ScrollReveal animation="fade-left" className="relative mx-auto w-full max-w-[340px] lg:mx-0">
               <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-[#1277ff]/30 bg-[#0c0e15] shadow-2xl shadow-black/60">
                 <video
@@ -742,16 +742,16 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   loop
                   muted
                   playsInline
-                  poster="/videos/window-tint-studio-poster.webp"
+                  poster="/videos/window-tint-shop-poster.webp"
                   preload="metadata"
                 >
-                  <source src="/videos/window-tint-studio.webm" type="video/webm" />
-                  <source src="/videos/window-tint-studio.mp4" type="video/mp4" />
+                  <source src="/videos/window-tint-shop.webm" type="video/webm" />
+                  <source src="/videos/window-tint-shop.mp4" type="video/mp4" />
                 </video>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080a0e]/85 via-transparent to-[#080a0e]/40" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between p-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#4da3ff]">
                   <span className="rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-md border border-white/10">
-                    CleanWorx Studio
+                    CleanWorx Shop
                   </span>
                   <span className="rounded-full bg-black/60 px-2 py-1 backdrop-blur-md border border-white/10 text-white font-mono">
                     2× Speed
@@ -788,7 +788,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 </p>
               </div>
               <div className="shrink-0">
-                <BookingLink label="Book Tint Removal" className="w-full sm:w-auto" />
+                <CallLink label="Call for Tint Removal" className="w-full sm:w-auto" />
               </div>
             </div>
 
@@ -819,7 +819,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-3 text-xl font-bold text-white">Window Tint Removal Pricing</h3>
                   <p className="mt-2 text-xs leading-6 text-neutral-300 sm:text-sm">
-                    Remove old film and adhesive at the studio or through a mobile appointment.
+                    Remove old film and adhesive safely at our Basking Ridge shop.
                   </p>
                   <dl className="mt-4 space-y-2 border-t border-white/10 pt-4 text-sm">
                     {tintRemovalPrices.map((removal) => (
@@ -838,7 +838,7 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                     <span className="block text-xs text-neutral-400">Starting at</span>
                     <span className="font-mono text-lg font-bold text-emerald-400">$20 / window</span>
                   </div>
-                  <BookingLink label="Book Now" className="text-xs px-4 py-2.5" />
+                  <CallLink label="Call Now" className="text-xs px-4 py-2.5" />
                 </div>
               </div>
             </div>
@@ -881,11 +881,11 @@ export function WindowTintingPage({ data }: { data: ServicePageData }) {
                 Schedule Your Window Tint Installation in Basking Ridge, NJ
               </h2>
               <p className="mt-3 max-w-xl text-xs leading-6 text-white/90 sm:text-sm">
-                Choose a studio appointment at 19 E. Henry Street, Basking Ridge, or request mobile service. Select your vehicle class and choose between carbon or ceramic film.
+                Call our shop at 19 E. Henry Street, Basking Ridge, to discuss your vehicle class and choose between carbon or ceramic film.
               </p>
             </div>
             <div className="mt-6 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">
-              <BookingLink label="Book Now" className="bg-[#080a0e] hover:bg-black text-white" />
+              <CallLink label="Call Now" className="bg-[#080a0e] hover:bg-black text-white" />
               <a
                 href="tel:+19088992832"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-3 text-xs font-bold text-white transition hover:bg-white/20"

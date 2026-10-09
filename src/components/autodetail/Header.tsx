@@ -17,7 +17,7 @@ const services = [
   ["Car Odor Removal", "/car-odor-treatment"],
 ] as const;
 
-export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
+export function Header({ hideOurWork = false, contactMode = "booking" }: { hideOurWork?: boolean; contactMode?: "booking" | "call" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -104,6 +104,9 @@ export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
                 </div>
               </div>
             </div>
+            <Link href="/pricing" className="text-sm font-medium text-neutral-300 hover:text-white">
+              Pricing
+            </Link>
             {!hideOurWork && (
               <Link href="/our-work" className="text-sm font-medium text-neutral-300 hover:text-white">
                 Our Work
@@ -124,14 +127,25 @@ export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
               <Phone className="h-4 w-4 text-[#1277ff]" />
               <span className="font-semibold text-white">908-899-2832</span>
             </a>
-            <a
-              href={BOOKING_URL}
-              aria-label="Book Now"
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg bg-[#1277ff] px-3 py-2 text-xs font-bold text-white shadow-lg shadow-[#1277ff]/25 transition hover:bg-[#0d62d6] active:scale-95 sm:px-5 sm:py-2.5 sm:text-sm"
-            >
-              <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              <span className="hidden min-[360px]:inline">Book Now</span>
-            </a>
+            {contactMode === "booking" ? (
+              <a
+                href={BOOKING_URL}
+                aria-label="Book Now"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg bg-[#1277ff] px-3 py-2 text-xs font-bold text-white shadow-lg shadow-[#1277ff]/25 transition hover:bg-[#0d62d6] active:scale-95 sm:px-5 sm:py-2.5 sm:text-sm"
+              >
+                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="hidden min-[360px]:inline">Book Now</span>
+              </a>
+            ) : (
+              <a
+                href="tel:+19088992832"
+                aria-label="Call CleanWorx"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg bg-[#1277ff] px-3 py-2 text-xs font-bold text-white shadow-lg shadow-[#1277ff]/25 transition hover:bg-[#0d62d6] active:scale-95 sm:px-5 sm:py-2.5 sm:text-sm"
+              >
+                <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="hidden min-[360px]:inline">Call Now</span>
+              </a>
+            )}
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation menu"
@@ -192,6 +206,13 @@ export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
                 <span>Add-Ons &amp; Extras</span>
                 <span className="rounded bg-[#1277ff]/20 px-1.5 py-0.5 text-[10px] font-bold text-[#4da3ff]">NEW</span>
               </Link>
+              <Link
+                href="/pricing"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-between rounded-lg px-3 py-3 text-neutral-100"
+              >
+                Pricing <ChevronRight className="h-4 w-4" />
+              </Link>
               {[
                 ["Our Work", "/our-work"],
                 ["About", "/about"],
@@ -211,14 +232,25 @@ export function Header({ hideOurWork = false }: { hideOurWork?: boolean }) {
               ))}
             </nav>
             <div className="mt-auto border-t border-white/10 pt-6">
-              <a
-                href={BOOKING_URL}
-                onClick={() => setMenuOpen(false)}
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white"
-              >
-                <Calendar className="h-4 w-4" />
-                Book Now
-              </a>
+              {contactMode === "booking" ? (
+                <a
+                  href={BOOKING_URL}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Book Now
+                </a>
+              ) : (
+                <a
+                  href="tel:+19088992832"
+                  onClick={() => setMenuOpen(false)}
+                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#1277ff] py-3.5 text-sm font-bold text-white"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+              )}
               <a
                 href="tel:+19088992832"
                 className="mt-4 block text-center text-sm font-semibold text-white"

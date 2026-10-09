@@ -314,7 +314,7 @@ export function ContactPageContent() {
             <div className="group relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-[#121318] shadow-2xl">
               <Image
                 src="/images/contact/interior-detailing-mazda-6.webp"
-                alt="CleanWorx deep interior steam cleaning and leather conditioning on Mazda 6 in Basking Ridge studio"
+                alt="CleanWorx deep interior steam cleaning and leather conditioning on Mazda 6 in the Basking Ridge shop"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

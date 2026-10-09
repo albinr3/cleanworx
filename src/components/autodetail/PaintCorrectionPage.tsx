@@ -127,10 +127,10 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
 
             <ScrollReveal animation="fade-up" delay={150} className="w-full">
               <div className="border border-white/15 bg-[#0b0d13]/80 p-5 shadow-2xl shadow-black/35 backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm">
-                  Prices marked with a plus sign or as variable are confirmed after reviewing the vehicle and selected service.
+                  All prices are subject to change upon inspection of the vehicle.
                 </p>
               </div>
             </ScrollReveal>
@@ -285,7 +285,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/15 bg-[#111722] shadow-2xl">
                 <Image
                   src="/images/autodetail/cleanworx-paint-correction-action.jpg"
-                  alt="CleanWorx certified specialist performing dual-action machine polishing and paint correction in Basking Ridge studio"
+                  alt="CleanWorx certified specialist performing dual-action machine polishing and paint correction in the Basking Ridge shop"
                   fill
                   priority
                   sizes="(min-width: 1024px) 35vw, 90vw"

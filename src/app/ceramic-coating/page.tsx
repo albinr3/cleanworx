@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     absolute: "Ceramic Coating in Basking Ridge, NJ | CleanWorx",
   },
   description:
-    "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 5-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
+    "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 6-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
   alternates: { canonical: "/ceramic-coating" },
   openGraph: {
     title: "Ceramic Coating in Basking Ridge, NJ | CleanWorx",
     description:
-      "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 5-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
+      "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 6-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
     url: "https://www.cleanworxnj.com/ceramic-coating",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ceramic Coating in Basking Ridge, NJ | CleanWorx",
     description:
-      "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 5-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
+      "Certified System X ceramic coating in Basking Ridge, NJ. 1, 3 & 6-year warrantied protection, paint correction prep, and extreme hydrophobic gloss.",
     images: ["/images/autodetail/ceramic-coating-hero.jpg"],
   },
 };

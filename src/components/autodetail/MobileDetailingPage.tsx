@@ -17,13 +17,13 @@ import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
 
 const comparisonRows = [
-  ["Water & Power Supply", "Requires your home hose & power outlets", "Plugs into customer spigots & cords", "100% self-contained van & generator"],
+  ["Water & Power Supply", "Requires your home hose & power outlets", "Plugs into customer spigots & cords", "100% self-contained mobile unit & generator"],
   ["Water Quality & Spotting", "Hard tap water leaves mineral spots", "Untreated municipal tap water", "Deionized spot-free filtered water"],
   ["Equipment & Chemical Grade", "Over-the-counter soaps & dirty sponges", "Basic shop-vac & harsh degreasers", "Commercial steam & pH-neutral chemistry"],
   ["Customer Time & Effort", "3–5 hours of heavy physical labor", "Managing cords & waiting around", "Zero downtime — relax or work inside"],
   ["Service Location Flexibility", "Restricted strictly to garden hose range", "Requires outdoor hookups nearby", "Driveway, office lot, or private road"],
   ["Paint & Clear Coat Safety", "Severe swirl risk from improper washing", "High swirl risk from rapid wiping", "Scratch-free two-bucket wash with grit guards"],
-  ["Pricing Transparency", "Uncalculated equipment & chemical costs", "Surprise travel fees & hidden add-ons", "$50 fee only below a $400 appointment subtotal"],
+  ["Pricing Transparency", "Uncalculated equipment & chemical costs", "Surprise travel fees & hidden add-ons", "$35 fee for every mobile appointment"],
 ] as const;
 
 function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
@@ -87,7 +87,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
           loop
           playsInline
           preload="auto"
-          poster={data.image || "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp"}
+          poster={data.image || "/images/autodetail/cleanworx-mobile-detailing-unit-driveway-setup.webp"}
           className="absolute inset-0 -z-30 h-full w-full object-cover object-[60%_center]"
           aria-hidden="true"
         >
@@ -128,10 +128,10 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
 
             <ScrollReveal animation="fade-up" delay={150} className="w-full">
               <div className="border border-white/15 bg-[#0b0d13]/80 p-5 shadow-2xl shadow-black/35 backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm">
-                  Prices marked with a plus sign or as variable are confirmed after reviewing the vehicle and selected service.
+                  All prices are subject to change upon inspection of the vehicle.
                 </p>
               </div>
             </ScrollReveal>
@@ -147,7 +147,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-square overflow-hidden bg-[#111827]">
               <Image
-                src={data.image || "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp"}
+                src={data.image || "/images/autodetail/cleanworx-mobile-detailing-unit-driveway-setup.webp"}
                 alt="CleanWorx mobile auto detailing setup ready to detail at customer driveway"
                 fill
                 sizes="(min-width: 1024px) 35vw, 90vw"
@@ -190,7 +190,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
                 <Image
                   src="/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp"
-                  alt="CleanWorx mobile detailing van fully equipped with water, power and tools"
+                alt="CleanWorx mobile detailing unit fully equipped with water, power and tools"
                   fill
                   priority
                   sizes="(min-width: 1024px) 50vw, 90vw"
@@ -282,18 +282,18 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Mobile Detailing Unit</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    We bring our fully self-contained detailing van to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400.
+                    We bring our fully self-contained mobile unit to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </div>
 
                 <div className="border-l-2 border-[#4da3ff] pl-5">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
                     <MapPin className="h-3.5 w-3.5" />
-                    <span>Studio Drop-Off Option</span>
+                    <span>In-Shop Drop-Off Option</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Shop</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Prefer studio drop-off? You can also bring your vehicle directly to our detailing facility at 19 E. Henry Street in Basking Ridge, NJ.
+                    Prefer in-shop drop-off? You can also bring your vehicle directly to our detailing facility at 19 E. Henry Street in Basking Ridge, NJ.
                   </p>
                 </div>
               </div>
@@ -309,7 +309,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                 </div>
                 <h3 className="mt-4 text-2xl font-bold text-white">Zero Utilities Required. Showroom Care at Home.</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-300">
-                  Our dedicated mobile detailing van brings professional-grade care directly to your vehicle without using your utilities:
+                  Our dedicated mobile detailing unit brings professional-grade care directly to your vehicle without using your utilities:
                 </p>
 
                 <ul className="mt-6 space-y-3.5 text-xs text-neutral-300 sm:text-sm">
@@ -327,7 +327,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Transparent mobile pricing:</strong> One $50 fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee.</span>
+                    <span><strong>Transparent mobile pricing:</strong> A $35 mobile service fee applies to every mobile appointment.</span>
                   </li>
                 </ul>
 
@@ -337,7 +337,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
                   />
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    One $50 mobile fee only when the appointment subtotal is under $400.
+                    A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </div>
               </div>
@@ -358,7 +358,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   Mobile Detailing Rates &amp; Scheduling
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee, even when they include multiple services. Final pricing is confirmed upfront before work begins.
+                  A $35 mobile service fee applies to every mobile appointment. Final pricing is confirmed upfront before work begins.
                 </p>
               </ScrollReveal>
 
@@ -366,13 +366,13 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                 <ScrollReveal animation="fade-up" delay={80} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">{data.price}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose any of our interior, exterior, or full detailing services, and our self-contained van comes directly to your driveway or workplace.
+                    Choose any of our interior, exterior, or full detailing services, and our self-contained mobile unit comes directly to your driveway or workplace.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">Self-Contained Rig Included</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    All electricity, deionized water, commercial steam extraction, and high-lubricity foam equipment are completely self-supplied by our van.
+                    All electricity, deionized water, commercial steam extraction, and high-lubricity foam equipment are completely self-supplied by our mobile unit.
                   </p>
                 </ScrollReveal>
               </div>
@@ -380,7 +380,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up" delay={200} className="mt-6 flex flex-wrap items-center gap-4">
                 <BookingLink label="Book Now" className="bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                  Studio drop-off or mobile availability check
+                  In-shop drop-off or mobile availability check
                 </span>
               </ScrollReveal>
             </div>
@@ -457,12 +457,12 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-left" delay={140} className="border border-white/10 bg-[#121722]/80 p-4 backdrop-blur-sm sm:p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#1277ff]/20 font-mono text-sm font-bold text-[#4da3ff]">
-                    $50
+                    $35
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">Mobile Fee Below $400</h3>
+                  <h3 className="text-base font-bold text-white sm:text-lg">Mobile Service Fee</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  One $50 fee per appointment when the pre-fee service subtotal is below $400. No mobile fee applies at $400 or more.
+                  A $35 mobile service fee applies to every mobile appointment.
                 </p>
               </ScrollReveal>
 

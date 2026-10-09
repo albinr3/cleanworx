@@ -9,6 +9,7 @@ import {
   type PortfolioItem,
 } from "@/data/ourWorkData";
 import { BookingTrigger } from "@/components/autodetail/BookingTrigger";
+import { normalizeTerminology } from "@/lib/terminology";
 import {
   ChevronLeft,
   ChevronRight,
@@ -138,7 +139,7 @@ export function PortfolioGallery() {
               >
                 <Image
                   src={item.src}
-                  alt={item.alt}
+                  alt={normalizeTerminology(item.alt)}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -163,13 +164,13 @@ export function PortfolioGallery() {
                 <div className="absolute inset-x-0 bottom-0 z-10 p-5">
                   <p className="text-xs font-semibold text-neutral-300 flex items-center gap-1">
                     <MapPin className="h-3 w-3 text-[#4da3ff]" />
-                    {item.location}
+                    {normalizeTerminology(item.location)}
                   </p>
                   <h3 className="mt-1 text-base font-bold text-white transition-colors group-hover:text-[#4da3ff] line-clamp-1">
-                    {item.title}
+                    {normalizeTerminology(item.title)}
                   </h3>
                   <p className="mt-1.5 text-xs text-neutral-400 line-clamp-2 leading-relaxed">
-                    {item.description}
+                    {normalizeTerminology(item.description)}
                   </p>
                 </div>
               </div>
@@ -246,7 +247,7 @@ export function PortfolioGallery() {
               <div className="relative h-full w-full flex items-center justify-center">
                 <Image
                   src={activeItem.src}
-                  alt={activeItem.alt}
+                  alt={normalizeTerminology(activeItem.alt)}
                   width={activeItem.width}
                   height={activeItem.height}
                   className="max-h-[60vh] sm:max-h-[65vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
@@ -259,14 +260,14 @@ export function PortfolioGallery() {
             <div className="flex flex-col gap-3 border-t border-white/10 bg-[#14151a] p-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h4 className="text-lg font-bold text-white">
-                  {activeItem.title}
+                  {normalizeTerminology(activeItem.title)}
                 </h4>
                 <p className="mt-1 text-xs text-neutral-400 sm:text-sm">
-                  {activeItem.description}
+                  {normalizeTerminology(activeItem.description)}
                 </p>
                 <p className="mt-1 text-xs text-[#4da3ff] font-medium flex items-center gap-1">
                   <MapPin className="h-3 w-3" />
-                  {activeItem.location}
+                  {normalizeTerminology(activeItem.location)}
                 </p>
               </div>
 

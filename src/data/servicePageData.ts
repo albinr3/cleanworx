@@ -19,7 +19,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     inclusions: [
       "1-year ceramic coating package from $325+",
       "3-year System X ceramic package from $899.99+",
-      "5-year System X ceramic package from $1,099.99+",
+      "6-year System X ceramic package from $1,099.99+",
       "Complete exterior decontamination & prep wash included",
       "Digital paint-depth inspection before application"
     ],
@@ -89,7 +89,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "System X Ceramic Coating Options",
         paragraphs: [
-          "We offer 1-year, 3-year, and 5-year ceramic coating packages tailored to how long you plan to keep your vehicle and your driving habits. Final pricing depends on vehicle size and surface condition."
+          "We offer 1-year, 3-year, and 6-year ceramic coating packages tailored to how long you plan to keep your vehicle and your driving habits. Final pricing depends on vehicle size and surface condition."
         ],
         subsections: [
           {
@@ -122,7 +122,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     faqs: [
       {
         question: "How much does ceramic coating cost in Basking Ridge, NJ?",
-        answer: "Our ceramic coating packages start at $325+ for 1-year protection, $899.99+ for 3-year protection, and $1,099.99+ for 5-year protection. Final pricing depends on your vehicle size and the amount of paint correction required before application."
+        answer: "Our ceramic coating packages start at $325+ for 1-year protection, $899.99+ for 3-year protection, and $1,099.99+ for 6-year protection. Final pricing depends on your vehicle size and the amount of paint correction required before application."
       },
       {
         question: "Does ceramic coating fix existing scratches?",
@@ -130,7 +130,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "Are ceramic coatings backed by a warranty?",
-        answer: "Yes. Our 3-year and 5-year System X ceramic coatings include manufacturer warranties when maintained according to standard care guidelines."
+        answer: "Yes. Our 3-year and 6-year System X ceramic coatings include manufacturer warranties when maintained according to standard care guidelines."
       }
     ],
     faqTitle: "Ceramic Coating FAQs",
@@ -285,7 +285,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     slug: "interior-detailing",
     name: "Interior Detailing",
     h1: "Deep Interior Car Detailing in Basking Ridge, NJ",
-    eyebrow: "Cabin deep restoration",
+    eyebrow: "Interior deep restoration",
     summary: "CleanWorx provides deep interior car detailing in Basking Ridge, NJ. Commercial steam extraction, hot-water shampooing, and leather conditioning restore that fresh factory feeling.",
     image: "/videos/hero-interior-detailing-poster.webp",
     price: "From $225+",
@@ -298,9 +298,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     ],
     sections: [
       {
-        title: "Complete Cabin Deep Cleaning & Sanitization",
+        title: "Complete Interior Deep Cleaning & Sanitization",
         paragraphs: [
-          "Daily commutes, children, pets, and coffee spills leave dirt, allergens, and odors embedded in your seats and floor mats. Our full interior detailing deep-cleans every surface with commercial-grade steam and extraction, sanitizing your cabin without leaving greasy residues or harsh chemical odors."
+          "Daily commutes, children, pets, and coffee spills leave dirt, allergens, and odors embedded in your seats and floor mats. Our full interior detailing deep-cleans every surface with commercial-grade steam and extraction, sanitizing your interior without leaving greasy residues or harsh chemical odors."
         ]
       },
       {
@@ -328,9 +328,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ]
       },
       {
-        title: "Mobile or In-Studio Interior Detailing",
+        title: "Mobile or In-Shop Interior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or book our mobile detailing van to come to your driveway or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
+          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or book our mobile detailing unit to come to your driveway or workplace. A $35 mobile service fee applies to every mobile appointment."
         ]
       }
     ],
@@ -345,7 +345,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "Is mobile interior detailing available in my town?",
-        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
+        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns. A $35 mobile service fee applies to every mobile appointment."
       }
     ],
     faqTitle: "Interior Detailing FAQs",
@@ -404,9 +404,9 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
         ]
       },
       {
-        title: "Mobile or In-Studio Exterior Detailing",
+        title: "Mobile or In-Shop Exterior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge studio at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400."
+          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. A $35 mobile service fee applies to every mobile appointment."
         ]
       }
     ],
@@ -446,12 +446,12 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     name: "Mobile Auto Detailing",
     h1: "Mobile Auto Detailing in Basking Ridge & Somerset County, NJ",
     eyebrow: "We come to your driveway",
-    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400.",
-    image: "/images/autodetail/cleanworx-mobile-detailing-van-driveway-setup.webp",
-    price: "Package + up to $50",
+    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. A $35 mobile service fee applies to every mobile appointment.",
+    image: "/images/autodetail/cleanworx-mobile-detailing-unit-driveway-setup.webp",
+    price: "Package + $35 mobile fee",
     inclusions: [
-      "$50 mobile fee only when the appointment subtotal is under $400",
-      "Fully self-contained detailing van with onboard water and power",
+      "$35 mobile service fee for every mobile appointment",
+      "Fully self-contained mobile unit with onboard water and power",
       "Mobile interior detailing, exterior hand washes, and sealants",
       "Available across Basking Ridge, Bernardsville, Bedminster & beyond",
       "Zero travel time or waiting rooms required"
@@ -460,7 +460,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Showroom-Level Care in Your Own Driveway",
         paragraphs: [
-          "You do not have to waste your Saturday in a waiting room or arrange rides to drop your vehicle off. Our self-contained mobile detailing van carries its own deionized water supply, commercial generator, pressure washers, and professional extractors right to your doorstep."
+          "You do not have to waste your Saturday in a waiting room or arrange rides to drop your vehicle off. Our self-contained mobile detailing unit carries its own deionized water supply, commercial generator, pressure washers, and professional extractors right to your doorstep."
         ]
       },
       {
@@ -476,13 +476,13 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "Services Offered Mobiles",
             paragraphs: [
-              "We provide full interior detailing, exterior hand wash and decontamination packages, and ceramic wax sealants on a mobile basis. Complex multi-stage paint correction and multi-year ceramic coatings are best performed in our climate-controlled Basking Ridge studio."
+              "We provide full interior detailing, exterior hand wash and decontamination packages, and ceramic wax sealants on a mobile basis. Complex multi-stage paint correction and multi-year ceramic coatings are best performed in our climate-controlled Basking Ridge shop."
             ]
           },
           {
             title: "Self-Contained Power & Spot-Free Water",
             paragraphs: [
-              "Our custom mobile detailing van carries an onboard pure water tank and quiet generator. We bring all electricity and spot-free water needed for a complete detail without using your home utilities."
+              "Our custom mobile detailing unit carries an onboard pure water tank and quiet generator. We bring all electricity and spot-free water needed for a complete detail without using your home utilities."
             ]
           }
         ]
@@ -501,7 +501,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "What is the fee for mobile detailing?",
-        answer: "One $50 mobile service fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee, even when they include multiple services."
+        answer: "A $35 mobile service fee applies to every mobile appointment."
       },
       {
         question: "Which towns in New Jersey do you travel to?",
@@ -523,29 +523,29 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     slug: "window-tinting",
     name: "Window Tinting",
     h1: "Professional Window Tint Installation in Basking Ridge, NJ",
-    eyebrow: "Studio & Mobile Installation and Removal",
-    summary: "Protect your vehicle interior, keep your cabin cool, and add privacy with professional window tint in Basking Ridge, NJ. Choose carbon film with a 2-year warranty or ceramic film with a 10-year warranty, installed at our studio or through a mobile appointment.",
+    eyebrow: "In-Shop Installation and Removal",
+    summary: "Protect your vehicle interior, keep your interior cool, and add privacy with professional window tint in Basking Ridge, NJ. Choose carbon film with a 2-year warranty or ceramic film with a 10-year warranty, installed in our shop.",
     image: "/images/autodetail/window-tint-hero.jpg",
     price: "Sedan / coupe from $300",
     inclusions: [
       "High-performance nano-ceramic and carbon film options",
       "99% UV ray rejection protecting leather, dash, and passengers",
-      "Up to 88% infrared heat rejection for significantly cooler cabin temps",
+      "Up to 88% infrared heat rejection for significantly cooler interior temps",
       "Computer-cut plotter precision tailored to exact factory glass edges",
       "Tint removal from $20 per window",
-      "Studio and mobile appointments available"
+      "In-shop installation only"
     ],
     sections: [
       {
         title: "Drive in Comfort with Professional Window Tint",
         paragraphs: [
-          "Summer heat can turn your vehicle cabin into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties."
+          "Summer heat can turn your vehicle interior into an oven, while UV exposure slowly fades and cracks leather upholstery. Our window films help keep your interior cooler, cut road glare, and block UV rays across Somerset and Morris counties."
         ],
         subsections: [
           {
             title: "Solar Heat Rejection",
             paragraphs: [
-              "Advanced window films actively block infrared thermal energy, lowering interior cabin temperatures by up to 30°F during hot New Jersey summers and easing the workload on your vehicle's air conditioning system."
+              "Advanced window films actively block infrared thermal energy, lowering interior temperatures by up to 30°F during hot New Jersey summers and easing the workload on your vehicle's air conditioning system."
             ]
           },
           {
@@ -599,7 +599,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Precision Window Tint Installation: Our 3-Stage Process",
         paragraphs: [
-          "Choose an appointment at our Basking Ridge studio or ask about mobile installation at your home or workplace."
+          "Window tinting is installed in our Basking Ridge shop."
         ],
         subsections: [
           {
@@ -637,7 +637,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "Key Factors That Influence Window Tinting Cost",
             paragraphs: [
-              "One $50 mobile fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee."
+              "Window tinting is available in shop only. Call us to confirm your vehicle, selected film, and service total."
             ]
           }
         ]
@@ -651,11 +651,11 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Where to Get Your Windows Tinted in New Jersey",
         paragraphs: [
-          "Visit our studio at 19 E. Henry Street in Basking Ridge, NJ, or ask about a mobile appointment at your home or workplace."
+          "Visit our shop at 19 E. Henry Street in Basking Ridge, NJ."
         ],
         subsections: [
           {
-            title: "Dedicated Dust-Free Studio in Basking Ridge",
+            title: "Dedicated Dust-Free Shop in Basking Ridge",
             paragraphs: [
               "Located at 19 E. Henry Street in Basking Ridge, NJ, our dedicated facility offers a climate-controlled space for tint installation."
             ]
@@ -663,7 +663,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "Serving Somerset and Morris County Communities",
             paragraphs: [
-              "We proudly serve clients throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, Peapack-Gladstone, Warren, Bridgewater, Morristown, and neighboring communities."
+              "We proudly serve customers throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, Peapack-Gladstone, Warren, Bridgewater, Morristown, and neighboring communities."
             ]
           }
         ]
@@ -696,7 +696,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "Where Can I Get My Windows Tinted by Certified Installers?",
-        answer: "CleanWorx offers tint installation at our studio at 19 E. Henry Street in Basking Ridge, NJ, and through mobile appointments across our service area."
+        answer: "CleanWorx offers tint installation at our shop at 19 E. Henry Street in Basking Ridge, NJ."
       },
       {
         question: "What Is the Difference Between Ceramic and Carbon Film?",

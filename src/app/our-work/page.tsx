@@ -37,7 +37,7 @@ export default function Page() {
     <StandardPage
       title="Our Work"
       h1="Our Detailing Work"
-      description="Browse real results crafted at our Basking Ridge studio and through our on-site mobile detailing unit. Explore certified ceramic coatings, multi-stage paint corrections, exotic supercar care, and showroom interior restorations."
+      description="Browse real results crafted at our Basking Ridge shop and through our on-site mobile detailing unit. Explore certified ceramic coatings, multi-stage paint corrections, exotic supercar care, and showroom interior restorations."
       image="/images/our-work/cleanworx-lamborghini-urus-matte-ceramic-coating-basking-ridge.webp"
       ctaTitle="Ready For Showroom Results on Your Vehicle?"
       childrenPosition="before"
@@ -88,11 +88,11 @@ export default function Page() {
         {
           title: "Exotic Supercars & Mobile Care",
           content: [
-            "From Rolls-Royce Cullinans and Lamborghini Uruses to Porsche GT3s and track-prepped Shelby Mustangs, we treat every vehicle with uncompromising precision either at our 19 E. Henry Street studio or at your residence via our custom mobile rig.",
+            "From Rolls-Royce Cullinans and Lamborghini Uruses to Porsche GT3s and track-prepped Shelby Mustangs, we treat every vehicle with uncompromising precision either at our 19 E. Henry Street shop or at your residence via our custom mobile unit.",
           ],
           subsections: [
             {
-              title: "Studio & Driveway Convenience",
+              title: "Shop & Driveway Convenience",
               paragraphs: [
                 "Drop off your vehicle at our secure facility in Basking Ridge or enjoy the convenience of our fully self-contained mobile detailing unit dispatched across Somerset, Morris, and Union counties.",
               ],

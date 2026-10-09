@@ -129,10 +129,10 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
 
             <ScrollReveal animation="fade-up" delay={150} className="w-full">
               <div className="border border-white/15 bg-[#0b0d13]/80 p-5 shadow-2xl shadow-black/35 backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm">
-                  Prices marked with a plus sign or as variable are confirmed after reviewing the vehicle and selected service.
+                  All prices are subject to change upon inspection of the vehicle.
                 </p>
               </div>
             </ScrollReveal>
@@ -258,14 +258,14 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Mobile or In-Studio Section */}
+      {/* Mobile or In-Shop Section */}
       <section className="bg-[#0b0d12] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:items-center">
             <ScrollReveal animation="fade-right">
               <span className="block h-px w-20 bg-[#4da3ff]" />
               <h2 className="mt-6 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl">
-                {delivery?.title ?? "Mobile or In-Studio Exterior Detailing"}
+                {delivery?.title ?? "Mobile or In-Shop Exterior Detailing"}
               </h2>
               {delivery?.paragraphs ? (
                 <Paragraphs paragraphs={delivery.paragraphs} />
@@ -279,9 +279,9 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <div className="border-l-2 border-[#4da3ff] pl-5">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
                     <MapPin className="h-3.5 w-3.5" />
-                    <span>Studio Drop-Off Option</span>
+                    <span>In-Shop Drop-Off Option</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Shop</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
                     Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ for your exterior-detailing appointment.
                   </p>
@@ -294,7 +294,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Ask About a Mobile Appointment</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Mobile detailing is available at your home or workplace. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee.
+                    Mobile detailing is available at your home or workplace. A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </div>
               </div>
@@ -337,10 +337,10 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                     href="/mobile-auto-detailing"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
                   >
-                    Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
+                    Explore Mobile Detailing Unit <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    One $50 mobile fee only when the appointment subtotal is under $400.
+                    A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </div>
               </div>
@@ -373,9 +373,9 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-white">Studio or Mobile</h3>
+                  <h3 className="text-xl font-bold text-white">In-Shop or Mobile</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose an in-studio appointment in Basking Ridge or ask about mobile availability at your home or workplace. A $50 fee is charged once when the pre-fee appointment subtotal is below $400.
+                    Choose an in-shop appointment in Basking Ridge or ask about mobile availability at your home or workplace. A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </ScrollReveal>
               </div>
@@ -383,7 +383,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up" delay={200} className="mt-6 flex flex-wrap items-center gap-4">
                 <BookingLink label="Book Now" className="bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                  Studio drop-off or mobile availability check
+                  In-shop drop-off or mobile availability check
                 </span>
               </ScrollReveal>
             </div>

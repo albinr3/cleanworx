@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ShieldCheck,
   Sun,
   ThermometerSun,
   Eye,
   ArrowRight,
-  Phone,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import styles from "./TintLevelVisualizer.module.css";
@@ -40,9 +38,9 @@ export const tintLevels: TintLevelData[] = [
     privacyRating: 5,
     privacyLabel: "Maximum Blackout / 100% Privacy",
     bestFor:
-      "VIP privacy, high-value tool/cargo security in rear cabin, and sleek blacked-out aesthetic.",
+      "VIP privacy, high-value tool/cargo security in the rear interior, and a sleek blacked-out aesthetic.",
     summary:
-      "The deepest automotive tint available. Obscures the cabin from all outside angles while offering maximum infrared thermal defense.",
+      "The deepest automotive tint available. Obscures the interior from all outside angles while offering maximum infrared thermal defense.",
   },
   {
     percentage: 15,
@@ -57,7 +55,7 @@ export const tintLevels: TintLevelData[] = [
     bestFor:
       "Drivers desiring deep privacy with slightly more night driving visibility than 5% limo film.",
     summary:
-      "Rich, deep charcoal shade that keeps interior belongings out of sight and rejects substantial summer cabin heat.",
+      "Rich, deep charcoal shade that keeps interior belongings out of sight and rejects substantial summer interior heat.",
   },
   {
     percentage: 20,
@@ -362,21 +360,13 @@ export function TintLevelVisualizer() {
               {activeLevel.vlt}
             </p>
 
-            <div className="mt-4 grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
-              <Link
-                href="/booking"
-                className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#f0783c] px-4 py-2.5 text-center text-sm font-bold text-[#111318] shadow-[0_10px_24px_rgba(240,120,60,0.2)] transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#ff874b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0783c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0e12] active:translate-y-px"
-              >
-                <span>Book {activeLevel.percentage}% tint</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="mt-4">
               <a
-                href="tel:9088992832"
-                className="inline-flex min-h-11 items-center justify-center gap-2 border border-white/15 bg-white/[0.045] px-4 py-2.5 text-sm font-bold text-white transition-[transform,background-color,border-color] duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0783c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0e12] active:translate-y-px"
-                title="Call CleanWorx Basking Ridge studio"
+                href="tel:+19088992832"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 bg-[#f0783c] px-4 py-2.5 text-center text-sm font-bold text-[#111318] shadow-[0_10px_24px_rgba(240,120,60,0.2)] transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#ff874b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0783c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0e12] active:translate-y-px"
               >
-                <Phone className="h-4 w-4 text-[#f0783c]" />
-                <span>Call studio</span>
+                <span>Call about {activeLevel.percentage}% tint</span>
+                <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </aside>

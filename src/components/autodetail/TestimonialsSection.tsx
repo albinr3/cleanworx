@@ -5,14 +5,6 @@ import { Star } from "lucide-react";
 import { TESTIMONIALS } from "@/data/autodetailData";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
-const portraitClasses: Record<string, string> = {
-  "google-david": "reviewer-portrait-one",
-  "google-yuval": "reviewer-portrait-two",
-  "google-jason": "reviewer-portrait-three",
-  "google-megan": "reviewer-portrait-four",
-  "google-conor": "reviewer-portrait-five",
-};
-
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktop, setIsDesktop] = useState(true);
@@ -39,7 +31,7 @@ export function TestimonialsSection() {
           </div>
 
           <h2 className="mt-3 text-3xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[54px] font-heading">
-            What Clients<br className="hidden sm:inline" /> Say
+            What Customers<br className="hidden sm:inline" /> Say
           </h2>
 
           {/* 220+ Reviews & 5-Star Prominent Google Badge Card */}
@@ -109,7 +101,9 @@ export function TestimonialsSection() {
                       <div>
                         <div className="mb-4 flex items-start justify-between gap-3 sm:mb-5">
                           <div className="flex items-center gap-3">
-                            <div aria-hidden="true" className={`h-11 w-11 shrink-0 rounded-full border border-white/10 bg-neutral-800 bg-cover sm:h-12 sm:w-12 ${portraitClasses[item.id]}`} />
+                            <div aria-hidden="true" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#4da3ff]/30 bg-[#1277ff]/15 text-base font-black text-[#8ec7ff] sm:h-12 sm:w-12">
+                              {item.author.charAt(0).toUpperCase()}
+                            </div>
                             <div>
                               <h3 className="text-sm font-bold leading-tight text-white sm:text-base">{item.author}</h3>
                               <p className="mt-0.5 text-[11px] font-medium text-neutral-400 sm:mt-1 sm:text-xs">{item.role} · {item.date}</p>

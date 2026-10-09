@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       url: "/images/autodetail/cleanworx-headlight-restoration-basking-ridge.webp",
       width: 1600,
       height: 1066,
-      alt: "CleanWorx technician machine polishing oxidized headlight lens in Basking Ridge, NJ studio",
+      alt: "CleanWorx technician machine polishing oxidized headlight lens in the Basking Ridge, NJ shop",
     }],
   },
   twitter: {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, MapPin } from "lucide-react";
 import { SiteShell } from "@/components/autodetail/SiteShell";
+import { normalizeTerminology } from "@/lib/terminology";
 import { PORTFOLIO_ITEMS, type PortfolioItem } from "@/data/ourWorkData";
 import {
   cityPages,
@@ -37,7 +38,7 @@ function getPortfolioItem(id: string): PortfolioItem {
 export function getCityMetadata(slug: CitySlug): Metadata {
   const { city } = cityPages[slug];
   const title = `Auto Detailing in ${city}, NJ | CleanWorx`;
-  const description = `Explore detailing, paint protection, headlight and odor services for ${city}, NJ drivers. Studio appointments in Basking Ridge; eligible mobile visits confirmed individually.`;
+  const description = `Explore detailing, paint protection, headlight and odor services for ${city}, NJ drivers. In-shop appointments in Basking Ridge; eligible mobile visits confirmed individually.`;
 
   return {
     title: { absolute: title },
@@ -85,7 +86,7 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
           <h1 className="mt-4 max-w-5xl text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl">
             Auto Detailing in {page.city}
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-neutral-300 sm:text-lg">{page.intro}</p>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-neutral-300 sm:text-lg">{normalizeTerminology(page.intro)}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact" className="inline-flex min-h-11 items-center rounded-lg bg-[#1277ff] px-6 py-3 text-sm font-bold text-white hover:bg-[#0d62d6]">
               Discuss Your Vehicle
@@ -96,7 +97,7 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
           </div>
           <p className="mt-8 flex max-w-3xl items-start gap-2 text-sm leading-6 text-neutral-400">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" aria-hidden="true" />
-            {page.appointmentNote}
+            {normalizeTerminology(page.appointmentNote)}
           </p>
         </div>
       </section>
@@ -127,11 +128,11 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                   </Link>
                 </div>
                 <div>
-                  <p className="max-w-3xl text-base leading-8 text-neutral-300">{page.serviceCopy[topic.id]}</p>
+                  <p className="max-w-3xl text-base leading-8 text-neutral-300">{normalizeTerminology(page.serviceCopy[topic.id])}</p>
                   {topic.id === "exterior-detailing" && (
                     <div className="mt-7 space-y-4 rounded-xl border border-white/10 bg-[#14151a] p-5 text-sm leading-7 text-neutral-300">
-                      <p>{page.fullDetailNote} <Link href="/" className="font-semibold text-[#4da3ff] hover:text-white">Explore full detailing →</Link></p>
-                      <p>{page.engineBayNote} <Link href="/add-ons" className="font-semibold text-[#4da3ff] hover:text-white">Explore engine bay cleaning →</Link></p>
+                      <p>{normalizeTerminology(page.fullDetailNote)} <Link href="/" className="font-semibold text-[#4da3ff] hover:text-white">Explore full detailing →</Link></p>
+                      <p>{normalizeTerminology(page.engineBayNote)} <Link href="/add-ons" className="font-semibold text-[#4da3ff] hover:text-white">Explore engine bay cleaning →</Link></p>
                     </div>
                   )}
                   {sectionPhotos.length > 0 && (
@@ -139,17 +140,17 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       {sectionPhotos.map((photo) => (
                         <figure key={photo.id} className="overflow-hidden rounded-2xl border border-white/10 bg-[#14151a] md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
                           <div className="relative aspect-[4/3] bg-neutral-900 md:h-full md:min-h-72 md:aspect-auto">
-                            <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, 35vw" className="object-cover" />
+                            <Image src={photo.src} alt={normalizeTerminology(photo.alt)} fill sizes="(max-width: 767px) 100vw, 35vw" className="object-cover" />
                           </div>
                           <figcaption className="p-5">
-                            <h3 className="text-lg font-bold text-white">{photo.title}</h3>
+                            <h3 className="text-lg font-bold text-white">{normalizeTerminology(photo.title)}</h3>
                             <p className="mt-2 text-xs font-semibold text-[#4da3ff]">
-                              {photo.id === "work-06" ? "Studio and mobile rig photo" : "Separate photographed project"} · {photo.location === "CleanWorx Studio · Basking Ridge, NJ" ? "CleanWorx Studio · 19 E. Henry St, Basking Ridge, NJ" : photo.location}
+                              {photo.id === "work-06" ? "Shop and mobile rig photo" : "Separate photographed project"} · {normalizeTerminology(photo.location)}
                             </p>
                             <p className="mt-4 text-xs font-bold uppercase tracking-wider text-neutral-400">Illustrative service story for {page.city}</p>
                             <div className="mt-3 space-y-4 text-sm leading-7 text-neutral-300">
                               {portfolioStories[photo.id].split("\n\n").map((paragraph) => (
-                                <p key={paragraph}>{paragraph}</p>
+                                <p key={paragraph}>{normalizeTerminology(paragraph)}</p>
                               ))}
                             </div>
                           </figcaption>
@@ -169,8 +170,8 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
           <dl className="mt-8 grid gap-5 md:grid-cols-2">
             {page.questions.map(({ question, answer }) => (
               <div key={question} className="rounded-xl border border-white/10 bg-[#14151a] p-6">
-                <dt className="font-bold text-white">{question}</dt>
-                <dd className="mt-3 text-sm leading-7 text-neutral-300">{answer}</dd>
+                <dt className="font-bold text-white">{normalizeTerminology(question)}</dt>
+                <dd className="mt-3 text-sm leading-7 text-neutral-300">{normalizeTerminology(answer)}</dd>
               </div>
             ))}
           </dl>

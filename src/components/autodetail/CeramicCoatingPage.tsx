@@ -94,9 +94,9 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
 
           <ScrollReveal animation="fade-up" delay={150} className="max-w-md self-end sm:mr-[8%] lg:mr-[16%]">
             <div className="border border-white/15 bg-[#0b0d13]/75 p-5 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-6">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
               <p className="mt-2 font-mono text-4xl font-bold tracking-[-.06em] text-white">{data.price}</p>
-              <p className="mt-3 text-sm leading-6 text-neutral-300">Prices marked with a plus sign or as variable are confirmed after reviewing the vehicle and selected service.</p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">All prices are subject to change upon inspection of the vehicle.</p>
             </div>
           </ScrollReveal>
         </div>
@@ -108,7 +108,7 @@ export function CeramicCoatingPage({ data }: { data: ServicePageData }) {
           <ScrollReveal animation="fade-right" className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="absolute -inset-3 border border-[#4da3ff]/25" />
             <div className="relative aspect-[4/5] overflow-hidden bg-[#111827]">
-              <Image src="/images/autodetail/ceramic-coating-application.png" alt="CleanWorx specialist applying certified System X ceramic coating layer on vehicle clear coat in Basking Ridge studio" fill sizes="(min-width: 1024px) 35vw, 90vw" className="object-cover" />
+              <Image src="/images/autodetail/ceramic-coating-application.png" alt="CleanWorx specialist applying certified System X ceramic coating layer on vehicle clear coat in the Basking Ridge shop" fill sizes="(min-width: 1024px) 35vw, 90vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080a0e]/80 via-transparent" />
             </div>
           </ScrollReveal>

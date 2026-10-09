@@ -6,19 +6,19 @@ export const metadata: Metadata = {
     absolute: "About CleanWorx Auto Detailing | Vito DeGironimo & Team | Basking Ridge, NJ",
   },
   description:
-    "The story of CleanWorx Auto Detailing. Founded in 2019 by Vito DeGironimo, joined by Melqui Pichardo & Hemza Nasser. Dedicated studio at 19 E. Henry St, Basking Ridge, NJ & mobile service.",
+    "The story of CleanWorx Auto Detailing. Founded in 2019 by Vito DeGironimo, joined by Melqui Pichardo & Hemza Nasser. Dedicated shop at 19 E. Henry St, Basking Ridge, NJ & mobile service.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About CleanWorx Auto Detailing | Vito DeGironimo & Team | Basking Ridge, NJ",
     description:
-      "From a garage in Colonia to our detailing studio at 19 E. Henry St, Basking Ridge, NJ. Meet Vito DeGironimo, Melqui Pichardo & Hemza Nasser.",
+      "From a garage in Colonia to our detailing shop at 19 E. Henry St, Basking Ridge, NJ. Meet Vito DeGironimo, Melqui Pichardo & Hemza Nasser.",
     url: "https://www.cleanworxnj.com/about",
     images: [
       {
         url: "/images/about/cleanworx-team-and-shop.jpg",
         width: 1024,
         height: 576,
-        alt: "CleanWorx Team Vito DeGironimo, Melqui Pichardo, and Hemza Nasser at Basking Ridge Detailing Studio",
+        alt: "CleanWorx Team Vito DeGironimo, Melqui Pichardo, and Hemza Nasser at the Basking Ridge Detailing Shop",
       },
     ],
   },
@@ -41,7 +41,7 @@ export default function Page() {
         "url": "https://www.cleanworxnj.com/about",
         "name": "About CleanWorx Auto Detailing & Ceramic Coating",
         "description":
-          "The founding story, team, and studio history of CleanWorx Auto Detailing & Ceramic Coating in Basking Ridge, NJ.",
+          "The founding story, team, and shop history of CleanWorx Auto Detailing & Ceramic Coating in Basking Ridge, NJ.",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [

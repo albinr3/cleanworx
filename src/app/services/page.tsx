@@ -8,7 +8,7 @@ import { SERVICES } from "@/data/autodetailData";
 export const metadata: Metadata = {
   title: { absolute: "Auto Detailing Services in Basking Ridge, NJ | CleanWorx" },
   description:
-    "Explore CleanWorx detailing, paint protection, window tinting, and specialty services. Choose a service and confirm studio or mobile availability.",
+    "Explore CleanWorx detailing, paint protection, window tinting, and specialty services. Choose a service and confirm in-shop or mobile availability.",
   alternates: { canonical: "/services" },
   robots: {
     index: false,
@@ -74,7 +74,7 @@ const services = [
     href: "/car-odor-treatment",
     description: "Explore vehicle odor treatment, its process, and its limits.",
     image: "/images/autodetail/car-odor-treatment-hero.png",
-    imageAlt: "Vehicle receiving odor treatment at the CleanWorx studio",
+    imageAlt: "Vehicle receiving odor treatment at the CleanWorx shop",
   },
   {
     title: "Specialized Add-Ons",
@@ -99,13 +99,13 @@ export default function ServicesPage() {
         {
           title: "Which service is right for your vehicle?",
           content: [
-            "Start with interior detailing for cabin cleaning or exterior detailing for the body and finish. Choose paint correction for an assessment of visible paint defects or ceramic coating for a protection option. Mobile detailing explains appointments at your location; window tinting covers film installation and removal. For cloudy headlights, lingering odors, or other targeted needs, explore the specialist pages below.",
+            "Start with interior detailing for interior cleaning or exterior detailing for the body and finish. Choose paint correction for an assessment of visible paint defects or ceramic coating for a protection option. Mobile detailing explains appointments at your location; window tinting covers in-shop film installation and removal. For cloudy headlights, lingering odors, or other targeted needs, explore the specialist pages below.",
           ],
         },
         {
-          title: "Mobile or Studio Appointments",
+          title: "Mobile or In-Shop Appointments",
           content: [
-            "CleanWorx confirms the service, location, and availability for each appointment. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400; appointments of $400 or more have no mobile fee. Ask us which services are suitable for your location.",
+            "CleanWorx confirms the service, location, and availability for each appointment. A $35 mobile service fee applies to every mobile appointment. Window tinting is available in shop only. Ask us which services are suitable for your location.",
           ],
         },
         {

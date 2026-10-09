@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     absolute: "Auto Detailing in Basking Ridge, NJ | CleanWorx",
   },
   description:
-    "Professional auto detailing in Basking Ridge, NJ: certified ceramic coating, paint correction, deep interior cleaning & exterior hand care. Studio or mobile.",
+    "Professional auto detailing in Basking Ridge, NJ: certified ceramic coating, paint correction, deep interior cleaning & exterior hand care. In shop or mobile.",
   alternates: { canonical: "/" },
 };
 
@@ -105,7 +105,7 @@ export default function Home() {
               itemOffered: {
                 "@type": "Service",
                 name: "Deep Interior Detailing",
-                description: "Deep steam sanitization, hot water carpet extraction, and leather conditioning for a factory-fresh cabin."
+                description: "Deep steam sanitization, hot water carpet extraction, and leather conditioning for a factory-fresh interior."
               }
             },
             {

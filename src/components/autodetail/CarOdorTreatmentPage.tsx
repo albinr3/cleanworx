@@ -19,17 +19,17 @@ const commonConcerns = [
   {
     title: "Smoke and lingering scents",
     description:
-      "Cigarette, cigar, and marijuana smoke penetrate deep into cabin surfaces. Ozone air purification circulates through the interior to neutralize trapped odor compounds at the source.",
+      "Cigarette, cigar, and marijuana smoke penetrate deep into interior surfaces. Ozone air purification circulates through the interior to neutralize trapped odor compounds at the source.",
   },
   {
     title: "Pet, food, and spill odors",
     description:
-      "Pets, food, and spills leave odors deep in upholstery and carpets. Pairing ozone air purification with a Full Interior Detail extracts the physical residue before clearing the cabin air.",
+      "Pets, food, and spills leave odors deep in upholstery and carpets. Pairing ozone air purification with a Full Interior Detail extracts the physical residue before clearing the interior air.",
   },
   {
-    title: "Musty cabin odors",
+    title: "Musty interior odors",
     description:
-      "Musty cabin smells often trace back to damp floor mats, spills, or AC condensation. Once the source is cleaned and dried, ozone clears away any remaining stale odor.",
+      "Musty interior smells often trace back to damp floor mats, spills, or AC condensation. Once the source is cleaned and dried, ozone clears away any remaining stale odor.",
   },
 ];
 
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "How much does car odor removal cost?",
     answer:
-      "A standalone ozone air purification appointment is $125 at the CleanWorx studio in Basking Ridge. When added to a Full Interior Detail, the treatment is $75.",
+      "A standalone ozone air purification appointment is $125 at the CleanWorx shop in Basking Ridge. When added to a Full Interior Detail, the treatment is $75.",
   },
   {
     question: "How long does the appointment take?",
@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "What affects the results of car odor removal?",
     answer:
-      "Results depend on the odor source, how long it has been in the cabin, and the materials affected. Ozone neutralizes airborne and surface odor compounds throughout the vehicle. For deeply embedded smells or heavy residue, combining it with interior detailing produces the most thorough results.",
+      "Results depend on the odor source, how long it has been in the interior, and the materials affected. Ozone neutralizes airborne and surface odor compounds throughout the vehicle. For deeply embedded smells or heavy residue, combining it with interior detailing produces the most thorough results.",
   },
   {
     question: "Can ozone treatment remove smoke odor from a car?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "Is car air purification the same as auto odor removal?",
     answer:
-      "These terms describe the same professional ozone treatment process. It targets persistent cabin odors at the molecular level, offering a focused solution when ordinary air fresheners fall short.",
+      "These terms describe the same professional ozone treatment process. It targets persistent interior odors at the molecular level, offering a focused solution when ordinary air fresheners fall short.",
   },
 ];
 
@@ -73,7 +73,7 @@ const schema = {
       "@type": "Service",
       name: "Car Odor Removal",
       description:
-        "A 30 to 40 minute ozone air purification treatment for lingering vehicle cabin odors, offered as a standalone studio appointment or as a Full Interior Detail add-on.",
+        "A 30 to 40 minute ozone air purification treatment for lingering vehicle interior odors, offered as a standalone in-shop appointment or as a Full Interior Detail add-on.",
       url: "https://www.cleanworxnj.com/car-odor-treatment",
       image: [
         "https://www.cleanworxnj.com/images/autodetail/cleanworx-car-odor-removal-ozone-treatment.webp",
@@ -132,7 +132,7 @@ export function CarOdorTreatmentPage() {
       <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#080b10]">
         <Image
           src="/images/autodetail/car-odor-treatment-hero.png"
-          alt="Vehicle receiving an ozone air purification treatment in the CleanWorx detail studio"
+          alt="Vehicle receiving an ozone air purification treatment in the CleanWorx detail shop"
           fill
           priority
           sizes="100vw"
@@ -151,17 +151,17 @@ export function CarOdorTreatmentPage() {
           <div className="max-w-2xl pb-4 pt-16 sm:pt-24 lg:min-h-[540px] lg:pt-28">
             <div className="inline-flex items-center gap-2 border border-[#4da3ff]/30 bg-[#1277ff]/15 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#9bcaff]">
               <Wind className="h-3.5 w-3.5" />
-              Studio air purification
+              In-shop air purification
             </div>
             <h1 className="mt-5 text-4xl font-black leading-[.98] tracking-[-.045em] text-white sm:text-5xl lg:text-6xl">
               Car Odor Removal in Basking Ridge, NJ
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-neutral-200 sm:text-lg">
-              <span className="font-semibold text-white">Smoke odor removal:</span> cigarette, cigar, and marijuana smoke removed permanently at the source. Professional 30 to 40 minute ozone air purification for lingering vehicle odors, available as a studio appointment or Full Interior Detail add-on.
+              <span className="font-semibold text-white">Smoke odor removal:</span> cigarette, cigar, and marijuana smoke removed permanently at the source. Professional 30 to 40 minute ozone air purification for lingering vehicle odors, available as an in-shop appointment or Full Interior Detail add-on.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4 text-sm text-neutral-200">
               <span className="inline-flex items-center gap-2"><Clock3 className="h-4 w-4 text-[#70b5ff]" />45-minute appointment</span>
-              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#70b5ff]" />Basking Ridge studio</span>
+              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#70b5ff]" />Basking Ridge shop</span>
             </div>
             <div className="mt-8">
               <BookingLink label="Book Air Purification" />
@@ -174,13 +174,13 @@ export function CarOdorTreatmentPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.12fr)_minmax(320px,.88fr)] lg:items-start lg:px-8">
           <ScrollReveal animation="fade-right">
             <h2 className="max-w-2xl text-3xl font-black leading-[1] tracking-[-.04em] text-white sm:text-5xl">
-              Car smell removal for a lingering cabin odor.
+              Car smell removal for a lingering interior odor.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-7 text-neutral-300">
-              Air fresheners only mask scents temporarily. CleanWorx uses professional ozone air purification to break down odor compounds circulating inside the cabin and ventilation system. The ozone generator runs inside the closed vehicle for approximately 30 to 40 minutes.
+              Air fresheners only mask scents temporarily. CleanWorx uses professional ozone air purification to break down odor compounds circulating inside the interior and ventilation system. The ozone generator runs inside the closed vehicle for approximately 30 to 40 minutes.
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-neutral-300">
-              For a vehicle that also needs deep cleaning, stains addressed, or pet hair removed, pairing this service with a Full Interior Detail provides the most complete cabin refresh by extracting the physical source.
+              For a vehicle that also needs deep cleaning, stains addressed, or pet hair removed, pairing this service with a Full Interior Detail provides the most complete interior refresh by extracting the physical source.
             </p>
             <Link href="/interior-detailing" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#70b5ff] transition hover:text-white">
               Explore Full Interior Detailing <ArrowRight className="h-4 w-4" />
@@ -188,7 +188,7 @@ export function CarOdorTreatmentPage() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-left" className="border border-[#4da3ff]/25 bg-[#111b2b] p-6 shadow-[0_24px_72px_rgba(0,0,0,.25)] sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-[.16em] text-[#9bcaff]">Standalone studio appointment</p>
+            <p className="text-xs font-bold uppercase tracking-[.16em] text-[#9bcaff]">Standalone in-shop appointment</p>
             <p className="mt-3 text-5xl font-black tracking-[-.05em] text-white">$125</p>
             <p className="mt-2 text-sm leading-6 text-neutral-300">45 minutes reserved through Square for the standalone air-purification service.</p>
             <div className="mt-6 border-t border-white/10 pt-5">
@@ -211,7 +211,7 @@ export function CarOdorTreatmentPage() {
               Ozone treatment targeting odors at the source.
             </h2>
             <p className="mt-6 text-base leading-7 text-neutral-300">
-              The standalone appointment reserves 45 minutes, with our commercial ozone generator circulating inside the cabin for approximately 30 to 40 minutes. It targets trapped odor molecules throughout the interior surfaces and ventilation system.
+              The standalone appointment reserves 45 minutes, with our commercial ozone generator circulating inside the interior for approximately 30 to 40 minutes. It targets trapped odor molecules throughout the interior surfaces and ventilation system.
             </p>
             <p className="mt-4 text-base leading-7 text-neutral-300">
               <strong className="font-semibold text-white">Car smoke smell removal starts with the source.</strong> Cigarette, cigar, and marijuana smoke settle deep into fabric upholstery, carpeting, and headliners. While ozone air purification breaks down airborne and surface odor compounds, pairing it with a{" "}
@@ -221,7 +221,7 @@ export function CarOdorTreatmentPage() {
               >
                 Full Interior Detail
               </Link>{" "}
-              provides the deep physical extraction needed for the cleanest cabin environment.
+              provides the deep physical extraction needed for the cleanest interior environment.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
@@ -238,7 +238,7 @@ export function CarOdorTreatmentPage() {
               <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-neutral-900">
                 <Image
                   src="/images/autodetail/cleanworx-car-odor-removal-ozone-treatment.webp"
-                  alt="CleanWorx auto detailer operating an OdorStop ozone generator inside a car cabin for odor removal in Basking Ridge, NJ"
+                  alt="CleanWorx auto detailer operating an OdorStop ozone generator inside a vehicle interior for odor removal in Basking Ridge, NJ"
                   width={1024}
                   height={682}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -252,12 +252,12 @@ export function CarOdorTreatmentPage() {
                     OdorStop Ozone Machine Setup
                   </span>
                   <span className="rounded bg-[#080b10]/80 px-2 py-0.5 text-[11px] text-neutral-300">
-                    Basking Ridge Studio
+                    Basking Ridge Shop
                   </span>
                 </div>
               </div>
               <figcaption className="px-3 py-2.5 text-xs text-neutral-400">
-                CleanWorx technician preparing the commercial OdorStop ozone generator inside the cabin for 30–40 minute air purification and smoke smell removal.
+                CleanWorx technician preparing the commercial OdorStop ozone generator inside the interior for 30–40 minute air purification and smoke smell removal.
               </figcaption>
             </figure>
           </ScrollReveal>
@@ -317,12 +317,12 @@ export function CarOdorTreatmentPage() {
                         AC Vent Steam Extraction
                       </span>
                       <span className="rounded bg-[#080b10]/80 px-2 py-0.5 text-[11px] text-neutral-300">
-                        Targeting Musty Cabin Odors
+                        Targeting Musty Interior Odors
                       </span>
                     </div>
                   </div>
                   <figcaption className="px-3 py-2.5 text-xs text-neutral-400">
-                    High-temperature steam deep-cleaning vehicle AC vents to eliminate bacteria, trapped moisture, and mildew odors before ozone purification resets the cabin air.
+                    High-temperature steam deep-cleaning vehicle AC vents to eliminate bacteria, trapped moisture, and mildew odors before ozone purification resets the interior air.
                   </figcaption>
                 </figure>
               </ScrollReveal>
@@ -338,7 +338,7 @@ export function CarOdorTreatmentPage() {
             <ShieldCheck className="h-8 w-8 text-[#70b5ff]" />
             <h2 className="mt-6 text-3xl font-black leading-[1] tracking-[-.04em] text-white sm:text-4xl">Targeted process, practical next steps.</h2>
             <p className="mt-5 text-sm leading-7 text-neutral-300 sm:text-base">
-              Results depend on the odor source, affected materials, and cabin exposure time. When strong smells are tied to physical residue or spills, pairing air purification with a Full Interior Detail delivers the most thorough outcome.
+              Results depend on the odor source, affected materials, and interior exposure time. When strong smells are tied to physical residue or spills, pairing air purification with a Full Interior Detail delivers the most thorough outcome.
             </p>
           </ScrollReveal>
 
@@ -349,14 +349,14 @@ export function CarOdorTreatmentPage() {
                 <Calendar className="mt-0.5 h-5 w-5 shrink-0 text-[#70b5ff]" />
                 <div>
                   <h3 className="font-bold text-white">Standalone air purification</h3>
-                  <p className="mt-1 text-sm leading-6 text-neutral-300">Book the 45-minute, $125 studio appointment when air purification is the service you need.</p>
+                  <p className="mt-1 text-sm leading-6 text-neutral-300">Book the 45-minute, $125 in-shop appointment when air purification is the service you need.</p>
                 </div>
               </div>
               <div className="flex gap-4 border-l-2 border-[#4da3ff] pl-5">
                 <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#70b5ff]" />
                 <div>
                   <h3 className="font-bold text-white">Air purification with interior detailing</h3>
-                  <p className="mt-1 text-sm leading-6 text-neutral-300">Add the $75 treatment to a Full Interior Detail when the cabin needs cleaning alongside odor removal.</p>
+                  <p className="mt-1 text-sm leading-6 text-neutral-300">Add the $75 treatment to a Full Interior Detail when the interior needs cleaning alongside odor removal.</p>
                 </div>
               </div>
             </div>
@@ -386,7 +386,7 @@ export function CarOdorTreatmentPage() {
 
           <ScrollReveal animation="fade-up" className="mt-14 border border-[#4da3ff]/35 bg-[#1277ff] p-7 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-10">
             <div>
-              <h2 className="text-3xl font-black leading-tight text-white">Book air purification at our Basking Ridge studio.</h2>
+              <h2 className="text-3xl font-black leading-tight text-white">Book air purification at our Basking Ridge shop.</h2>
               <p className="mt-3 max-w-xl text-sm leading-6 text-white/85">Choose a standalone appointment or add the treatment to a Full Interior Detail.</p>
             </div>
             <BookingLink label="Book Air Purification" className="mt-6 shrink-0 bg-[#080a0e] hover:bg-black sm:mt-0" />
@@ -399,7 +399,7 @@ export function CarOdorTreatmentPage() {
 
           <p className="mt-8 flex items-start gap-2 text-xs leading-5 text-neutral-500">
             <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-neutral-400" />
-            This service is performed at the CleanWorx studio. Mobile availability is not advertised for air purification.
+            This service is performed at the CleanWorx shop. Mobile availability is not advertised for air purification.
           </p>
         </div>
       </section>

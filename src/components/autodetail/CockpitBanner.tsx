@@ -7,8 +7,8 @@ import { BOOKING_URL } from "@/data/autodetailData";
 const detailPhases = [
   {
     step: "01",
-    tag: "Cabin Deep Clean",
-    title: "A cabin that feels fresh again",
+    tag: "Interior Deep Clean",
+    title: "An interior that feels fresh again",
     description: "Steam cleaning and shampooing for seats, carpets, and upholstery.",
   },
   {
@@ -58,7 +58,7 @@ export function CockpitBanner() {
 
             <ScrollReveal animation="fade-up" delay={220} duration={750}>
               <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm text-white/90 sm:mt-4 sm:text-base md:mx-0 md:text-lg">
-                From a deep-cleaned cabin to a decontaminated exterior, we tailor the right full detail to your vehicle. You get a clear recommendation and price before work begins.
+                From a deep-cleaned interior to a decontaminated exterior, we tailor the right full detail to your vehicle. You get a clear recommendation and price before work begins.
               </p>
             </ScrollReveal>
 

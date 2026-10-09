@@ -14,7 +14,7 @@ const sharedProps = {
 export function MobileDetailIcon({ index, className }: MobileDetailIconProps) {
   const iconClassName = className ?? "h-8 w-8";
 
-  // 0: Driveway and Parking Requirements (Mobile van parked in residential driveway / designated space)
+  // 0: Driveway and Parking Requirements (Mobile unit parked in residential driveway / designated space)
   if (index === 0) {
     return (
       <svg aria-hidden="true" className={iconClassName} viewBox="0 0 32 32" {...sharedProps}>

@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     url: "https://www.cleanworxnj.com",
     siteName: "CleanWorx Auto Detailing & Ceramic Coating",
     title: "CleanWorx Auto Detailing & Ceramic Coating | Basking Ridge, NJ",
-    description: "Professional auto detailing and ceramic coating in Basking Ridge, NJ. Studio and mobile detailing appointments.",
+    description: "Professional auto detailing and ceramic coating in Basking Ridge, NJ. In-shop and mobile detailing appointments.",
     images: [
       {
         url: "/images/cleanworx-logo.webp",

@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 
 export function AboutSection() {
   const highlights = [
-    "Full-service Basking Ridge studio at 19 E. Henry Street",
+    "Full-service Basking Ridge shop at 19 E. Henry Street",
     "Self-contained mobile detailing units dispatched to your driveway",
     "Paint gauge inspections before any correction or coating",
     "Upfront pricing with no surprise charges upon completion",
@@ -26,7 +26,7 @@ export function AboutSection() {
                 <div className="relative h-[260px] sm:h-[420px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
                   <Image
                     src="/images/autodetail/paint-correction.webp"
-                    alt="CleanWorx multi-stage machine paint correction restoring clear coat gloss in Basking Ridge studio"
+                    alt="CleanWorx multi-stage machine paint correction restoring clear coat gloss in the Basking Ridge shop"
                     fill
                     sizes="(max-width: 639px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -77,7 +77,7 @@ export function AboutSection() {
               </div>
 
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-balance">
-                Professional Detailing in Studio or Mobile
+                Professional Detailing In Shop or Mobile
               </h2>
             </ScrollReveal>
 
@@ -87,9 +87,9 @@ export function AboutSection() {
               </p>
 
               <p className="mt-3 sm:mt-4 text-xs sm:text-base text-neutral-400 leading-relaxed">
-                You can drop your car off at our dedicated Basking Ridge studio at 19 E. Henry Street or have our self-contained mobile rig come directly to your driveway.
+                You can drop your car off at our dedicated Basking Ridge shop at 19 E. Henry Street or have our self-contained mobile unit come directly to your driveway.
               </p>
-              <h3 className="mt-5 text-lg font-bold text-white">Studio and Mobile Appointments Available</h3>
+              <h3 className="mt-5 text-lg font-bold text-white">In-Shop and Mobile Appointments Available</h3>
             </ScrollReveal>
 
             {/* Highlights List */}

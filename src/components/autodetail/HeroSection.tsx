@@ -77,7 +77,7 @@ export function HeroSection() {
         {/* Subtitle with Delay */}
         <ScrollReveal animation="fade-up" delay={300} duration={850}>
           <p className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-lg md:text-xl text-neutral-200 font-medium leading-relaxed text-pretty drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Dedicated studio and self-contained mobile detailing throughout Somerset County. Specializing in System X ceramic coatings, multi-stage paint correction, and deep interior restoration.
+            Premium in shop and mobile detailing services provided throughout Somerset County.
           </p>
         </ScrollReveal>
 

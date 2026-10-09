@@ -5,6 +5,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 const links = [
   ["Home", "/"],
   ["Services", "/services"],
+  ["Pricing", "/pricing"],
   ["Add-Ons & Extras", "/add-ons"],
   ["Our Work", "/our-work"],
   ["About", "/about"],
@@ -39,7 +40,29 @@ export function Footer({ hideOurWork = false }: { hideOurWork?: boolean }) {
               className="h-10 w-44 object-contain object-left"
             />
           </Link>
-          <p className="mt-5 text-sm leading-relaxed">CleanWorx Auto Detailing &amp; Ceramic Coating provides professional auto detailing in Basking Ridge, New Jersey, with studio and mobile appointment options confirmed for each request.</p>
+          <p className="mt-5 text-sm leading-relaxed">CleanWorx Auto Detailing &amp; Ceramic Coating provides professional auto detailing in Basking Ridge, New Jersey, with in-shop and mobile appointment options confirmed for each request.</p>
+
+          <a
+            href="https://www.instagram.com/cleanworx_llc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#4da3ff] transition-colors hover:border-[#4da3ff] hover:text-white"
+            aria-label="Follow CleanWorx on Instagram"
+            title="Follow CleanWorx on Instagram"
+          >
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
 
           {/* Official Profiles: Google & BBB */}
           <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5">

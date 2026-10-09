@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     absolute: "Auto Detailing Service Areas in NJ | CleanWorx",
   },
   description:
-    "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
+    "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
   alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
     url: "https://www.cleanworxnj.com/service-areas",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. Studio and eligible mobile appointments.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
     images: ["/images/cleanworx-logo.webp"],
   },
 };
@@ -38,7 +38,7 @@ export default function Page() {
     <StandardPage
       title="Service Areas"
       h1="Auto Detailing Service Areas in New Jersey"
-      description="CleanWorx Auto Detailing & Ceramic Coating is based in Basking Ridge and serves nearby New Jersey communities through studio and eligible mobile appointment options."
+      description="CleanWorx Auto Detailing & Ceramic Coating is based in Basking Ridge and serves nearby New Jersey communities through in-shop and eligible mobile appointment options."
       image="/images/autodetail/cleanworx-service-areas-somerset-county-nj.webp"
       ctaTitle="Confirm an Appointment"
       childrenPosition="before"
@@ -53,7 +53,7 @@ export default function Page() {
         {
           title: "Current Service Areas",
           content: [
-            "We provide dedicated in-studio services at our Basking Ridge location and dispatch fully self-contained mobile detailing units across the following New Jersey towns:"
+            "We provide dedicated in-shop services at our Basking Ridge location and dispatch fully self-contained mobile detailing units across the following New Jersey towns:"
           ],
           subsections: [
             {
@@ -83,7 +83,7 @@ export default function Page() {
           ]
         },
         {
-          title: "Mobile and Studio Appointment Options",
+          title: "Mobile and In-Shop Appointment Options",
           content: [
             "One $50 mobile fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee. We confirm mobile availability and scheduling directly."
           ]

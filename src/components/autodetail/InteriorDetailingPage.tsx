@@ -22,7 +22,7 @@ const comparisonRows = [
   ["Leather Cleansing & Conditioning", "Silicone spray (greasy)", "Basic wipe-down", "pH-neutral scrub & UV shield"],
   ["Pet Hair & Crevice Removal", "Not included", "Partial surface vacuum", "Pneumatic air & rubber blades"],
   ["Dashboard, Console & Air Vents", "Surface dusting", "Quick wipe", "Detail brushes & streak-free"],
-  ["Cabin Chemical & Odor Level", "Heavy synthetic scents", "Lingering cleaners", "Non-toxic, odor-neutralized"],
+  ["Interior Chemical & Odor Level", "Heavy synthetic scents", "Lingering cleaners", "Non-toxic, odor-neutralized"],
   ["Fabric & Carpet Dry Time", "Often left soaking", "12–24 hours", "Rapid extraction (dry in ~2h)"],
 ] as const;
 
@@ -129,10 +129,10 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
 
             <ScrollReveal animation="fade-up" delay={150} className="w-full">
               <div className="border border-white/15 bg-[#0b0d13]/80 p-5 shadow-2xl shadow-black/35 backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Published starting point</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#70b5ff]">Packages start at</p>
                 <p className="mt-2 font-mono text-3xl font-bold tracking-[-.06em] text-white sm:text-4xl">{data.price}</p>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm">
-                  Prices marked with a plus sign or as variable are confirmed after reviewing the vehicle and selected service.
+                  All prices are subject to change upon inspection of the vehicle.
                 </p>
               </div>
             </ScrollReveal>
@@ -200,7 +200,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080a0e]/85 via-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-white/10 bg-black/75 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm sm:px-5 sm:py-3 sm:text-xs">
                   <span>CleanWorx In Action</span>
-                  <span className="text-[#8ec7ff]">Deep Cabin Restoration</span>
+                  <span className="text-[#8ec7ff]">Deep Interior Restoration</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -258,7 +258,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
         </div>
       </section>
 
-      {/* Mobile or In-Studio Section */}
+      {/* Mobile or In-Shop Section */}
       <section className="bg-[#0b0d12] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:items-center">
@@ -273,11 +273,11 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <div className="border-l-2 border-[#4da3ff] pl-5">
                   <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#70b5ff]">
                     <MapPin className="h-3.5 w-3.5" />
-                    <span>Studio Drop-Off Option</span>
+                    <span>In-Shop Drop-Off Option</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Studio</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">CleanWorx Detailing Shop</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ. Our studio provides a fully controlled workspace with industrial extraction equipment and dedicated drying fans.
+                    Drop your vehicle off at 19 E. Henry Street in Basking Ridge, NJ. Our shop provides a fully controlled workspace with industrial extraction equipment and dedicated drying fans.
                   </p>
                 </div>
 
@@ -286,9 +286,9 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                     <Truck className="h-3.5 w-3.5" />
                     <span>Convenient Mobile Service</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold text-white">Mobile Van Directly to Your Driveway</h3>
+                  <h3 className="mt-1 text-xl font-bold text-white">Mobile Unit Directly to Your Driveway</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Prefer zero downtime? Our self-contained mobile detailing van comes to your home or workplace throughout Basking Ridge, Bernardsville, Bedminster, and Far Hills. One $50 fee applies when the pre-fee appointment subtotal is below $400.
+                    Prefer zero downtime? Our self-contained mobile detailing unit comes to your home or workplace throughout Basking Ridge, Bernardsville, Bedminster, and Far Hills. A $35 mobile service fee applies to every mobile appointment.
                   </p>
                 </div>
               </div>
@@ -304,13 +304,13 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                 </div>
                 <h3 className="mt-4 text-2xl font-bold text-white">Hospital-Grade Clean. Zero Greasy Residues.</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-300">
-                  Every cabin we detail receives thorough hand care, safe steam sanitation, and strict attention to detail:
+                  Every interior we detail receives thorough hand care, safe steam sanitation, and strict attention to detail:
                 </p>
 
                 <ul className="mt-6 space-y-3.5 text-xs text-neutral-300 sm:text-sm">
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>High-Heat Steam Sanitization:</strong> 220°F+ steam eliminates bacteria, dust mites, and stubborn cabin allergens.</span>
+                    <span><strong>High-Heat Steam Sanitization:</strong> 220°F+ steam eliminates bacteria, dust mites, and stubborn interior allergens.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
@@ -331,7 +331,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                     href="/mobile-auto-detailing"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
                   >
-                    Explore Mobile Detailing Van <ArrowUpRight className="h-4 w-4" />
+                    Explore Mobile Detailing Unit <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
                     One $50 mobile fee only when the appointment subtotal is under $400.
@@ -355,7 +355,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                   Full Interior Detailing
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  Final rates depend on vehicle size, seat count, and cabin condition, confirmed with you before work begins.
+                  Final rates depend on vehicle size, seat count, and interior condition, confirmed with you before work begins.
                 </p>
               </ScrollReveal>
 
@@ -363,13 +363,13 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <ScrollReveal animation="fade-up" delay={80} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">{data.price}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Complete cabin restoration including commercial steam sanitization, hot-water carpet extraction, and leather conditioning.
+                    Complete interior restoration including commercial steam sanitization, hot-water carpet extraction, and leather conditioning.
                   </p>
                 </ScrollReveal>
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-white">Studio or Mobile</h3>
+                  <h3 className="text-xl font-bold text-white">In-Shop or Mobile</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose in-studio drop-off at 19 E. Henry Street in Basking Ridge or have our self-contained mobile detailing van come right to your door.
+                    Choose in-shop drop-off at 19 E. Henry Street in Basking Ridge or have our self-contained mobile detailing unit come right to your door.
                   </p>
                 </ScrollReveal>
               </div>
@@ -377,7 +377,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
               <ScrollReveal animation="fade-up" delay={200} className="mt-6 flex flex-wrap items-center gap-4">
                 <BookingLink label="Book Now" className="bg-white !text-[#0753b7] shadow-black/20 hover:!bg-neutral-100" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-                  Self-contained van or studio drop-off
+                  Self-contained mobile unit or in-shop drop-off
                 </span>
               </ScrollReveal>
             </div>
@@ -393,7 +393,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                   preload="auto"
                   poster="/videos/full-interior-detailing-poster.webp"
                   className="aspect-[9/16] h-full w-full object-cover"
-                  aria-label="Full Interior Detailing deep cabin restoration"
+                  aria-label="Full Interior Detailing deep interior restoration"
                 >
                   <source src="/videos/full-interior-detailing.webm" type="video/webm" />
                   <source src="/videos/full-interior-detailing.mp4" type="video/mp4" />

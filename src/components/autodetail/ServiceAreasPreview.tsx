@@ -11,7 +11,7 @@ export function ServiceAreasPreview() {
           <ScrollReveal animation="fade-right" duration={700} className="lg:col-span-6 flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1277ff]/30 bg-[#1277ff]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#4da3ff] w-fit mb-4">
               <MapPin className="h-3.5 w-3.5" />
-              <span>Studio &amp; Mobile Service</span>
+              <span>In-Shop &amp; Mobile Service</span>
             </div>
 
             <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl font-heading">
@@ -19,7 +19,7 @@ export function ServiceAreasPreview() {
             </h2>
 
             <p className="mt-4 text-sm leading-relaxed text-neutral-300 sm:text-base">
-              CleanWorx operates from our dedicated detailing studio at 19 E. Henry Street in Basking Ridge, NJ, and dispatches self-contained mobile detailing units across Somerset, Morris, and Union counties.
+              CleanWorx operates from our dedicated detailing shop at 19 E. Henry Street in Basking Ridge, NJ, and dispatches self-contained mobile detailing units across Somerset, Morris, and Union counties.
             </p>
 
             {/* Quick Details Card */}
@@ -77,7 +77,7 @@ export function ServiceAreasPreview() {
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
                 className="absolute inset-0 h-full w-full border-0"
-                title="CleanWorx Auto Detailing & Ceramic Coating Studio Map"
+                title="CleanWorx Auto Detailing & Ceramic Coating Shop Map"
               />
             </div>
             <div className="mt-2.5 flex items-center justify-between px-1 text-xs">

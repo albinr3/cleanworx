@@ -68,7 +68,7 @@ const ADDONS_CATALOG: AddonItem[] = [
       "Enhanced nighttime visibility and passing NJ inspection",
     ],
     bestFor: "Vehicles with foggy, yellowed, hazy, or scratched plastic headlight lenses.",
-    bookingNote: "Available as a $75 add-on to any detail, or $125 standalone at our Basking Ridge studio.",
+    bookingNote: "Available as a $75 add-on to any detail, or $125 standalone at our Basking Ridge shop.",
   },
   {
     id: "engine-bay-detail",
@@ -92,13 +92,13 @@ const ADDONS_CATALOG: AddonItem[] = [
       "Factory-satin UV dressing applied to plastics & rubber hoses",
     ],
     bestFor: "Vehicles with dust, oil mist, leaves, or road grime under the hood.",
-    bookingNote: "Add to any interior/exterior package for $75, or book standalone at our studio for $125.",
+    bookingNote: "Add to any interior/exterior package for $75, or book standalone at our shop for $125.",
   },
   {
     id: "air-purification",
     category: "interior",
     badge: "Odor Neutralization",
-    title: "Cabin Air Purification & Odor Removal",
+    title: "Interior Air Purification & Odor Removal",
     tagline: "30 to 40 minute ozone treatment for lingering vehicle odors",
     addonPrice: "$75.00",
     standalonePrice: "$125.00",
@@ -107,16 +107,16 @@ const ADDONS_CATALOG: AddonItem[] = [
     image: "/images/autodetail/cleanworx-interior-steam-leather-restoration.webp",
     imageAlt: "CleanWorx deep interior air purification and steam treatment",
     description:
-      "Air fresheners only change the scent in a vehicle. Our standalone ozone air purification appointment runs for approximately 30 to 40 minutes and is intended for lingering cabin odor concerns. Results depend on the odor source, affected materials, and vehicle condition.",
+      "Air fresheners only change the scent in a vehicle. Our standalone ozone air purification appointment runs for approximately 30 to 40 minutes and is intended for lingering interior odor concerns. Results depend on the odor source, affected materials, and vehicle condition.",
     inclusions: [
       "30 to 40 minute ozone generator treatment",
-      "45-minute standalone studio appointment",
+      "45-minute standalone in-shop appointment",
       "USD 125 standalone appointment",
       "USD 75 add-on to a Full Interior Detail",
-      "Optional pairing with Full Interior Detailing for cabin cleaning",
+      "Optional pairing with Full Interior Detailing for interior cleaning",
     ],
-    bestFor: "Vehicles with lingering smoke, pet, food, spill, or musty cabin odors after the underlying concern has been addressed.",
-    bookingNote: "Add to a Full Interior Detail for $75, or schedule a standalone Basking Ridge studio appointment for $125.",
+    bestFor: "Vehicles with lingering smoke, pet, food, spill, or musty interior odors after the underlying concern has been addressed.",
+    bookingNote: "Add to a Full Interior Detail for $75, or schedule a standalone Basking Ridge shop appointment for $125.",
   },
   {
     id: "one-step-polish",
@@ -188,7 +188,7 @@ const ADDONS_CATALOG: AddonItem[] = [
       "Prepares glass for fresh Carbon or Ceramic tint installation",
     ],
     bestFor: "Vehicles with bubbling, purple, peeling, or damaged window tint.",
-    bookingNote: "$20 per window; $50 for a front or rear windshield; $100 for a whole vehicle; $150 for a large van or SUV. Whole-vehicle prices exclude the front windshield. Studio and mobile appointments available; one $50 mobile fee applies when the pre-fee appointment subtotal is below $400.",
+    bookingNote: "$20 per window; $50 for a front or rear windshield; $100 for a whole vehicle; $150 for a large van or SUV. Whole-vehicle prices exclude the front windshield. Window tint removal is available in shop only.",
   },
   {
     id: "pet-hair-removal",
@@ -262,7 +262,7 @@ export function AddOnsPageContent() {
                 Auto Detailing <span className="text-[#4da3ff]">Add-Ons</span> &amp; Restoration
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-300 sm:text-lg">
-                Targeted vehicle enhancements for lingering cabin odors, headlight clarity, engine-bay cleaning, and interior or exterior protection. Services are available as applicable add-ons or standalone studio appointments in Basking Ridge, NJ.
+                Targeted vehicle enhancements for lingering interior odors, headlight clarity, engine-bay cleaning, and interior or exterior protection. Services are available as applicable add-ons or standalone in-shop appointments in Basking Ridge, NJ.
               </p>
 
               {/* Value Pills */}
@@ -273,7 +273,7 @@ export function AddOnsPageContent() {
                 </div>
                 <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-neutral-200">
                   <CheckCircle2 className="h-4 w-4 text-[#1277ff]" />
-                  <span>Studio &amp; Mobile Options</span>
+                  <span>In-Shop &amp; Mobile Options</span>
                 </div>
                 <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-neutral-200">
                   <CheckCircle2 className="h-4 w-4 text-[#1277ff]" />
@@ -329,7 +329,7 @@ export function AddOnsPageContent() {
 
           <div className="flex items-center gap-2 text-xs text-neutral-400">
             <Info className="h-4 w-4 text-[#4da3ff]" />
-            <span>Pair with any package or book standalone at our studio</span>
+            <span>Pair with any package or book standalone at our shop</span>
           </div>
         </div>
       </section>
@@ -486,10 +486,10 @@ export function AddOnsPageContent() {
                 <Car className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-lg font-bold text-white">
-                2. Standalone Studio Drop-Off
+                2. Standalone In-Shop Drop-Off
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-neutral-400 leading-relaxed">
-                Only need headlight restoration, window tint removal, or air purification? Book a dedicated standalone appointment at our studio located at <strong>19 E. Henry Street in Basking Ridge, NJ</strong> with fast turnaround times.
+                Only need headlight restoration, window tint removal, or air purification? Book a dedicated standalone appointment at our shop located at <strong>19 E. Henry Street in Basking Ridge, NJ</strong> with fast turnaround times.
               </p>
             </div>
 
@@ -527,7 +527,7 @@ export function AddOnsPageContent() {
             {[
               {
                 q: "Can I book an add-on service by itself without getting a full detail?",
-                a: "Yes. Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal (from $20 per window) can be booked separately. Ask about studio or mobile availability for your service."
+                a: "Yes. Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal (from $20 per window) can be booked separately. Ask about in-shop or mobile availability for your service."
               },
               {
                 q: "What is the difference between a 1-step polish and full paint correction?",
@@ -572,7 +572,7 @@ export function AddOnsPageContent() {
                 Schedule Your Add-On or Package Today
               </h2>
               <p className="mt-3 max-w-xl text-sm text-neutral-300">
-                Book online in 60 seconds with live availability on Square, or call our Basking Ridge studio for tailored recommendations.
+                Book online in 60 seconds with live availability on Square, or call our Basking Ridge shop for tailored recommendations.
               </p>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-3 lg:mt-0">

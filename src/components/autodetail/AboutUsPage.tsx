@@ -52,10 +52,10 @@ const STORY_MILESTONES = [
   },
   {
     year: "2025",
-    tag: "Studio Opening",
+    tag: "Shop Opening",
     title: "19 E. Henry St in Basking Ridge",
     description:
-      "Opened our dedicated detailing studio with 6500K LED inspection lighting, a dust-controlled window tint bay, and climate-controlled ceramic coating bays.",
+      "Opened our dedicated detailing shop with 6500K LED inspection lighting, a dust-controlled window tint bay, and climate-controlled ceramic coating bays.",
     icon: Building2,
   },
 ];
@@ -65,7 +65,7 @@ const TEAM_MEMBERS = [
     name: "Vito DeGironimo",
     role: "Founder & Owner-Operator",
     tenure: "Est. 2019",
-    specialties: ["Paint Correction", "System X Ceramic Coatings", "Studio Direction"],
+    specialties: ["Paint Correction", "System X Ceramic Coatings", "Shop Direction"],
     bio: "Vito founded CleanWorx in his Colonia garage. He works on vehicles daily alongside the team, checking each finish personally before handing back the keys.",
   },
   {
@@ -84,7 +84,7 @@ const TEAM_MEMBERS = [
   },
 ];
 
-const STUDIO_AMENITIES = [
+const SHOP_AMENITIES = [
   {
     icon: Sparkles,
     title: "6500K Hexagonal LED Array",
@@ -108,7 +108,7 @@ const STUDIO_AMENITIES = [
 ];
 
 export function AboutUsPage() {
-  const [activePhoto, setActivePhoto] = useState<"composite" | "team" | "studio">("composite");
+  const [activePhoto, setActivePhoto] = useState<"composite" | "team" | "shop">("composite");
 
   return (
     <SiteShell>
@@ -145,13 +145,13 @@ export function AboutUsPage() {
               </span>
             </h1>
             <p className="mt-5 max-w-3xl text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-              In 2019, <strong className="text-white font-semibold">Vito DeGironimo</strong> started detailing cars out of his Colonia garage with a Jeep Grand Cherokee. That setup grew into a custom mobile rig and, in 2025, our dedicated studio at <strong className="text-white font-semibold">19 E. Henry Street</strong> in Basking Ridge. Today, Vito, <strong className="text-white font-semibold">Melqui Pichardo</strong>, and <strong className="text-white font-semibold">Hemza Nasser</strong> handle every vehicle directly—no outsourced crews or handed-off prep work.
+              In 2019, <strong className="text-white font-semibold">Vito DeGironimo</strong> started detailing cars out of his Colonia garage with a Jeep Grand Cherokee. That setup grew into a custom mobile rig and, in 2025, our dedicated shop at <strong className="text-white font-semibold">19 E. Henry Street</strong> in Basking Ridge. Today, Vito, <strong className="text-white font-semibold">Melqui Pichardo</strong>, and <strong className="text-white font-semibold">Hemza Nasser</strong> handle every vehicle directly—no outsourced crews or handed-off prep work.
             </p>
           </div>
 
           {/* Action buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <BookingLink label="Book Studio or Mobile Service" />
+            <BookingLink label="Book In-Shop or Mobile Service" />
             <a
               href="tel:+19088992832"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-5 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white hover:bg-white/10 hover:border-white/25 transition-all"
@@ -183,7 +183,7 @@ export function AboutUsPage() {
             </div>
             <div className="rounded-xl border border-white/5 bg-[#121318]/70 p-4 backdrop-blur-sm">
               <div className="text-2xl sm:text-3xl font-black text-white">19 E. Henry</div>
-              <div className="mt-1 text-xs font-medium text-neutral-400">Basking Ridge Detailing Studio</div>
+              <div className="mt-1 text-xs font-medium text-neutral-400">Basking Ridge Detailing Shop</div>
             </div>
             <div className="rounded-xl border border-white/5 bg-[#121318]/70 p-4 backdrop-blur-sm">
               <div className="text-2xl sm:text-3xl font-black text-[#4da3ff]">System X</div>
@@ -206,10 +206,10 @@ export function AboutUsPage() {
                   <span>How We Grew</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                  From Mobile Driveways to a Dedicated Studio
+                  From Mobile Driveways to a Dedicated Shop
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-neutral-300 leading-relaxed">
-                  CleanWorx grew through word of mouth and repeat clients across Central and North Jersey. We handle all paint correction, ceramic coatings, and interior restorations in-house with the same care we put into our own cars.
+                  CleanWorx grew through word of mouth and repeat customers across Central and North Jersey. We handle all paint correction, ceramic coatings, and interior restorations in-house with the same care we put into our own cars.
                 </p>
 
                 {/* 4 Concise Milestone Steps */}
@@ -274,14 +274,14 @@ export function AboutUsPage() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => setActivePhoto("studio")}
+                      onClick={() => setActivePhoto("shop")}
                       className={`rounded-md px-3 py-1 cursor-pointer transition-all ${
-                        activePhoto === "studio"
+                        activePhoto === "shop"
                           ? "bg-[#1277ff] text-white font-bold"
                           : "text-neutral-400 hover:text-white"
                       }`}
                     >
-                      Studio
+                      Shop
                     </button>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ export function AboutUsPage() {
                     {activePhoto === "composite" && (
                       <Image
                         src="/images/about/cleanworx-team-and-shop.webp"
-                        alt="CleanWorx Team Vito DeGironimo, Melqui Pichardo, and Hemza Nasser inside Basking Ridge studio"
+                        alt="CleanWorx Team Vito DeGironimo, Melqui Pichardo, and Hemza Nasser inside the Basking Ridge shop"
                         fill
                         priority
                         quality={95}
@@ -311,7 +311,7 @@ export function AboutUsPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     )}
-                    {activePhoto === "studio" && (
+                    {activePhoto === "shop" && (
                       <Image
                         src="/images/about/cleanworx-shop-exterior.webp"
                         alt="CleanWorx Auto Detailing storefront at 19 E. Henry Street Basking Ridge NJ"
@@ -328,10 +328,10 @@ export function AboutUsPage() {
                     {/* Floating Info Overlay */}
                     <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/15 bg-black/75 p-3.5 backdrop-blur-md">
                       <p className="text-xs font-bold uppercase tracking-wider text-[#4da3ff]">
-                        {activePhoto === "studio" ? "19 E. Henry Street Studio" : "CleanWorx Detailing Team"}
+                        {activePhoto === "shop" ? "19 E. Henry Street Shop" : "CleanWorx Detailing Team"}
                       </p>
                       <p className="text-sm font-semibold text-white mt-0.5">
-                        {activePhoto === "studio"
+                        {activePhoto === "shop"
                           ? "Basking Ridge, NJ 07920 · Somerset County"
                           : "Melqui Pichardo · Vito DeGironimo · Hemza Nasser"}
                       </p>
@@ -433,20 +433,20 @@ export function AboutUsPage() {
         </div>
       </section>
 
-      {/* 4. THE BASKING RIDGE STUDIO & MOBILE SERVICE */}
+      {/* 4. THE BASKING RIDGE SHOP & MOBILE SERVICE */}
       <section className="relative bg-[#0d0e12] py-16 sm:py-24 border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
-            {/* Left: Studio Amenities & Location Card */}
+            {/* Left: Shop Amenities & Location Card */}
             <div className="lg:col-span-7">
               <ScrollReveal animation="fade-right">
                 <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#4da3ff] uppercase mb-2">
                   <Building2 className="h-4 w-4" />
-                  <span>Studio &amp; Mobile</span>
+                  <span>Shop &amp; Mobile</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                  19 E. Henry Street Detailing Studio
+                  19 E. Henry Street Detailing Shop
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-neutral-300 leading-relaxed">
                   Our Basking Ridge shop provides the clean, temperature-controlled environment needed for thorough multi-stage paint correction, dust-free window tinting, and proper System X ceramic curing.
@@ -454,7 +454,7 @@ export function AboutUsPage() {
 
                 {/* 4 Amenities */}
                 <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  {STUDIO_AMENITIES.map((item) => {
+                  {SHOP_AMENITIES.map((item) => {
                     const AmenityIcon = item.icon;
                     return (
                       <div
@@ -471,7 +471,7 @@ export function AboutUsPage() {
                   })}
                 </div>
 
-                {/* Studio Address & Get Directions */}
+                {/* Shop Address & Get Directions */}
                 <div className="mt-6 rounded-xl border border-white/10 bg-[#14151e] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2 text-sm font-bold text-white">
@@ -496,14 +496,14 @@ export function AboutUsPage() {
               </ScrollReveal>
             </div>
 
-            {/* Right: Studio Photo & Mobile Alternative */}
+            {/* Right: Shop Photo & Mobile Alternative */}
             <div className="lg:col-span-5">
               <ScrollReveal animation="fade-left">
                 <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#14151b] group">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
                       src="/images/about/cleanworx-shop-basking-ridge.webp"
-                      alt="CleanWorx Auto Detailing studio storefront at 19 E. Henry Street Basking Ridge NJ"
+                      alt="CleanWorx Auto Detailing shop storefront at 19 E. Henry Street Basking Ridge NJ"
                       fill
                       quality={95}
                       sizes="(max-width: 1024px) 100vw, 40vw"
@@ -513,7 +513,7 @@ export function AboutUsPage() {
                     
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="inline-flex items-center gap-1.5 rounded-md bg-[#00d2ff]/20 border border-[#00d2ff]/40 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[#00d2ff] mb-1.5 backdrop-blur-md">
-                        Basking Ridge Studio
+                        Basking Ridge Shop
                       </div>
                       <p className="text-sm font-bold text-white">
                         Dedicated Indoor Detailing Bays
@@ -558,7 +558,7 @@ export function AboutUsPage() {
                 <span>CleanWorx Auto Detailing</span>
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
-                Book Your Detailing Appointment at Our Studio or at Home
+                Book Your Detailing Appointment at Our Shop or at Home
               </h2>
               <p className="mt-3 text-sm sm:text-base text-white/90 leading-relaxed">
                 Drop off your car at 19 E. Henry Street in Basking Ridge or schedule our mobile rig to your driveway. Vito, Melqui, and Hemza handle each vehicle personally.

@@ -102,7 +102,7 @@ export function StatsCounters() {
       highlights: [
         "We come directly to your home or office",
         "Complete self-powered mobile detailing rig",
-        "$50 mobile fee only for appointments under $400",
+        "$35 mobile service fee for every mobile appointment",
       ],
       featured: false,
     },
@@ -134,7 +134,7 @@ export function StatsCounters() {
         "As a certified System X ceramic coating installer, we apply commercial-grade ceramic protection that chemically bonds to your vehicle's clear coat. This delivers mirror-like gloss, hydrophobic water beading, and lasting defense against NJ winter road salt, acid rain, and UV damage.",
       highlights: [
         "Certified System X Ceramic installer",
-        "1, 3, and 5-year coating protection options",
+        "1, 3, and 6-year coating protection options",
         "Winter road salt and UV oxidation barrier",
       ],
       featured: true,
@@ -205,7 +205,7 @@ export function StatsCounters() {
             </h2>
 
             <p className="mt-4 sm:mt-5 text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed text-pretty">
-              Engineered around your convenience and vehicle value: self-contained mobile care delivered directly to your driveway, or dedicated service at our Basking Ridge studio.
+              Engineered around your convenience and vehicle value: self-contained mobile care delivered directly to your driveway, or dedicated service at our Basking Ridge shop.
             </p>
           </div>
         </ScrollReveal>

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: "Car Odor & Smoke Smell Removal, Basking Ridge | CleanWorx",
   },
   description:
-    "Smoke odor and car smell removal in Basking Ridge, NJ. Cigarette, cigar, and marijuana smoke odor removal with ozone air purification at our studio.",
+    "Smoke odor and car smell removal in Basking Ridge, NJ. Cigarette, cigar, and marijuana smoke odor removal with ozone air purification at our shop.",
   alternates: { canonical: "/car-odor-treatment" },
   openGraph: {
     title: "Car Odor & Smoke Smell Removal, Basking Ridge | CleanWorx",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/images/autodetail/car-odor-treatment-hero.png",
         width: 1776,
         height: 888,
-        alt: "Vehicle receiving ozone air purification at the CleanWorx detail studio",
+        alt: "Vehicle receiving ozone air purification at the CleanWorx detail shop",
       },
     ],
   },

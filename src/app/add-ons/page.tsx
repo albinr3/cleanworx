@@ -90,7 +90,7 @@ export default function AddOnsPage() {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Cabin Air Purification & Odor Removal",
+                name: "Interior Air Purification & Odor Removal",
                 description:
                   "30 to 40 minute ozone air purification treatment for lingering vehicle odors. Results depend on the odor source and vehicle condition.",
               },
