@@ -40,20 +40,16 @@ function CityStoryCard({
   image,
   imageAlt,
   paragraphs,
-  city,
   service,
   index,
-  photoLocation,
   preserveImage = false,
 }: {
   title: string;
   image: string;
   imageAlt: string;
   paragraphs: readonly string[];
-  city: string;
   service: string;
   index: number;
-  photoLocation?: string;
   preserveImage?: boolean;
 }) {
   return (
@@ -77,7 +73,6 @@ function CityStoryCard({
           <span className="ml-auto text-neutral-500">0{index + 1}</span>
         </div>
         <h3 className="max-w-xl text-2xl font-bold leading-tight text-white sm:text-[1.75rem]">{normalizeTerminology(title)}</h3>
-        <p className="mt-2 text-xs font-medium text-neutral-400">{city} service case{photoLocation ? ` · Portfolio photo: ${normalizeTerminology(photoLocation)}` : ""}</p>
         <div className="mt-5 space-y-4 border-l-2 border-[#347bd2]/70 pl-5 text-sm leading-7 text-neutral-300 sm:text-[0.95rem]">
           {paragraphs.map((paragraph, paragraphIndex) => (
             <p key={paragraphIndex} className={paragraphIndex === 0 ? "text-neutral-100" : ""}>
@@ -186,7 +181,6 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                 <div>
                   <span className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">0{index + 1} / 08</span>
                   <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">{topic.title}</h2>
-                  {storyCount > 0 && <p className="mt-4 text-sm text-neutral-400">{storyCount} documented {storyCount === 1 ? "case" : "cases"} for {topic.title}</p>}
                   <Link href={topic.href} className="group mt-6 inline-flex min-h-12 items-center gap-4 rounded-lg border border-[#3993ff] bg-[#1277ff] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_-14px_rgba(18,119,255,0.85)] transition-colors hover:border-[#8cc4ff] hover:bg-[#0865dd] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8cc4ff]">
                     Explore {topic.title}
                     <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -194,18 +188,12 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                 </div>
                 <div>
                   <p className="max-w-3xl text-base leading-8 text-neutral-300">{normalizeTerminology(page.serviceCopy[topic.id])}</p>
-                  {topic.id === "exterior-detailing" && (
-                    <div className="mt-7 space-y-4 rounded-xl border border-white/10 bg-[#14151a] p-5 text-sm leading-7 text-neutral-300">
-                      <p>{normalizeTerminology(page.fullDetailNote)} <Link href="/" className="font-semibold text-[#4da3ff] hover:text-white">Explore full detailing →</Link></p>
-                      <p>{normalizeTerminology(page.engineBayNote)} <Link href="/add-ons" className="font-semibold text-[#4da3ff] hover:text-white">Explore engine bay cleaning →</Link></p>
-                    </div>
-                  )}
                 </div>
               </div>
               {storyCount > 0 && (
                 <div className="mt-10 space-y-6 lg:mt-12">
                   <div className="flex items-center gap-4">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#66adff]">Documented service {storyCount === 1 ? "case" : "cases"}</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#66adff]">{storyCount === 1 ? "A case" : "Cases"} from {page.city}</span>
                     <span className="h-px flex-1 bg-white/10" aria-hidden="true" />
                   </div>
                   {sectionPhotos.map((photo, storyIndex) => (
@@ -215,10 +203,8 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       image={photo.src}
                       imageAlt={photo.alt}
                       paragraphs={portfolioStories[photo.id].split("\n\n")}
-                      city={page.city}
                       service={topic.title}
                       index={storyIndex}
-                      photoLocation={photo.location}
                     />
                   ))}
                   {serviceStory && (
@@ -227,12 +213,17 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       image={serviceStory.image}
                       imageAlt={serviceStory.imageAlt}
                       paragraphs={serviceStory.paragraphs}
-                      city={page.city}
                       service={topic.title}
                       index={sectionPhotos.length}
                       preserveImage
                     />
                   )}
+                </div>
+              )}
+              {topic.id === "exterior-detailing" && (
+                <div className="mt-8 max-w-3xl space-y-4 rounded-xl border border-white/10 bg-[#14151a] p-5 text-sm leading-7 text-neutral-300 lg:ml-auto">
+                  <p>{normalizeTerminology(page.fullDetailNote)} <Link href="/" className="font-semibold text-[#4da3ff] hover:text-white">Explore full detailing →</Link></p>
+                  <p>{normalizeTerminology(page.engineBayNote)} <Link href="/add-ons" className="font-semibold text-[#4da3ff] hover:text-white">Explore engine bay cleaning →</Link></p>
                 </div>
               )}
             </section>

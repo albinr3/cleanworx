@@ -5,7 +5,7 @@ import { Check, ChevronRight, Clock3 } from "lucide-react";
 import { BookingLink } from "@/components/autodetail/BookingLink";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 
-const image = "/images/autodetail/cleanworx-hand-wash-lotus.webp";
+const image = "/images/autodetail/mini-detail-foam-covered-wagon.webp";
 const bookingUrl = "https://book.squareup.com/appointments/zaytwokypbkwju/location/LTG6WA905VGVV/services/JXK72CJDYWYTKO3W6MPCJSJI";
 
 const inclusions = [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "Monthly maintenance after a Full Detail, with a three-bucket hand wash and light interior care. From $95.",
     url: "https://www.cleanworxnj.com/mini-detail",
-    images: [{ url: image, alt: "CleanWorx hand washing a vehicle" }],
+    images: [{ url: image, alt: "Sport wagon covered in foam during an exterior wash" }],
   },
 };
 
@@ -83,7 +83,7 @@ export default function MiniDetailPage() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-white/10 bg-[#14151a] lg:aspect-square">
             <Image
               src={image}
-              alt="CleanWorx team hand washing a red vehicle"
+              alt="Sport wagon covered in foam during an exterior wash"
               fill
               sizes="(max-width: 1023px) 100vw, 45vw"
               priority
