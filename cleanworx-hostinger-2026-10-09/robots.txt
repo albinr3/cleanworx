@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /booking
+
+Sitemap: https://www.cleanworxnj.com/sitemap.xml

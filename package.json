@@ -30,6 +30,7 @@
     "dev": "node -e \"const path=require('node:path'); const {spawn}=require('node:child_process'); const cwd=process.cwd(); const root=path.basename(cwd)==='standalone' && path.basename(path.dirname(cwd))==='.next' ? path.resolve(cwd,'..','..') : cwd; const child=spawn(process.execPath,[path.join(root,'node_modules','next','dist','bin','next'),'dev',root],{stdio:'inherit'}); child.on('exit',(code,signal)=>process.exit(code ?? (signal ? 1 : 0)));\"",
     "build": "next build",
     "build:hostinger": "node scripts/build-hostinger.mjs",
+    "verify:migration": "node scripts/seo-migration.mjs verify",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",

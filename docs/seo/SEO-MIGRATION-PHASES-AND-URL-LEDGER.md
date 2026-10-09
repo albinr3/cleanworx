@@ -59,22 +59,24 @@ Las cinco fotos de cada página son imágenes distintas del portafolio, incluida
 
 **Puerta de salida:** todos los destinos del anexo devuelven 200, son accesibles en HTML y explican el servicio o propósito que heredarán; las páginas indexables tienen canonical propio y `/services` es `noindex, follow` y queda fuera del sitemap.
 
-## Fase 4 — Aplicar el mapa URL por URL
+## Fase 4 — Aplicar el mapa URL por URL ✅ Completada
 
-**Responsable:** desarrollo implementará después; agencia aprobará el resultado. **Salida:** cada URL antigua responde con la acción exacta del anexo.
+**Estado:** completada el 9 de octubre de 2026 como preparación del paquete estático para Hostinger. El [informe de las 143 filas](./PHASE-4-HOSTINGER-REDIRECT-AUDIT.csv) registra la validación estática. La aprobación de la agencia, el despliegue y la comprobación de respuestas HTTP reales corresponden a la fase 5.
+
+**Responsables:** desarrollo preparó y auditó las reglas; agencia aprobará el paquete antes del lanzamiento. **Salida:** mapa implementado en la exportación estática, listo para publicar.
 
 1. Configurar cada `301` de servidor directamente al destino final HTTPS con `www`, sin pasar por `/services`, la home intermedia u otra URL antigua. Preservar los parámetros de campaña cuando proceda.
 2. Para las cinco ciudades elegidas, seguir los destinos locales del anexo. Las páginas antiguas de otras ciudades se consolidan en la página general del mismo servicio; las de full/general detailing en la home y las de vano motor en una sección sustancial de `/add-ons`.
 3. No activar redirecciones si falta una sección clave del destino. Resolver la insuficiencia de contenido **antes del cambio de dominio**, manteniendo la decisión documentada y revisando el anexo si se demuestra que no existe reemplazo. `410` se reserva a la retirada definitiva sin sustituto; en el inventario actual ninguna URL cumple esa condición tras la revisión.
 4. Sustituir el sitemap viejo por uno que contenga solo URL nuevas indexables con respuesta 200. Excluir `/services`, todas las URL antiguas redirigidas y cualquier retirada 410. Actualizar los enlaces internos a los destinos finales.
 
-**Puerta de salida:** 143 filas comprobadas; 143 respuestas `301` a destinos finales 200; cero bucles, destinos no indexables o cadenas evitables. Si la evidencia cambia, actualizar primero la fila y volver a probar.
+**Puerta de salida:** 143 filas comprobadas contra las reglas, con destinos finales presentes, indexables y canónicos en la exportación; sin cadenas evitables en el mapa. La verificación de las 143 respuestas HTTP `301` hacia páginas `200` se hará en la fase 5. Si la evidencia cambia, actualizar primero la fila y volver a probar.
 
 ## Fase 5 — Lanzamiento y vigilancia
 
 **Responsables:** desarrollo despliega; agencia verifica y sigue GSC. **Salida:** migración rastreable y sin pérdidas evitables por errores técnicos.
 
-1. En el momento del cambio, comprobar en producción una muestra de cada destino y **todas las URL del anexo** con una herramienta de crawl/HTTP. Enviar el nuevo sitemap desde la misma propiedad de GSC.
+1. Obtener la aprobación de la agencia para el paquete y publicar la exportación preparada en Hostinger. En el momento del cambio, comprobar en producción una muestra de cada destino y **todas las URL del anexo** con una herramienta de crawl/HTTP: `301` directo al destino final `200`, sin bucles ni cadenas, con HTTPS y `www`. Enviar el nuevo sitemap desde la misma propiedad de GSC.
 2. Durante la primera semana, revisar diariamente 301/404/410, canonicals, indexación y errores de sitemap. Durante las siguientes 12 semanas, comparar semanalmente clics e impresiones de páginas y grupos de ciudad/servicio frente a la línea base; registrar cualquier URL antigua que siga apareciendo o termine en destino incorrecto.
 3. Revisar mensualmente después de las 12 semanas, corregir enlaces controlados que aún apunten a URL viejas y mantener las redirecciones por **al menos un año**. Las oscilaciones iniciales son posibles mientras Google vuelve a rastrear e indexar.
 

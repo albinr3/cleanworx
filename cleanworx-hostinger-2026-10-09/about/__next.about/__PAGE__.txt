@@ -1,0 +1,46 @@
+1:"$Sreact.fragment"
+3:I[45891,["/_next/static/chunks/3fntmmi971322.js","/_next/static/chunks/1w314e1zqw9yi.js","/_next/static/chunks/1_3khyqapos-g.js"],"AboutUsPage"]
+4:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+a:I[97367,["/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+2:T704,{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://www.cleanworxnj.com/about#webpage","url":"https://www.cleanworxnj.com/about","name":"About CleanWorx Auto Detailing & Ceramic Coating","description":"The founding story, team, and shop history of CleanWorx Auto Detailing & Ceramic Coating in Basking Ridge, NJ.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.cleanworxnj.com/"},{"@type":"ListItem","position":2,"name":"About CleanWorx","item":"https://www.cleanworxnj.com/about"}]},"mainEntity":{"@type":["AutoRepair","LocalBusiness"],"@id":"https://www.cleanworxnj.com/#business","name":"CleanWorx Auto Detailing & Ceramic Coating","url":"https://www.cleanworxnj.com","telephone":"+1-908-899-2832","email":"cleanworxnj@gmail.com","foundingDate":"2019","foundingLocation":{"@type":"Place","name":"Colonia, New Jersey"},"founder":{"@type":"Person","name":"Vito DeGironimo","jobTitle":"Founder & Owner-Operator"},"employee":[{"@type":"Person","name":"Melqui Pichardo","jobTitle":"Detailing Specialist"},{"@type":"Person","name":"Hemza Nasser","jobTitle":"Detailing Specialist"}],"address":{"@type":"PostalAddress","streetAddress":"19 E. Henry Street","addressLocality":"Basking Ridge","addressRegion":"NJ","postalCode":"07920","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":40.7050942,"longitude":-74.5482277},"hasMap":"https://www.google.com/maps?cid=15973418579450373920","sameAs":["https://www.bbb.org/us/nj/basking-ridge/profile/auto-detailing/cleanworx-llc-auto-detailing-0221-90237271","https://www.google.com/maps?cid=15973418579450373920"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"220","bestRating":"5","worstRating":"1"}}}]}8:X
+22:X
+22:C
+0:{"buildId":"hFZFe1joZ8dOq93EeJVL-","data":[{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L3",null,{}]],[["$","script","script-0",{"src":"/_next/static/chunks/1w314e1zqw9yi.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1_3khyqapos-g.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"About CleanWorx Auto Detailing | Vito DeGironimo & Team | Basking Ridge, NJ"}],["$","meta","1",{"name":"description","content":"The story of CleanWorx Auto Detailing. Founded in 2019 by Vito DeGironimo, joined by Melqui Pichardo & Hemza Nasser. Dedicated shop at 19 E. Henry St, Basking Ridge, NJ & mobile service."}],["$","meta","2",{"name":"application-name","content":"CleanWorx Auto Detailing & Ceramic Coating"}],["$","link","3",{"rel":"author","href":"https://www.cleanworxnj.com"}],["$","meta","4",{"name":"author","content":"CleanWorx Auto Detailing & Ceramic Coating"}],["$","link","5",{"rel":"manifest","href":"/manifest.json"}],["$","meta","6",{"name":"keywords","content":"auto detailing Basking Ridge NJ,ceramic coating Basking Ridge NJ,paint correction Somerset County,mobile auto detailing NJ,interior car detailing,exterior car detailing hand wash,System X ceramic coating,CleanWorx NJ"}],["$","meta","7",{"name":"creator","content":"CleanWorx Auto Detailing & Ceramic Coating"}],["$","meta","8",{"name":"publisher","content":"CleanWorx Auto Detailing & Ceramic Coating"}],"$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d"]}]}]}],"$L1e"]}],"isPartial":"$@1f","staleTime":"$8","varyParams":null},{"rsc":"$L20","isPartial":"$@21","staleTime":"$8","varyParams":"$22"},{"rsc":"$L23","isPartial":"$@24","staleTime":"$8","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@25","rootVaryParams":null,"needsRuntimeRequest":"$@26"}
+27:I[27201,["/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+28:I[39756,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+29:I[37457,["/_next/static/chunks/3fntmmi971322.js"],"default"]
+:HL["/_next/static/chunks/2jexfapkb1815.css","style"]
+:HL["/_next/static/chunks/0c4_2xai251si.css","style"]
+6:null
+b:["$","meta","9",{"name":"robots","content":"index, follow"}]
+c:["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}]
+d:["$","link","11",{"rel":"canonical","href":"https://www.cleanworxnj.com/about"}]
+e:["$","meta","12",{"property":"og:title","content":"About CleanWorx Auto Detailing | Vito DeGironimo & Team | Basking Ridge, NJ"}]
+f:["$","meta","13",{"property":"og:description","content":"From a garage in Colonia to our detailing shop at 19 E. Henry St, Basking Ridge, NJ. Meet Vito DeGironimo, Melqui Pichardo & Hemza Nasser."}]
+10:["$","meta","14",{"property":"og:url","content":"https://www.cleanworxnj.com/about"}]
+11:["$","meta","15",{"property":"og:image","content":"https://www.cleanworxnj.com/images/about/cleanworx-team-and-shop.jpg"}]
+12:["$","meta","16",{"property":"og:image:width","content":"1024"}]
+13:["$","meta","17",{"property":"og:image:height","content":"576"}]
+14:["$","meta","18",{"property":"og:image:alt","content":"CleanWorx Team Vito DeGironimo, Melqui Pichardo, and Hemza Nasser at the Basking Ridge Detailing Shop"}]
+15:["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}]
+16:["$","meta","20",{"name":"twitter:title","content":"About CleanWorx Auto Detailing | Vito DeGironimo & Team | Basking Ridge, NJ"}]
+17:["$","meta","21",{"name":"twitter:description","content":"Meet Vito DeGironimo, Melqui Pichardo & Hemza Nasser at CleanWorx Auto Detailing in Basking Ridge, NJ."}]
+18:["$","meta","22",{"name":"twitter:image","content":"https://www.cleanworxnj.com/images/about/cleanworx-team-and-shop.jpg"}]
+19:["$","link","23",{"rel":"icon","href":"/favicon.ico?favicon.1ydcr_o4y2xr0.ico","sizes":"48x48","type":"image/x-icon"}]
+1a:["$","link","24",{"rel":"icon","href":"/icon0.svg?icon0.0iqdqflgh50qv.svg","sizes":"any","type":"image/svg+xml"}]
+1b:["$","link","25",{"rel":"icon","href":"/icon1.png?icon1.0nnzd99c5h5pt.png","sizes":"96x96","type":"image/png"}]
+1c:["$","link","26",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.13l2l9pr6fvhf.png","sizes":"180x180","type":"image/png"}]
+1d:["$","$L27","27",{}]
+1e:["$","meta",null,{"name":"next-size-adjust","content":""}]
+20:["$","$1","c",{"children":[null,["$","$L28",null,{"parallelRouterKey":"children","template":["$","$L29",null,{}]}]]}]
+23:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2jexfapkb1815.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/chunks/0c4_2xai251si.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3fntmmi971322.js","async":true}]],["$","html",null,{"lang":"en","data-scroll-behavior":"smooth","className":"outfit_9b36d3f5-module__bjS-Fq__variable plus_jakarta_sans_7e487dc-module__F90gHa__variable dark scroll-smooth h-full antialiased","children":["$","body",null,{"className":"min-h-full bg-[#0a0a0c] text-neutral-200 font-sans selection:bg-[#1277ff] selection:text-white flex flex-col","children":["$","$L28",null,{"parallelRouterKey":"children","template":["$","$L29",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}]}]]}]
+8:300
+26:true
+8:C
+25:0
+1f:"$undefined"
+21:"$undefined"
+24:"$undefined"
+7:"$undefined"
