@@ -33,7 +33,7 @@ const detailPhases = [
 
 export function CockpitBanner() {
   return (
-    <section className="relative flex min-h-[640px] w-full items-center justify-center overflow-hidden bg-[#1277ff] px-4 py-16 sm:min-h-[700px] sm:py-24">
+    <section id="full-detail" className="relative flex min-h-[640px] w-full items-center justify-center overflow-hidden bg-[#1277ff] px-4 py-16 sm:min-h-[700px] sm:py-24">
       {/* Subtle geometric pattern overlay matching CtaBanner */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
 
@@ -43,7 +43,7 @@ export function CockpitBanner() {
             <ScrollReveal animation="zoom-in" duration={600}>
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
                 <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                <span>Complete Detailing Process</span>
+                <span>Full Detailing Process</span>
               </div>
             </ScrollReveal>
 
@@ -97,7 +97,7 @@ export function CockpitBanner() {
 
             <div className="mt-6 flex flex-col items-center justify-center gap-1 lg:items-start">
               <p className="text-sm font-bold tracking-wide text-white sm:text-base">
-                Complete Interior + Exterior Detail from $405+
+                Full Interior + Exterior Detail from $405+
               </p>
               <p className="text-xs text-white/85 sm:text-sm">
                 Clear scope and upfront pricing before work begins. Final pricing depends on vehicle size and surface condition.

@@ -19,6 +19,7 @@ const serviceLinks = [
   ["Window Tinting", "/window-tinting"],
   ["Interior Detailing", "/interior-detailing"],
   ["Exterior Detailing", "/exterior-detailing"],
+  ["Mini Detail", "/mini-detail"],
   ["Mobile Auto Detailing", "/mobile-auto-detailing"],
   ["Headlight Restoration", "/headlight-restoration"],
   ["Car Odor Removal", "/car-odor-treatment"],
@@ -42,14 +43,15 @@ export function Footer({ hideOurWork = false }: { hideOurWork?: boolean }) {
           </Link>
           <p className="mt-5 text-sm leading-relaxed">CleanWorx Auto Detailing &amp; Ceramic Coating provides professional auto detailing in Basking Ridge, New Jersey, with in-shop and mobile appointment options confirmed for each request.</p>
 
-          <a
-            href="https://www.instagram.com/cleanworx_llc/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#4da3ff] transition-colors hover:border-[#4da3ff] hover:text-white"
-            aria-label="Follow CleanWorx on Instagram"
-            title="Follow CleanWorx on Instagram"
-          >
+          <div className="mt-5 flex gap-3">
+            <a
+              href="https://www.instagram.com/cleanworx_llc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#4da3ff] transition-colors hover:border-[#4da3ff] hover:text-white"
+              aria-label="Follow CleanWorx on Instagram"
+              title="Follow CleanWorx on Instagram"
+            >
             <svg
               className="h-5 w-5"
               viewBox="0 0 24 24"
@@ -62,7 +64,32 @@ export function Footer({ hideOurWork = false }: { hideOurWork?: boolean }) {
               <circle cx="12" cy="12" r="4" />
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
             </svg>
-          </a>
+            </a>
+            <a
+              href="https://www.tiktok.com/@cleanworxnj?_r=1&_t=ZP-9APd8cSSbKJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#4da3ff] transition-colors hover:border-[#4da3ff] hover:text-white"
+              aria-label="Follow CleanWorx on TikTok"
+              title="Follow CleanWorx on TikTok"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.6 7.1a6.8 6.8 0 0 1-4.2-1.5v8.1a6.7 6.7 0 1 1-5.8-6.6v3.6a3.2 3.2 0 1 0 2.3 3.1V2h3.5c.2 2.1 1.7 3.8 4.2 4.2v.9Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/share/1DyC4RT9p4/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#4da3ff] transition-colors hover:border-[#4da3ff] hover:text-white"
+              aria-label="Follow CleanWorx on Facebook"
+              title="Follow CleanWorx on Facebook"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21h3.4Z" />
+              </svg>
+            </a>
+          </div>
 
           {/* Official Profiles: Google & BBB */}
           <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5">

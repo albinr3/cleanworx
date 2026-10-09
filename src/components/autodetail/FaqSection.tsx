@@ -8,7 +8,7 @@ export function FaqSection() {
         <div className="mb-10 text-center sm:mb-16">
           <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">Questions and appointment guidance</p>
           <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">Frequently Asked Questions</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-400 sm:text-base">Answers about complete detailing, coating, paint correction, mobile availability, and requesting a quote.</p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-neutral-400 sm:text-base">Answers about full detailing, coating, paint correction, mobile availability, and requesting a quote.</p>
         </div>
 
         <div className="space-y-3">

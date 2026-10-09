@@ -30,6 +30,7 @@ export function PortfolioGallery() {
     if (item.tags.includes(activeCategory)) return true;
     return false;
   });
+  const filteredItemCount = filteredItems.length;
 
   const activeItem: PortfolioItem | null =
     activeItemIndex !== null && filteredItems[activeItemIndex]
@@ -39,16 +40,16 @@ export function PortfolioGallery() {
   const handleNext = useCallback(() => {
     if (activeItemIndex === null) return;
     setActiveItemIndex((prev) =>
-      prev === null ? 0 : (prev + 1) % filteredItems.length
+      prev === null ? 0 : (prev + 1) % filteredItemCount
     );
-  }, [activeItemIndex, filteredItems.length]);
+  }, [activeItemIndex, filteredItemCount]);
 
   const handlePrev = useCallback(() => {
     if (activeItemIndex === null) return;
     setActiveItemIndex((prev) =>
-      prev === null ? 0 : (prev - 1 + filteredItems.length) % filteredItems.length
+      prev === null ? 0 : (prev - 1 + filteredItemCount) % filteredItemCount
     );
-  }, [activeItemIndex, filteredItems.length]);
+  }, [activeItemIndex, filteredItemCount]);
 
   const handleClose = useCallback(() => {
     setActiveItemIndex(null);

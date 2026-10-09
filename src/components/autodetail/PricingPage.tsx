@@ -1,4 +1,5 @@
 import { Check, Phone } from "lucide-react";
+import Link from "next/link";
 import { ADD_ON_PRICES, CERAMIC_PACKAGES, DETAILING_PACKAGES, type PricingPackage } from "@/data/pricingData";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
@@ -7,7 +8,11 @@ function PackageTable({ packageData }: { packageData: PricingPackage }) {
   return (
     <article className="overflow-hidden border border-white/10 bg-[#14151a] shadow-2xl shadow-black/20">
       <div className="border-b border-white/10 bg-[#10131a] px-5 py-5 sm:px-6">
-        <h2 className="text-xl font-black text-white">{packageData.name}</h2>
+        <h2 className="text-xl font-black text-white">
+          {packageData.name === "Mini Detail" ? (
+            <Link href="/mini-detail" className="hover:text-[#70b5ff]">Mini Detail →</Link>
+          ) : packageData.name}
+        </h2>
         {packageData.detail ? <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#70b5ff]">{packageData.detail}</p> : null}
       </div>
       <dl className="divide-y divide-white/10 px-5 sm:px-6">

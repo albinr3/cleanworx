@@ -65,7 +65,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: "work-12",
-    title: "Lotus Emira — Supercar Paint Restoration",
+    title: "Lotus Emira — Ceramic Coating",
     vehicle: "Lotus Emira (Magma Red)",
     category: "Ceramic Coating",
     tags: ["Exotics & Supercars", "Ceramic Coating"],

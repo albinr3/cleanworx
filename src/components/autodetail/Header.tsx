@@ -12,6 +12,7 @@ const services = [
   ["Window Tinting", "/window-tinting"],
   ["Interior Detailing", "/interior-detailing"],
   ["Exterior Detailing", "/exterior-detailing"],
+  ["Mini Detail", "/mini-detail"],
   ["Mobile Auto Detailing", "/mobile-auto-detailing"],
   ["Headlight Restoration", "/headlight-restoration"],
   ["Car Odor Removal", "/car-odor-treatment"],

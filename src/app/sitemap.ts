@@ -55,6 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/mini-detail`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/mobile-auto-detailing`,
       lastModified: new Date("2026-09-26T16:00:00.000Z"),
       changeFrequency: "monthly",

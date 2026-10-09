@@ -482,7 +482,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
           {
             title: "Self-Contained Power & Spot-Free Water",
             paragraphs: [
-              "Our custom mobile detailing unit carries an onboard pure water tank and quiet generator. We bring all electricity and spot-free water needed for a complete detail without using your home utilities."
+              "Our custom mobile detailing unit carries an onboard pure water tank and quiet generator. We bring all electricity and spot-free water needed for a full detail without using your home utilities."
             ]
           }
         ]

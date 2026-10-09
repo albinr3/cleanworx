@@ -35,18 +35,25 @@ const services = [
     imageAlt: "Paint correction on a vehicle finish at CleanWorx",
   },
   {
-    title: "Interior Detailing",
+    title: "Full Interior Detailing",
     href: "/interior-detailing",
     description: "Find cleaning options for seats, carpets, upholstery, and interior surfaces.",
     image: catalogImages["interior-detailing"],
     imageAlt: "CleanWorx interior detailing of vehicle seats and surfaces",
   },
   {
-    title: "Exterior Detailing",
+    title: "Full Exterior Detailing",
     href: "/exterior-detailing",
     description: "See hand washing, decontamination, and finish protection options.",
     image: catalogImages["exterior-detailing"],
     imageAlt: "Hand washing a vehicle during exterior detailing",
+  },
+  {
+    title: "Mini Detail",
+    href: "/mini-detail",
+    description: "Keep up your vehicle with a hand wash and light interior clean. A popular monthly maintenance service after a Full Detail, starting at $95.",
+    image: catalogImages["mini-detail"],
+    imageAlt: "CleanWorx team hand washing a red vehicle",
   },
   {
     title: "Mobile Auto Detailing",
@@ -70,7 +77,7 @@ const services = [
     imageAlt: "CleanWorx technician restoring an oxidized vehicle headlight",
   },
   {
-    title: "Car Odor Treatment",
+    title: "Car Odor Removal (Air Purification)",
     href: "/car-odor-treatment",
     description: "Explore vehicle odor treatment, its process, and its limits.",
     image: "/images/autodetail/car-odor-treatment-hero.png",
@@ -117,7 +124,7 @@ export default function ServicesPage() {
       ]}
       links={[
         { label: "Headlight restoration", href: "/headlight-restoration" },
-        { label: "Car odor treatment", href: "/car-odor-treatment" },
+        { label: "Car Odor Removal (Air Purification)", href: "/car-odor-treatment" },
         { label: "Specialized add-ons", href: "/add-ons" },
         { label: "View our work", href: "/our-work" },
         { label: "Check service areas", href: "/service-areas" },
