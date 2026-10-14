@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
     "cleanworx-hostinger-*/**",
     "build/**",
     "dist/**",
+    "temp/**",
     "next-env.d.ts",
     "scripts/**",
     ".agents/**",

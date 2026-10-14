@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
+import { AnalyticsLinkEvents } from "@/components/analytics/AnalyticsLinkEvents";
+import { AnalyticsPageViews } from "@/components/analytics/AnalyticsPageViews";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -86,6 +89,21 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-[#0a0a0c] text-neutral-200 font-sans selection:bg-[#1277ff] selection:text-white flex flex-col">
         {children}
+        <AnalyticsLinkEvents />
+        <AnalyticsPageViews />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FRVB9W1H8D"
+          strategy="afterInteractive"
+        />
+        <Script id="cleanworx-ga4" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag('js', new Date());
+if (window.location.hostname === 'cleanworxnj.com' || window.location.hostname === 'www.cleanworxnj.com') {
+  gtag('config', 'G-FRVB9W1H8D', { send_page_view: false });
+}`}
+        </Script>
       </body>
     </html>
   );

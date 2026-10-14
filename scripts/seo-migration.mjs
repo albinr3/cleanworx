@@ -59,6 +59,7 @@ function generate(rows) {
   const rules = uniquePathRows(rows).map(ruleFor);
   const content = [
     "Options -MultiViews",
+    "DirectorySlash Off",
     "RewriteEngine On",
     "",
     beginMarker,
@@ -78,7 +79,6 @@ function generate(rows) {
     "# Next.js exports /about as about.html; keep extensionless URLs working.",
     "RewriteRule ^(.+)/$ /$1 [R=301,L]",
     "RewriteCond %{REQUEST_FILENAME} !-f",
-    "RewriteCond %{REQUEST_FILENAME} !-d",
     "RewriteCond %{REQUEST_FILENAME}.html -f",
     "RewriteRule ^(.+)$ $1.html [L]",
     "",
