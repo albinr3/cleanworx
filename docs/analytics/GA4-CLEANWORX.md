@@ -56,7 +56,7 @@ Square Online administra su propio tag y consentimiento. La medición entre domi
 
 Estos cinco eventos se envían desde el **sitio principal**. `page_path` identifica la página donde ocurrió el evento; `page_view` también envía `page_location` y `page_title`. `destination_host` solo identifica a cuál de los dos hosts de Square se hizo clic, no el servicio ni el resultado de la reserva. `service_interest` es una de estas categorías fijas: Ceramic Coating, Paint Correction, Window Tinting, Interior Detailing, Exterior Detailing, Full Detail Package, Mobile Auto Detailing u Other Inquiry.
 
-`generate_lead` es el único evento propio marcado como **evento clave principal**. `click_call` y `click_email` registran la intención de contactar, sin confirmar una llamada o un correo enviado. `booking_click` registra intención de reservar. `booking_completed` **no está implementado**. La medición mejorada de GA4 puede producir eventos automáticos adicionales, como `click`; para contar los clics de reserva definidos aquí, filtrar siempre por `booking_click`.
+`generate_lead` es el único evento propio marcado como **evento clave principal**. `click_call` y `click_email` registran la intención de contactar, sin confirmar una llamada o un correo enviado. `booking_click` registra intención de reservar. `booking_completed` está implementado en el servidor, pero no activado en producción hasta configurar Square, MySQL y el secreto de Measurement Protocol, y completar las pruebas controladas. La medición mejorada de GA4 puede producir eventos automáticos adicionales, como `click`; para contar los clics de reserva definidos aquí, filtrar siempre por `booking_click`.
 
 El formulario solo envía a GA4 una categoría de servicio elegida de una lista fija. No se envían nombre, correo, teléfono, vehículo, mensaje ni URL de destino como parámetros de los eventos propios. El tag de Google sí recoge la URL de la página, por lo que no deben incluirse datos personales en URLs.
 
@@ -96,10 +96,10 @@ Para evaluar el trabajo SEO, filtrar por **Fuente/medio de la sesión = `google 
    - Pruebas HTTP automatizadas confirmaron que las redirecciones HTTP -> HTTPS, sin www -> con www, y las redirecciones 301 de URLs migradas conservan el 100% de la query string (`utm_*`, `gclid`, `gbraid`, `wbraid`).
    - Se confirmó vía API que GA4 no tiene cuentas de Google Ads vinculadas directamente (0 vínculos).
 
-6. **Confirmación de citas reales en Square Appointments (`booking_completed`):** ⏳ **PENDIENTE**.
-   - No se ha realizado una reserva controlada real en Appointments.
-   - No existe evento `booking_completed` ni atribución directa de citas finales a SEO/Ads en GA4 (la plataforma de citas no expone esa señal verificable y el tag no carga en `book.squareup.com`).
-   - Las citas cerradas se contabilizan directamente en el panel de Square Appointments.
+6. **Confirmación de citas reales en Square Appointments (`booking_completed`):** ⏳ **IMPLEMENTADO, PENDIENTE DE ACTIVACIÓN Y PRUEBA**.
+   - El endpoint firmado, registro MySQL, envío server-side y conciliación diaria están en el proyecto. La guía de puesta en producción está en [SQUARE-GA4-BOOKING-WEBHOOK-DEPLOYMENT.md](./SQUARE-GA4-BOOKING-WEBHOOK-DEPLOYMENT.md).
+   - Falta configurar credenciales, suscripción de producción y realizar una reserva controlada real en Appointments.
+   - Las citas emitidas por el webhook usan un identificador técnico sin sesión verificable y no deben atribuirse a SEO/Ads.
 
 7. **Validación cruzada con Google Search Console:** ✅ **VERIFICADO**.
    - Se consultó la API de Search Console (`sc-domain:cleanworxnj.com`): el sitio ya registra impresiones y clics en búsquedas orgánicas reales de Google.

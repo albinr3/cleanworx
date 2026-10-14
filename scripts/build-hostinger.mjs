@@ -1,28 +1,25 @@
-import { spawnSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 import fs from "node:fs";
 
-const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const nextCli = path.join(projectRoot, "node_modules", "next", "dist", "bin", "next");
+const projectRoot = path.resolve(import.meta.dirname, "..");
+const outputDirectory = path.join(projectRoot, "out");
+const standaloneDirectory = path.join(projectRoot, ".next", "standalone");
+const staticDirectory = path.join(projectRoot, ".next", "static");
 
-const result = spawnSync(process.execPath, [nextCli, "build"], {
-  cwd: projectRoot,
-  env: { ...process.env, HOSTINGER_STATIC_EXPORT: "1" },
-  stdio: "inherit",
-});
-
-if (result.error) {
-  console.error(result.error);
+if (!fs.existsSync(standaloneDirectory) || !fs.existsSync(staticDirectory)) {
+  throw new Error("Next.js standalone output is missing. Run `npm run build` before packaging for Hostinger.");
 }
 
-if (result.status === 0) {
-  const serviceAreasHtml = path.join(projectRoot, "out", "service-areas.html");
-  const serviceAreasDir = path.join(projectRoot, "out", "service-areas");
-  if (fs.existsSync(serviceAreasHtml) && fs.existsSync(serviceAreasDir)) {
-    fs.copyFileSync(serviceAreasHtml, path.join(serviceAreasDir, "index.html"));
-  }
-}
+fs.rmSync(outputDirectory, { recursive: true, force: true });
+fs.cpSync(standaloneDirectory, outputDirectory, { recursive: true });
+fs.mkdirSync(path.join(outputDirectory, ".next"), { recursive: true });
+fs.cpSync(staticDirectory, path.join(outputDirectory, ".next", "static"), { recursive: true });
+fs.cpSync(path.join(projectRoot, "public"), path.join(outputDirectory, "public"), { recursive: true });
 
-process.exit(result.status ?? 1);
+const packageJson = JSON.parse(fs.readFileSync(path.join(projectRoot, "package.json"), "utf8"));
+fs.writeFileSync(
+  path.join(outputDirectory, "package.json"),
+  `${JSON.stringify({ private: true, scripts: { start: "node server.js" } }, null, 2)}\n`,
+);
+fs.writeFileSync(path.join(outputDirectory, ".node-version"), `${packageJson.engines.node.replace(">=", "")}\n`);

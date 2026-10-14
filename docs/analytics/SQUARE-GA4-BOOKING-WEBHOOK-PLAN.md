@@ -1,6 +1,6 @@
 # Plan de integración: citas confirmadas de Square en GA4
 
-**Estado:** plan aprobado; integración pendiente de implementar y verificar.  
+**Estado:** implementación terminada localmente el 14 de octubre de 2026; pendiente de configurar secretos, MySQL, Square, Hostinger y pruebas controladas de producción.
 **Fecha:** 14 de octubre de 2026.  
 **Sitio:** `cleanworxnj.com`; reservas alojadas por Square Appointments.
 
@@ -54,3 +54,13 @@ No marcar `booking_completed` como evento clave ni crear audiencias de reservas 
 - Una reserva de prueba autorizada y un procedimiento para cotejar diariamente Square, el registro interno y GA4.
 
 **Criterio de aceptación:** cada cita `ACCEPTED` de los casos de prueba aparece una vez en el registro interno, se envía a GA4 y se verifica en sus informes; las diferencias posteriores quedan visibles para conciliación. Las citas sin unión comprobable con una visita no se presentan como conversiones atribuibles a una campaña concreta.
+
+## Implementación añadida
+
+- Ruta firmada de Square: `POST /api/square/webhooks/bookings`.
+- Tablas y deduplicación por `event_id` y por ID de reserva: [`database/square-booking-ga4.sql`](../../database/square-booking-ga4.sql).
+- Evento `booking_completed` enviado con Measurement Protocol desde el servidor, sin datos personales ni parámetros de atribución inventados.
+- Conciliación protegida: `POST /api/internal/booking-reconciliation`; consulta Events API de Square de los últimos 28 días y procesa las entregas pendientes.
+- Paquete de Hostinger actualizado para desplegar Next.js standalone con servidor Node en lugar de exportación estática.
+
+La configuración de hPanel, credenciales y la reserva de prueba siguen siendo pasos manuales. Consultar [SQUARE-GA4-BOOKING-WEBHOOK-DEPLOYMENT.md](./SQUARE-GA4-BOOKING-WEBHOOK-DEPLOYMENT.md) antes de activar la suscripción de producción.
