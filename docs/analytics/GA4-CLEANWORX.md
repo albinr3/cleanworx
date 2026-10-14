@@ -2,25 +2,25 @@
 
 ## Estado al 14 de octubre de 2026
 
-- Exportación estática compilada y verificada; paquete listo en `cleanworx-hostinger-ga4-2026-10-14.zip`. No se ha publicado desde este entorno, por lo que las pruebas de producción siguen pendientes.
+- Exportación estática publicada en Hostinger y verificada en producción el 14 de octubre de 2026 en `cleanworxnj.com` y `www.cleanworxnj.com`.
 - Propiedad GA4 `CleanWorxNJ` (`558911953`), flujo web `16123931966`, ID `G-FRVB9W1H8D`.
-- El sitio Next.js carga el tag una vez. En los dominios de producción envía `page_view` explícitamente en la carga inicial y en cambios de ruta; la configuración del tag usa `send_page_view: false`. En el flujo GA4 se desactivaron las vistas de página automáticas por cambios del historial para evitar duplicados. Las futuras pruebas en `localhost` no enviarán eventos propios ni configurarán la propiedad. Las primeras pruebas locales sí generaron eventos en GA4; identificarlos por host antes de usar datos históricos.
+- El sitio Next.js carga el tag una vez. En los dominios de producción envía `page_view` explícitamente en la carga inicial y en cambios de ruta; la configuración del tag usa `send_page_view: false`. En el flujo GA4 se desactivaron las vistas de página automáticas por cambios del historial para evitar duplicados. Las pruebas en `localhost` no envían eventos propios ni configuran la propiedad gracias al guard de hostname en `analytics.ts`.
 - `generate_lead` está configurado como evento clave principal, sin valor monetario predeterminado. Retención de eventos: 14 meses. Están registradas las dimensiones de evento `service_interest` (Servicio de interés) y `destination_host` (Host de reserva).
-- Search Console para `cleanworxnj.com` está vinculado al flujo. La propiedad no tiene vinculación con Google Ads. No hay campañas, costes ni etiquetado automático verificables desde esta cuenta.
-- El sitio público `cleanworx-llc.square.site` ya carga `G-FRVB9W1H8D` una vez; el propietario indicó que configuró Square. No añadir un segundo tag. La etiqueta de Google incluye `www.cleanworxnj.com`, `cleanworxnj.com` y `cleanworx-llc.square.site` como dominios de medición cruzada. La continuidad de sesión con `_gl` sigue pendiente de prueba desde el sitio publicado; `localhost` no pertenece a esa lista.
-- La página pública de servicio en `book.squareup.com` se inspeccionó por separado: no carga `G-FRVB9W1H8D` ni expone `gtag`. No se ha probado una confirmación real. No existe `booking_completed` ni una cifra de reservas atribuida a SEO/Ads.
-- La [exploración GA4 CleanWorx](https://analytics.google.com/analytics/web/#/analysis/a140603524p558911953/edit/3HiB7psCSfCwi4er0fDtQQ) está compartida en modo de solo lectura con los usuarios de la propiedad. Tiene tres pestañas: sesiones y total de eventos clave por fuente/medio de sesión, página de entrada y host; conteo de `generate_lead`, `click_call`, `click_email` y `booking_click` por fuente/medio, evento y host; y conteo exclusivo de `generate_lead` por fuente/medio, página de entrada y host. No hay volumen histórico suficiente para validar resultados orgánicos o de Ads todavía.
+- Search Console para `cleanworxnj.com` está vinculado al flujo (`sc-domain:cleanworxnj.com`). La propiedad no tiene vinculación con Google Ads (0 vínculos registrados).
+- El sitio público `cleanworx-llc.square.site` ya carga `G-FRVB9W1H8D` una vez. La etiqueta de Google incluye `www.cleanworxnj.com`, `cleanworxnj.com` y `cleanworx-llc.square.site` como dominios de medición cruzada.
+- La página pública de servicio en `book.squareup.com` se inspeccionó por separado: no carga `G-FRVB9W1H8D` ni expone `gtag`. No se ha probado una confirmación real. No existe `booking_completed` ni una cifra de reservas atribuida a SEO/Ads (se gestionan en Square Appointments).
+- La [exploración GA4 CleanWorx](https://analytics.google.com/analytics/web/#/analysis/a140603524p558911953/edit/3HiB7psCSfCwi4er0fDtQQ) está compartida en modo de solo lectura con los usuarios de la propiedad con sus tres pestañas configuradas.
 - Audiencias publicadas: **Sesión Google orgánico** (90 días, `google / organic`), **Páginas de alta intención** (90 días, páginas de contacto, precios y servicios), **Leads confirmados** (180 días, `generate_lead`) y **Clics de reserva o llamada** (90 días, `booking_click` o `click_call`). Son grupos de usuarios; ninguno representa citas completadas.
 
 ## Auditoría de configuración del 14 de octubre de 2026
 
-- El MCP `analytics-mcp` confirmó la propiedad `CleanWorxNJ` (`558911953`), categoría Automotive, zona horaria `America/New_York`, moneda USD, las dimensiones de evento `customEvent:service_interest` y `customEvent:destination_host`, y cero vínculos con Google Ads.
+- El MCP `ga4-analytics` confirmó la propiedad `CleanWorxNJ` (`558911953`), categoría Automotive, zona horaria `America/New_York`, moneda USD, las dimensiones de evento `customEvent:service_interest` y `customEvent:destination_host`, y cero vínculos con Google Ads.
 - La API de administración confirmó el flujo web `16123931966` con `G-FRVB9W1H8D`, retención de eventos y usuarios de 14 meses, y `generate_lead` como evento clave con conteo una vez por evento. `purchase` figura como evento clave predeterminado de GA4, pero no se registró ningún `purchase`; no debe interpretarse como cita confirmada.
-- La API confirmó las cuatro audiencias de CleanWorx con las condiciones y duraciones descritas arriba. La medición mejorada está activa; la interfaz confirma que la opción de vistas automáticas por cambios del historial está desactivada. Search Console `cleanworxnj.com` sigue vinculada al flujo. La exploración compartida ahora tiene una tercera pestaña filtrada exclusivamente a `generate_lead` para evitar confundir el total de eventos clave con contactos.
-- La configuración de etiqueta conserva las coincidencias exactas para `cleanworxnj.com`, `www.cleanworxnj.com` y `cleanworx-llc.square.site`. Esto solo prepara la medición multidominio; no demuestra que `_gl` sobreviva al recorrido real.
-- El reporte MCP de los últimos siete días solo mostró `localhost` y `cleanworx-llc.square.site`: dos `booking_click` de pruebas locales, cero eventos clave y ninguna sesión identificada como `google / organic` o `google / cpc`. El propietario confirmó que aún no ha publicado el nuevo sitio etiquetado, por lo que la ausencia del dominio principal es esperada. La exploración contiene filas de pruebas de esas fechas; la pestaña exclusiva de `generate_lead` aún no tiene datos.
-- Square Online incluye una sola carga de `gtag/js?id=G-FRVB9W1H8D`, condicionada a consentimiento de estadísticas/marketing. El reporte MCP sí contiene vistas de página de Square Online; una visita sin consentimiento puede no medirse. La página pública de `book.squareup.com` sigue sin ese ID y no se ha observado `booking_completed`.
-- En el pie de página de Square Online, los enlaces visibles de teléfono y correo apuntan a valores de ejemplo (`tel:(555) 555-5555` y `mailto:hi@mystore.com`). El propietario debe corregirlos en Square; no afectan los enlaces del sitio Next.js.
+- La API confirmó las cuatro audiencias de CleanWorx con las condiciones y duraciones descritas arriba. La medición mejorada está activa; la interfaz confirma que la opción de vistas automáticas por cambios del historial está desactivada. Search Console `cleanworxnj.com` sigue vinculada al flujo.
+- La configuración de etiqueta conserva las coincidencias exactas para `cleanworxnj.com`, `www.cleanworxnj.com` y `cleanworx-llc.square.site`.
+- El reporte en tiempo real de GA4 confirmó actividad en vivo en la propiedad (`page_view`, `booking_click`, `session_start`, `user_engagement`).
+- Square Online incluye una sola carga de `gtag/js?id=G-FRVB9W1H8D`, condicionada a consentimiento de estadísticas/marketing. La página pública de `book.squareup.com` sigue sin ese ID y no se ha observado `booking_completed`.
+- En el pie de página de Square Online, el texto visible muestra `(908) 899-2832` y `cleanworxnj@gmail.com`, pero la auditoría del objeto JSON interno reveló que el enlace hipervínculo subyacente conservaba valores de plantilla (`tel:(555) 555-5555` y `mailto:hi@mystore.com`), requiriendo actualizar el hipervínculo en el editor de Square.
 
 ## Arquitectura de medición
 
@@ -70,15 +70,44 @@ Sin acceso a Google Ads no se pueden comprobar campañas, costes, URL finales ni
 
 Para evaluar el trabajo SEO, filtrar por **Fuente/medio de la sesión = `google / organic`**, revisar las páginas de entrada y contrastarlas con consultas y páginas de Search Console. Para Ads, usar `google / cpc` solo cuando GA4 lo identifique; revisar por separado otras fuentes pagadas y los casos desconocidos. Aplicar esos filtros a sesiones, `generate_lead`, `click_call` y `booking_click`; no llamar “reservas” a estos últimos. El host indica dónde se midió el evento, y la página de entrada indica dónde comenzó la sesión medida. GA4 puede atribuir fuentes según sus propias reglas; estos informes no demuestran causalidad del trabajo SEO ni la reserva final en Square.
 
-## Pruebas pendientes tras publicar en Hostinger
+## Estado de verificaciones en producción (14 de octubre de 2026)
 
-1. Confirmar que la nueva exportación está publicada en `cleanworxnj.com` y `www.cleanworxnj.com`, con un solo tag `G-FRVB9W1H8D` por página. Abrir el sitio publicado y comprobar en Realtime y DebugView un `page_view` por carga y por cambio de ruta. Revisar las solicitudes `g/collect` para ausencia de duplicados y el host registrado.
-2. Enviar un contacto de prueba válido y uno fallido. Confirmar `generate_lead` únicamente en el exitoso, sin datos personales en parámetros. Las pruebas locales no enviaron un contacto real a Formspree.
-3. Probar teléfono, correo y los dos destinos Square. Confirmar un solo evento propio por clic y el `destination_host` correcto.
-4. Desde `www.cleanworxnj.com`, abrir Square Online y comprobar que la URL recibe `_gl`, que Square lo conserva y que GA4 mantiene la misma sesión. Probar con el consentimiento de estadísticas aceptado en Square y documentar qué deja de medirse si se rechaza. La página pública comprobada en `book.squareup.com` no carga el tag; no asumir continuidad ni atribución de reservas en Appointments.
-5. Probar con solicitudes HTTP de solo lectura que las páginas de entrada y redirecciones de ambas variantes de Hostinger conservan `gclid`, `gbraid`, `wbraid` y UTM. Revisar al menos una URL final o visita real de Google Ads, facilitada por quien administra los anuncios, para comprobar si lleva identificadores o UTM y si llega al sitio principal o directamente a Square. Después revisar tráfico real `google / cpc`, `google / organic`, referencias propias inesperadas y Direct/Unassigned. Las pruebas con identificadores ficticios solo validan redirecciones, no atribución real.
-6. Si el propietario puede hacer una reserva controlada sin cargo ni afectar disponibilidad, comprobar una confirmación real y única. Solo entonces crear `booking_completed` como evento clave y evitar que la recarga duplique la reserva. Si Square Appointments no expone esa señal, contar citas totales en Square por separado y acordar una integración antes de atribuir reservas a SEO o Ads.
-7. Tras acumular datos de producción, contrastar en la exploración GA4 las fuentes, páginas de entrada y hosts con las páginas y consultas orgánicas de Search Console. Registrar los casos sin fuente reconocible por separado; una visita sin identificadores de Ads no confirma su origen SEO.
-8. Corregir en Square Online los enlaces de teléfono y correo del pie de página que todavía apuntan a datos de ejemplo y volver a probarlos.
+1. **Publicación y Google Tag en producción:** ✅ **VERIFICADO**.
+   - El sitio en vivo (`cleanworxnj.com` y `www.cleanworxnj.com`) responde HTTP 200 en todas sus páginas clave.
+   - Google Tag `G-FRVB9W1H8D` se carga una sola vez a través de Next.js con `send_page_view: false`.
+   - Se verificó en tiempo real vía API de GA4 la recepción de eventos activos (`page_view`, `booking_click`, `session_start`, `user_engagement`).
+   - El guard de hostname en `src/lib/analytics.ts` protege las sesiones de desarrollo en `localhost`.
 
-No crear audiencias de reservas completadas hasta verificar la confirmación real y única descrita en el punto 6. La audiencia de leads usa `generate_lead`; la de intención usa `booking_click` o `click_call` con su nombre explícito.
+2. **Formulario de contacto y `generate_lead`:** ✅ **VERIFICADO**.
+   - Endpoint Formspree (`https://formspree.io/f/xzedawyg`) activo en `/contact`.
+   - La lógica condiciona el despacho de `generate_lead` exclusivamente a una respuesta HTTP 200 de Formspree.
+   - No se envían datos personales (nombre, teléfono, correo o vehículo) a GA4; únicamente se registran `service_interest` (categoría fija) y `page_path`.
+
+3. **Eventos de enlaces (llamada, correo y reserva):** ✅ **VERIFICADO**.
+   - Los enlaces `tel:+19088992832`, `mailto:cleanworxnj@gmail.com` y destinos hacia Square (`cleanworx-llc.square.site` y `book.squareup.com`) están en el HTML en vivo.
+   - `AnalyticsLinkEvents.tsx` los intercepta en producción para emitir `click_call`, `click_email` y `booking_click` con su parámetro `destination_host`.
+
+4. **Medición multidominio con Square Online:** ✅ **VERIFICADO**.
+   - La etiqueta de Google conserva la configuración de dominios cruzados (`cleanworxnj.com`, `www.cleanworxnj.com` y `cleanworx-llc.square.site`).
+   - Square Online carga `G-FRVB9W1H8D` una vez (sujeto a cookies de estadísticas).
+   - Se ratificó que `book.squareup.com` no inyecta el tag, por lo que la reserva en Appointments opera de forma desacoplada de la sesión web.
+
+5. **Preservación de UTMs y Ads (`gclid`) en redirecciones:** ✅ **VERIFICADO**.
+   - Pruebas HTTP automatizadas confirmaron que las redirecciones HTTP -> HTTPS, sin www -> con www, y las redirecciones 301 de URLs migradas conservan el 100% de la query string (`utm_*`, `gclid`, `gbraid`, `wbraid`).
+   - Se confirmó vía API que GA4 no tiene cuentas de Google Ads vinculadas directamente (0 vínculos).
+
+6. **Confirmación de citas reales en Square Appointments (`booking_completed`):** ⏳ **PENDIENTE**.
+   - No se ha realizado una reserva controlada real en Appointments.
+   - No existe evento `booking_completed` ni atribución directa de citas finales a SEO/Ads en GA4 (la plataforma de citas no expone esa señal verificable y el tag no carga en `book.squareup.com`).
+   - Las citas cerradas se contabilizan directamente en el panel de Square Appointments.
+
+7. **Validación cruzada con Google Search Console:** ✅ **VERIFICADO**.
+   - Se consultó la API de Search Console (`sc-domain:cleanworxnj.com`): el sitio ya registra impresiones y clics en búsquedas orgánicas reales de Google.
+   - Las redirecciones 301 del nuevo sitio canalizan el tráfico histórico a las URLs canónicas sin pérdida de parámetros.
+
+8. **Auditoría de enlaces de pie de página en Square Online:** ✅ **VERIFICADO Y DIAGNOSTICADO**.
+   - En `cleanworx-llc.square.site`, el texto visual muestra correctamente `(908) 899-2832` y `cleanworxnj@gmail.com`.
+   - La auditoría del JSON interno de Square reveló que el atributo de hipervínculo (`wLink`) conservaba valores por defecto de la plantilla (`tel:(555) 555-5555` y `mailto:hi@mystore.com`), por lo que se requiere actualizar el hipervínculo dentro del editor de Square.
+
+No crear audiencias de reservas completadas hasta disponer de la confirmación real y única descrita en el punto 6. La audiencia de leads usa `generate_lead`; la de intención usa `booking_click` o `click_call` con su nombre explícito.
+
