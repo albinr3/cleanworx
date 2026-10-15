@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ChevronRight, Clock3 } from "lucide-react";
-import { BookingLink } from "@/components/autodetail/BookingLink";
+import { BookingLink, BOOKING_URL } from "@/components/autodetail/BookingLink";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 
 const image = "/images/autodetail/mini-detail-foam-covered-wagon.webp";
-const bookingUrl = "https://book.squareup.com/appointments/zaytwokypbkwju/location/LTG6WA905VGVV/services/JXK72CJDYWYTKO3W6MPCJSJI";
-
 const inclusions = [
   "Three-bucket exterior hand wash",
   "Gentle air cleaning, interior vacuum, and plastic wipe-down",
@@ -78,7 +76,7 @@ export default function MiniDetailPage() {
               </div>
             </div>
             <p className="mt-4 text-sm text-neutral-400">Final price and time depend on vehicle size and condition.</p>
-            <BookingLink href={bookingUrl} label="Book Mini Detail" className="mt-7" />
+            <BookingLink href={BOOKING_URL} label="Book Mini Detail" className="mt-7" />
           </div>
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-white/10 bg-[#14151a] lg:aspect-square">
             <Image
@@ -134,7 +132,7 @@ export default function MiniDetailPage() {
             <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">Ready for Your Mini Detail?</h2>
             <p className="mt-3 text-sm leading-7 text-neutral-400">Choose your vehicle in Square to see its appointment option.</p>
           </div>
-          <BookingLink href={bookingUrl} label="Book Mini Detail" />
+          <BookingLink href={BOOKING_URL} label="Book Mini Detail" />
         </div>
       </section>
     </SiteShell>
