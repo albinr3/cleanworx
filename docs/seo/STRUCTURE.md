@@ -73,5 +73,5 @@ This document outlines the canonical URL structure, XML sitemap specifications, 
 
 1. **`src/app/sitemap.ts`**: Provides the type-safe Next.js `MetadataRoute.Sitemap` generator returning 20 canonical objects with `lastModified`, `priority`, and `changeFrequency`.
 2. **`src/app/robots.ts`**: Declares user agent rules, allows `/`, disallows `/booking`, and points search crawlers to `https://www.cleanworxnj.com/sitemap.xml`.
-3. **`next.config.ts`**: Manages permanent redirect from `/sitemap` to `/sitemap.xml`.
+3. **`next.config.mjs`**: Manages permanent redirect from `/sitemap` to `/sitemap.xml`.
 4. **`src/components/autodetail/Footer.tsx`**: Renders direct anchor links to `/sitemap.xml` in both the Explore section and the bottom legal/copyright bar.

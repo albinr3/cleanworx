@@ -18,7 +18,7 @@ Las tablas conservan IDs técnicos, estados y resultados de entrega. No almacena
 4. Probar en el dominio temporal las páginas, redirecciones, formularios, sitemap, eventos existentes y las rutas `/api/square/webhooks/bookings` y `/api/internal/booking-reconciliation` antes de cambiar el dominio de producción.
 5. Descargar una copia del sitio estático actual y revisar sus recursos asociados. Cuando la aplicación temporal esté validada, quitar el sitio estático que hoy tiene asignado `cleanworxnj.com`, conectar ese dominio a la aplicación Node.js y volver a probarlo. Hostinger exige liberar un dominio que ya esté asignado a otro sitio antes de usarlo en una nueva aplicación Node.js.
 
-No borrar el sitio estático antes de contar con el respaldo y la aplicación Node.js probada. Una exportación estática no puede recibir el `POST` de Square. Las redirecciones de SEO continúan en `next.config.ts` bajo el servidor de Next.js.
+No borrar el sitio estático antes de contar con el respaldo y la aplicación Node.js probada. Una exportación estática no puede recibir el `POST` de Square. Las redirecciones de SEO continúan en `next.config.mjs` bajo el servidor de Next.js.
 
 ## 3. Configurar Square y GA4
 
