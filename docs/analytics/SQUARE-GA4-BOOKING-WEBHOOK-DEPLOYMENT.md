@@ -13,7 +13,7 @@ Las tablas conservan IDs técnicos, estados y resultados de entrega. No almacena
 ## 2. Publicar como aplicación Node.js
 
 1. En Hostinger, crear una aplicación en **Websites → Add Website → Deploy Web App**, inicialmente con el dominio temporal de Hostinger. Importar este repositorio desde GitHub o subir un ZIP del **código fuente** que incluya `package.json` y `package-lock.json`, pero excluya `node_modules`, `.next` y `out`.
-2. Elegir Node.js 24. Hostinger debe detectar Next.js; conservar `npm run build` como comando de compilación y `npm run start` como comando de inicio.
+2. Elegir Node.js 24. Hostinger debe detectar Next.js; usar `npm run build` como comando de compilación y `npm run start` como comando de inicio. El script de compilación usa Webpack porque el entorno actual de Hostinger no puede ejecutar Turbopack sin sus bindings nativos.
 3. Definir todas las variables de [`.env.example`](../../.env.example) en el paso de despliegue y publicar la aplicación temporal.
 4. Probar en el dominio temporal las páginas, redirecciones, formularios, sitemap, eventos existentes y las rutas `/api/square/webhooks/bookings` y `/api/internal/booking-reconciliation` antes de cambiar el dominio de producción.
 5. Descargar una copia del sitio estático actual y revisar sus recursos asociados. Cuando la aplicación temporal esté validada, quitar el sitio estático que hoy tiene asignado `cleanworxnj.com`, conectar ese dominio a la aplicación Node.js y volver a probarlo. Hostinger exige liberar un dominio que ya esté asignado a otro sitio antes de usarlo en una nueva aplicación Node.js.
