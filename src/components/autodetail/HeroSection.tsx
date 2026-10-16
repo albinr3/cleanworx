@@ -40,8 +40,15 @@ export function HeroSection() {
             muted
             loop
             playsInline
+            poster="/images/autodetail/hero-video.mobile.v1-poster.webp"
+            aria-hidden="true"
             className="h-full w-full object-cover object-center"
           >
+            <source
+              media="(max-width: 767px)"
+              src="/images/autodetail/hero-video.mobile.v1.mp4"
+              type="video/mp4"
+            />
             <source src="/images/autodetail/hero-video.mp4" type="video/mp4" />
           </video>
         </div>

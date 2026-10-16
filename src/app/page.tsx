@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ReactDOM from "react-dom";
 import { AboutSection } from "@/components/autodetail/AboutSection";
 import { CockpitBanner } from "@/components/autodetail/CockpitBanner";
 import { CtaBanner } from "@/components/autodetail/CtaBanner";
@@ -22,6 +23,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  ReactDOM.preload(
+    "/images/autodetail/hero-video.mobile.v1-poster.webp",
+    {
+      as: "image",
+      fetchPriority: "high",
+      media: "(max-width: 767px)",
+      type: "image/webp",
+    },
+  );
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [

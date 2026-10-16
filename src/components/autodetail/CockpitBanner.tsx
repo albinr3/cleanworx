@@ -1,8 +1,87 @@
 "use client";
 
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { BOOKING_URL } from "@/data/autodetailData";
+
+const MOBILE_MEDIA_QUERY = "(max-width: 767px)";
+const DESKTOP_MEDIA_QUERY = "(min-width: 768px)";
+
+function setAcceleratedPlaybackRate(video: HTMLVideoElement) {
+  video.defaultPlaybackRate = 2.5;
+  video.playbackRate = 2.5;
+}
+
+function MobileDeferredShowroomVideo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(MOBILE_MEDIA_QUERY);
+    const target = containerRef.current;
+    const scheduleAnimationFrame = window.requestAnimationFrame.bind(window);
+    const cancelScheduledAnimationFrame = window.cancelAnimationFrame.bind(window);
+
+    if (!mediaQuery.matches || !target) {
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      const animationFrame = scheduleAnimationFrame(() => {
+        setShouldLoadVideo(true);
+      });
+      return () => cancelScheduledAnimationFrame(animationFrame);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative aspect-[4/5] h-full w-full md:hidden"
+    >
+      <Image
+        src="/images/autodetail/showroom-detail.mobile.v1-poster.webp"
+        alt=""
+        aria-hidden="true"
+        fill
+        unoptimized
+        sizes="(max-width: 639px) calc(100vw - 2rem), 390px"
+        className="object-cover"
+      />
+      {shouldLoadVideo ? (
+        <video
+          autoPlay
+          className="absolute inset-0 h-full w-full object-cover"
+          loop
+          muted
+          playsInline
+          poster="/images/autodetail/showroom-detail.mobile.v1-poster.webp"
+          aria-hidden="true"
+          onLoadedMetadata={({ currentTarget }) => {
+            setAcceleratedPlaybackRate(currentTarget);
+          }}
+        >
+          <source src="/videos/showroom-detail.mobile.v1.mp4" type="video/mp4" />
+        </video>
+      ) : null}
+    </div>
+  );
+}
 
 const detailPhases = [
   {
@@ -122,19 +201,24 @@ export function CockpitBanner() {
             <div className="relative mx-auto w-full max-w-[390px] overflow-hidden rounded-2xl border border-white/15 bg-[#090d16] shadow-2xl shadow-black/50 lg:mx-0">
               <video
                 autoPlay
-                className="aspect-[4/5] h-full w-full object-cover"
+                className="hidden aspect-[4/5] h-full w-full object-cover md:block"
                 loop
                 muted
                 onLoadedMetadata={({ currentTarget }) => {
-                  currentTarget.defaultPlaybackRate = 2.5;
-                  currentTarget.playbackRate = 2.5;
+                  setAcceleratedPlaybackRate(currentTarget);
                 }}
                 playsInline
                 poster="/images/autodetail/showroom-detail-poster.webp"
                 preload="metadata"
+                aria-hidden="true"
               >
-                <source src="/videos/showroom-detail.mp4" type="video/mp4" />
+                <source
+                  media={DESKTOP_MEDIA_QUERY}
+                  src="/videos/showroom-detail.mp4"
+                  type="video/mp4"
+                />
               </video>
+              <MobileDeferredShowroomVideo />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06080e]/55 via-transparent to-transparent" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between p-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80">
                 <span>CleanWorx Detail</span>

@@ -2,6 +2,33 @@ import { legacyRedirects } from "./legacy-redirects.mjs";
 
 const nextConfig = {
   output: "standalone",
+  async headers() {
+    const immutableMediaHeaders = [
+      {
+        key: "Cache-Control",
+        value: "public, max-age=31536000, immutable",
+      },
+    ];
+
+    return [
+      {
+        source: "/images/autodetail/hero-video.mobile.v1.mp4",
+        headers: immutableMediaHeaders,
+      },
+      {
+        source: "/images/autodetail/hero-video.mobile.v1-poster.webp",
+        headers: immutableMediaHeaders,
+      },
+      {
+        source: "/images/autodetail/showroom-detail.mobile.v1-poster.webp",
+        headers: immutableMediaHeaders,
+      },
+      {
+        source: "/videos/showroom-detail.mobile.v1.mp4",
+        headers: immutableMediaHeaders,
+      },
+    ];
+  },
   async redirects() {
     return [
       ...legacyRedirects,
