@@ -4,6 +4,58 @@ import { ADD_ON_PRICES, CERAMIC_PACKAGES, DETAILING_PACKAGES, type PricingPackag
 import { ScrollReveal } from "@/components/autodetail/ScrollReveal";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 
+const pricingUrl = "https://www.cleanworxnj.com/pricing";
+const pricedPackages = [...DETAILING_PACKAGES, ...CERAMIC_PACKAGES];
+
+const pricingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${pricingUrl}#webpage`,
+      url: pricingUrl,
+      name: "Auto Detailing Pricing in Basking Ridge, NJ | CleanWorx",
+      description: "Pricing for CleanWorx interior, exterior, full detailing, and ceramic coating packages in Basking Ridge, New Jersey.",
+      mainEntity: { "@id": `${pricingUrl}#catalog` },
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": `${pricingUrl}#catalog`,
+      name: "CleanWorx Service Packages & Pricing",
+      itemListElement: [
+        ...pricedPackages.map(({ name, detail, prices }) => ({
+          "@type": "Offer",
+          name,
+          itemOffered: {
+            "@type": "Service",
+            name,
+            ...(detail ? { description: detail } : {}),
+            provider: { "@id": "https://www.cleanworxnj.com/#business" },
+          },
+          priceSpecification: prices.map(({ vehicle, price }) => ({
+            "@type": "UnitPriceSpecification",
+            name: vehicle,
+            price,
+            priceCurrency: "USD",
+          })),
+        })),
+        {
+          "@type": "Offer",
+          name: "Eligible Mobile Service Fee",
+          itemOffered: {
+            "@type": "Service",
+            name: "Eligible Mobile Service",
+            description: "A $35 mobile service fee applies to every eligible mobile appointment. Window tint installation and removal are available in shop only.",
+            provider: { "@id": "https://www.cleanworxnj.com/#business" },
+          },
+          price: 35,
+          priceCurrency: "USD",
+        },
+      ],
+    },
+  ],
+};
+
 function PackageTable({ packageData }: { packageData: PricingPackage }) {
   return (
     <article className="overflow-hidden border border-white/10 bg-[#14151a] shadow-2xl shadow-black/20">
@@ -30,6 +82,10 @@ function PackageTable({ packageData }: { packageData: PricingPackage }) {
 export function PricingPage() {
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema).replace(/</g, "\\u003c") }}
+      />
       <section className="border-b border-white/10 bg-[#0a0a0c] py-18 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal animation="fade-up" className="max-w-3xl">
