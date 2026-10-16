@@ -7,7 +7,7 @@ const nextConfig = {
       ...legacyRedirects,
       {
         source: "/addons",
-        destination: "/add-ons",
+        destination: "https://www.cleanworxnj.com/add-ons",
         statusCode: 301,
       },
       {
@@ -17,8 +17,19 @@ const nextConfig = {
       },
       {
         source: "/sitemap",
-        destination: "/sitemap.xml",
-        permanent: true,
+        destination: "https://www.cleanworxnj.com/sitemap.xml",
+        statusCode: 301,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "cleanworxnj.com",
+          },
+        ],
+        destination: "https://www.cleanworxnj.com/:path*",
+        statusCode: 301,
       },
     ];
   },
