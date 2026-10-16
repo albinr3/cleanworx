@@ -102,7 +102,7 @@ export function StatsCounters() {
       highlights: [
         "We come directly to your home or office",
         "Complete self-powered mobile detailing rig",
-        "$35 mobile service fee for every mobile appointment",
+        "$35 mobile service fee for every eligible mobile appointment",
       ],
       featured: false,
     },

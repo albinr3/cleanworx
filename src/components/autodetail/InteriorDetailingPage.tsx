@@ -288,7 +288,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Mobile Unit Directly to Your Driveway</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Prefer zero downtime? Our self-contained mobile detailing unit comes to your home or workplace throughout Basking Ridge, Bernardsville, Bedminster, and Far Hills. A $35 mobile service fee applies to every mobile appointment.
+                    Prefer zero downtime? Our self-contained mobile detailing unit comes to your home or workplace throughout Basking Ridge, Bernardsville, Bedminster, and Far Hills. A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
               </div>
@@ -334,7 +334,7 @@ export function InteriorDetailingPage({ data }: { data: ServicePageData }) {
                     Explore Mobile Detailing Unit <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    One $50 mobile fee only when the appointment subtotal is under $400.
+                    A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
               </div>

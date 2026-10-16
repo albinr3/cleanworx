@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     absolute: "Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx",
   },
   description:
-    "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. One $50 mobile fee applies when the appointment subtotal is under $400.",
+    "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. A $35 mobile service fee applies to every eligible mobile appointment.",
   alternates: { canonical: "/mobile-auto-detailing" },
   openGraph: {
     title: "Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx",
     description:
-      "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. One $50 mobile fee applies when the appointment subtotal is under $400.",
+      "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. A $35 mobile service fee applies to every eligible mobile appointment.",
     url: "https://www.cleanworxnj.com/mobile-auto-detailing",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mobile Auto Detailing in Basking Ridge, NJ | CleanWorx",
     description:
-      "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. One $50 mobile fee applies when the appointment subtotal is under $400.",
+      "Professional mobile auto detailing brought to your driveway across Basking Ridge, NJ. A $35 mobile service fee applies to every eligible mobile appointment.",
     images: ["/images/autodetail/cleanworx-exterior-hand-wash-foam-cannon.webp"],
   },
 };

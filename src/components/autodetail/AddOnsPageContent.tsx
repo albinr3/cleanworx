@@ -527,7 +527,7 @@ export function AddOnsPageContent() {
             {[
               {
                 q: "Can I book an add-on service by itself without getting a full detail?",
-                a: "Yes. Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal (from $20 per window) can be booked separately. Ask about in-shop or mobile availability for your service."
+                a: "Yes. Headlight Restoration ($125 standalone), Engine Bay Cleaning ($125 standalone), Air Purification ($125 standalone), and Window Tint Removal (from $20 per window) can be booked separately. Window tint installation and removal are in-shop only; ask about mobile availability for other eligible services."
               },
               {
                 q: "What is the difference between a 1-step polish and full paint correction?",

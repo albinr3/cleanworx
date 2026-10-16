@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ledgerPath = path.join(root, "docs", "seo", "SEO-MIGRATION-PHASES-AND-URL-LEDGER.md");
 const htaccessPath = path.join(root, "public", ".htaccess");
+const nextRedirectsPath = path.join(root, "legacy-redirects.mjs");
 const exportPath = path.join(root, "out");
 const reportPath = path.join(root, "docs", "seo", "PHASE-4-HOSTINGER-REDIRECT-AUDIT.csv");
 const canonicalOrigin = "https://www.cleanworxnj.com";
@@ -55,6 +56,21 @@ function ruleFor(row) {
   return `RewriteRule ^${slug}/?$ ${row.destination} [R=301,L,NE]`;
 }
 
+function nextRedirectFor(row) {
+  return `  { source: ${JSON.stringify(row.sourcePath)}, destination: ${JSON.stringify(row.destination)}, statusCode: 301 },`;
+}
+
+function nextRedirectsContent(rows) {
+  return [
+    "// Generated from docs/seo/SEO-MIGRATION-PHASES-AND-URL-LEDGER.md by scripts/seo-migration.mjs.",
+    "// Do not edit manually; run `node scripts/seo-migration.mjs generate` after changing the ledger.",
+    "export const legacyRedirects = [",
+    ...uniquePathRows(rows).map(nextRedirectFor),
+    "];",
+    "",
+  ].join("\n");
+}
+
 function generate(rows) {
   const rules = uniquePathRows(rows).map(ruleFor);
   const content = [
@@ -86,6 +102,7 @@ function generate(rows) {
     "",
   ].join("\n");
   fs.writeFileSync(htaccessPath, content);
+  fs.writeFileSync(nextRedirectsPath, nextRedirectsContent(rows));
   console.log(`Generated ${rules.length} path rules plus canonical redirects for two home variants.`);
 }
 
@@ -105,6 +122,14 @@ function verifyRules(content, rows) {
   assert.ok(content.includes("RewriteRule ^booking/?$ https://cleanworx-llc.square.site/ [R=302,L,NE]"));
   assert.ok(content.includes(`RewriteRule ^sitemap/?$ ${canonicalOrigin}/sitemap.xml [R=301,L,NE]`));
   assert.ok(!content.includes("QSD"), "Query strings must pass through unchanged");
+}
+
+function verifyNextRedirects(rows) {
+  assert.equal(
+    fs.readFileSync(nextRedirectsPath, "utf8"),
+    nextRedirectsContent(rows),
+    "Generated Next.js redirects differ from the migration ledger",
+  );
 }
 
 function exportFileFor(destination) {
@@ -185,6 +210,7 @@ if (command === "generate") {
   generate(rows);
 } else if (command === "verify") {
   verifyRules(fs.readFileSync(htaccessPath, "utf8"), rows);
+  verifyNextRedirects(rows);
   const count = verifyExport(rows);
   writeReport(rows);
   console.log(`PASS: ${rows.length} ledger rows, 138 direct path rules, 2 home variants, ${count} sitemap URLs, all destinations exported.`);

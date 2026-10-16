@@ -85,7 +85,7 @@ export default function Page() {
         {
           title: "Mobile and In-Shop Appointment Options",
           content: [
-            "One $50 mobile fee applies when the pre-fee appointment subtotal is below $400. Appointments of $400 or more have no mobile fee. We confirm mobile availability and scheduling directly."
+            "A $35 mobile service fee applies to every eligible mobile appointment. We confirm mobile availability and scheduling directly. Window tinting is available in shop only."
           ]
         },
         {

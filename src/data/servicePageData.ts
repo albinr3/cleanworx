@@ -330,7 +330,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Mobile or In-Shop Interior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or book our mobile detailing unit to come to your driveway or workplace. A $35 mobile service fee applies to every mobile appointment."
+          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or book our mobile detailing unit to come to your driveway or workplace. A $35 mobile service fee applies to every eligible mobile appointment."
         ]
       }
     ],
@@ -345,7 +345,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "Is mobile interior detailing available in my town?",
-        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns. A $35 mobile service fee applies to every mobile appointment."
+        answer: "Yes, we provide mobile interior detailing throughout Basking Ridge, Bernardsville, Bedminster, Far Hills, and surrounding Somerset and Morris County towns. A $35 mobile service fee applies to every eligible mobile appointment."
       }
     ],
     faqTitle: "Interior Detailing FAQs",
@@ -406,7 +406,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       {
         title: "Mobile or In-Shop Exterior Detailing",
         paragraphs: [
-          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. A $35 mobile service fee applies to every mobile appointment."
+          "You can drop your car off at our Basking Ridge shop at 19 E. Henry Street or ask about a mobile appointment at your home or workplace. A $35 mobile service fee applies to every eligible mobile appointment."
         ]
       }
     ],
@@ -446,11 +446,11 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
     name: "Mobile Auto Detailing",
     h1: "Mobile Auto Detailing in Basking Ridge & Somerset County, NJ",
     eyebrow: "We come to your driveway",
-    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. A $35 mobile service fee applies to every mobile appointment.",
+    summary: "CleanWorx brings fully self-contained mobile auto detailing directly to your home or office driveway across Basking Ridge and nearby towns. A $35 mobile service fee applies to every eligible mobile appointment.",
     image: "/images/autodetail/cleanworx-mobile-detailing-unit-driveway-setup.webp",
     price: "Package + $35 mobile fee",
     inclusions: [
-      "$35 mobile service fee for every mobile appointment",
+      "$35 mobile service fee for every eligible mobile appointment",
       "Fully self-contained mobile unit with onboard water and power",
       "Mobile interior detailing, exterior hand washes, and sealants",
       "Available across Basking Ridge, Bernardsville, Bedminster & beyond",
@@ -501,7 +501,7 @@ export const SERVICE_PAGES: Record<string, ServicePageData> = {
       },
       {
         question: "What is the fee for mobile detailing?",
-        answer: "A $35 mobile service fee applies to every mobile appointment."
+        answer: "A $35 mobile service fee applies to every eligible mobile appointment."
       },
       {
         question: "Which towns in New Jersey do you travel to?",

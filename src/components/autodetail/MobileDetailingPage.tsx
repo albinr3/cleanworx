@@ -282,7 +282,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Mobile Detailing Unit</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    We bring our fully self-contained mobile unit to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. A $35 mobile service fee applies to every mobile appointment.
+                    We bring our fully self-contained mobile unit to your home or office driveway across Basking Ridge, Bernardsville, Bedminster, and neighboring communities. A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
 
@@ -327,7 +327,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4da3ff]" />
-                    <span><strong>Transparent mobile pricing:</strong> A $35 mobile service fee applies to every mobile appointment.</span>
+                    <span><strong>Transparent mobile pricing:</strong> A $35 mobile service fee applies to every eligible mobile appointment.</span>
                   </li>
                 </ul>
 
@@ -337,7 +337,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4da3ff]/40 bg-[#1277ff] px-5 py-3.5 font-semibold text-white shadow-lg shadow-[#1277ff]/20 transition hover:bg-[#0e61ce]"
                   />
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    A $35 mobile service fee applies to every mobile appointment.
+                    A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
               </div>
@@ -358,7 +358,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   Mobile Detailing Rates &amp; Scheduling
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-white/90 sm:text-base">
-                  A $35 mobile service fee applies to every mobile appointment. Final pricing is confirmed upfront before work begins.
+                  A $35 mobile service fee applies to every eligible mobile appointment. Final pricing is confirmed upfront before work begins.
                 </p>
               </ScrollReveal>
 
@@ -462,7 +462,7 @@ export function MobileDetailingPage({ data }: { data: ServicePageData }) {
                   <h3 className="text-base font-bold text-white sm:text-lg">Mobile Service Fee</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  A $35 mobile service fee applies to every mobile appointment.
+                  A $35 mobile service fee applies to every eligible mobile appointment.
                 </p>
               </ScrollReveal>
 

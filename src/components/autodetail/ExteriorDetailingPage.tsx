@@ -294,7 +294,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                   </div>
                   <h3 className="mt-1 text-xl font-bold text-white">Ask About a Mobile Appointment</h3>
                   <p className="mt-2 text-sm leading-7 text-neutral-400 sm:text-base">
-                    Mobile detailing is available at your home or workplace. A $35 mobile service fee applies to every mobile appointment.
+                    Mobile detailing is available at your home or workplace. A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
               </div>
@@ -340,7 +340,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                     Explore Mobile Detailing Unit <ArrowUpRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-2 text-center text-xs text-neutral-400">
-                    A $35 mobile service fee applies to every mobile appointment.
+                    A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </div>
               </div>
@@ -375,7 +375,7 @@ export function ExteriorDetailingPage({ data }: { data: ServicePageData }) {
                 <ScrollReveal animation="fade-up" delay={140} className="border border-white/20 bg-[#0753b7]/80 p-6 backdrop-blur-sm">
                   <h3 className="text-xl font-bold text-white">In-Shop or Mobile</h3>
                   <p className="mt-3 text-sm leading-6 text-white/85">
-                    Choose an in-shop appointment in Basking Ridge or ask about mobile availability at your home or workplace. A $35 mobile service fee applies to every mobile appointment.
+                    Choose an in-shop appointment in Basking Ridge or ask about mobile availability at your home or workplace. A $35 mobile service fee applies to every eligible mobile appointment.
                   </p>
                 </ScrollReveal>
               </div>

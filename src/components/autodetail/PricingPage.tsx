@@ -39,7 +39,7 @@ export function PricingPage() {
           </ScrollReveal>
           <ScrollReveal animation="fade-up" delay={100} className="mt-8 flex gap-3 border border-[#1277ff]/35 bg-[#1277ff]/10 p-4 text-sm leading-6 text-neutral-200 sm:max-w-3xl">
             <Check className="mt-1 h-4 w-4 shrink-0 text-[#70b5ff]" />
-            <p><strong className="text-white">Mobile service:</strong> a $35 mobile service fee applies to all mobile appointments. Window Tinting is available in shop only.</p>
+            <p><strong className="text-white">Mobile service:</strong> a $35 mobile service fee applies to every eligible mobile appointment. Window tint installation and removal are available in shop only.</p>
           </ScrollReveal>
         </div>
       </section>

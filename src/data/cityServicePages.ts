@@ -67,7 +67,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "exterior-detailing":
         "Exterior detailing combines a careful hand wash with wheel and tire cleaning, glass and trim care, and paint decontamination when needed. We finish a Woodbridge vehicle with suitable exterior protection after the surfaces are clean. Interior detailing can be added when the whole vehicle needs attention.",
       "mobile-auto-detailing":
-        "Mobile auto detailing brings our equipment to a suitable Woodbridge home or workplace for eligible interior, exterior, or full detailing. We confirm the service, vehicle, and space before scheduling. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400; there is no mobile fee at $400 or more.",
+        "Mobile auto detailing brings our equipment to a suitable Woodbridge home or workplace for eligible interior, exterior, or full detailing. We confirm the service, vehicle, and space before scheduling. A $35 mobile service fee applies to every eligible mobile appointment.",
       "headlight-restoration":
         "Headlight restoration removes surface oxidation and haze from cloudy lenses. At our Basking Ridge shop, we clean, sand, polish, and protect the headlights on a Woodbridge vehicle when the lens condition allows it. Damage inside the housing or cracked lenses may need another repair.",
       "car-odor-treatment":
@@ -109,7 +109,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "exterior-detailing":
         "Exterior detailing includes a careful hand wash, wheel and tire cleaning, attention to glass and trim, and decontamination of affected paint. We finish an Edison vehicle with suitable protection after cleaning the surfaces. Interior work can be added for a full detail.",
       "mobile-auto-detailing":
-        "Mobile auto detailing brings our self-contained equipment to a suitable Edison home or workplace for eligible interior, exterior, or full detailing. We confirm the service and setup before scheduling. A $50 fee applies once per appointment below a $400 pre-fee subtotal; appointments of $400 or more have no mobile fee.",
+        "Mobile auto detailing brings our self-contained equipment to a suitable Edison home or workplace for eligible interior, exterior, or full detailing. We confirm the service and setup before scheduling. A $35 mobile service fee applies to every eligible mobile appointment.",
       "headlight-restoration":
         "Headlight restoration clears surface haze and yellowing by cleaning, sanding, and machine polishing the lenses, then adding protection. We inspect both headlights on an Edison vehicle at our Basking Ridge shop to confirm what can be refinished. Cracks or damage inside the housing cannot be corrected by polishing the exterior.",
       "car-odor-treatment":
@@ -151,7 +151,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "exterior-detailing":
         "Exterior detailing cleans the paint, wheels, tires, glass, and trim with a careful hand wash and targeted decontamination. We inspect a Westfield vehicle before choosing the preparation and finish with suitable paint protection. Interior detailing can be added for a full detail.",
       "mobile-auto-detailing":
-        "Mobile auto detailing brings our equipment to a suitable Westfield driveway or workplace for eligible interior, exterior, or full detailing. We confirm the parking space, requested work, and schedule before the visit. A single $50 mobile fee applies below a $400 pre-fee appointment subtotal; it is waived at $400 or more.",
+        "Mobile auto detailing brings our equipment to a suitable Westfield driveway or workplace for eligible interior, exterior, or full detailing. We confirm the parking space, requested work, and schedule before the visit. A $35 mobile service fee applies to every eligible mobile appointment.",
       "headlight-restoration":
         "Headlight restoration removes surface oxidation and haze from the lenses through cleaning, sanding, and polishing, then adds protection. We inspect both headlights on a Westfield vehicle at our Basking Ridge shop before refinishing them. Internal damage or cracks need a different repair.",
       "car-odor-treatment":
@@ -206,7 +206,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "exterior-detailing":
         "Exterior detailing washes the body by hand, cleans wheels and tires, and addresses glass, trim, and paint contamination. We inspect a Cranford vehicle before choosing any decontamination and finish the cleaned exterior with protection. Engine bay cleaning is a separate service when that area needs attention.",
       "mobile-auto-detailing":
-        "Mobile auto detailing brings our equipment to a suitable Cranford home or workplace for eligible interior, exterior, or full detailing. We confirm the vehicle, requested work, and address before scheduling. A single $50 mobile fee applies below a $400 pre-fee appointment subtotal; appointments of $400 or more do not have that fee.",
+        "Mobile auto detailing brings our equipment to a suitable Cranford home or workplace for eligible interior, exterior, or full detailing. We confirm the vehicle, requested work, and address before scheduling. A $35 mobile service fee applies to every eligible mobile appointment.",
       "headlight-restoration":
         "Headlight restoration removes the weathered outer layer from cloudy lenses through cleaning, controlled sanding, and machine polishing. We add protection after refinishing both headlights on a Cranford vehicle. The improvement depends on lens condition; cracks and internal damage need a different repair.",
       "car-odor-treatment":
@@ -262,7 +262,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "exterior-detailing":
         "Exterior detailing starts with a careful hand wash, wheel and tire cleaning, and attention to glass and trim. We check a Bridgewater vehicle for bonded contamination, clean the affected surfaces, and finish with paint protection suited to the job. Engine bay cleaning and headlight restoration are separate services.",
       "mobile-auto-detailing":
-        "Mobile auto detailing brings our equipment to a suitable Bridgewater home or workplace for eligible interior, exterior, or full detailing. We confirm the requested work, address, and setup before scheduling. One $50 mobile fee applies when the pre-fee appointment subtotal is below $400; there is no mobile fee at $400 or more.",
+        "Mobile auto detailing brings our equipment to a suitable Bridgewater home or workplace for eligible interior, exterior, or full detailing. We confirm the requested work, address, and setup before scheduling. A $35 mobile service fee applies to every eligible mobile appointment.",
       "headlight-restoration":
         "Headlight restoration removes surface oxidation from cloudy lenses through cleaning, controlled sanding, and machine polishing. We then protect the refinished lenses. A Bridgewater vehicle's lens condition determines how much clarity we can restore; cracks or damage inside the housing need a different repair.",
       "car-odor-treatment":

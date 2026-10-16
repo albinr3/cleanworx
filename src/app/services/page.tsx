@@ -112,7 +112,7 @@ export default function ServicesPage() {
         {
           title: "Mobile or In-Shop Appointments",
           content: [
-            "CleanWorx confirms the service, location, and availability for each appointment. A $35 mobile service fee applies to every mobile appointment. Window tinting is available in shop only. Ask us which services are suitable for your location.",
+            "CleanWorx confirms the service, location, and availability for each appointment. A $35 mobile service fee applies to every eligible mobile appointment. Window tinting is available in shop only. Ask us which services are suitable for your location.",
           ],
         },
         {
