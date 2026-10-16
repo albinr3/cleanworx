@@ -99,6 +99,7 @@ Para evaluar el trabajo SEO, filtrar por **Fuente/medio de la sesión = `google 
 5. **Preservación de UTMs y Ads (`gclid`) en redirecciones:** ✅ **VERIFICADO**.
    - Pruebas HTTP automatizadas confirmaron que las redirecciones HTTP -> HTTPS, sin www -> con www, y las redirecciones 301 de URLs migradas conservan el 100% de la query string (`utm_*`, `gclid`, `gbraid`, `wbraid`).
    - Se confirmó vía API que GA4 no tiene cuentas de Google Ads vinculadas directamente (0 vínculos).
+   - La nomenclatura y URLs autorizadas para las fichas locales están en [UTM-LOCAL-LISTINGS.md](./UTM-LOCAL-LISTINGS.md).
 
 6. **Confirmación de citas reales en Square Appointments (`booking_completed`):** ✅ **ACTIVADA Y COMPROBADA**.
    - El endpoint firmado respondió `202` al evento de prueba de Square y una cita real alcanzó el flujo de confirmación.
