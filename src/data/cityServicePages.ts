@@ -38,6 +38,7 @@ type CityPageContent = {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
+    gallery?: readonly { image: string; imageAlt: string }[];
     layout?: "split";
     paragraphs: readonly string[];
   }>>;
@@ -230,6 +231,23 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
   "bridgewater-nj": {
     city: "Bridgewater",
     serviceStories: {
+      "interior-detailing": {
+        title: "2022 Ford F-150 — Interior Detailing",
+        image: "/images/service-areas/bridgewater/ford-f150-interior-driver.webp",
+        imageAlt: "Cleaned driver's seat and dashboard of a Ford F-150",
+        imageWidth: 1024,
+        imageHeight: 768,
+        gallery: [
+          { image: "/images/service-areas/bridgewater/ford-f150-interior-dashboard.webp", imageAlt: "Cleaned Ford F-150 dashboard and center console" },
+          { image: "/images/service-areas/bridgewater/ford-f150-interior-rear.webp", imageAlt: "Cleaned rear seats and floor of the Ford F-150" },
+          { image: "/images/service-areas/bridgewater/ford-f150-interior-passenger.webp", imageAlt: "Cleaned passenger seat and floor of the Ford F-150" },
+        ],
+        paragraphs: [
+          "Carlos called us from Bridgewater about his 2022 Ford F-150, which he drove daily for work and family activities. Dirt and salt had built up on the carpets, crumbs had collected between the seats, and a coffee stain and sticky cupholder needed attention.",
+          "We removed the mats and vacuumed under the seats, along the rails, and around the console. We cleaned the seats, carpets, mats, dashboard, door panels, cupholders, and interior glass, choosing products suited to each surface.",
+          "When Carlos opened the door, he noticed the cleaner carpets and even finish on the console. He told us he had forgotten how nice it felt to see the interior that way.",
+        ],
+      },
       "car-odor-treatment": {
         title: "Ferrari Interior — Ozone Odor Treatment",
         image: "/images/autodetail/ferrari-interior-ozone-car-odor-treatment.webp",
