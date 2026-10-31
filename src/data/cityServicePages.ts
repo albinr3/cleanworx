@@ -307,7 +307,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
         imageAlt: "Blue Nissan Skyline parked on a city street",
         video: "/videos/service-areas/bernardsville/paint-correction-optimized.mp4",
         videoPoster: "/images/service-areas/bernardsville/paint-correction-video-poster.webp",
-        paragraphs: ["The vivid blue finish on this Nissan Skyline GT-R was the focus of a paint correction appointment on Claremont Road in Bernardsville. The owner chose a mobile visit, so we brought the service to the car rather than having them travel to our Basking Ridge shop.", "We worked on the Skyline's paint at the customer's location, giving its distinctive finish the attention the appointment called for. In the photo, the blue hood reflects the buildings and sky around the car."],
+        paragraphs: ["The owner of this blue Nissan Skyline GT-R booked a mobile paint correction at their location on Claremont Road in Bernardsville. Before polishing, we washed the exterior by hand and removed bonded contamination from the paint to prepare the surface.", "We inspected the finish under a work light, paying particular attention to the hood and doors, where wash marks were visible in the blue paint. Using a dual-action polisher, we worked section by section to reduce the lighter marks and improve the clarity of the reflections.", "After polishing, we wiped down and inspected the panels again, then applied a paint sealant. We also discussed gentle washing with the owner to help maintain the finish between details."],
       },
       "interior-detailing": {
         title: "BMW — Interior Detailing at Our Shop",
@@ -315,19 +315,19 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
         imageAlt: "Black BMW exterior with reflections across the hood",
         video: "/videos/service-areas/bernardsville/interior-detailing-optimized.mp4",
         videoPoster: "/images/service-areas/bernardsville/interior-detailing-video-poster.webp",
-        paragraphs: ["A Bernardsville driver brought this black BMW to our shop on E. Henry Street in Basking Ridge for interior detailing. While the photograph captures the exterior, the appointment centered on the cabin and the surfaces the owner uses every day.", "With the BMW at the shop, we carried out the interior detail before the customer collected it. Seats, carpets, mats, and trim each call for care suited to their materials; the video gives a closer look at interior detailing."],
+        paragraphs: ["A Bernardsville driver brought this black BMW to our shop on E. Henry Street in Basking Ridge for interior detailing.", "Interior detailing covers seats, carpets, mats, and trim, with cleaning methods chosen for each material. The video gives a closer look at interior detailing."],
       },
       "exterior-detailing": {
         title: "Porsche Cayman — Mobile Exterior Detailing",
         image: "/images/service-areas/bernardsville/exterior-detailing-optimized.webp",
         imageAlt: "Dark Porsche parked outside with a reflective finish",
-        paragraphs: ["The owner of this dark Porsche Cayman chose to have its exterior detailed on Lloyd Road in Bernardsville. We traveled to the car for the appointment, bringing the service to the customer.", "We detailed the Porsche's exterior on site. The photo captures the result from the front, with the trees and sky reflected across the hood and the car's dark curves."],
+        paragraphs: ["The owner of this dark Porsche Cayman booked mobile exterior detailing on Lloyd Road in Bernardsville.", "Exterior detailing includes a hand wash, wheel and tire cleaning, and care for the glass and trim. The paint receives protection suited to the service."],
       },
       "headlight-restoration": {
         title: "Headlight Restoration — Mobile Service",
         image: "/images/service-areas/bernardsville/headlight-restoration-optimized.webp",
         imageAlt: "Headlight lens and a tube of lens coating beside a white car",
-        paragraphs: ["A Bernardsville customer arranged a mobile headlight restoration for this white vehicle, so we traveled to their location on Mendham Road for the work. The appointment focused on the headlight lenses rather than a full exterior detail.", "The photograph shows one of the headlights alongside the lens coating product. Restoring a headlight means addressing the lens surface; its condition determines the amount of clarity that can be recovered."],
+        paragraphs: ["A Bernardsville customer booked mobile headlight restoration for this white vehicle on Mendham Road.", "Headlight restoration addresses surface haze through cleaning, sanding, polishing, and protection. The lens condition determines how much clarity can be recovered."],
       },
     },
     questions: [
