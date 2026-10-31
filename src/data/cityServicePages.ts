@@ -4,6 +4,7 @@ export const citySlugs = [
   "westfield-nj",
   "cranford-nj",
   "bridgewater-nj",
+  "bernardsville-nj",
 ] as const;
 
 export type CitySlug = (typeof citySlugs)[number];
@@ -30,6 +31,7 @@ type CityPageContent = {
   serviceCopy: Record<ServiceTopicId, string>;
   questions: readonly { question: string; answer: string }[];
   photoIds: readonly string[];
+  serviceMedia?: Partial<Record<ServiceTopicId, { image: string; imageAlt: string; video?: string; videoPoster?: string; title: string; paragraphs: readonly string[] }>>;
   serviceStories?: Partial<Record<ServiceTopicId, {
     title: string;
     image: string;
@@ -279,6 +281,58 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
         answer:
           "No. Mobile suitability is confirmed for the specific service and location; the Basking Ridge shop remains available for shop work.",
       },
+    ],
+  },
+  "bernardsville-nj": {
+    city: "Bernardsville",
+    intro: "CleanWorx serves Bernardsville drivers from our Basking Ridge shop, with eligible mobile detailing available by appointment. Tell us about your vehicle and the services you need so we can recommend the right visit.",
+    appointmentNote: "Share your vehicle, requested service, and Bernardsville address. We will confirm whether the work is suitable for a mobile visit or an appointment at our Basking Ridge shop.",
+    fullDetailNote: "Full detailing combines interior and exterior care. We assess the vehicle and discuss the work needed before recommending a package.",
+    engineBayNote: "Engine bay cleaning is available separately, with the approach determined by the vehicle and its condition.",
+    photoIds: [],
+    serviceCopy: {
+      "ceramic-coating": "Ceramic coating adds a water-repellent protective layer to properly prepared paint. At our Basking Ridge shop, we inspect the finish, remove contamination, and discuss any polishing needed before applying a coating.",
+      "paint-correction": "Paint correction uses machine polishing to reduce visible swirls, haze, and light scratches. We inspect the paint and select a process suited to its condition and the available clear coat.",
+      "window-tinting": "Choose Carbon or Ceramic film for selected windows after discussing privacy, heat reduction, and the vehicle's existing glass. Tint installation is available at our Basking Ridge shop; windshield coverage is discussed separately.",
+      "interior-detailing": "Interior detailing addresses seats, carpets, mats, and trim with methods suited to each material. Depending on condition, cleaning may include steam or extraction, while persistent odors may require a separate treatment.",
+      "exterior-detailing": "Exterior detailing includes a careful hand wash, wheel and tire cleaning, and attention to glass and trim. We assess bonded contamination and finish the clean paint with protection suited to the service.",
+      "mobile-auto-detailing": "Eligible interior, exterior, and full detailing can be scheduled at a suitable Bernardsville home or workplace. We confirm the vehicle, service, and space before booking. A $35 mobile service fee applies to every eligible mobile appointment.",
+      "headlight-restoration": "Headlight restoration addresses surface oxidation and haze with cleaning, controlled sanding, polishing, and protection. The condition of the lens determines the possible improvement; cracks or damage inside the housing require a different repair.",
+      "car-odor-treatment": "We assess persistent odors and their possible sources before discussing cleaning and in-shop ozone air purification. Results depend on the source and affected materials, and a continuing source can cause the odor to return.",
+    },
+    serviceMedia: {
+      "paint-correction": {
+        title: "Nissan Skyline GT-R — Mobile Paint Correction",
+        image: "/images/service-areas/bernardsville/paint-correction-optimized.webp",
+        imageAlt: "Blue Nissan Skyline parked on a city street",
+        video: "/videos/service-areas/bernardsville/paint-correction-optimized.mp4",
+        videoPoster: "/images/service-areas/bernardsville/paint-correction-video-poster.webp",
+        paragraphs: ["The vivid blue finish on this Nissan Skyline GT-R was the focus of a paint correction appointment on Claremont Road in Bernardsville. The owner chose a mobile visit, so we brought the service to the car rather than having them travel to our Basking Ridge shop.", "We worked on the Skyline's paint at the customer's location, giving its distinctive finish the attention the appointment called for. In the photo, the blue hood reflects the buildings and sky around the car."],
+      },
+      "interior-detailing": {
+        title: "BMW — Interior Detailing at Our Shop",
+        image: "/images/service-areas/bernardsville/interior-detailing-optimized.webp",
+        imageAlt: "Black BMW exterior with reflections across the hood",
+        video: "/videos/service-areas/bernardsville/interior-detailing-optimized.mp4",
+        videoPoster: "/images/service-areas/bernardsville/interior-detailing-video-poster.webp",
+        paragraphs: ["A Bernardsville driver brought this black BMW to our shop on E. Henry Street in Basking Ridge for interior detailing. While the photograph captures the exterior, the appointment centered on the cabin and the surfaces the owner uses every day.", "With the BMW at the shop, we carried out the interior detail before the customer collected it. Seats, carpets, mats, and trim each call for care suited to their materials; the video gives a closer look at interior detailing."],
+      },
+      "exterior-detailing": {
+        title: "Porsche Cayman — Mobile Exterior Detailing",
+        image: "/images/service-areas/bernardsville/exterior-detailing-optimized.webp",
+        imageAlt: "Dark Porsche parked outside with a reflective finish",
+        paragraphs: ["The owner of this dark Porsche Cayman chose to have its exterior detailed on Lloyd Road in Bernardsville. We traveled to the car for the appointment, bringing the service to the customer.", "We detailed the Porsche's exterior on site. The photo captures the result from the front, with the trees and sky reflected across the hood and the car's dark curves."],
+      },
+      "headlight-restoration": {
+        title: "Headlight Restoration — Mobile Service",
+        image: "/images/service-areas/bernardsville/headlight-restoration-optimized.webp",
+        imageAlt: "Headlight lens and a tube of lens coating beside a white car",
+        paragraphs: ["A Bernardsville customer arranged a mobile headlight restoration for this white vehicle, so we traveled to their location on Mendham Road for the work. The appointment focused on the headlight lenses rather than a full exterior detail.", "The photograph shows one of the headlights alongside the lens coating product. Restoring a headlight means addressing the lens surface; its condition determines the amount of clarity that can be recovered."],
+      },
+    },
+    questions: [
+      { question: "Do you have a shop in Bernardsville?", answer: "Our shop is at 19 E. Henry Street in Basking Ridge. We also confirm eligible mobile appointments in Bernardsville individually." },
+      { question: "Can I combine interior and exterior detailing?", answer: "Yes. Tell us about your vehicle's condition and priorities so we can discuss a full detail and any separate specialist services." },
     ],
   },
 };

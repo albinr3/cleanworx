@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { ServiceVideo } from "@/components/autodetail/ServiceVideo";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import { normalizeTerminology } from "@/lib/terminology";
 import { PORTFOLIO_ITEMS, type PortfolioItem } from "@/data/ourWorkData";
@@ -174,6 +175,7 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
           const sectionPhotos = photos.filter((photo) => (photoServiceOverride[photo.id] ?? photoService[photo.category]) === topic.id);
           const serviceStory = page.serviceStories?.[topic.id];
           const storyCount = sectionPhotos.length + (serviceStory ? 1 : 0);
+          const media = page.serviceMedia?.[topic.id];
 
           return (
             <section key={topic.id} id={topic.id} className="scroll-mt-28 border-b border-white/10 py-14 sm:py-20">
@@ -218,6 +220,34 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       preserveImage
                     />
                   )}
+                </div>
+              )}
+              {media && (
+                <div className="mt-10 space-y-6 lg:mt-12">
+                  <div className="flex items-center gap-4">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#66adff]">A case from {page.city}</span>
+                    <span className="h-px flex-1 bg-white/10" aria-hidden="true" />
+                  </div>
+                  <figure className="overflow-hidden rounded-2xl border border-white/15 bg-[#151a23] lg:grid lg:grid-cols-2">
+                    <div className={media.video ? "grid grid-cols-2 gap-1 bg-[#090d14] p-1" : "relative min-h-64 bg-[#090d14] sm:min-h-80"}>
+                      <div className={media.video ? "relative min-h-0 overflow-hidden" : "absolute inset-0"}>
+                        <Image src={media.image} alt={media.imageAlt} fill sizes={media.video ? "(max-width: 1023px) 50vw, 25vw" : "(max-width: 1023px) 100vw, 50vw"} className={media.video ? "object-cover" : "object-contain"} />
+                      </div>
+                      {media.video && (
+                        <ServiceVideo src={media.video} poster={media.videoPoster ?? media.image} label={topic.title + " video"} />
+                      )}
+                    </div>
+                    <figcaption className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+                      <div className="mb-7 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#66adff]">
+                        <span className="h-px w-8 bg-[#4da3ff]" aria-hidden="true" />
+                        Documented case
+                      </div>
+                      <h3 className="text-2xl font-bold leading-tight text-white sm:text-[1.75rem]">{media.title}</h3>
+                      <div className="mt-5 space-y-4 border-l-2 border-[#347bd2]/70 pl-5 text-sm leading-7 text-neutral-300">
+                        {media.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                      </div>
+                    </figcaption>
+                  </figure>
                 </div>
               )}
               {topic.id === "exterior-detailing" && (

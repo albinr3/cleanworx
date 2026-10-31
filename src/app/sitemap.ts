@@ -90,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "westfield-nj",
       "cranford-nj",
       "bridgewater-nj",
+      "bernardsville-nj",
     ].map((slug) => ({
       url: `${baseUrl}/service-areas/${slug}`,
       lastModified: new Date("2026-10-07T00:00:00.000Z"),

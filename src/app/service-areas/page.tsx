@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     absolute: "Auto Detailing Service Areas in NJ | CleanWorx",
   },
   description:
-    "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
+    "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, Bridgewater, and Bernardsville, NJ. In-shop and eligible mobile appointments.",
   alternates: { canonical: "/service-areas" },
   openGraph: {
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, Bridgewater, and Bernardsville, NJ. In-shop and eligible mobile appointments.",
     url: "https://www.cleanworxnj.com/service-areas",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Auto Detailing Service Areas in NJ | CleanWorx",
     description:
-      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, and Bridgewater, NJ. In-shop and eligible mobile appointments.",
+      "Explore CleanWorx auto detailing service guides for Woodbridge, Edison, Westfield, Cranford, Bridgewater, and Bernardsville, NJ. In-shop and eligible mobile appointments.",
     images: ["/images/cleanworx-logo.webp"],
   },
 };
