@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -165,9 +166,16 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <nav aria-label="Jump to service" className="mt-4 flex flex-wrap gap-2 border-b border-white/10 pb-10">
           {serviceTopics.map((topic) => (
-            <a key={topic.id} href={`#${topic.id}`} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-neutral-300 hover:border-[#4da3ff] hover:text-white">
-              {topic.title}
-            </a>
+            <Fragment key={topic.id}>
+              <a href={`#${topic.id}`} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-neutral-300 hover:border-[#4da3ff] hover:text-white">
+                {topic.title}
+              </a>
+              {slug === "bernardsville-nj" && topic.id === "interior-detailing" && (
+                <a href="#mini-detail" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-neutral-300 hover:border-[#4da3ff] hover:text-white">
+                  Mini Detail
+                </a>
+              )}
+            </Fragment>
           ))}
         </nav>
 
@@ -178,10 +186,11 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
           const media = page.serviceMedia?.[topic.id];
 
           return (
-            <section key={topic.id} id={topic.id} className="scroll-mt-28 border-b border-white/10 py-14 sm:py-20">
+            <Fragment key={topic.id}>
+            <section id={topic.id} className="scroll-mt-28 border-b border-white/10 py-14 sm:py-20">
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">0{index + 1} / 08</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">0{index + 1 + (slug === "bernardsville-nj" && index > 3 ? 1 : 0)} / {slug === "bernardsville-nj" ? "09" : "08"}</span>
                   <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">{topic.title}</h2>
                   <Link href={topic.href} className="group mt-6 inline-flex min-h-12 items-center gap-4 rounded-lg border border-[#3993ff] bg-[#1277ff] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_-14px_rgba(18,119,255,0.85)] transition-colors hover:border-[#8cc4ff] hover:bg-[#0865dd] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8cc4ff]">
                     Explore {topic.title}
@@ -257,8 +266,58 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                 </div>
               )}
             </section>
+        {slug === "bernardsville-nj" && topic.id === "interior-detailing" && (
+          <section id="mini-detail" className="scroll-mt-28 border-b border-white/10 py-14 sm:py-20">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">05 / 09</span>
+                <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">Mini Detail</h2>
+                <Link href="/mini-detail" className="group mt-6 inline-flex min-h-12 items-center gap-4 rounded-lg border border-[#3993ff] bg-[#1277ff] px-5 py-3 text-sm font-bold text-white shadow-[0_10px_28px_-14px_rgba(18,119,255,0.85)] transition-colors hover:border-[#8cc4ff] hover:bg-[#0865dd] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8cc4ff]">
+                  Explore Mini Detail
+                  <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </div>
+              <p className="max-w-3xl text-base leading-8 text-neutral-300">A Mini Detail helps maintain your vehicle between full details with a hand wash and light interior care. Ask us about an appointment at our Basking Ridge shop or an eligible mobile visit in Bernardsville. A $35 mobile service fee applies to every eligible mobile appointment.</p>
+            </div>
+            <div className="mt-10 space-y-6 lg:mt-12">
+              <div className="flex items-center gap-4">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#66adff]">A case from Bernardsville</span>
+                <span className="h-px flex-1 bg-white/10" aria-hidden="true" />
+              </div>
+              <figure className="overflow-hidden rounded-2xl border border-white/15 bg-[#151a23] lg:grid lg:grid-cols-2">
+                <div className="grid grid-cols-2 gap-1 bg-[#090d14] p-1">
+                  {[
+                    { src: "/images/service-areas/bernardsville/ferrari-mini-detail-driveway.webp", alt: "Yellow Ferrari parked outside a garage in Bernardsville" },
+                    { src: "/images/service-areas/bernardsville/ferrari-mini-detail-wash.webp", alt: "Yellow Ferrari covered in foam during a mobile wash" },
+                    { src: "/images/service-areas/bernardsville/ferrari-mini-detail-hood.webp", alt: "Close view of the yellow Ferrari's hood and headlight" },
+                    { src: "/images/service-areas/bernardsville/ferrari-mini-detail-interior.webp", alt: "Tan leather seats and dashboard inside the Ferrari" },
+                  ].map((photo) => (
+                    <div key={photo.src} className="relative aspect-square overflow-hidden bg-[#090d14]">
+                      <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1023px) 50vw, 25vw" className="object-contain" />
+                    </div>
+                  ))}
+                </div>
+                <figcaption className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+                  <div className="mb-7 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#66adff]">
+                    <span className="h-px w-8 bg-[#4da3ff]" aria-hidden="true" />
+                    Documented case
+                  </div>
+                  <h3 className="text-2xl font-bold leading-tight text-white sm:text-[1.75rem]">Yellow Ferrari — Mini Detail on Ford Avenue</h3>
+                  <div className="mt-5 space-y-4 border-l-2 border-[#347bd2]/70 pl-5 text-sm leading-7 text-neutral-300">
+                    <p>A month after we completed a Full Detail on this yellow Ferrari, the owner called to schedule a maintenance visit. The car had already received a thorough interior and exterior cleaning, and they wanted to keep it looking its best between full details. We arranged a mobile Mini Detail on Ford Avenue in Bernardsville.</p>
+                    <p>We started with a hand wash, working over the yellow paint, wheels, and tires to remove the dirt that had collected since the previous appointment. After rinsing and drying the exterior, we applied spray wax and finished the tires with tire shine.</p>
+                    <p>Inside, we vacuumed the cabin and wiped down the plastic surfaces. The Mini Detail gave the Ferrari a refresh without repeating the more extensive cleaning from the month before.</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        )}
+            </Fragment>
           );
         })}
+
+
 
         <section aria-label={`Questions about detailing for ${page.city} drivers`} className="py-14 sm:py-20">
           <p className="text-xs font-bold uppercase tracking-widest text-[#4da3ff]">Before you book</p>
