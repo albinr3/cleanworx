@@ -61,7 +61,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "paint-correction":
         "Paint correction uses machine polishing to reduce wash swirls, haze, and light scratches so the finish reflects more clearly. We inspect the clear coat on each Woodbridge vehicle and set a safe polishing scope based on its condition. We then explain how to wash and care for the corrected paint.",
       "window-tinting":
-        "Window tinting adds Carbon or Ceramic film to selected windows for privacy, UV protection, and heat reduction. We review the glass on a Woodbridge vehicle, help choose the film and windows, and remove old tint if needed. The front windshield is treated separately from full-vehicle packages, and we confirm whether installation is suitable for the shop or a mobile visit.",
+        "Window tinting adds Carbon or Ceramic film to selected windows for privacy, UV protection, and heat reduction. We review the glass on a Woodbridge vehicle, help choose the film and windows, and remove old tint if needed. The front windshield is treated separately from full-vehicle packages. Installation is available only at our Basking Ridge shop.",
       "interior-detailing":
         "Interior detailing cleans seats, carpets, mats, and trim using methods suited to their materials. For a Woodbridge vehicle, we assess buildup, stains, and pet hair before deciding where steam or extraction is needed. Persistent odors may also call for a separate treatment at our shop.",
       "exterior-detailing":
@@ -103,7 +103,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "paint-correction":
         "Paint correction uses machine polishing to reduce swirls, wash marks, and haze that a wash cannot remove. We inspect the clear coat on an Edison vehicle, set a realistic goal, and polish within what the paint can safely support. Deep damage may remain and can require another type of repair.",
       "window-tinting":
-        "Window tinting applies Carbon or Ceramic film to selected glass for privacy, UV protection, and reduced interior heat. We help Edison drivers choose the film and windows, and can remove deteriorated existing tint. The vehicle layout and chosen glass determine the installation scope; we confirm shop or eligible mobile service before booking.",
+        "Window tinting applies Carbon or Ceramic film to selected glass for privacy, UV protection, and reduced interior heat. We help Edison drivers choose the film and windows, and can remove deteriorated existing tint. The vehicle layout and chosen glass determine the installation scope. Installation is available only at our Basking Ridge shop.",
       "interior-detailing":
         "Interior detailing deep-cleans the seats, carpets, mats, and trim rather than stopping at a surface wipe. We assess an Edison vehicle's materials and soiling, then use steam, extraction, and material-specific care where appropriate. Tell us about stains or pet hair so we can plan the work.",
       "exterior-detailing":
@@ -145,7 +145,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "paint-correction":
         "Paint correction uses machine polishing to reduce swirls, wash marks, haze, and light scratches in the clear coat. We inspect a Westfield vehicle under suitable light, choose a safe polishing process, and check the finish as we work. The result depends on the paint's condition and the depth of the marks.",
       "window-tinting":
-        "Window tinting applies Carbon or Ceramic film to selected windows for privacy, UV protection, and heat reduction. We review the glass on a Westfield vehicle, remove old film when needed, and install the chosen option. Film choice and window configuration affect the quote and warranty; we confirm shop or eligible mobile installation.",
+        "Window tinting applies Carbon or Ceramic film to selected windows for privacy, UV protection, and heat reduction. We review the glass on a Westfield vehicle, remove old film when needed, and install the chosen option. Film choice and window configuration affect the quote and warranty. Installation is available only at our Basking Ridge shop.",
       "interior-detailing":
         "Interior detailing cleans seats, carpets, mats, and trim with methods suited to each material. For a Westfield vehicle, we assess stains and buildup, then use steam, extraction, and leather or trim care where appropriate. Tell us about problem areas before booking so we can set the scope.",
       "exterior-detailing":
@@ -200,7 +200,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "paint-correction":
         "Paint correction uses machine polishing to reduce swirls, haze, and light scratches and improve the paint's reflection. We inspect the clear coat on a Cranford vehicle before deciding whether a focused polish or broader correction is safe. Deep marks may remain if removing them would take too much clear coat.",
       "window-tinting":
-        "Window tinting applies Carbon or Ceramic film to selected glass to add privacy, block UV, and reduce interior heat. We review a Cranford vehicle's windows, remove old tint if needed, and install the chosen film. The film and window configuration affect the quote; we confirm whether shop or eligible mobile installation is suitable.",
+        "Window tinting applies Carbon or Ceramic film to selected glass to add privacy, block UV, and reduce interior heat. We review a Cranford vehicle's windows, remove old tint if needed, and install the chosen film. The film and window configuration affect the quote. Installation is available only at our Basking Ridge shop.",
       "interior-detailing":
         "Interior detailing cleans seats, carpets, mats, trim, and frequently touched surfaces. We assess the materials and soiling in a Cranford vehicle, then use steam, extraction, or material-specific care where appropriate. Stains and pet hair should be mentioned before a full detail so we can include the needed interior work.",
       "exterior-detailing":
@@ -256,7 +256,7 @@ export const cityPages: Record<CitySlug, CityPageContent> = {
       "paint-correction":
         "Paint correction uses machine polishing to reduce swirls, haze, and light scratches in the clear coat and bring back a clearer reflection. We inspect each Bridgewater vehicle in person before choosing a polishing process the paint can safely support. The scope and price depend on its condition.",
       "window-tinting":
-        "Window tinting applies Carbon or Ceramic film to the selected glass for privacy, UV protection, and less heat inside the vehicle. We review the windows on a Bridgewater vehicle, discuss film options, and remove existing tint when needed. The front windshield and installation location are confirmed separately.",
+        "Window tinting applies Carbon or Ceramic film to the selected glass for privacy, UV protection, and less heat inside the vehicle. We review the windows on a Bridgewater vehicle, discuss film options, and remove existing tint when needed. The front windshield is confirmed separately. Installation is available only at our Basking Ridge shop.",
       "interior-detailing":
         "Interior detailing cleans the seats, carpets, mats, and trim with methods suited to each material. For a Bridgewater vehicle, we assess stains, pet hair, and worn areas, then use cleaning, steam, or extraction where appropriate. We can pair it with exterior work for a full detail; persistent odors may need separate treatment.",
       "exterior-detailing":

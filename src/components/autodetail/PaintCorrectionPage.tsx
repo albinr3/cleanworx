@@ -475,7 +475,7 @@ export function PaintCorrectionPage({ data }: { data: ServicePageData }) {
                   <h3 className="text-base font-bold text-white sm:text-lg">Ceramic Ready Surface</h3>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-neutral-300 sm:text-sm sm:leading-6">
-                  Optically level paint creates the ideal foundation for ceramic coating bonds, sealing in mirror gloss for 1 to 5+ years.
+                  Optically level paint creates the ideal foundation for ceramic coating bonds, sealing in mirror gloss for 1 to 6 years.
                 </p>
               </ScrollReveal>
 

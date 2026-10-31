@@ -14,7 +14,7 @@ import { SiteShell } from "@/components/autodetail/SiteShell";
 import type { ServicePageData } from "@/components/autodetail/ServicePage";
 
 const comparisonRows = [
-  ["Typical Durability", "1–3 months", "6–12 months", "1–5+ years"],
+  ["Typical Durability", "1–3 months", "6–12 months", "1–6 years"],
   ["Gloss Enhancement", "★★★☆☆", "★★★★☆", "★★★★★"],
   ["Water Repellency", "★★★☆☆", "★★★★☆", "★★★★★"],
   ["UV & Environmental Protection", "★★☆☆☆", "★★★☆☆", "★★★★★"],

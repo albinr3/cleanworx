@@ -176,7 +176,7 @@ export function CockpitBanner() {
 
             <div className="mt-6 flex flex-col items-center justify-center gap-1 lg:items-start">
               <p className="text-sm font-bold tracking-wide text-white sm:text-base">
-                Full Interior + Exterior Detail from $405+
+                Full Interior + Exterior Detail from $400+
               </p>
               <p className="text-xs text-white/85 sm:text-sm">
                 Clear scope and upfront pricing before work begins. Final pricing depends on vehicle size and surface condition.
