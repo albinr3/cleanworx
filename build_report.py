@@ -1,0 +1,2370 @@
+import os
+
+html_code = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanWorx Auto Detailing & Ceramic Coating - Monthly Performance Report (October 2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #f0f9ff;
+      --gold: #0284c7;
+      --gold-dark: #0369a1;
+      --gold-light: #f0f9ff;
+      --accent: #38bdf8;
+      --dark: #0f172a;
+      --slate: #334155;
+      --muted: #64748b;
+      --light-bg: #f8fafc;
+      --cream: #f0f9ff;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --purple: #8b5cf6;
+      --purple-light: #ede9fe;
+      --blue: #0284c7;
+      --blue-light: #e0f2fe;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate);
+      background-color: #f1f5f9;
+      line-height: 1.5;
+      font-size: 13.5px;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 28px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--primary);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo-img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ffffff;
+      border: 2px solid var(--primary);
+      padding: 3px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .brand-group h1 {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-badge {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-sub {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .meta-box {
+      text-align: right;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .meta-location {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .meta-agency {
+      font-size: 11px;
+      color: #cbd5e1;
+      margin-top: 2px;
+    }
+
+    /* Content Area */
+    .content {
+      padding: 36px;
+    }
+
+    /* 4 Big KPI Cards */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .kpi-card.gold { border-top: 4px solid var(--primary); }
+    .kpi-card.success { border-top: 4px solid var(--success); }
+    .kpi-card.blue { border-top: 4px solid var(--blue); }
+    .kpi-card.amber { border-top: 4px solid var(--amber); }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-number {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .kpi-number-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .kpi-sub {
+      font-size: 11.5px;
+      color: var(--slate);
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+
+    .kpi-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 2px 0;
+      font-size: 11px;
+      color: var(--slate);
+    }
+
+    .kpi-delta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      width: fit-content;
+    }
+
+    .kpi-card.gold .kpi-delta { background: var(--primary-light); color: var(--primary-dark); }
+    .kpi-card.success .kpi-delta { background: var(--success-light); color: var(--success); }
+    .kpi-card.blue .kpi-delta { background: var(--blue-light); color: var(--blue); }
+    .kpi-card.amber .kpi-delta { background: var(--amber-light); color: var(--amber); }
+
+    /* Highlight Banner */
+    .highlight-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+      border: 1px solid #bae6fd;
+      border-left: 5px solid var(--primary);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .highlight-card h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0369a1;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .highlight-grid li {
+      font-size: 12.5px;
+      color: var(--slate);
+      line-height: 1.5;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .highlight-grid li::before {
+      content: "•";
+      color: var(--primary);
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--dark);
+      margin: 32px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Panels & Tables */
+    .panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--light-bg);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--slate);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #fafafa;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .pill-green { background: #dcfce7; color: #15803d; }
+    .pill-blue { background: #e0f2fe; color: #0369a1; }
+    .pill-gold { background: #fef3c7; color: #b45309; }
+    .pill-amber { background: #fee2e2; color: #b91c1c; }
+    .pill-purple { background: #f3e8ff; color: #7e22ce; }
+
+    /* Notice / Formal Alert Box */
+    .notice-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    .notice-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 5px;
+    }
+
+    .notice-desc {
+      font-size: 11.8px;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+
+    /* Verification Charts Grid (Section 3/4) */
+    .chart-proof-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .chart-proof-header {
+      padding: 10px 14px;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .chart-proof-img {
+      padding: 8px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      cursor: zoom-in;
+    }
+
+    .chart-proof-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #1e293b;
+      transition: transform 0.2s;
+    }
+
+    .chart-proof-img img:hover {
+      transform: scale(1.01);
+    }
+
+    .chart-proof-meta {
+      padding: 10px 14px;
+      font-size: 11px;
+      color: var(--slate);
+      line-height: 1.4;
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      flex-grow: 1;
+    }
+
+    /* Geo-Grid Cards */
+    .geogrid-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .geogrid-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .geogrid-header {
+      padding: 12px 14px;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .geogrid-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .geogrid-img-wrapper {
+      padding: 10px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      cursor: zoom-in;
+    }
+
+    .geogrid-img-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .geogrid-img-wrapper img:hover {
+      transform: scale(1.015);
+    }
+
+    .geogrid-caption {
+      padding: 12px 14px;
+      font-size: 11.5px;
+      color: var(--slate);
+      border-top: 1px solid var(--border);
+      line-height: 1.45;
+      background: #ffffff;
+      flex-grow: 1;
+    }
+
+    /* SECTION 6: OPERATIONS & GROWTH LEDGER (BONSAI PLATFORM - DARK STYLING) */
+    .tasks-page-section {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 30px;
+      margin-top: 36px;
+      border: 1px solid #1e293b;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .tasks-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tasks-title-group h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tasks-title-group p {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .tasks-badge {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
+    }
+
+    .featured-tasks-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+
+    .featured-tasks-header {
+      margin-bottom: 16px;
+    }
+
+    .featured-tasks-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    .featured-tasks-subtitle {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .featured-tasks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .featured-task-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .featured-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .featured-pillar-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .featured-effort-badge {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(2, 132, 199, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(2, 132, 199, 0.3);
+      font-weight: 600;
+    }
+
+    .featured-card-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .featured-card-desc {
+      font-size: 11.5px;
+      color: #cbd5e1;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .featured-card-impact {
+      font-size: 11px;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid #38bdf8;
+      padding: 8px 10px;
+      border-radius: 0 4px 4px 0;
+      line-height: 1.4;
+    }
+
+    .tasks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .task-col-header {
+      font-size: 13px;
+      font-weight: 700;
+      color: #38bdf8;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #334155;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .task-item {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .task-item-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+
+    .task-check {
+      color: #4ade80;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .task-item-desc {
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.4;
+      padding-left: 16px;
+    }
+
+    .tasks-footer-bar {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 24px 36px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Funnel Chart Component */
+    .funnel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 0;
+      margin: 12px 0 16px 0;
+    }
+
+    .funnel-step-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .funnel-stage {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .funnel-stage:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    /* Staged tapering widths to create a true visual funnel */
+    .funnel-stage.stage-1 {
+      width: 100%;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-left: 5px solid #64748b;
+    }
+
+    .funnel-stage.stage-2 {
+      width: 88%;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 5px solid var(--blue);
+      border-color: #bae6fd;
+    }
+
+    .funnel-stage.stage-3 {
+      width: 76%;
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      border-left: 5px solid #0284c7;
+      border-color: #7dd3fc;
+    }
+
+    .funnel-stage.stage-4 {
+      width: 64%;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-left: 5px solid var(--success);
+      border-color: #86efac;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12);
+    }
+
+    .funnel-stage-left {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      max-width: 62%;
+    }
+
+    .funnel-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+    }
+
+    .funnel-badge.success-badge {
+      color: #15803d;
+    }
+
+    .funnel-title {
+      font-size: 13.5px;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .funnel-title code {
+      font-family: var(--font-mono, monospace);
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.06);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--slate);
+    }
+
+    .funnel-desc {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .funnel-stage-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .funnel-metric {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .funnel-metric-unit {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .funnel-submetric {
+      font-size: 11px;
+      color: var(--slate);
+      font-weight: 500;
+    }
+
+    .funnel-rate-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-top: 3px;
+      display: inline-block;
+    }
+
+    .rate-100 { background: #e2e8f0; color: #475569; }
+    .rate-mid { background: #e0f2fe; color: #0369a1; }
+    .rate-high { background: #bae6fd; color: #0284c7; }
+    .rate-success { background: #dcfce7; color: #15803d; }
+
+    .funnel-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 6px 0;
+      position: relative;
+    }
+
+    .connector-line {
+      width: 2px;
+      height: 12px;
+      background: #cbd5e1;
+    }
+
+    .connector-pill {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2px 12px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--muted);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .connector-pill.success-connector {
+      border-color: #86efac;
+      background: #f0fdf4;
+      color: #166534;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .funnel-stage, .funnel-stage.stage-1, .funnel-stage.stage-2, .funnel-stage.stage-3, .funnel-stage.stage-4 {
+        width: 100% !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .funnel-stage-left { max-width: 100%; }
+      .funnel-stage-right { text-align: left; align-items: flex-start; }
+    }
+
+    /* Zoom Modal */
+    #imageModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    #imageModal img {
+      max-width: 92%;
+      max-height: 92vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 860px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .grid-2, .grid-3, .grid-4, .tasks-grid, .featured-tasks-grid { grid-template-columns: 1fr; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .content { padding: 20px; }
+      .top-bar { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- TOP BAR: CLEANWORX AUTO DETAILING & CERAMIC COATING -->
+    <div class="top-bar">
+      <div class="brand-wrap">
+        <img src="./report-assets/cleanworx-logo.webp" alt="CleanWorx Logo" class="brand-logo-img">
+        <div class="brand-group">
+          <h1>
+            CleanWorx
+            <span class="brand-badge">Auto Detailing & Ceramic Coating</span>
+          </h1>
+          <div class="brand-sub">
+            19 E. Henry Street, Basking Ridge, NJ 07920 • (908) 899-2832 • www.cleanworxnj.com
+          </div>
+        </div>
+      </div>
+      <div class="meta-box">
+        <div class="meta-badge">Performance Report: October 2026</div>
+        <div class="meta-location">Primary Markets: Basking Ridge, Bernardsville, Bridgewater & Somerset/Morris, NJ</div>
+        <div class="meta-agency">Developed by <strong>iSearch Digital</strong> • Strategic Growth Engine</div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+      <!-- 4 BIG KPI CARDS -->
+      <div class="kpi-row">
+        <!-- Card 1: GSC Clicks -->
+        <div class="kpi-card gold">
+          <div>
+            <div class="kpi-header">
+              <span>Google Organic Clicks</span>
+              <span class="pill pill-blue">GSC</span>
+            </div>
+            <div class="kpi-number">181</div>
+            <div class="kpi-sub">
+              Total search clicks to <em>cleanworxnj.com</em> in October (up from 154 in September).
+            </div>
+          </div>
+          <span class="kpi-delta">+17.5% Organic Click Growth</span>
+        </div>
+
+        <!-- Card 2: GBP Direct Calls -->
+        <div class="kpi-card success">
+          <div>
+            <div class="kpi-header">
+              <span>Google Maps Phone Calls</span>
+              <span class="pill pill-green">GBP</span>
+            </div>
+            <div class="kpi-number">44</div>
+            <div class="kpi-sub">
+              Calls placed directly from Google Maps in October (up from 32 in September).
+            </div>
+          </div>
+          <span class="kpi-delta">+37.5% Direct Phone Inquiries</span>
+        </div>
+
+        <!-- Card 3: GBP Website Visits -->
+        <div class="kpi-card blue">
+          <div>
+            <div class="kpi-header">
+              <span>Maps to Website Clicks</span>
+              <span class="pill pill-blue">Local Traffic</span>
+            </div>
+            <div class="kpi-number">188</div>
+            <div class="kpi-sub">
+              High-intent local map searchers navigating straight to the website (up from 135).
+            </div>
+          </div>
+          <span class="kpi-delta">+39.3% Local Referral Surge</span>
+        </div>
+
+        <!-- Card 4: Appointments & Booking Funnel -->
+        <div class="kpi-card amber">
+          <div>
+            <div class="kpi-header">
+              <span>Confirmed Appointments & Funnel</span>
+              <span class="pill pill-gold">Square Engine</span>
+            </div>
+            <div class="kpi-number">75 <span class="kpi-number-sub">/ 111</span></div>
+            <div class="kpi-sub">
+              <strong>75 completed appointments</strong> accepted via Square webhook; 111 booking flows started.
+            </div>
+          </div>
+          <span class="kpi-delta">High-Ticket Service Revenue</span>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHT BANNER: BUSINESS-FIRST EXECUTIVE TAKEAWAYS -->
+      <div class="highlight-card">
+        <h3>🚀 Key Performance Highlights (October 2026)</h3>
+        <ul class="highlight-grid">
+          <li>
+            <strong>Record GBP Engagement & Accelerating Review Velocity (+10 Reviews in Oct vs. 8 in Sept):</strong> October delivered peak local activity with <strong>44 direct phone calls (+37.5%)</strong>, <strong>188 website visits (+39.3%)</strong>, <strong>7 customer chat inquiries (+16.7%)</strong>, and <strong>+10 new 5-star Google reviews</strong> (up from 8 in Sept), bringing cumulative verified reviews to 230 while maintaining a spotless 5.0 ★ rating with 100% positive sentiment.
+          </li>
+          <li>
+            <strong>Dominant Local 3-Pack Monopolization ("Ceramic Coating" & "Car Waxing"):</strong> Local geo-grid tracking reveals near 100% #1 rank saturation across Basking Ridge, Bernardsville, Bedminster, and Liberty Corner for high-ticket <em>"ceramic coating near me"</em> ($325–$1,099+) alongside sweeping green expansion for <em>"car waxing"</em> and <em>"car detailing near me"</em>.
+          </li>
+          <li>
+            <strong>Strong Organic Search Expansion (+17.5% Clicks, +11.0% Impressions):</strong> CleanWorx climbed to <strong>181 organic Google Search clicks and 6,531 impressions</strong> in Search Console (up from 154 clicks and 5,883 impressions in September). High-intent non-branded queries like <em>"car wash near me"</em>, <em>"paint correction near me"</em>, and localized city terms delivered consistent customer acquisition.
+          </li>
+          <li>
+            <strong>Robust Website & Square Appointments Conversion Engine:</strong> Across 643 user sessions and 505 unique visitors, potential clients triggered <strong>111 online appointment flow starts (`book_appointment`)</strong>, <strong>88 direct booking clicks (`booking_click`)</strong>, <strong>8 detailed Formspree quote inquiries (`generate_lead`)</strong>, and <strong>75 verified completed bookings (`booking_completed`)</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <!-- SECTION 1: EXECUTIVE SUMMARY TABLE -->
+      <div class="section-title">1. 📊 Executive Summary: What Drove Customers & Revenue (October 2026)</div>
+      <div class="panel" style="margin-bottom: 24px;">
+        <div class="table-responsive" style="margin-bottom: 0;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 22%;">Customer Channel</th>
+                <th style="width: 24%;">Customer Action Tracked</th>
+                <th style="width: 18%;">October 2026 Total</th>
+                <th style="width: 26%;">Business Impact & Growth</th>
+                <th style="width: 10%; text-align: center;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1. GBP Calls -->
+              <tr>
+                <td><strong>Google Maps Direct Calls</strong></td>
+                <td>Direct Phone Calls via GBP Profile</td>
+                <td><strong style="color: var(--success); font-size: 14px;">44 Phone Calls</strong></td>
+                <td><strong>+37.5% vs. September</strong> (up from 32 calls in Sept); customers calling about ceramic packages, full details, and mobile availability</td>
+                <td style="text-align: center;"><span class="pill pill-green">6-Mo Peak</span></td>
+              </tr>
+
+              <!-- 2. GBP Website Clicks -->
+              <tr>
+                <td><strong>Local Map Website Clicks</strong></td>
+                <td>Website Clicks from Google Profile</td>
+                <td><strong style="color: var(--blue); font-size: 14px;">188 Clicks</strong></td>
+                <td><strong>+39.3% vs. September</strong> (up from 135 clicks in Sept); all-time high in map searchers entering the booking funnel</td>
+                <td style="text-align: center;"><span class="pill pill-blue">Record High</span></td>
+              </tr>
+
+              <!-- 3. GBP Chat Clicks -->
+              <tr>
+                <td><strong>In-App Customer Chats</strong></td>
+                <td>Chat Clicks via Google Business Profile</td>
+                <td><strong style="color: var(--primary-dark); font-size: 14px;">7 Chat Inquiries</strong></td>
+                <td><strong>+16.7% vs. September</strong> (up from 6 chats in Sept); customers asking about package customization and vehicle drop-offs</td>
+                <td style="text-align: center;"><span class="pill pill-green">All-Time High</span></td>
+              </tr>
+
+              <!-- 4. Google Reviews Velocity -->
+              <tr>
+                <td><strong>Google Reviews & Reputation</strong></td>
+                <td>New 5-Star Reviews Added (GBP)</td>
+                <td><strong style="color: #fbbf24; font-size: 14px;">+10 Reviews</strong></td>
+                <td><strong>+10 new verified reviews in October vs. 8 in September</strong>; cumulative reviews climbed from 220 to 230 (231 currently), preserving a perfect <strong>5.0 ★ rating</strong> with 100% positive sentiment</td>
+                <td style="text-align: center;"><span class="pill pill-green">5.0 ★ Clean</span></td>
+              </tr>
+
+              <!-- 4. Google Organic Search (GSC) -->
+              <tr>
+                <td><strong>Google Organic Search</strong></td>
+                <td>Total Verified Search Clicks (GSC)</td>
+                <td><strong style="color: var(--dark); font-size: 14px;">181 Clicks</strong></td>
+                <td><strong>+17.5% click growth</strong> (up from 154) across <strong>6,531 impressions (+11.0%)</strong>; average ranking improved to 16.2</td>
+                <td style="text-align: center;"><span class="pill pill-green">Verified Growth</span></td>
+              </tr>
+
+              <!-- 5. Square Appointments Initiations -->
+              <tr>
+                <td><strong>Appointment Flow Starts</strong></td>
+                <td>Square Online `book_appointment` Events</td>
+                <td><strong style="color: var(--blue); font-size: 14px;">111 Booking Starts</strong></td>
+                <td>61 unique high-intent clients selecting detailing and ceramic service packages on the hosted Square schedule</td>
+                <td style="text-align: center;"><span class="pill pill-gold">High Intent</span></td>
+              </tr>
+
+              <!-- 6. Website Booking Clicks -->
+              <tr>
+                <td><strong>Website Booking Portal Clicks</strong></td>
+                <td>`booking_click` to Square Appointments</td>
+                <td><strong style="color: var(--blue); font-size: 14px;">88 Clicks</strong></td>
+                <td>66 unique website visitors clicking primary CTAs across homepage, pricing, and service pages into Square</td>
+                <td style="text-align: center;"><span class="pill pill-blue">Active Funnel</span></td>
+              </tr>
+
+              <!-- 7. Confirmed Completed Bookings -->
+              <tr>
+                <td><strong>Confirmed Customer Bookings</strong></td>
+                <td>Square Server Webhook `booking_completed`</td>
+                <td><strong style="color: var(--success); font-size: 14px;">75 Completed Citas</strong></td>
+                <td>Verified customer appointments accepted into Square Appointments; core engine of recurring and new detailing revenue</td>
+                <td style="text-align: center;"><span class="pill pill-green">Real Revenue</span></td>
+              </tr>
+
+              <!-- 8. Detailed Quote Form Inquiries -->
+              <tr>
+                <td><strong>Custom Quote Submissions</strong></td>
+                <td>Formspree Contact Leads (`generate_lead`)</td>
+                <td><strong style="color: var(--amber); font-size: 14px;">8 Form Leads</strong></td>
+                <td>Verified inquiries specifying vehicle make/model, paint condition, and interest in Ceramic Coating & Paint Correction</td>
+                <td style="text-align: center;"><span class="pill pill-gold">High Ticket</span></td>
+              </tr>
+
+              <!-- 9. Website Click-to-Call & Email -->
+              <tr>
+                <td><strong>Direct Website Contacts</strong></td>
+                <td>Direct `click_call` & `click_email` Actions</td>
+                <td><strong style="color: var(--slate); font-size: 14px;">5 Contacts</strong></td>
+                <td>4 direct phone calls and 1 email inquiry tapped directly from mobile header and contact sections</td>
+                <td style="text-align: center;"><span class="pill pill-blue">Direct Touch</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 2: GOOGLE SEARCH CONSOLE -->
+      <div class="section-title">2. 🔍 Google Search Console: Branded vs. Non-Branded (Discovery) Search</div>
+      <p style="font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5;">
+        Google Search Console tracks organic searchers entering <em>cleanworxnj.com</em> directly from Google's organic search index. In addition to prominent brand searches, CleanWorx captures valuable discovery searchers across Somerset and Morris counties seeking premium automotive detailing, paint protection, ceramic coatings, and car care services.
+      </p>
+
+      <!-- SEARCH CONSOLE TOTAL RECONCILIATION BAR -->
+      <div style="background: var(--light-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <strong style="color: var(--dark); font-size: 13px;">📊 Total Google Search Console Performance: 181 Clicks (6,531 Impressions)</strong>
+            <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+              Overall Click-Through Rate: <strong>2.77% CTR</strong> (up from 2.62% in Sept) | Average Ranking Position: <strong>16.17</strong> across all organic search queries
+            </div>
+          </div>
+          <span class="pill pill-green">October 2026 Verified Data</span>
+        </div>
+
+        <!-- 3-Way Distribution Strip -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 11.5px;">
+          <div style="background: #ffffff; padding: 10px 12px; border-radius: 6px; border: 1px solid var(--border); border-left: 3px solid var(--primary);">
+            <div style="font-size: 10.5px; color: var(--muted); text-transform: uppercase; font-weight: 700;">🏷️ Branded Clicks</div>
+            <div style="font-size: 18px; font-weight: 800; color: var(--dark); margin: 3px 0 1px;">30 <span style="font-size: 11px; font-weight: 600; color: var(--primary);">(16.6%)</span></div>
+            <div style="font-size: 10.5px; color: var(--muted);">Direct searches for CleanWorx brand</div>
+          </div>
+
+          <div style="background: #ffffff; padding: 10px 12px; border-radius: 6px; border: 1px solid var(--border); border-left: 3px solid var(--blue);">
+            <div style="font-size: 10.5px; color: var(--muted); text-transform: uppercase; font-weight: 700;">🎯 Discovery Clicks</div>
+            <div style="font-size: 18px; font-weight: 800; color: var(--dark); margin: 3px 0 1px;">35 <span style="font-size: 11px; font-weight: 600; color: var(--blue);">(19.3%)</span></div>
+            <div style="font-size: 10.5px; color: var(--muted);">Detailing, ceramic coating & car wash</div>
+          </div>
+
+          <div style="background: #ffffff; padding: 10px 12px; border-radius: 6px; border: 1px solid var(--border); border-left: 3px solid #8b5cf6;">
+            <div style="font-size: 10.5px; color: var(--muted); text-transform: uppercase; font-weight: 700;">🔒 Google Privacy Clicks</div>
+            <div style="font-size: 18px; font-weight: 800; color: var(--dark); margin: 3px 0 1px;">116 <span style="font-size: 11px; font-weight: 600; color: #8b5cf6;">(64.1%)</span></div>
+            <div style="font-size: 10.5px; color: var(--muted);">Withheld by Google for user privacy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branded vs Non-Branded Panels -->
+      <div class="grid-2" style="margin-bottom: 20px;">
+        <!-- Panel A: Branded Searches -->
+        <div class="panel" style="border-top: 3px solid var(--primary); margin-bottom: 0;">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">🏷️ Branded Searches (Direct Brand Recognition)</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Queries containing "CleanWorx" or variations</div>
+            </div>
+            <span class="pill pill-blue">30 Clicks (16.6%)</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-bottom: 14px;">
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Impressions</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--dark);">148</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Avg CTR</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--success);">20.3%</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Avg Position</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--dark);">3.5</div>
+            </div>
+          </div>
+
+          <table style="font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th>Branded Search Query</th>
+                <th style="text-align: right;">Clicks</th>
+                <th style="text-align: right;">Impr.</th>
+                <th style="text-align: right;">CTR</th>
+                <th style="text-align: right;">Pos.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>cleanworx</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">12</td>
+                <td style="text-align: right;">54</td>
+                <td style="text-align: right;">22.2%</td>
+                <td style="text-align: right; font-weight: 700;">5.3</td>
+              </tr>
+              <tr>
+                <td><strong>cleanworx llc</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">9</td>
+                <td style="text-align: right;">28</td>
+                <td style="text-align: right;">32.1%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">1.0</td>
+              </tr>
+              <tr>
+                <td><strong>clean worx</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">4</td>
+                <td style="text-align: right;">24</td>
+                <td style="text-align: right;">16.7%</td>
+                <td style="text-align: right;">19.2</td>
+              </tr>
+              <tr>
+                <td><strong>cleanworx auto detailing & ceramic coating</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">4</td>
+                <td style="text-align: right;">40</td>
+                <td style="text-align: right;">10.0%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">1.4</td>
+              </tr>
+              <tr>
+                <td><strong>clean works</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">1</td>
+                <td style="text-align: right;">2</td>
+                <td style="text-align: right;">50.0%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">1.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Panel B: Non-Branded Discovery Searches -->
+        <div class="panel" style="border-top: 3px solid var(--blue); margin-bottom: 0;">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">🎯 Non-Branded Discovery (New Customer Acquisition)</div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">Commercial & local intent queries</div>
+            </div>
+            <span class="pill pill-blue">35 Clicks (19.3%)</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-bottom: 14px;">
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Impressions</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--dark);">782</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Avg CTR</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--success);">4.48%</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+              <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Avg Position</div>
+              <div style="font-size: 15px; font-weight: 800; color: var(--dark);">9.8</div>
+            </div>
+          </div>
+
+          <table style="font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th>Commercial Search Query</th>
+                <th style="text-align: right;">Clicks</th>
+                <th style="text-align: right;">Impr.</th>
+                <th style="text-align: right;">CTR</th>
+                <th style="text-align: right;">Pos.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>car wash near me</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">6</td>
+                <td style="text-align: right;">131</td>
+                <td style="text-align: right;">4.58%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">2.4</td>
+              </tr>
+              <tr>
+                <td><strong>car wash basking ridge nj</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">3</td>
+                <td style="text-align: right;">20</td>
+                <td style="text-align: right;">15.0%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">1.0</td>
+              </tr>
+              <tr>
+                <td><strong>paint correction near me</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">2</td>
+                <td style="text-align: right;">14</td>
+                <td style="text-align: right;">14.3%</td>
+                <td style="text-align: right;">11.6</td>
+              </tr>
+              <tr>
+                <td><strong>best hand car wash near me</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">1</td>
+                <td style="text-align: right;">1</td>
+                <td style="text-align: right;">100%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">4.0</td>
+              </tr>
+              <tr>
+                <td><strong>car interior detailing near me</strong></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">1</td>
+                <td style="text-align: right;">3</td>
+                <td style="text-align: right;">33.3%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">3.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel C: Top Organic Landing Pages -->
+      <div class="panel" style="margin-bottom: 24px;">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">📄 Top Organic Landing Pages (Where Searchers Entered)</div>
+            <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+              Canonical and localized destination pages capturing Google Organic traffic
+            </div>
+          </div>
+          <span class="pill pill-green">20 Top Indexed URLs</span>
+        </div>
+
+        <div class="table-responsive" style="margin-bottom: 0;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 48%;">Landing Page URL</th>
+                <th style="width: 13%; text-align: right;">Clicks</th>
+                <th style="width: 13%; text-align: right;">Impr.</th>
+                <th style="width: 13%; text-align: right;">CTR</th>
+                <th style="width: 13%; text-align: right;">Avg Pos.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Homepage (GBP Attribution UTM)</strong><br><span style="font-size: 10.5px; color: var(--muted);">/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=website</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">58</td>
+                <td style="text-align: right;">923</td>
+                <td style="text-align: right; font-weight: 600;">6.28%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">5.5</td>
+              </tr>
+              <tr>
+                <td><strong>Homepage (Direct HTTP)</strong><br><span style="font-size: 10.5px; color: var(--muted);">http://www.cleanworxnj.com/</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">38</td>
+                <td style="text-align: right;">641</td>
+                <td style="text-align: right; font-weight: 600;">5.93%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">6.7</td>
+              </tr>
+              <tr>
+                <td><strong>Homepage (Direct HTTPS)</strong><br><span style="font-size: 10.5px; color: var(--muted);">https://www.cleanworxnj.com/</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--primary);">29</td>
+                <td style="text-align: right;">691</td>
+                <td style="text-align: right; font-weight: 600;">4.20%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">7.7</td>
+              </tr>
+              <tr>
+                <td><strong>Woodbridge — Smoke & Smell Removal</strong><br><span style="font-size: 10.5px; color: var(--muted);">/woodbridge-nj-smoke-smell-removal</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">9</td>
+                <td style="text-align: right;">362</td>
+                <td style="text-align: right; font-weight: 600;">2.49%</td>
+                <td style="text-align: right;">16.9</td>
+              </tr>
+              <tr>
+                <td><strong>Edison — Interior Detailing Services</strong><br><span style="font-size: 10.5px; color: var(--muted);">/interior-detailing-edison-nj</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">7</td>
+                <td style="text-align: right;">513</td>
+                <td style="text-align: right; font-weight: 600;">1.36%</td>
+                <td style="text-align: right;">13.3</td>
+              </tr>
+              <tr>
+                <td><strong>Pricing & Package Menu</strong><br><span style="font-size: 10.5px; color: var(--muted);">/pricing</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">4</td>
+                <td style="text-align: right;">116</td>
+                <td style="text-align: right; font-weight: 600;">3.45%</td>
+                <td style="text-align: right; font-weight: 700;">10.3</td>
+              </tr>
+              <tr>
+                <td><strong>Mobile Detailing Service Area Overview</strong><br><span style="font-size: 10.5px; color: var(--muted);">/service-area-mobile-auto-detail-nj</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">4</td>
+                <td style="text-align: right;">567</td>
+                <td style="text-align: right; font-weight: 600;">0.71%</td>
+                <td style="text-align: right;">22.9</td>
+              </tr>
+              <tr>
+                <td><strong>Bridgewater — Full Detailing Services</strong><br><span style="font-size: 10.5px; color: var(--muted);">/bridgewater-nj-full-detailing-services</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">3</td>
+                <td style="text-align: right;">148</td>
+                <td style="text-align: right; font-weight: 600;">2.03%</td>
+                <td style="text-align: right; font-weight: 700; color: var(--success);">9.1</td>
+              </tr>
+              <tr>
+                <td><strong>Edison — Headlight Restoration</strong><br><span style="font-size: 10.5px; color: var(--muted);">/edison-nj-headlight-restoration</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">3</td>
+                <td style="text-align: right;">109</td>
+                <td style="text-align: right; font-weight: 600;">2.75%</td>
+                <td style="text-align: right;">11.1</td>
+              </tr>
+              <tr>
+                <td><strong>Woodbridge — Detailing Questions & FAQ</strong><br><span style="font-size: 10.5px; color: var(--muted);">/woodbridge-nj-detailing-questions</span></td>
+                <td style="text-align: right; font-weight: 700; color: var(--blue);">3</td>
+                <td style="text-align: right;">120</td>
+                <td style="text-align: right; font-weight: 600;">2.50%</td>
+                <td style="text-align: right;">11.2</td>
+              </tr>
+              <tr>
+                <td><strong>Other Local Service Hubs</strong> (Bedminster, Cranford, Westfield, Scotch Plains, etc.)</td>
+                <td style="text-align: right; font-weight: 700;">12</td>
+                <td style="text-align: right;">1,478</td>
+                <td style="text-align: right;">0.81%</td>
+                <td style="text-align: right;">14.8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 3: GA4 MOBILE WEBSITE PERFORMANCE -->
+      <div class="section-title">3. 📱 Mobile Website Conversions & Customer Engagement (GA4 October 2026)</div>
+
+      <!-- Notice Box on Architecture & Measurement -->
+      <div class="notice-box">
+        <div class="notice-title">
+          <strong>Verified Full-Funnel Architecture (Next.js + GA4 + Square Appointments):</strong>
+        </div>
+        <div class="notice-desc">
+          CleanWorx operates a high-performance Next.js application deployed on Hostinger, instrumented with <strong>Google Analytics 4 (Property 558911953)</strong>, custom Formspree quote dispatching, and cross-domain tracking (`_gl`) into <strong>cleanworx-llc.square.site</strong>. In October, the web presence recorded <strong>643 visitor sessions and 505 unique users</strong>, generating <strong>111 booking selector engagements, 88 direct portal clicks, 8 high-ticket Formspree quotes, and 75 server-verified completed appointments</strong>.
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <!-- GA4 Acquisition Channels -->
+        <div class="panel" style="margin-bottom: 0;">
+          <div class="panel-header">
+            <span class="panel-title">Where Customers Came From (Traffic Channels)</span>
+            <span class="pill pill-green">643 Total Sessions</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; line-height: 1.45;">
+            <div style="border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: var(--dark);">1. Organic Search (Google & Bing):</strong>
+                <span style="font-weight: 700; color: var(--primary-dark);">231 sessions (35.9%)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                164 high-intent local searchers seeking detailing and ceramic treatments, maintaining a <strong>62.8% engagement rate</strong> and generating 37 key events.
+              </div>
+            </div>
+            <div style="border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: var(--dark);">2. Direct & Returning Vehicle Owners:</strong>
+                <span style="font-weight: 700; color: var(--slate);">152 sessions (23.6%)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                142 clients navigating directly via saved links, business cards, or word-of-mouth recommendations, driving 13 key events.
+              </div>
+            </div>
+            <div style="border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: var(--dark);">3. Paid Search Campaigns:</strong>
+                <span style="font-weight: 700; color: var(--slate);">111 sessions (17.3%)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                98 targeted searchers from promotional search initiatives, generating 54 engaged sessions and 5 direct booking actions.
+              </div>
+            </div>
+            <div style="border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: var(--dark);">4. Referral & Square Cross-Traffic:</strong>
+                <span style="font-weight: 700; color: var(--slate);">101 sessions (15.7%)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                80 visitors arriving from partner directories and Square Online cross-domain navigation.
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <strong style="color: var(--dark);">5. AI Assistant Recommendations (ChatGPT, Perplexity):</strong>
+                <span style="font-weight: 700; color: var(--blue);">21 sessions (3.3%)</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                19 qualified vehicle owners referred directly by conversational AI engines, with an exceptional <strong>81.0% engagement rate</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy & Conversion Funnels -->
+        <div class="panel" style="margin-bottom: 0; background: var(--light-bg); border-left: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="panel-header" style="border-bottom: 1px solid var(--border);">
+              <span class="panel-title" style="color: var(--primary-dark);">Customer Interest by Website Section</span>
+            </div>
+            <div style="font-size: 12px; color: var(--slate); line-height: 1.55; margin-bottom: 12px;">
+              Visitors engaged heavily with core commercial service packages and booking pathways:
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px; font-size: 11.5px;">
+              <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border);">
+                <span><strong>Homepage (/)</strong> — Service Showcase & Quick Booking</span>
+                <span style="font-weight: 700; color: var(--dark);">400 sess. (650 views)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border);">
+                <span><strong>Pricing & Menu (/pricing)</strong> — Detailed Package Tiers</span>
+                <span style="font-weight: 700; color: var(--dark);">16 sess. (31 views)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border);">
+                <span><strong>Window Tinting (/window-tinting)</strong> — Heat & UV Rejection</span>
+                <span style="font-weight: 700; color: var(--dark);">14 sess. (28 views)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border);">
+                <span><strong>Ceramic Coating (/ceramic-coating)</strong> — System X Coatings</span>
+                <span style="font-weight: 700; color: var(--dark);">12 sess. (24 views)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+                <span><strong>Local City Hubs</strong> (Bridgewater, Bernardsville, Edison, etc.)</span>
+                <span style="font-weight: 700; color: var(--dark);">45 sess. (89 views)</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 14px; padding: 10px 14px; background: #ffffff; border-radius: 6px; border: 1px solid var(--border); font-size: 11.5px; color: var(--primary-dark); font-weight: 600;">
+            ✓ Overall Engagement Rate: 46.81% across 301 engaged sessions and 1,138 page views.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: FUNNEL CHART: VERIFIED KEY EVENTS & CONVERSION ACTIONS -->
+      <div class="panel" style="margin-bottom: 24px; padding: 24px 28px;">
+        <div class="panel-header" style="margin-bottom: 20px;">
+          <div>
+            <div class="panel-title" style="font-size: 15px; display: flex; align-items: center; gap: 8px;">
+              <span>🔻</span> Verified Conversion Funnel & Key Events (GA4 + Square Appointments)
+            </div>
+            <div style="font-size: 11.5px; color: var(--muted); margin-top: 3px;">
+              Step-by-step customer journey from initial website session to confirmed automotive detailing appointments
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span class="pill pill-blue">October 2026</span>
+            <span class="pill pill-gold">144 Key Events Total</span>
+          </div>
+        </div>
+
+        <!-- FUNNEL VISUALIZATION -->
+        <div class="funnel-container">
+          <!-- Stage 1: Inbound Traffic & Discovery -->
+          <div class="funnel-step-wrap">
+            <div class="funnel-stage stage-1">
+              <div class="funnel-stage-left">
+                <span class="funnel-badge">Stage 1 • Top of Funnel</span>
+                <div class="funnel-title">
+                  <strong>Total Website Sessions & Service Discovery</strong>
+                  <code>session_start / page_view</code>
+                </div>
+                <div class="funnel-desc">
+                  Qualified visitors arriving via Google Organic (35.9%), Direct (23.6%), Paid Search (17.3%), and Referral (15.7%) to explore packages.
+                </div>
+              </div>
+              <div class="funnel-stage-right">
+                <div class="funnel-metric">643 <span class="funnel-metric-unit">Sessions</span></div>
+                <div class="funnel-submetric">505 Unique Users • 1,138 Page Views</div>
+                <div class="funnel-rate-badge rate-100">100% Traffic Baseline</div>
+              </div>
+            </div>
+            <div class="funnel-connector">
+              <div class="connector-line"></div>
+              <div class="connector-pill">
+                <span>↓ 13.7% click-through to booking portal (88 clicks / 643 sessions)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 2: Booking Intent & Portal Handoff -->
+          <div class="funnel-step-wrap">
+            <div class="funnel-stage stage-2">
+              <div class="funnel-stage-left">
+                <span class="funnel-badge">Stage 2 • Booking Intent</span>
+                <div class="funnel-title">
+                  <strong>Booking Portal Outbound Clicks</strong>
+                  <code>booking_click</code>
+                </div>
+                <div class="funnel-desc">
+                  Prospective clients clicking primary "Book Online", pricing tables, and service package CTAs to open Square Appointments.
+                </div>
+              </div>
+              <div class="funnel-stage-right">
+                <div class="funnel-metric">88 <span class="funnel-metric-unit">Clicks</span></div>
+                <div class="funnel-submetric">66 Unique Prospective Clients</div>
+                <div class="funnel-rate-badge rate-mid">13.7% Traffic Intent</div>
+              </div>
+            </div>
+            <div class="funnel-connector">
+              <div class="connector-line"></div>
+              <div class="connector-pill">
+                <span>↓ 92.4% user progression (61 of 66 users actively selected a package)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 3: Appointment Flow Initiated -->
+          <div class="funnel-step-wrap">
+            <div class="funnel-stage stage-3">
+              <div class="funnel-stage-left">
+                <span class="funnel-badge">Stage 3 • Package Selection</span>
+                <div class="funnel-title">
+                  <strong>Square Online Flow Started</strong>
+                  <code>book_appointment</code>
+                </div>
+                <div class="funnel-desc">
+                  Clients actively browsing available dates, vehicle sizes, and service packages on <em>cleanworx-llc.square.site</em>.
+                </div>
+              </div>
+              <div class="funnel-stage-right">
+                <div class="funnel-metric">111 <span class="funnel-metric-unit">Flow Starts</span></div>
+                <div class="funnel-submetric">61 Unique High-Intent Customers</div>
+                <div class="funnel-rate-badge rate-high">92.4% User Retention</div>
+              </div>
+            </div>
+            <div class="funnel-connector">
+              <div class="connector-line"></div>
+              <div class="connector-pill success-connector">
+                <span>↓ 67.6% final booking completion rate (75 completed / 111 flow starts)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 4: Confirmed & Accepted Bookings -->
+          <div class="funnel-step-wrap">
+            <div class="funnel-stage stage-4">
+              <div class="funnel-stage-left">
+                <span class="funnel-badge success-badge">Stage 4 • Final Conversion</span>
+                <div class="funnel-title" style="color: #15803d;">
+                  <strong>Confirmed & Accepted Appointments</strong>
+                  <code style="background: #dcfce7; color: #166534;">booking_completed</code>
+                </div>
+                <div class="funnel-desc">
+                  Real client appointments confirmed and accepted in Square Appointments, verified via server webhook into GA4.
+                </div>
+              </div>
+              <div class="funnel-stage-right">
+                <div class="funnel-metric" style="color: #15803d;">75 <span class="funnel-metric-unit">Bookings</span></div>
+                <div class="funnel-submetric" style="color: #166534;">Verified High-Ticket Revenue Events</div>
+                <div class="funnel-rate-badge rate-success">67.6% Flow Conversion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLEMENTARY CONVERSION PATHWAYS & SUMMARY -->
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+          <!-- Channel A: Custom Form Leads -->
+          <div style="background: var(--light-bg); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: 8px; padding: 12px 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase;">High-Ticket Quotes</span>
+              <span class="pill pill-gold">8 Leads</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 2px;">
+              <code>generate_lead</code>: 8 Forms
+            </div>
+            <div style="font-size: 11px; color: var(--slate); line-height: 1.4;">
+              Detailed inquiries via Formspree specifying vehicle paint correction and ceramic packages.
+            </div>
+          </div>
+
+          <!-- Channel B: Direct Phone & Email Clicks -->
+          <div style="background: var(--light-bg); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 8px; padding: 12px 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase;">Direct Contact Clicks</span>
+              <span class="pill pill-blue">5 Contacts</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 2px;">
+              <code>click_call</code>: 4 | <code>click_email</code>: 1
+            </div>
+            <div style="font-size: 11px; color: var(--slate); line-height: 1.4;">
+              Immediate customer touchpoints tapped on mobile headers for rapid scheduling.
+            </div>
+          </div>
+
+          <!-- Channel C: Net Funnel Performance -->
+          <div style="background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); border: 1px solid #bbf7d0; border-left: 3px solid var(--success); border-radius: 8px; padding: 12px 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: #166534; text-transform: uppercase;">Funnel Health</span>
+              <span class="pill pill-green">High Efficiency</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 800; color: #15803d; margin-bottom: 2px;">
+              11.7% End-to-End Rate
+            </div>
+            <div style="font-size: 11px; color: var(--slate); line-height: 1.4;">
+              <strong>75 bookings + 8 leads + 5 calls = 88 customer actions</strong> from 643 web sessions (plus 44 direct GBP calls).
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: GOOGLE BUSINESS PROFILE & REPUTATION -->
+      <div class="section-title">4. 📍 Google Business Profile & Online Reputation (October 2026)</div>
+
+      <!-- PROMINENT REVIEWS SCORECARD -->
+      <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #ffffff; border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #38bdf8; font-weight: 700; margin-bottom: 4px;">
+              ⭐ Online Reputation & Social Proof
+            </div>
+            <div style="font-size: 26px; font-weight: 800; color: #ffffff; display: flex; align-items: baseline; gap: 10px;">
+              +10 Reviews Added in October
+              <span style="font-size: 13px; font-weight: 600; color: #cbd5e1;">(vs. 8 in September • 230 Cumulative)</span>
+            </div>
+            <div style="font-size: 12px; color: #cbd5e1; margin-top: 4px;">
+              Accelerating review momentum from 220 to 230 verified reviews (231 currently), maintaining an unbroken 5.0 ★ rating with 100% positive customer sentiment.
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div style="text-align: center; background: rgba(255, 255, 255, 0.06); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 10px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">October Reviews</div>
+              <div style="font-size: 22px; font-weight: 800; color: #ffffff;">+10 <span style="font-size: 11px; font-weight: 500; color: #cbd5e1;">(vs 8 Sept)</span></div>
+            </div>
+            <div style="text-align: center; background: rgba(255, 255, 255, 0.06); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 10px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Total Reviews</div>
+              <div style="font-size: 22px; font-weight: 800; color: #ffffff;">230</div>
+            </div>
+            <div style="text-align: center; background: rgba(255, 255, 255, 0.06); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 10px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Average Rating</div>
+              <div style="font-size: 22px; font-weight: 800; color: #fbbf24;">5.0 ★</div>
+            </div>
+            <div style="text-align: center; background: rgba(34, 197, 94, 0.15); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(34, 197, 94, 0.3);">
+              <div style="font-size: 10px; text-transform: uppercase; color: #86efac; font-weight: 700;">Customer Sentiment</div>
+              <div style="font-size: 22px; font-weight: 800; color: #86efac;">100% Pos.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Velocity & Sentiment Narrative -->
+        <div style="margin-top: 14px; padding: 10px 14px; background: rgba(56, 189, 248, 0.08); border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.2); font-size: 11.5px; color: #cbd5e1; line-height: 1.5;">
+          <strong style="color: #38bdf8;">📈 Monthly Review Velocity Analysis:</strong> During October, CleanWorx gained <strong>+10 verified 5-star customer reviews</strong> (advancing from 220 to 230 total reviews), accelerating above the <strong>8 reviews earned in September</strong>. The business maintains an unbroken 5.0 ★ rating across all 230 verified reviews with zero negative or neutral ratings (100% positive sentiment), reinforcing the prominent authority required to sustain dominant #1 rankings in Google's Local 3-Pack.
+        </div>
+
+        <!-- Standout Review Quotes Grid -->
+        <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #38bdf8;">
+            <div style="font-size: 11px; font-weight: 700; color: #38bdf8; margin-bottom: 3px;">✨ Quality & Craftsmanship — David</div>
+            <p style="font-size: 11px; color: #e2e8f0; font-style: italic; margin: 0; line-height: 1.45;">
+              "These gents are absolutely amazing… the price was fantastic and the job they did was excellent."
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #4ade80;">
+            <div style="font-size: 11px; font-weight: 700; color: #4ade80; margin-bottom: 3px;">⭐ Flawless Experience — Yuval W. (Local Guide)</div>
+            <p style="font-size: 11px; color: #e2e8f0; font-style: italic; margin: 0; line-height: 1.45;">
+              "The service was absolutely excellent from start to finish… We highly recommend CleanWorx."
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #fbbf24;">
+            <div style="font-size: 11px; font-weight: 700; color: #fbbf24; margin-bottom: 3px;">🚗 Showroom Results — Megan G.</div>
+            <p style="font-size: 11px; color: #e2e8f0; font-style: italic; margin: 0; line-height: 1.45;">
+              "Left my car looking as good as new! Extremely impressed with how spotless the interior was from the full detail."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GBP VERIFICATION CHARTS: CALLS, WEBSITES, CHATS -->
+      <div class="grid-3" style="margin-bottom: 24px;">
+        <!-- Chart 1: Calls -->
+        <div class="chart-proof-card">
+          <div class="chart-proof-header">
+            <span>📞 Customer Phone Calls (GBP)</span>
+            <span class="pill pill-green">44 Calls in Oct</span>
+          </div>
+          <div class="chart-proof-img" onclick="openModal('./report-assets/gbp-calls-october-2026.png')">
+            <img src="./report-assets/gbp-calls-october-2026.png" alt="GBP Phone Calls October 2026">
+          </div>
+          <div class="chart-proof-meta">
+            <strong>6-Month Record Peak:</strong> Phone calls spiked to <strong>44 in October</strong> (up from 32 in Sept, 36 in Aug, 35 in Jul, 38 in Jun), representing a <strong>+37.5% increase</strong> and bringing cumulative calls to 193.
+          </div>
+        </div>
+
+        <!-- Chart 2: Website Clicks -->
+        <div class="chart-proof-card">
+          <div class="chart-proof-header">
+            <span>🌐 Profile to Website Clicks</span>
+            <span class="pill pill-blue">188 Clicks in Oct</span>
+          </div>
+          <div class="chart-proof-img" onclick="openModal('./report-assets/gbp-website-clicks-october-2026.png')">
+            <img src="./report-assets/gbp-website-clicks-october-2026.png" alt="GBP Website Clicks October 2026">
+          </div>
+          <div class="chart-proof-meta">
+            <strong>All-Time High Traffic:</strong> Website clicks reached <strong>188 in October</strong> (up from 135 in Sept, 152 in Aug, 145 in Jul, 165 in Jun), delivering a <strong>+39.3% month-over-month surge</strong> and 871 total clicks.
+          </div>
+        </div>
+
+        <!-- Chart 3: Chat Clicks -->
+        <div class="chart-proof-card">
+          <div class="chart-proof-header">
+            <span>💬 In-App Customer Messages</span>
+            <span class="pill pill-green">7 Chats in Oct</span>
+          </div>
+          <div class="chart-proof-img" onclick="openModal('./report-assets/gbp-chat-clicks-october-2026.png')">
+            <img src="./report-assets/gbp-chat-clicks-october-2026.png" alt="GBP Chat Clicks October 2026">
+          </div>
+          <div class="chart-proof-meta">
+            <strong>Record Direct Consultations:</strong> Chat interactions peaked at <strong>7 customer conversations</strong> in October (up from 6 in Sept, 1 in Aug, 2 in Jul), driving rapid quote conversions.
+          </div>
+        </div>
+      </div>
+
+      <!-- ONGOING OPERATING CADENCE NOTICE -->
+      <div style="background: var(--light-bg); border: 1px solid var(--border); border-left: 4px solid var(--success); border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
+        <div style="font-size: 12.5px; font-weight: 700; color: var(--dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--success);">🛡️</span> Active Profile Management & Growth Discipline
+        </div>
+        <div style="font-size: 11.8px; color: var(--slate); line-height: 1.5;">
+          Throughout October and November, our team executes continuous profile hygiene: <strong>weekly high-resolution photography uploads</strong> displaying real vehicle transformations, <strong>weekly promotional and educational Google posts</strong> spotlighting ceramic coating benefits and seasonal paint protection, and <strong>prompt, professional responses to 100% of incoming customer reviews</strong>.
+        </div>
+      </div>
+
+      <!-- SECTION 5: GEO-GRID LOCAL 3-PACK RANKINGS -->
+      <div class="section-title">5. 🗺️ Local 3-Pack Geo-Grid Rankings (Local Map Footprint)</div>
+      <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
+        Local Falcon geo-grid tracking measures exact ranking positions across Google's critical <strong>Local 3-Pack</strong> and Google Maps from multiple physical coordinates surrounding the 19 E. Henry Street studio. Green pins indicate #1, #2, and #3 rankings where CleanWorx appears directly in front of nearby vehicle owners.
+      </p>
+
+      <!-- HERO GEOGRID CARD 1: CERAMIC COATING -->
+      <div class="geogrid-card" style="border-top: 4px solid var(--primary); margin-bottom: 24px;">
+        <div class="geogrid-header">
+          <div class="geogrid-title">
+            <span style="color: var(--primary);">⭐ Flagship Ranking:</span> "ceramic coating near me" (5-Mile Local 3-Pack Grid)
+          </div>
+          <span class="pill pill-green">Dominant #1 Grid Saturation (14 Sep vs 17 Nov)</span>
+        </div>
+        <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-ceramic-coating-near-me.png')">
+          <img src="./report-assets/geogrid-ceramic-coating-near-me.png" alt="Geo-grid comparison for ceramic coating near me Local 3-Pack">
+        </div>
+        <div class="geogrid-caption">
+          <strong>High-Ticket Dominance:</strong> CleanWorx completely dominates high-ticket ceramic coating queries across Basking Ridge, Bernardsville, Bedminster, and Liberty Corner. Comparing September 14 to November 17, <strong>virtually the entire 5-mile operating radius has transformed into solid Rank #1 positions</strong>, securing the most lucrative service searches in the luxury Somerset Hills market.
+        </div>
+      </div>
+
+      <!-- 2-Card Grid: Car Waxing & Car Detailing -->
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <!-- Card 2: Car Waxing -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "car waxing" (6.2-Mile Grid)
+            </div>
+            <span class="pill pill-green">Massive Green Expansion</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-car-waxing.png')">
+            <img src="./report-assets/geogrid-car-waxing.png" alt="Geo-grid car waxing Local 3-Pack">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Sweeping Map Reach:</strong> CleanWorx achieved a dramatic geographic expansion from September to November, converting outer perimeter red coordinates across northern and eastern corridors into <strong>solid Rank #1 and #2 positions</strong>.
+          </div>
+        </div>
+
+        <!-- Card 3: Car Detailing Near Me -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "car detailing near me" (10-Mile Grid)
+            </div>
+            <span class="pill pill-green">12+ Top-3 Pins Across 10 Miles</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-car-detailing-near-me.png')">
+            <img src="./report-assets/geogrid-car-detailing-near-me.png" alt="Geo-grid car detailing near me Local 3-Pack">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Broad Regional Footprint:</strong> Visibility across a large 10-mile radius expanded from 7 central pins to <strong>12+ green Local 3-Pack pins (#1, #2, #3)</strong>, capturing vehicle owners commuting along I-287 and Route 202.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-Card Grid: Auto Detailing & Window Tinting -->
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <!-- Card 4: Auto Detailing Near Me -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "auto detailing near me" (6-Mile Grid)
+            </div>
+            <span class="pill pill-green">23 Top-3 Pins • Center Red Eliminated</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-auto-detailing-near-me.png')">
+            <img src="./report-assets/geogrid-auto-detailing-near-me.png" alt="Geo-grid auto detailing near me Local 3-Pack">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Core Monopolization:</strong> The central drop-off coordinate from September has been completely resolved. The studio's immediate radius now commands <strong>pure #1 rankings across 4 core quadrants</strong> with 23 green pins overall.
+          </div>
+        </div>
+
+        <!-- Card 5: Tint Car Windows Near Me -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "tint car windows near me" (10-Mile Grid)
+            </div>
+            <span class="pill pill-blue">Breakthrough Service Ranking Growth</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-tint-car-windows-near-me.png')">
+            <img src="./report-assets/geogrid-tint-car-windows-near-me.png" alt="Geo-grid tint car windows near me Google Maps">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Major Momentum:</strong> On October 1, the grid was entirely red with only 1 isolated green pin. By November 17, CleanWorx established a <strong>firm #1, #1, #3 core presence</strong>, with peripheral ranks advancing from 20+ to positions 8 through 14.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-Card Grid: Headlight Restoration & Car Wash -->
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <!-- Card 6: Headlight Restoration -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "headlight restoration near me" (5.1-Mile Grid)
+            </div>
+            <span class="pill pill-green">Rock-Solid #1 & #2 Positions</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-headlight-restoration-near-me.png')">
+            <img src="./report-assets/geogrid-headlight-restoration-near-me.png" alt="Geo-grid headlight restoration near me Google Maps">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Add-On Service Dominance:</strong> CleanWorx holds uninterrupted <strong>Rank #1 and #2 positions</strong> across Basking Ridge, Bernardsville, and Bedminster, driving lucrative optical clarity add-on packages.
+          </div>
+        </div>
+
+        <!-- Card 7: Car Wash Near Me -->
+        <div class="geogrid-card">
+          <div class="geogrid-header">
+            <div class="geogrid-title">
+              "CAR WASH NEAR ME" (6-Mile Grid)
+            </div>
+            <span class="pill pill-green">Holding Core Top-3 vs. Automated Tunnels</span>
+          </div>
+          <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-car-wash-near-me.png')">
+            <img src="./report-assets/geogrid-car-wash-near-me.png" alt="Geo-grid car wash near me Google Maps">
+          </div>
+          <div class="geogrid-caption">
+            <strong>Hand-Wash Positioning:</strong> CleanWorx effectively defends core <strong>Rank #1 and #2 positions</strong> against high-volume automated tunnel car washes, attracting discerning clients seeking swirl-free hand washes.
+          </div>
+        </div>
+      </div>
+
+      <!-- STRATEGY TAKEAWAY: MONETIZING #1 LOCAL RANKINGS -->
+      <div style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border: 1px solid #bae6fd; border-left: 5px solid var(--primary); border-radius: 10px; padding: 20px 24px; margin-top: 10px; margin-bottom: 24px;">
+        <div style="font-size: 14px; font-weight: 800; color: #0369a1; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <span>📈 Strategy Takeaway: Monetizing #1 Local Rankings into High-Ticket Service Revenue</span>
+        </div>
+        <p style="font-size: 12.5px; color: var(--slate); line-height: 1.55; margin: 0;">
+          Holding <strong>pure #1 rankings across Basking Ridge, Bedminster, and Bernardsville for "ceramic coating near me"</strong> combined with <strong>44 monthly phone calls and 188 website visits</strong> positions CleanWorx perfectly to capture premium vehicle owners seeking seasonal winter paint protection, road salt defense, and interior restoration. Connecting these top map rankings directly to the Square Appointments engine and the new 10-product GBP catalog creates an automated, frictionless booking pipeline for high-ticket services ($325–$1,099+).
+        </p>
+      </div>
+
+    </div><!-- /content -->
+
+    <!-- SECTION 6: STRATEGIC OPERATIONS & GROWTH DEPLOYMENTS -->
+    <div class="tasks-page-section">
+      <div class="tasks-header">
+        <div class="tasks-title-group">
+          <h2>
+            <span style="color: #38bdf8;">⚡</span> 6. Operational Tasks & Marketing Deployments (Bonsai)
+          </h2>
+          <p>Completed deliverables, GBP optimization, and technical enhancements tracked via <strong>Bonsai</strong> (30/10 – 17/11)</p>
+        </div>
+        <span class="tasks-badge">15 Deliverables Deployed</span>
+      </div>
+
+      <!-- FEATURED SECTION: TOP 4 STRATEGIC MILESTONES -->
+      <div class="featured-tasks-section">
+        <div class="featured-tasks-header">
+          <div class="featured-tasks-title">
+            🌟 Four Key Strategic Deliverables Deployed Since October 30, 2026
+          </div>
+          <div class="featured-tasks-subtitle">
+            High-impact optimizations deployed to maximize local map dominance, service monetization, and booking conversions
+          </div>
+        </div>
+
+        <div class="featured-tasks-grid">
+          <!-- Milestone 1: 10-Product GBP Catalog -->
+          <div class="featured-task-card">
+            <div>
+              <div class="featured-card-top">
+                <span class="featured-pillar-badge">GBP Product Monetization</span>
+                <span class="featured-effort-badge">TSK-02205</span>
+              </div>
+              <div class="featured-card-title">Integrated 10 High-Intent Products in Google Business Profile</div>
+              <div class="featured-card-desc">
+                Structured and published 10 core service products in Google Business Profile (Ceramic Coating, Paint Correction, Full Detailing, Window Tinting, Headlight Restoration, Smoke & Odor Removal, etc.) with transparent pricing ($150–$1,099+), high-resolution media, and dedicated UTM tracking URLs.
+              </div>
+            </div>
+            <div class="featured-card-impact">
+              <strong>Impact:</strong> Turns passive Google Maps browsers into paying customers by showcasing exact packages and prices directly on the profile card before they even visit the website.
+            </div>
+          </div>
+
+          <!-- Milestone 2: City Pages & Real Proof -->
+          <div class="featured-task-card">
+            <div>
+              <div class="featured-card-top">
+                <span class="featured-pillar-badge">Local Search Authority</span>
+                <span class="featured-effort-badge">TSK-01990 & TSK-01993</span>
+              </div>
+              <div class="featured-card-title">Published Bernardsville City Page & Enriched Bridgewater Case Studies</div>
+              <div class="featured-card-desc">
+                Deployed a dedicated local city landing page for Bernardsville with rich local schema and service proof, and enriched the Bridgewater service hub with real customer case studies and high-resolution vehicle imagery (Ford F-150 interior and Ferrari exterior details).
+              </div>
+            </div>
+            <div class="featured-card-impact">
+              <strong>Impact:</strong> Expands CleanWorx's organic indexation footprint into high-income adjacent municipalities, capturing localized long-tail searches outside of Basking Ridge proper.
+            </div>
+          </div>
+
+          <!-- Milestone 3: GBP Service Catalog Optimization -->
+          <div class="featured-task-card">
+            <div>
+              <div class="featured-card-top">
+                <span class="featured-pillar-badge">Google Profile Architecture</span>
+                <span class="featured-effort-badge">TSK-01948 & TSK-01980–89</span>
+              </div>
+              <div class="featured-card-title">Complete GBP Service Architecture Audit & Price Structuring</div>
+              <div class="featured-card-desc">
+                Audited and depurated duplicate service items in Google Business Profile, added missing core packages (System X Ceramic, Paint Correction, Window Tinting), standardized "From" pricing options, and rewrote descriptions with high-intent localized search terms.
+              </div>
+            </div>
+            <div class="featured-card-impact">
+              <strong>Impact:</strong> Prevents keyword cannibalization, strengthens semantic relevance for Google AI matching, and ensures vehicle owners see transparent starting rates immediately.
+            </div>
+          </div>
+
+          <!-- Milestone 4: Apple Maps & Bing Places -->
+          <div class="featured-task-card">
+            <div>
+              <div class="featured-card-top">
+                <span class="featured-pillar-badge">Multi-Platform Local Reach</span>
+                <span class="featured-effort-badge">TSK-01613 & TSK-01614</span>
+              </div>
+              <div class="featured-card-title">Synchronized Apple Business Connect & Bing Places for Business</div>
+              <div class="featured-card-desc">
+                Claimed, verified, and synchronized official business information, operating hours, studio address, and high-resolution media across Apple Maps (Apple Business Connect) and Microsoft Bing Places.
+              </div>
+            </div>
+            <div class="featured-card-impact">
+              <strong>Impact:</strong> Secures turn-by-turn navigation traffic from Apple CarPlay, iPhone Siri searchers, and Microsoft Copilot, ensuring 100% NAP consistency across external ecosystem platforms.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAILED LEDGER HEADER -->
+      <div style="margin: 24px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <h3 style="font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: -0.2px;">
+          Completed Work Log: 15 Deliverables Deployed (Oct 30 – Nov 17, 2026)
+        </h3>
+        <span style="font-size: 11px; color: #94a3b8;">All 15 Items Verified Live in Production & Tracked via Bonsai</span>
+      </div>
+
+      <!-- Detailed Tasks Grid: 2 Columns -->
+      <div class="tasks-grid">
+        <!-- Column 1: Website Engineering, Local City Hubs & Conversion -->
+        <div>
+          <div class="task-col-header">1. 💻 Website Engineering, City Hubs & Conversion</div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Published Bernardsville City Landing Page [TSK-01990]</span>
+            </div>
+            <div class="task-item-desc">
+              Built and published dedicated local landing page for Bernardsville featuring service pricing, localized schema markup, and studio proximity signals.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Added Real Vehicle Proof to Bridgewater Page [TSK-01993]</span>
+            </div>
+            <div class="task-item-desc">
+              Uploaded and optimized high-resolution interior/exterior photography and real case studies (Ford F-150 and Ferrari) on the Bridgewater service page.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Identified Missing High-Resolution Media Assets [TSK-01623]</span>
+            </div>
+            <div class="task-item-desc">
+              Audited existing asset library to isolate priority photo and video requirements for ceramic coating application, paint correction, and window tinting.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Uploaded Real Client Vehicle Photography [TSK-01618]</span>
+            </div>
+            <div class="task-item-desc">
+              Added authenticated showroom and mobile detailing photography showing recent high-end client vehicles to strengthen conversion credibility.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Verified Cross-Domain Tracking with Square Online</span>
+            </div>
+            <div class="task-item-desc">
+              Confirmed Google Tag measurement preservation (`_gl`) transferring user sessions smoothly from <em>cleanworxnj.com</em> to Square Online booking.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Validated Formspree `generate_lead` Event Dispatch</span>
+            </div>
+            <div class="task-item-desc">
+              Tested and confirmed that custom quote form submissions strictly trigger `generate_lead` with vehicle and service interest only upon successful 200 HTTP response.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Monthly Traffic & Customer Conversion Audit</span>
+            </div>
+            <div class="task-item-desc">
+              Audited October GA4 analytics and Search Console, verifying 643 site sessions, 181 organic search clicks, and 75 completed client bookings.
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Google Business Profile, Architecture & Directories -->
+        <div>
+          <div class="task-col-header">2. 📍 Google Business Profile, Products & Maps</div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>10-Product GBP Catalog Architecture [TSK-02205]</span>
+            </div>
+            <div class="task-item-desc">
+              Created detailed specifications, pricing, imagery, and UTM parameters for 10 core products for Google Business Profile and Merchant Center integration.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Configured Transparent Pricing in GBP Catalog [TSK-01989]</span>
+            </div>
+            <div class="task-item-desc">
+              Added exact numeric pricing and package starting rates across all detailing, ceramic, and tinting products within Google Profile.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Audited Service Pricing & "From" Options [TSK-01985]</span>
+            </div>
+            <div class="task-item-desc">
+              Reviewed all service catalog entries to verify that variable package tiers properly utilize the "From" starting rate format.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Audited Catalog Service Availability [TSK-01984]</span>
+            </div>
+            <div class="task-item-desc">
+              Cross-checked Google profile service listings against active Square Appointments booking items to ensure zero mismatched or unavailable services.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Added Missing Packages to Google Profile [TSK-01983]</span>
+            </div>
+            <div class="task-item-desc">
+              Expanded profile listings to include System X Ceramic Coating tiers, multi-stage paint correction, and vehicle window tinting packages.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Optimized Service Names & SEO Descriptions [TSK-01982]</span>
+            </div>
+            <div class="task-item-desc">
+              Enriched all service titles and copy with localized high-intent keywords like "Ceramic Coating Basking Ridge" and "Paint Correction Somerset County".
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Depurated Redundant & Clashing Services [TSK-01981 & TSK-01948]</span>
+            </div>
+            <div class="task-item-desc">
+              Consolidated fragmented custom services into clean, structured categories to prevent internal keyword cannibalization in Google Maps.
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-item-title">
+              <span class="task-check">✓</span>
+              <span>Synchronized Apple Business Connect & Bing Places [TSK-01613–14]</span>
+            </div>
+            <div class="task-item-desc">
+              Completed official business verification on Apple Maps and Microsoft Bing Places, synchronizing studio hours, address, and media assets.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVE WEEKLY OPERATING CADENCE & ROADMAP -->
+      <div style="margin-top: 24px; padding: 18px 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid #334155; border-radius: 8px;">
+        <div style="font-size: 13px; font-weight: 700; color: #38bdf8; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+          🔄 Ongoing Weekly Operating Cadence & Strategic Roadmap
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 11.5px; line-height: 1.5;">
+          <div>
+            <strong style="color: #ffffff;">Active Weekly Operating Disciplines:</strong>
+            <ul style="margin-top: 4px; padding-left: 18px; color: #cbd5e1;">
+              <li><strong>Weekly Google Posts:</strong> Publishing educational and promotional posts highlighting ceramic coating protection and detailing tips.</li>
+              <li><strong>Weekly Media Uploads:</strong> Adding fresh high-resolution photos of client cars, paint reflections, and interior transformations.</li>
+              <li><strong>100% Review Management:</strong> Prompt, customized responses to every incoming review to reinforce local ranking trust signals.</li>
+            </ul>
+          </div>
+          <div>
+            <strong style="color: #ffffff;">Next Month Priority Milestones:</strong>
+            <ul style="margin-top: 4px; padding-left: 18px; color: #cbd5e1;">
+              <li><strong>Warren City Landing Page [TSK-01992]:</strong> Deploy localized page targeting high-income vehicle owners in Warren Township.</li>
+              <li><strong>Regional City Expansion [TSK-01942]:</strong> Build service hubs for Long Hill, Berkeley Heights, and New Providence.</li>
+              <li><strong>Redirect & Indexation Audit [TSK-01900–02]:</strong> Continuous monitoring of 143 legacy 301 redirects on Hostinger to ensure zero link equity loss.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tasks-footer-bar">
+        <div>
+          <strong>CleanWorx Auto Detailing & Ceramic Coating</strong> • Operations & Marketing Work Log
+        </div>
+        <div>
+          <span>15 Deliverables Deployed • Verified Live via Bonsai</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GENERAL FOOTER -->
+    <div class="footer">
+      <div>
+        Monthly Performance Report prepared for <strong>CleanWorx Auto Detailing & Ceramic Coating</strong>
+      </div>
+      <div>
+        Period: <strong>October 2026</strong> • Basking Ridge, NJ • Developed by <strong>iSearch Digital</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL FOR IMAGE ZOOM -->
+  <div id="imageModal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Expanded View">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('imageModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
+"""
+
+dest_file = r'c:\Users\Albin Rodriguez\Documents\CleanWorx\REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html'
+with open(dest_file, 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("Successfully written HTML report to:", dest_file)
+print("Size:", os.path.getsize(dest_file), "bytes")
