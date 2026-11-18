@@ -996,7 +996,7 @@ html_code = """<!DOCTYPE html>
       <div class="meta-box">
         <div class="meta-badge">Performance Report: October 2026</div>
         <div class="meta-location">Primary Markets: Basking Ridge, Bernardsville, Bridgewater & Somerset/Morris, NJ</div>
-        <div class="meta-agency">Developed by <strong>iSearch Digital</strong> • Strategic Growth Engine</div>
+        <div class="meta-agency">Developed by <strong>iSearch Digital</strong> • Marketing & Performance Reporting</div>
       </div>
     </div>
 
@@ -1020,19 +1020,32 @@ html_code = """<!DOCTYPE html>
           <span class="kpi-delta">+17.5% Organic Click Growth</span>
         </div>
 
-        <!-- Card 2: GBP Direct Calls -->
+        <!-- Card 2: Customer Phone Inquiries (GBP + Web) -->
         <div class="kpi-card success">
           <div>
             <div class="kpi-header">
-              <span>Google Maps Phone Calls</span>
-              <span class="pill pill-green">GBP</span>
+              <span>Customer Phone Inquiries</span>
+              <div style="display: flex; gap: 4px;">
+                <span class="pill pill-green">GBP</span>
+                <span class="pill pill-blue">Web</span>
+              </div>
             </div>
-            <div class="kpi-number">44</div>
+            <div class="kpi-number">48 <span class="kpi-number-sub">(44 Maps + 4 Web)</span></div>
             <div class="kpi-sub">
-              Calls placed directly from Google Maps in October (up from 32 in September).
+              <strong>44 calls</strong> placed via Google Maps (+37.5% vs. Sept) plus <strong>4 direct calls</strong> initiated from the website <em>(from Oct 13)</em>.
+            </div>
+            <div style="margin-top: 6px; padding-top: 5px; border-top: 1px dashed var(--border);">
+              <div class="kpi-breakdown-row">
+                <span>📍 Google Maps (GBP):</span>
+                <strong>44 calls <span style="color: var(--success); font-weight: 700;">(+37.5%)</span></strong>
+              </div>
+              <div class="kpi-breakdown-row">
+                <span>🌐 Website (click-to-call):</span>
+                <strong>4 calls <span style="font-size: 10px; color: var(--muted); font-weight: 500;">(from Oct 13)</span></strong>
+              </div>
             </div>
           </div>
-          <span class="kpi-delta">+37.5% Direct Phone Inquiries</span>
+          <span class="kpi-delta">+37.5% Maps Growth • 48 Total Calls</span>
         </div>
 
         <!-- Card 3: GBP Website Visits -->
@@ -1047,7 +1060,7 @@ html_code = """<!DOCTYPE html>
               High-intent local map searchers navigating straight to the website (up from 135).
             </div>
           </div>
-          <span class="kpi-delta">+39.3% Local Referral Surge</span>
+          <span class="kpi-delta">+39.3% Maps Website Clicks</span>
         </div>
 
         <!-- Card 4: Appointments & Booking Funnel -->
@@ -1059,10 +1072,10 @@ html_code = """<!DOCTYPE html>
             </div>
             <div class="kpi-number">75 <span class="kpi-number-sub">/ 111</span></div>
             <div class="kpi-sub">
-              <strong>75 completed appointments</strong> accepted via Square webhook; 111 booking flows started.
+              <strong>75 completed appointments</strong> accepted via Square webhook; 111 booking flows started <em>(GA4 active from Oct 13)</em>.
             </div>
           </div>
-          <span class="kpi-delta">High-Ticket Service Revenue</span>
+          <span class="kpi-delta">Appointment Activity</span>
         </div>
       </div>
 
@@ -1071,135 +1084,16 @@ html_code = """<!DOCTYPE html>
         <h3>🚀 Key Performance Highlights (October 2026)</h3>
         <ul class="highlight-grid">
           <li>
-            <strong>Record GBP Engagement & Accelerating Review Velocity (+10 Reviews in Oct vs. 8 in Sept):</strong> October delivered peak local activity with <strong>44 direct phone calls (+37.5%)</strong>, <strong>188 website visits (+39.3%)</strong>, <strong>7 customer chat inquiries (+16.7%)</strong>, and <strong>+10 new 5-star Google reviews</strong> (up from 8 in Sept), bringing cumulative verified reviews to 230 while maintaining a spotless 5.0 ★ rating with 100% positive sentiment.
-          </li>
-          <li>
-            <strong>Dominant Local 3-Pack Monopolization ("Ceramic Coating" & "Car Waxing"):</strong> Local geo-grid tracking reveals near 100% #1 rank saturation across Basking Ridge, Bernardsville, Bedminster, and Liberty Corner for high-ticket <em>"ceramic coating near me"</em> ($325–$1,099+) alongside sweeping green expansion for <em>"car waxing"</em> and <em>"car detailing near me"</em>.
-          </li>
-          <li>
             <strong>Strong Organic Search Expansion (+17.5% Clicks, +11.0% Impressions):</strong> CleanWorx climbed to <strong>181 organic Google Search clicks and 6,531 impressions</strong> in Search Console (up from 154 clicks and 5,883 impressions in September). High-intent non-branded queries like <em>"car wash near me"</em>, <em>"paint correction near me"</em>, and localized city terms delivered consistent customer acquisition.
           </li>
           <li>
-            <strong>Robust Website & Square Appointments Conversion Engine:</strong> Across 643 user sessions and 505 unique visitors, potential clients triggered <strong>111 online appointment flow starts (`book_appointment`)</strong>, <strong>88 direct booking clicks (`booking_click`)</strong>, <strong>8 detailed Formspree quote inquiries (`generate_lead`)</strong>, and <strong>75 verified completed bookings (`booking_completed`)</strong>.
+            <strong>Website & Square Appointments Activity (Active from Oct 13):</strong> With GA4 web analytics and booking instrumentation activated on <strong>October 13, 2026</strong>, CleanWorx captured <strong>643 visitor sessions and 505 unique users</strong> in just 19 days, driving <strong>111 online appointment flow starts (`book_appointment`)</strong>, <strong>88 direct booking clicks (`booking_click`)</strong>, <strong>8 detailed Formspree quote inquiries (`generate_lead`)</strong>, and <strong>75 verified completed bookings (`booking_completed`)</strong>.
           </li>
         </ul>
       </div>
 
-      <!-- SECTION 1: EXECUTIVE SUMMARY TABLE -->
-      <div class="section-title">1. 📊 Executive Summary: What Drove Customers & Revenue (October 2026)</div>
-      <div class="panel" style="margin-bottom: 24px;">
-        <div class="table-responsive" style="margin-bottom: 0;">
-          <table>
-            <thead>
-              <tr>
-                <th style="width: 22%;">Customer Channel</th>
-                <th style="width: 24%;">Customer Action Tracked</th>
-                <th style="width: 18%;">October 2026 Total</th>
-                <th style="width: 26%;">Business Impact & Growth</th>
-                <th style="width: 10%; text-align: center;">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- 1. GBP Calls -->
-              <tr>
-                <td><strong>Google Maps Direct Calls</strong></td>
-                <td>Direct Phone Calls via GBP Profile</td>
-                <td><strong style="color: var(--success); font-size: 14px;">44 Phone Calls</strong></td>
-                <td><strong>+37.5% vs. September</strong> (up from 32 calls in Sept); customers calling about ceramic packages, full details, and mobile availability</td>
-                <td style="text-align: center;"><span class="pill pill-green">6-Mo Peak</span></td>
-              </tr>
-
-              <!-- 2. GBP Website Clicks -->
-              <tr>
-                <td><strong>Local Map Website Clicks</strong></td>
-                <td>Website Clicks from Google Profile</td>
-                <td><strong style="color: var(--blue); font-size: 14px;">188 Clicks</strong></td>
-                <td><strong>+39.3% vs. September</strong> (up from 135 clicks in Sept); all-time high in map searchers entering the booking funnel</td>
-                <td style="text-align: center;"><span class="pill pill-blue">Record High</span></td>
-              </tr>
-
-              <!-- 3. GBP Chat Clicks -->
-              <tr>
-                <td><strong>In-App Customer Chats</strong></td>
-                <td>Chat Clicks via Google Business Profile</td>
-                <td><strong style="color: var(--primary-dark); font-size: 14px;">7 Chat Inquiries</strong></td>
-                <td><strong>+16.7% vs. September</strong> (up from 6 chats in Sept); customers asking about package customization and vehicle drop-offs</td>
-                <td style="text-align: center;"><span class="pill pill-green">All-Time High</span></td>
-              </tr>
-
-              <!-- 4. Google Reviews Velocity -->
-              <tr>
-                <td><strong>Google Reviews & Reputation</strong></td>
-                <td>New 5-Star Reviews Added (GBP)</td>
-                <td><strong style="color: #fbbf24; font-size: 14px;">+10 Reviews</strong></td>
-                <td><strong>+10 new verified reviews in October vs. 8 in September</strong>; cumulative reviews climbed from 220 to 230 (231 currently), preserving a perfect <strong>5.0 ★ rating</strong> with 100% positive sentiment</td>
-                <td style="text-align: center;"><span class="pill pill-green">5.0 ★ Clean</span></td>
-              </tr>
-
-              <!-- 4. Google Organic Search (GSC) -->
-              <tr>
-                <td><strong>Google Organic Search</strong></td>
-                <td>Total Verified Search Clicks (GSC)</td>
-                <td><strong style="color: var(--dark); font-size: 14px;">181 Clicks</strong></td>
-                <td><strong>+17.5% click growth</strong> (up from 154) across <strong>6,531 impressions (+11.0%)</strong>; average ranking improved to 16.2</td>
-                <td style="text-align: center;"><span class="pill pill-green">Verified Growth</span></td>
-              </tr>
-
-              <!-- 5. Square Appointments Initiations -->
-              <tr>
-                <td><strong>Appointment Flow Starts</strong></td>
-                <td>Square Online `book_appointment` Events</td>
-                <td><strong style="color: var(--blue); font-size: 14px;">111 Booking Starts</strong></td>
-                <td>61 unique high-intent clients selecting detailing and ceramic service packages on the hosted Square schedule</td>
-                <td style="text-align: center;"><span class="pill pill-gold">High Intent</span></td>
-              </tr>
-
-              <!-- 6. Website Booking Clicks -->
-              <tr>
-                <td><strong>Website Booking Portal Clicks</strong></td>
-                <td>`booking_click` to Square Appointments</td>
-                <td><strong style="color: var(--blue); font-size: 14px;">88 Clicks</strong></td>
-                <td>66 unique website visitors clicking primary CTAs across homepage, pricing, and service pages into Square</td>
-                <td style="text-align: center;"><span class="pill pill-blue">Active Funnel</span></td>
-              </tr>
-
-              <!-- 7. Confirmed Completed Bookings -->
-              <tr>
-                <td><strong>Confirmed Customer Bookings</strong></td>
-                <td>Square Server Webhook `booking_completed`</td>
-                <td><strong style="color: var(--success); font-size: 14px;">75 Completed Citas</strong></td>
-                <td>Verified customer appointments accepted into Square Appointments; core engine of recurring and new detailing revenue</td>
-                <td style="text-align: center;"><span class="pill pill-green">Real Revenue</span></td>
-              </tr>
-
-              <!-- 8. Detailed Quote Form Inquiries -->
-              <tr>
-                <td><strong>Custom Quote Submissions</strong></td>
-                <td>Formspree Contact Leads (`generate_lead`)</td>
-                <td><strong style="color: var(--amber); font-size: 14px;">8 Form Leads</strong></td>
-                <td>Verified inquiries specifying vehicle make/model, paint condition, and interest in Ceramic Coating & Paint Correction</td>
-                <td style="text-align: center;"><span class="pill pill-gold">High Ticket</span></td>
-              </tr>
-
-              <!-- 9. Website Click-to-Call & Email -->
-              <tr>
-                <td><strong>Direct Website Contacts</strong></td>
-                <td>Direct `click_call` & `click_email` Actions</td>
-                <td><strong style="color: var(--slate); font-size: 14px;">5 Contacts</strong></td>
-                <td>4 direct phone calls and 1 email inquiry tapped directly from mobile header and contact sections</td>
-                <td style="text-align: center;"><span class="pill pill-blue">Direct Touch</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       <!-- SECTION 2: GOOGLE SEARCH CONSOLE -->
-      <div class="section-title">2. 🔍 Google Search Console: Branded vs. Non-Branded (Discovery) Search</div>
-      <p style="font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5;">
-        Google Search Console tracks organic searchers entering <em>cleanworxnj.com</em> directly from Google's organic search index. In addition to prominent brand searches, CleanWorx captures valuable discovery searchers across Somerset and Morris counties seeking premium automotive detailing, paint protection, ceramic coatings, and car care services.
-      </p>
-
+      <div class="section-title">1. 🔍 Google Search Console: Branded vs. Non-Branded (Discovery) Search</div>
       <!-- SEARCH CONSOLE TOTAL RECONCILIATION BAR -->
       <div style="background: var(--light-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
@@ -1494,24 +1388,14 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 3: GA4 MOBILE WEBSITE PERFORMANCE -->
-      <div class="section-title">3. 📱 Mobile Website Conversions & Customer Engagement (GA4 October 2026)</div>
-
-      <!-- Notice Box on Architecture & Measurement -->
-      <div class="notice-box">
-        <div class="notice-title">
-          <strong>Verified Full-Funnel Architecture (Next.js + GA4 + Square Appointments):</strong>
-        </div>
-        <div class="notice-desc">
-          CleanWorx operates a high-performance Next.js application deployed on Hostinger, instrumented with <strong>Google Analytics 4 (Property 558911953)</strong>, custom Formspree quote dispatching, and cross-domain tracking (`_gl`) into <strong>cleanworx-llc.square.site</strong>. In October, the web presence recorded <strong>643 visitor sessions and 505 unique users</strong>, generating <strong>111 booking selector engagements, 88 direct portal clicks, 8 high-ticket Formspree quotes, and 75 server-verified completed appointments</strong>.
-        </div>
-      </div>
+      <div class="section-title">2. 📱 Mobile Website Conversions & Customer Engagement (GA4: Oct 13–31, 2026)</div>
 
       <div class="grid-2" style="margin-bottom: 24px;">
         <!-- GA4 Acquisition Channels -->
         <div class="panel" style="margin-bottom: 0;">
           <div class="panel-header">
             <span class="panel-title">Where Customers Came From (Traffic Channels)</span>
-            <span class="pill pill-green">643 Total Sessions</span>
+            <span class="pill pill-green">643 Total Sessions (Oct 13–31)</span>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; line-height: 1.45;">
             <div style="border-bottom: 1px solid var(--border); padding-bottom: 8px;">
@@ -1556,7 +1440,7 @@ html_code = """<!DOCTYPE html>
                 <span style="font-weight: 700; color: var(--blue);">21 sessions (3.3%)</span>
               </div>
               <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
-                19 qualified vehicle owners referred directly by conversational AI engines, with an exceptional <strong>81.0% engagement rate</strong>.
+                19 users referred by conversational AI engines, with an <strong>81.0% engagement rate</strong>.
               </div>
             </div>
           </div>
@@ -1612,7 +1496,7 @@ html_code = """<!DOCTYPE html>
             </div>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <span class="pill pill-blue">October 2026</span>
+            <span class="pill pill-blue">Oct 13–31, 2026</span>
             <span class="pill pill-gold">144 Key Events Total</span>
           </div>
         </div>
@@ -1623,7 +1507,7 @@ html_code = """<!DOCTYPE html>
           <div class="funnel-step-wrap">
             <div class="funnel-stage stage-1">
               <div class="funnel-stage-left">
-                <span class="funnel-badge">Stage 1 • Top of Funnel</span>
+                <span class="funnel-badge">Stage 1 • Top of Funnel (Oct 13–31)</span>
                 <div class="funnel-title">
                   <strong>Total Website Sessions & Service Discovery</strong>
                   <code>session_start / page_view</code>
@@ -1715,7 +1599,7 @@ html_code = """<!DOCTYPE html>
               </div>
               <div class="funnel-stage-right">
                 <div class="funnel-metric" style="color: #15803d;">75 <span class="funnel-metric-unit">Bookings</span></div>
-                <div class="funnel-submetric" style="color: #166534;">Verified High-Ticket Revenue Events</div>
+                <div class="funnel-submetric" style="color: #166534;">Verified Booking Events</div>
                 <div class="funnel-rate-badge rate-success">67.6% Flow Conversion</div>
               </div>
             </div>
@@ -1727,7 +1611,7 @@ html_code = """<!DOCTYPE html>
           <!-- Channel A: Custom Form Leads -->
           <div style="background: var(--light-bg); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: 8px; padding: 12px 14px;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-              <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase;">High-Ticket Quotes</span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase;">Quote Inquiries</span>
               <span class="pill pill-gold">8 Leads</span>
             </div>
             <div style="font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 2px;">
@@ -1762,14 +1646,14 @@ html_code = """<!DOCTYPE html>
               11.7% End-to-End Rate
             </div>
             <div style="font-size: 11px; color: var(--slate); line-height: 1.4;">
-              <strong>75 bookings + 8 leads + 5 calls = 88 customer actions</strong> from 643 web sessions (plus 44 direct GBP calls).
+              <strong>75 bookings + 8 leads + 5 contacts = 88 customer actions</strong> from 643 web sessions (plus 44 direct GBP calls, totaling 48 customer phone calls).
             </div>
           </div>
         </div>
       </div>
 
       <!-- SECTION 4: GOOGLE BUSINESS PROFILE & REPUTATION -->
-      <div class="section-title">4. 📍 Google Business Profile & Online Reputation (October 2026)</div>
+      <div class="section-title">3. 📍 Google Business Profile & Online Reputation (October 2026)</div>
 
       <!-- PROMINENT REVIEWS SCORECARD -->
       <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #ffffff; border-radius: 12px; padding: 22px 26px; margin-bottom: 24px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);">
@@ -1804,11 +1688,6 @@ html_code = """<!DOCTYPE html>
               <div style="font-size: 22px; font-weight: 800; color: #86efac;">100% Pos.</div>
             </div>
           </div>
-        </div>
-
-        <!-- Review Velocity & Sentiment Narrative -->
-        <div style="margin-top: 14px; padding: 10px 14px; background: rgba(56, 189, 248, 0.08); border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.2); font-size: 11.5px; color: #cbd5e1; line-height: 1.5;">
-          <strong style="color: #38bdf8;">📈 Monthly Review Velocity Analysis:</strong> During October, CleanWorx gained <strong>+10 verified 5-star customer reviews</strong> (advancing from 220 to 230 total reviews), accelerating above the <strong>8 reviews earned in September</strong>. The business maintains an unbroken 5.0 ★ rating across all 230 verified reviews with zero negative or neutral ratings (100% positive sentiment), reinforcing the prominent authority required to sustain dominant #1 rankings in Google's Local 3-Pack.
         </div>
 
         <!-- Standout Review Quotes Grid -->
@@ -1846,7 +1725,7 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/gbp-calls-october-2026.png" alt="GBP Phone Calls October 2026">
           </div>
           <div class="chart-proof-meta">
-            <strong>6-Month Record Peak:</strong> Phone calls spiked to <strong>44 in October</strong> (up from 32 in Sept, 36 in Aug, 35 in Jul, 38 in Jun), representing a <strong>+37.5% increase</strong> and bringing cumulative calls to 193.
+            <strong>Phone Call Trend:</strong> Phone calls rose to <strong>44 in October</strong> (up from 32 in Sept, 36 in Aug, 35 in Jul, 38 in Jun), representing a <strong>+37.5% increase</strong> and bringing cumulative calls to 193 (plus 4 direct calls via website click-to-call, totaling 48 calls in October).
           </div>
         </div>
 
@@ -1860,7 +1739,7 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/gbp-website-clicks-october-2026.png" alt="GBP Website Clicks October 2026">
           </div>
           <div class="chart-proof-meta">
-            <strong>All-Time High Traffic:</strong> Website clicks reached <strong>188 in October</strong> (up from 135 in Sept, 152 in Aug, 145 in Jul, 165 in Jun), delivering a <strong>+39.3% month-over-month surge</strong> and 871 total clicks.
+            <strong>Website Clicks:</strong> Website clicks reached <strong>188 in October</strong> (up from 135 in Sept, 152 in Aug, 145 in Jul, 165 in Jun), delivering a <strong>+39.3% month-over-month increase</strong> and 871 total clicks.
           </div>
         </div>
 
@@ -1874,23 +1753,13 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/gbp-chat-clicks-october-2026.png" alt="GBP Chat Clicks October 2026">
           </div>
           <div class="chart-proof-meta">
-            <strong>Record Direct Consultations:</strong> Chat interactions peaked at <strong>7 customer conversations</strong> in October (up from 6 in Sept, 1 in Aug, 2 in Jul), driving rapid quote conversions.
+            <strong>Customer Messages:</strong> Chat interactions reached <strong>7 customer conversations</strong> in October (up from 6 in Sept, 1 in Aug, 2 in Jul).
           </div>
         </div>
       </div>
 
-      <!-- ONGOING OPERATING CADENCE NOTICE -->
-      <div style="background: var(--light-bg); border: 1px solid var(--border); border-left: 4px solid var(--success); border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;">
-        <div style="font-size: 12.5px; font-weight: 700; color: var(--dark); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-          <span style="color: var(--success);">🛡️</span> Active Profile Management & Growth Discipline
-        </div>
-        <div style="font-size: 11.8px; color: var(--slate); line-height: 1.5;">
-          Throughout October and November, our team executes continuous profile hygiene: <strong>weekly high-resolution photography uploads</strong> displaying real vehicle transformations, <strong>weekly promotional and educational Google posts</strong> spotlighting ceramic coating benefits and seasonal paint protection, and <strong>prompt, professional responses to 100% of incoming customer reviews</strong>.
-        </div>
-      </div>
-
       <!-- SECTION 5: GEO-GRID LOCAL 3-PACK RANKINGS -->
-      <div class="section-title">5. 🗺️ Local 3-Pack Geo-Grid Rankings (Local Map Footprint)</div>
+      <div class="section-title">4. 🗺️ Local 3-Pack Geo-Grid Rankings (Local Map Footprint)</div>
       <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
         Local Falcon geo-grid tracking measures exact ranking positions across Google's critical <strong>Local 3-Pack</strong> and Google Maps from multiple physical coordinates surrounding the 19 E. Henry Street studio. Green pins indicate #1, #2, and #3 rankings where CleanWorx appears directly in front of nearby vehicle owners.
       </p>
@@ -1907,7 +1776,7 @@ html_code = """<!DOCTYPE html>
           <img src="./report-assets/geogrid-ceramic-coating-near-me.png" alt="Geo-grid comparison for ceramic coating near me Local 3-Pack">
         </div>
         <div class="geogrid-caption">
-          <strong>High-Ticket Dominance:</strong> CleanWorx completely dominates high-ticket ceramic coating queries across Basking Ridge, Bernardsville, Bedminster, and Liberty Corner. Comparing September 14 to November 17, <strong>virtually the entire 5-mile operating radius has transformed into solid Rank #1 positions</strong>, securing the most lucrative service searches in the luxury Somerset Hills market.
+          <strong>Ceramic Coating Rankings:</strong> The grid shows more #1 positions for "ceramic coating near me" on November 17 than on September 14, including points around Basking Ridge, Bernardsville, Bedminster, and Liberty Corner.
         </div>
       </div>
 
@@ -1919,13 +1788,13 @@ html_code = """<!DOCTYPE html>
             <div class="geogrid-title">
               "car waxing" (6.2-Mile Grid)
             </div>
-            <span class="pill pill-green">Massive Green Expansion</span>
+            <span class="pill pill-green">More Top-3 Grid Positions</span>
           </div>
           <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-car-waxing.png')">
             <img src="./report-assets/geogrid-car-waxing.png" alt="Geo-grid car waxing Local 3-Pack">
           </div>
           <div class="geogrid-caption">
-            <strong>Sweeping Map Reach:</strong> CleanWorx achieved a dramatic geographic expansion from September to November, converting outer perimeter red coordinates across northern and eastern corridors into <strong>solid Rank #1 and #2 positions</strong>.
+            <strong>Map Reach:</strong> Between September and November, several outer grid points to the north and east improved from red positions to <strong>positions #1 and #2</strong>.
           </div>
         </div>
 
@@ -1941,7 +1810,7 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/geogrid-car-detailing-near-me.png" alt="Geo-grid car detailing near me Local 3-Pack">
           </div>
           <div class="geogrid-caption">
-            <strong>Broad Regional Footprint:</strong> Visibility across a large 10-mile radius expanded from 7 central pins to <strong>12+ green Local 3-Pack pins (#1, #2, #3)</strong>, capturing vehicle owners commuting along I-287 and Route 202.
+            <strong>Regional Grid Rankings:</strong> The 10-mile grid increased from 7 central pins to <strong>12+ green Local 3-Pack pins (#1, #2, #3)</strong>.
           </div>
         </div>
       </div>
@@ -1960,7 +1829,7 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/geogrid-auto-detailing-near-me.png" alt="Geo-grid auto detailing near me Local 3-Pack">
           </div>
           <div class="geogrid-caption">
-            <strong>Core Monopolization:</strong> The central drop-off coordinate from September has been completely resolved. The studio's immediate radius now commands <strong>pure #1 rankings across 4 core quadrants</strong> with 23 green pins overall.
+            <strong>Central Grid Rankings:</strong> The central point that ranked outside the top three in September improved by November. The grid shows <strong>#1 rankings across four central quadrants</strong> and 23 green pins overall.
           </div>
         </div>
 
@@ -1970,7 +1839,7 @@ html_code = """<!DOCTYPE html>
             <div class="geogrid-title">
               "tint car windows near me" (10-Mile Grid)
             </div>
-            <span class="pill pill-blue">Breakthrough Service Ranking Growth</span>
+            <span class="pill pill-blue">Service Ranking Growth</span>
           </div>
           <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-tint-car-windows-near-me.png')">
             <img src="./report-assets/geogrid-tint-car-windows-near-me.png" alt="Geo-grid tint car windows near me Google Maps">
@@ -1989,13 +1858,13 @@ html_code = """<!DOCTYPE html>
             <div class="geogrid-title">
               "headlight restoration near me" (5.1-Mile Grid)
             </div>
-            <span class="pill pill-green">Rock-Solid #1 & #2 Positions</span>
+            <span class="pill pill-green">#1 & #2 Grid Positions</span>
           </div>
           <div class="geogrid-img-wrapper" onclick="openModal('./report-assets/geogrid-headlight-restoration-near-me.png')">
             <img src="./report-assets/geogrid-headlight-restoration-near-me.png" alt="Geo-grid headlight restoration near me Google Maps">
           </div>
           <div class="geogrid-caption">
-            <strong>Add-On Service Dominance:</strong> CleanWorx holds uninterrupted <strong>Rank #1 and #2 positions</strong> across Basking Ridge, Bernardsville, and Bedminster, driving lucrative optical clarity add-on packages.
+            <strong>Headlight Restoration Rankings:</strong> The grid shows <strong>#1 and #2 positions</strong> at points across Basking Ridge, Bernardsville, and Bedminster.
           </div>
         </div>
 
@@ -2011,19 +1880,9 @@ html_code = """<!DOCTYPE html>
             <img src="./report-assets/geogrid-car-wash-near-me.png" alt="Geo-grid car wash near me Google Maps">
           </div>
           <div class="geogrid-caption">
-            <strong>Hand-Wash Positioning:</strong> CleanWorx effectively defends core <strong>Rank #1 and #2 positions</strong> against high-volume automated tunnel car washes, attracting discerning clients seeking swirl-free hand washes.
+            <strong>Car Wash Rankings:</strong> The grid shows <strong>#1 and #2 positions</strong> at central points for "car wash near me".
           </div>
         </div>
-      </div>
-
-      <!-- STRATEGY TAKEAWAY: MONETIZING #1 LOCAL RANKINGS -->
-      <div style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border: 1px solid #bae6fd; border-left: 5px solid var(--primary); border-radius: 10px; padding: 20px 24px; margin-top: 10px; margin-bottom: 24px;">
-        <div style="font-size: 14px; font-weight: 800; color: #0369a1; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
-          <span>📈 Strategy Takeaway: Monetizing #1 Local Rankings into High-Ticket Service Revenue</span>
-        </div>
-        <p style="font-size: 12.5px; color: var(--slate); line-height: 1.55; margin: 0;">
-          Holding <strong>pure #1 rankings across Basking Ridge, Bedminster, and Bernardsville for "ceramic coating near me"</strong> combined with <strong>44 monthly phone calls and 188 website visits</strong> positions CleanWorx perfectly to capture premium vehicle owners seeking seasonal winter paint protection, road salt defense, and interior restoration. Connecting these top map rankings directly to the Square Appointments engine and the new 10-product GBP catalog creates an automated, frictionless booking pipeline for high-ticket services ($325–$1,099+).
-        </p>
       </div>
 
     </div><!-- /content -->
@@ -2033,7 +1892,7 @@ html_code = """<!DOCTYPE html>
       <div class="tasks-header">
         <div class="tasks-title-group">
           <h2>
-            <span style="color: #38bdf8;">⚡</span> 6. Operational Tasks & Marketing Deployments (Bonsai)
+            <span style="color: #38bdf8;">⚡</span> 5. Operational Tasks & Marketing Deployments (Bonsai)
           </h2>
           <p>Completed deliverables, GBP optimization, and technical enhancements tracked via <strong>Bonsai</strong> (30/10 – 17/11)</p>
         </div>
@@ -2047,7 +1906,7 @@ html_code = """<!DOCTYPE html>
             🌟 Four Key Strategic Deliverables Deployed Since October 30, 2026
           </div>
           <div class="featured-tasks-subtitle">
-            High-impact optimizations deployed to maximize local map dominance, service monetization, and booking conversions
+            Updates to local listings, service information, and booking pathways
           </div>
         </div>
 
@@ -2065,7 +1924,7 @@ html_code = """<!DOCTYPE html>
               </div>
             </div>
             <div class="featured-card-impact">
-              <strong>Impact:</strong> Turns passive Google Maps browsers into paying customers by showcasing exact packages and prices directly on the profile card before they even visit the website.
+              <strong>Purpose:</strong> Gives Google Maps users access to service packages and prices on the business profile.
             </div>
           </div>
 
@@ -2082,7 +1941,7 @@ html_code = """<!DOCTYPE html>
               </div>
             </div>
             <div class="featured-card-impact">
-              <strong>Impact:</strong> Expands CleanWorx's organic indexation footprint into high-income adjacent municipalities, capturing localized long-tail searches outside of Basking Ridge proper.
+              <strong>Purpose:</strong> Adds local service information for people searching in and around Bernardsville and Bridgewater.
             </div>
           </div>
 
@@ -2099,7 +1958,7 @@ html_code = """<!DOCTYPE html>
               </div>
             </div>
             <div class="featured-card-impact">
-              <strong>Impact:</strong> Prevents keyword cannibalization, strengthens semantic relevance for Google AI matching, and ensures vehicle owners see transparent starting rates immediately.
+              <strong>Purpose:</strong> Reduces duplicate service listings and makes package starting prices clearer on the profile.
             </div>
           </div>
 
@@ -2116,7 +1975,7 @@ html_code = """<!DOCTYPE html>
               </div>
             </div>
             <div class="featured-card-impact">
-              <strong>Impact:</strong> Secures turn-by-turn navigation traffic from Apple CarPlay, iPhone Siri searchers, and Microsoft Copilot, ensuring 100% NAP consistency across external ecosystem platforms.
+              <strong>Purpose:</strong> Makes the business information available across Apple Maps and Bing Places and supports consistent listings.
             </div>
           </div>
         </div>
@@ -2202,7 +2061,7 @@ html_code = """<!DOCTYPE html>
               <span>Monthly Traffic & Customer Conversion Audit</span>
             </div>
             <div class="task-item-desc">
-              Audited October GA4 analytics and Search Console, verifying 643 site sessions, 181 organic search clicks, and 75 completed client bookings.
+              Audited October GA4 analytics (active since Oct 13) and Search Console, verifying 643 site sessions, 181 organic search clicks, and 75 completed client bookings.
             </div>
           </div>
         </div>
@@ -2312,7 +2171,7 @@ html_code = """<!DOCTYPE html>
             <ul style="margin-top: 4px; padding-left: 18px; color: #cbd5e1;">
               <li><strong>Warren City Landing Page [TSK-01992]:</strong> Deploy localized page targeting high-income vehicle owners in Warren Township.</li>
               <li><strong>Regional City Expansion [TSK-01942]:</strong> Build service hubs for Long Hill, Berkeley Heights, and New Providence.</li>
-              <li><strong>Redirect & Indexation Audit [TSK-01900–02]:</strong> Continuous monitoring of 143 legacy 301 redirects on Hostinger to ensure zero link equity loss.</li>
+              <li><strong>Redirect & Indexation Audit [TSK-01900–02]:</strong> Monitor 143 legacy 301 redirects on Hostinger for redirect and indexing issues.</li>
             </ul>
           </div>
         </div>
@@ -2362,9 +2221,17 @@ html_code = """<!DOCTYPE html>
 </html>
 """
 
-dest_file = r'c:\Users\Albin Rodriguez\Documents\CleanWorx\REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html'
+dest_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html')
 with open(dest_file, 'w', encoding='utf-8') as f:
     f.write(html_code)
 
 print("Successfully written HTML report to:", dest_file)
 print("Size:", os.path.getsize(dest_file), "bytes")
+
+# Also write to Documents if folder exists
+doc_dir = r'c:\Users\Albin Rodriguez\Documents\CleanWorx'
+if os.path.exists(doc_dir):
+    doc_dest = os.path.join(doc_dir, 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html')
+    with open(doc_dest, 'w', encoding='utf-8') as f:
+        f.write(html_code)
+    print("Also written to Documents:", doc_dest)
