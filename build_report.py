@@ -967,12 +967,335 @@ html_code = """<!DOCTYPE html>
       border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
-    @media (max-width: 860px) {
+    @media screen and (max-width: 860px) {
       .kpi-row { grid-template-columns: repeat(2, 1fr); }
       .grid-2, .grid-3, .grid-4, .tasks-grid, .featured-tasks-grid { grid-template-columns: 1fr; }
       .highlight-grid { grid-template-columns: 1fr; }
       .content { padding: 20px; }
       .top-bar { padding: 20px; }
+    }
+
+    /* ==========================================================================
+       PRINT & PDF EXPORT STYLES (Strict Page-Break Architecture)
+       ========================================================================== */
+    @page {
+      size: letter portrait;
+      margin: 10mm 12mm 12mm 12mm;
+    }
+
+    @media print {
+      html, body {
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
+      .content {
+        padding: 0 !important;
+      }
+
+      /* Lock grid layouts in print so they never collapse into single-column mobile view */
+      .grid-2 {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+      .grid-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+      }
+      .grid-4 {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+      }
+      .kpi-row {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 16px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .featured-tasks-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+      .tasks-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+      .highlight-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* Top Bar */
+      .top-bar {
+        padding: 16px 20px !important;
+        border-radius: 8px !important;
+        margin-bottom: 16px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .brand-group h1 {
+        font-size: 20px !important;
+      }
+
+      /* KPI Cards */
+      .kpi-card {
+        padding: 12px 14px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-shadow: none !important;
+      }
+      .kpi-number {
+        font-size: 22px !important;
+      }
+
+      /* Highlights Card */
+      .highlight-card {
+        padding: 14px 18px !important;
+        margin-bottom: 16px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      /* Section Titles */
+      .section-title {
+        font-size: 13px !important;
+        margin: 12px 0 10px 0 !important;
+        padding-bottom: 6px !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+
+      /* Panels */
+      .panel {
+        padding: 12px 14px !important;
+        margin-bottom: 12px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-shadow: none !important;
+      }
+      .panel-header {
+        margin-bottom: 8px !important;
+        padding-bottom: 6px !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+
+      /* Tables */
+      table {
+        font-size: 9.5px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      thead {
+        display: table-header-group !important;
+      }
+      tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      th, td {
+        padding: 4px 6px !important;
+      }
+
+      /* Conversion Funnel Print Layout */
+      .funnel-panel {
+        padding: 14px 18px !important;
+        margin-bottom: 0 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .funnel-container {
+        margin: 8px 0 10px 0 !important;
+        gap: 0 !important;
+      }
+      .funnel-stage {
+        padding: 8px 14px !important;
+        border-radius: 6px !important;
+      }
+      .funnel-badge {
+        font-size: 8.5px !important;
+      }
+      .funnel-title {
+        font-size: 11.5px !important;
+        gap: 6px !important;
+      }
+      .funnel-title code {
+        font-size: 9px !important;
+        padding: 0 4px !important;
+      }
+      .funnel-desc {
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+      }
+      .funnel-metric {
+        font-size: 17px !important;
+      }
+      .funnel-metric-unit {
+        font-size: 10px !important;
+      }
+      .funnel-submetric {
+        font-size: 8.5px !important;
+      }
+      .funnel-rate-badge {
+        font-size: 8.5px !important;
+        padding: 1px 6px !important;
+      }
+      .funnel-connector {
+        margin: 2px 0 !important;
+      }
+      .connector-line {
+        height: 6px !important;
+      }
+      .connector-pill {
+        padding: 1px 8px !important;
+        font-size: 8px !important;
+      }
+
+      /* GBP Proof Cards */
+      .chart-proof-card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-shadow: none !important;
+      }
+      .chart-proof-img {
+        padding: 4px !important;
+      }
+      .chart-proof-img img {
+        max-height: 130px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+      .chart-proof-meta {
+        padding: 6px 8px !important;
+        font-size: 8.5px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Geo-Grid Cards */
+      .geogrid-card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-shadow: none !important;
+      }
+      .geogrid-img-wrapper {
+        padding: 4px !important;
+      }
+      .geogrid-img-wrapper img {
+        max-height: 140px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+      .geogrid-caption {
+        padding: 6px 8px !important;
+        font-size: 8.5px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Bonsai Section */
+      .tasks-page-section {
+        padding: 14px 16px !important;
+        margin-top: 0 !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+      }
+      .featured-tasks-section {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .featured-task-card {
+        padding: 8px 10px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .featured-card-title {
+        font-size: 11.5px !important;
+        margin-bottom: 4px !important;
+      }
+      .featured-card-desc, .featured-card-impact {
+        font-size: 8.5px !important;
+        line-height: 1.25 !important;
+      }
+
+      /* Detailed Task Items */
+      .task-col-header {
+        font-size: 11px !important;
+        padding-bottom: 4px !important;
+        margin-bottom: 6px !important;
+      }
+      .task-item {
+        padding: 4px 6px !important;
+        margin-bottom: 4px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .task-item-title {
+        font-size: 9.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .task-item-desc {
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+        padding-left: 12px !important;
+      }
+      .tasks-footer-bar, .footer {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        padding: 8px 12px !important;
+        font-size: 8.5px !important;
+      }
+
+      #imageModal {
+        display: none !important;
+      }
+
+      /* Strict Page Break Utilities */
+      .page-break-before {
+        page-break-before: always !important;
+        break-before: page !important;
+        display: block !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .page-break-after {
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+
+      .avoid-break {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
     }
   </style>
 </head>
@@ -1093,6 +1416,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 2: GOOGLE SEARCH CONSOLE -->
+      <div class="page-break-before"></div>
       <div class="section-title">1. 🔍 Google Search Console: Branded vs. Non-Branded (Discovery) Search</div>
       <!-- SEARCH CONSOLE TOTAL RECONCILIATION BAR -->
       <div style="background: var(--light-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px;">
@@ -1282,6 +1606,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- Panel C: Top Organic Landing Pages -->
+      <div class="page-break-before"></div>
       <div class="panel" style="margin-bottom: 24px;">
         <div class="panel-header">
           <div>
@@ -1388,6 +1713,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 3: GA4 MOBILE WEBSITE PERFORMANCE -->
+      <div class="page-break-before"></div>
       <div class="section-title">2. 📱 Mobile Website Conversions & Customer Engagement (GA4: Oct 13–31, 2026)</div>
 
       <div class="grid-2" style="margin-bottom: 24px;">
@@ -1485,7 +1811,8 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 3: FUNNEL CHART: VERIFIED KEY EVENTS & CONVERSION ACTIONS -->
-      <div class="panel" style="margin-bottom: 24px; padding: 24px 28px;">
+      <div class="page-break-before"></div>
+      <div class="panel funnel-panel" style="margin-bottom: 24px; padding: 20px 24px;">
         <div class="panel-header" style="margin-bottom: 20px;">
           <div>
             <div class="panel-title" style="font-size: 15px; display: flex; align-items: center; gap: 8px;">
@@ -1653,6 +1980,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 4: GOOGLE BUSINESS PROFILE & REPUTATION -->
+      <div class="page-break-before"></div>
       <div class="section-title">3. 📍 Google Business Profile & Online Reputation (October 2026)</div>
 
       <!-- PROMINENT REVIEWS SCORECARD -->
@@ -1759,6 +2087,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 5: GEO-GRID LOCAL 3-PACK RANKINGS -->
+      <div class="page-break-before"></div>
       <div class="section-title">4. 🗺️ Local 3-Pack Geo-Grid Rankings (Local Map Footprint)</div>
       <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">
         Local Falcon geo-grid tracking measures exact ranking positions across Google's critical <strong>Local 3-Pack</strong> and Google Maps from multiple physical coordinates surrounding the 19 E. Henry Street studio. Green pins indicate #1, #2, and #3 rankings where CleanWorx appears directly in front of nearby vehicle owners.
@@ -1816,6 +2145,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- 2-Card Grid: Auto Detailing & Window Tinting -->
+      <div class="page-break-before"></div>
       <div class="grid-2" style="margin-bottom: 24px;">
         <!-- Card 4: Auto Detailing Near Me -->
         <div class="geogrid-card">
@@ -1888,6 +2218,7 @@ html_code = """<!DOCTYPE html>
     </div><!-- /content -->
 
     <!-- SECTION 6: STRATEGIC OPERATIONS & GROWTH DEPLOYMENTS -->
+    <div class="page-break-before"></div>
     <div class="tasks-page-section">
       <div class="tasks-header">
         <div class="tasks-title-group">
@@ -1982,6 +2313,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- DETAILED LEDGER HEADER -->
+      <div class="page-break-before"></div>
       <div style="margin: 24px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         <h3 style="font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: -0.2px;">
           Completed Work Log: 15 Deliverables Deployed (Oct 30 – Nov 17, 2026)
@@ -2226,12 +2558,73 @@ with open(dest_file, 'w', encoding='utf-8') as f:
     f.write(html_code)
 
 print("Successfully written HTML report to:", dest_file)
-print("Size:", os.path.getsize(dest_file), "bytes")
+print("HTML Size:", os.path.getsize(dest_file), "bytes")
 
-# Also write to Documents if folder exists
-doc_dir = r'c:\Users\Albin Rodriguez\Documents\CleanWorx'
-if os.path.exists(doc_dir):
-    doc_dest = os.path.join(doc_dir, 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html')
-    with open(doc_dest, 'w', encoding='utf-8') as f:
-        f.write(html_code)
-    print("Also written to Documents:", doc_dest)
+# Generate PDF with strict page breaks using Chrome Headless
+import subprocess
+import shutil
+
+chrome_candidates = [
+    r'C:\Program Files\Google\Chrome\Application\chrome.exe',
+    r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
+    r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
+    r'C:\Program Files\Microsoft\Edge\Application\msedge.exe'
+]
+chrome_path = next((p for p in chrome_candidates if os.path.exists(p)), None)
+
+if chrome_path:
+    pdf_dest = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.pdf')
+    temp_pdf = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp_report_headless.pdf')
+
+    chrome_cmd = [
+        chrome_path,
+        '--headless=new',
+        '--disable-gpu',
+        '--no-sandbox',
+        '--no-pdf-header-footer',
+        '--run-all-compositor-stages-before-draw',
+        '--print-to-pdf=' + temp_pdf,
+        'file:///' + dest_file.replace('\\', '/')
+    ]
+
+    print(f"Generating PDF with: {os.path.basename(chrome_path)}...")
+    subprocess.run(chrome_cmd, check=True)
+
+    # Post-process with PyMuPDF to add running pagination
+    try:
+        import pymupdf
+        doc = pymupdf.open(temp_pdf)
+        total_pages = len(doc)
+        print(f"Initial PDF compiled: {total_pages} pages")
+
+        for i in range(total_pages):
+            if i > 0:  # Skip cover/overview dashboard
+                page = doc[i]
+                rect = page.rect
+                footer_left = "CleanWorx Auto Detailing & Ceramic Coating • Monthly Performance Report (October 2026)"
+                footer_right = f"Page {i+1} of {total_pages}"
+                y = rect.height - 20
+                page.draw_line(pymupdf.Point(34, y - 8), pymupdf.Point(rect.width - 34, y - 8), color=(0.88, 0.91, 0.94), width=0.5)
+                page.insert_text(pymupdf.Point(34, y), footer_left, fontsize=7.5, color=(0.4, 0.45, 0.52))
+                page.insert_text(pymupdf.Point(rect.width - 80, y), footer_right, fontsize=7.5, color=(0.4, 0.45, 0.52))
+
+        doc.save(pdf_dest)
+        doc.close()
+        if os.path.exists(temp_pdf):
+            os.remove(temp_pdf)
+    except Exception as e:
+        print("Note on pagination:", e)
+        shutil.move(temp_pdf, pdf_dest)
+
+    print("Successfully generated executive PDF:", pdf_dest)
+    print("PDF Size:", os.path.getsize(pdf_dest), "bytes")
+
+    # Also sync to outputs/reports/
+    reports_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'outputs', 'reports')
+    if os.path.exists(reports_dir):
+        reports_pdf = os.path.join(reports_dir, 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.pdf')
+        shutil.copy2(pdf_dest, reports_pdf)
+        print("Synced PDF to outputs/reports:", reports_pdf)
+else:
+    print("WARNING: Chrome or Edge binary not found for automated PDF conversion.")
+
