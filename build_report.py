@@ -967,6 +967,7 @@ html_code = """<!DOCTYPE html>
       border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
+    @media (max-width: 860px) {
     @media screen and (max-width: 860px) {
       .kpi-row { grid-template-columns: repeat(2, 1fr); }
       .grid-2, .grid-3, .grid-4, .tasks-grid, .featured-tasks-grid { grid-template-columns: 1fr; }
@@ -1811,6 +1812,7 @@ html_code = """<!DOCTYPE html>
       </div>
 
       <!-- SECTION 3: FUNNEL CHART: VERIFIED KEY EVENTS & CONVERSION ACTIONS -->
+      <div class="panel" style="margin-bottom: 24px; padding: 24px 28px;">
       <div class="page-break-before"></div>
       <div class="panel funnel-panel" style="margin-bottom: 24px; padding: 20px 24px;">
         <div class="panel-header" style="margin-bottom: 20px;">
@@ -2558,8 +2560,16 @@ with open(dest_file, 'w', encoding='utf-8') as f:
     f.write(html_code)
 
 print("Successfully written HTML report to:", dest_file)
+print("Size:", os.path.getsize(dest_file), "bytes")
 print("HTML Size:", os.path.getsize(dest_file), "bytes")
 
+# Also write to Documents if folder exists
+doc_dir = r'c:\Users\Albin Rodriguez\Documents\CleanWorx'
+if os.path.exists(doc_dir):
+    doc_dest = os.path.join(doc_dir, 'REPORTE-MENSUAL-OCTUBRE-2026-CLEANWORX.html')
+    with open(doc_dest, 'w', encoding='utf-8') as f:
+        f.write(html_code)
+    print("Also written to Documents:", doc_dest)
 # Generate PDF with strict page breaks using Chrome Headless
 import subprocess
 import shutil
