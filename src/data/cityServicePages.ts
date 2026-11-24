@@ -6,6 +6,8 @@ export const citySlugs = [
   "bridgewater-nj",
   "bernardsville-nj",
   "warren-nj",
+  "roseland-nj",
+  "long-hill-nj",
 ] as const;
 
 export type CitySlug = (typeof citySlugs)[number];
@@ -40,7 +42,9 @@ type CityPageContent = {
     imageWidth: number;
     imageHeight: number;
     gallery?: readonly { image: string; imageAlt: string }[];
-    layout?: "split";
+    galleryVideo?: { src: string; poster: string; label: string };
+    videos?: readonly { src: string; poster: string; label: string; landscape?: boolean }[];
+    layout?: "split" | "stacked-media";
     paragraphs: readonly string[];
   }>>;
 };
@@ -48,6 +52,132 @@ type CityPageContent = {
 // Five unique portfolio images per city, distributed by the services they document.
 // No image is reused between cities; work-09 is the only unused portfolio item.
 export const cityPages: Record<CitySlug, CityPageContent> = {
+  "long-hill-nj": {
+    city: "Long Hill",
+    serviceStories: {
+      "interior-detailing": {
+        layout: "stacked-media",
+        title: "Chevrolet Suburban — Full Interior and Exterior Detail",
+        image: "/images/service-areas/long-hill/chevrolet-suburban-full-detail-long-hill-nj.webp",
+        imageAlt: "Black Chevrolet Suburban from Long Hill after a full detail at our Basking Ridge shop",
+        imageWidth: 1800,
+        imageHeight: 1350,
+        gallery: [
+          { image: "/images/service-areas/long-hill/chevrolet-suburban-front-interior-detail.webp", imageAlt: "Front seats and dashboard of the detailed Chevrolet Suburban" },
+          { image: "/images/service-areas/long-hill/chevrolet-suburban-rear-seats-detail.webp", imageAlt: "Second and third rows of the Chevrolet Suburban after interior detailing" },
+        ],
+        videos: [
+          { src: "/images/service-areas/long-hill/chevrolet-suburban-interior-detail-long-hill.mp4", poster: "/images/service-areas/long-hill/chevrolet-suburban-interior-video-poster.webp", label: "Chevrolet Suburban cabin after interior detailing" },
+        ],
+        paragraphs: [
+          "This black Chevrolet Suburban High Country came to our Basking Ridge shop from Northfield Road in Long Hill for a full interior and exterior detail. Its three rows of dark seats and large body gave us plenty of space to work through.",
+          "We cleaned the cabin from the front seats and center console through the second and third rows, then washed the exterior and cleaned the wheels. When we finished, the seats and dashboard had a clean appearance, and the black body reflected the surroundings outside the shop.",
+        ],
+      },
+      "paint-correction": {
+        title: "Rivian R2 — One-Step Paint Correction and Ceramic Coating",
+        image: "/images/service-areas/long-hill/rivian-r2-paint-correction-long-hill-nj.webp",
+        imageAlt: "Rivian R2 from Long Hill after paint correction and ceramic coating at our Basking Ridge shop",
+        imageWidth: 1024,
+        imageHeight: 768,
+        gallery: [
+          { image: "/images/service-areas/long-hill/rivian-r2-wheel-coating.webp", imageAlt: "Rivian R2 wheel after coating at our Basking Ridge shop" },
+          { image: "/images/service-areas/long-hill/rivian-r2-glass-coating.webp", imageAlt: "Rivian R2 side glass and mirror after coating" },
+          { image: "/images/service-areas/long-hill/rivian-r2-hood-ceramic-coating.webp", imageAlt: "Shop lights reflected in the ceramic-coated Rivian R2 hood" },
+          { image: "/images/service-areas/long-hill/rivian-r2-ceramic-coating-basking-ridge.webp", imageAlt: "Rear side of the Rivian R2 after paint correction and coating" },
+        ],
+        videos: [
+          { src: "/images/service-areas/long-hill/rivian-r2-paint-correction-long-hill.mp4", poster: "/images/service-areas/long-hill/video-preview.webp", label: "Machine polishing a Rivian R2 at our Basking Ridge shop" },
+        ],
+        paragraphs: [
+          "A customer from Morris Street in Long Hill brought this Rivian R2 to our Basking Ridge shop for one-step paint correction and ceramic coating, along with coatings for the wheels and windows.",
+          "We machine-polished the green body panels in one step, working around the black trim before applying the ceramic coating to the paint. We also coated the wheels and glass. Once finished, the shop lights reflected clearly across the hood and side panels, and the black and silver wheels had a clean, even finish.",
+        ],
+      },
+    },
+    intro: "Long Hill drivers can visit our Basking Ridge shop for detailing, paint correction, ceramic coating, and window tinting. We also confirm eligible mobile detailing appointments for suitable locations in Long Hill Township, including Stirling and Gillette.",
+    appointmentNote: "Tell us about your vehicle, the service you need, and whether you prefer our Basking Ridge shop or a mobile visit in Long Hill. We confirm the location and availability before scheduling.",
+    fullDetailNote: "A full detail combines interior and exterior cleaning. Share the vehicle's condition and the areas that need attention so we can discuss the scope and price.",
+    engineBayNote: "Engine bay cleaning is a separate service. We assess its condition and access before recommending an approach; see our add-ons page for details.",
+    photoIds: [],
+    serviceCopy: {
+      "ceramic-coating": "Long Hill drivers can bring their vehicles to our Basking Ridge shop to discuss ceramic coating. We inspect and prepare the paint and review coating options and any polishing needed before application.",
+      "paint-correction": "Machine polishing can reduce swirls, haze, and light scratches. We inspect the finish at our Basking Ridge shop and discuss a correction approach suited to your vehicle's condition.",
+      "window-tinting": "Window tint installation is available at our Basking Ridge shop. Long Hill customers can discuss Carbon and Ceramic film options and select the windows to be tinted; the front windshield is priced separately.",
+      "interior-detailing": "Interior detailing addresses seats, carpets, mats, and trim according to their condition and material. Let us know about stains, pet hair, or other concerns when arranging care for your vehicle.",
+      "exterior-detailing": "Exterior detailing cleans the paint, wheels, tires, glass, and trim. We can assess contamination and discuss suitable protection when planning the work for your Long Hill vehicle.",
+      "mobile-auto-detailing": "Eligible interior, exterior, and full detailing may be scheduled at a suitable home or workplace in Long Hill. We confirm the service, location, and availability before booking. A $35 mobile service fee applies to every eligible mobile appointment.",
+      "headlight-restoration": "Headlight restoration treats surface haze and oxidation through cleaning, sanding, polishing, and protection. We assess the lenses first; cracks or damage inside the housing may require a different repair.",
+      "car-odor-treatment": "For persistent odors, we assess the likely source and affected interior materials. Long Hill customers can discuss cleaning and in-shop ozone air purification; results depend on the source and permanent removal is not guaranteed.",
+    },
+    questions: [
+      { question: "Where is your shop for Long Hill customers?", answer: "Our shop is at 19 E. Henry Street in Basking Ridge, NJ. Contact us to discuss your vehicle and arrange an appointment." },
+      { question: "Can I request mobile detailing in Long Hill?", answer: "Yes. We confirm whether the requested service, location, and appointment time are suitable. A $35 mobile service fee applies to every eligible mobile appointment." },
+      { question: "Do you offer window tinting in Long Hill?", answer: "Window tint installation and removal are performed at our Basking Ridge shop. Contact us to discuss film choices and pricing for your vehicle." },
+    ],
+  },
+  "roseland-nj": {
+    city: "Roseland",
+    serviceStories: {
+      "exterior-detailing": {
+        title: "BMW X6 M Competition and BMW M5 — Mobile Interior and Exterior Detail",
+        image: "/images/service-areas/roseland/bmw-m5-mobile-detail-roseland.webp",
+        imageAlt: "Green BMW M5 at a mobile detailing appointment in Roseland, NJ",
+        imageWidth: 1200,
+        imageHeight: 1600,
+        gallery: [
+          { image: "/images/service-areas/roseland/bmw-m5-wheel-mobile-detail-roseland.webp", imageAlt: "Clean black wheel and tire on a green BMW M5 in Roseland" },
+        ],
+        galleryVideo: { src: "/images/service-areas/roseland/bmw-mobile-exterior-wash-roseland.mp4", poster: "/images/service-areas/roseland/bmw-mobile-exterior-wash-roseland.webp", label: "Washing a BMW during mobile detailing in Roseland" },
+        videos: [
+          { src: "/images/service-areas/roseland/bmw-x6m-interior-detail-roseland.mp4", poster: "/images/service-areas/roseland/bmw-x6m-interior-detail-roseland.webp", label: "BMW cabin with red seats after interior detailing", landscape: true },
+          { src: "/images/service-areas/roseland/bmw-m5-interior-detail-roseland.mp4", poster: "/images/service-areas/roseland/bmw-m5-interior-detail-roseland.webp", label: "BMW cabin after interior detailing", landscape: true },
+        ],
+        paragraphs: [
+          "A BMW X6 M Competition and a BMW M5 were scheduled for interior and exterior detailing on Conover Avenue in Roseland, NJ. We brought our mobile setup to the customer's location and worked on both vehicles there.",
+          "We washed the exteriors, including the wheels and tires, and detailed the cabins around the seats, consoles, and trim. When we finished, the BMWs' interiors had a clean appearance, and the M5's black wheels and green paint looked clean and glossy.",
+        ],
+      },
+      "ceramic-coating": {
+        title: "Mercedes-Benz S-Class — Interior Detail, Paint Correction and Ceramic Coating",
+        image: "/images/service-areas/roseland/mercedes-s-class-ceramic-coating-roseland-nj.webp",
+        imageAlt: "Black Mercedes-Benz S-Class from Roseland after ceramic coating at our Basking Ridge shop",
+        imageWidth: 1024,
+        imageHeight: 768,
+        gallery: [
+          { image: "/images/service-areas/roseland/mercedes-s-class-foam-wash-basking-ridge.webp", imageAlt: "Mercedes-Benz S-Class covered in foam during a wash at the shop" },
+          { image: "/images/service-areas/roseland/mercedes-s-class-two-step-paint-correction.webp", imageAlt: "Machine polishing the black paint of a Mercedes-Benz S-Class" },
+          { image: "/images/service-areas/roseland/mercedes-s-class-black-paint-reflection.webp", imageAlt: "Shop lights reflected in the black trunk of a Mercedes-Benz S-Class" },
+          { image: "/images/service-areas/roseland/mercedes-s-class-front-interior-detail.webp", imageAlt: "Clean front cabin and quilted seat of a Mercedes-Benz S-Class" },
+          { image: "/images/service-areas/roseland/mercedes-s-class-rear-interior-detail.webp", imageAlt: "Clean rear seats and door panels in a Mercedes-Benz S-Class" },
+        ],
+        paragraphs: [
+          "A customer from Roseland brought this black Mercedes-Benz S-Class to our shop on East Henry Street in Basking Ridge for an interior detail, two-step paint correction, and ceramic coating. The car's dark finish and light quilted interior gave us two very different surfaces to work on.",
+          "We washed the exterior, then machine-polished the paint in two steps before applying the ceramic coating. Inside, we detailed the front and rear seating areas, working around the quilted upholstery, console, and door panels. The finished black paint reflected the shop lights and surroundings clearly, while the light interior had a clean, even appearance.",
+        ],
+      },
+    },
+    intro: "Roseland drivers can bring their vehicles to our Basking Ridge shop for detailing and specialist services. We also confirm whether eligible mobile detailing can be scheduled at a suitable Roseland home or workplace.",
+    appointmentNote: "Tell us about your vehicle, the work it needs, and whether you prefer a shop visit or a mobile appointment in Roseland. We confirm the service, location, and availability before scheduling.",
+    fullDetailNote: "A full detail combines interior and exterior cleaning. Share the vehicle's condition and the areas that need attention so we can discuss the scope and price.",
+    engineBayNote: "Engine bay cleaning is a separate service. We assess the condition and access before recommending an approach; see our add-ons page for details.",
+    photoIds: [],
+    serviceCopy: {
+      "ceramic-coating": "Roseland drivers can visit our Basking Ridge shop to discuss ceramic coating for their vehicle. We inspect and prepare the paint, then review coating options and any polishing needed before application.",
+      "paint-correction": "Machine polishing can reduce swirls, haze, and light scratches in a vehicle's finish. We inspect the paint at our Basking Ridge shop and discuss a suitable correction approach for your Roseland vehicle.",
+      "window-tinting": "Window tint installation is available at our Basking Ridge shop. Roseland customers can choose Carbon or Ceramic film and discuss which windows to tint; the front windshield is priced separately.",
+      "interior-detailing": "Interior detailing addresses seats, carpets, mats, and trim according to their condition and material. Tell us about stains, pet hair, or other concerns when requesting an appointment for your Roseland vehicle.",
+      "exterior-detailing": "Exterior detailing cleans the vehicle's paint, wheels, tires, glass, and trim. We can assess contamination and discuss suitable protection when planning the work for your Roseland vehicle.",
+      "mobile-auto-detailing": "Eligible interior, exterior, and full detailing may be scheduled at a suitable home or workplace in Roseland. We confirm the service, location, and availability before booking. A $35 mobile service fee applies to every eligible mobile appointment.",
+      "headlight-restoration": "Headlight restoration treats surface haze and oxidation through cleaning, sanding, polishing, and protection. We assess the lenses on your Roseland vehicle; cracks or damage inside the housing may require a different repair.",
+      "car-odor-treatment": "For persistent odors, we assess the likely source and any affected interior materials. Roseland customers can discuss cleaning and in-shop ozone air purification; the result depends on the source and permanent removal is not guaranteed.",
+    },
+    questions: [
+      { question: "Where can Roseland customers visit your shop?", answer: "Our shop is at 19 E. Henry Street in Basking Ridge, NJ. Contact us to discuss your vehicle and arrange an appointment." },
+      { question: "Can I request mobile detailing in Roseland?", answer: "Yes. We confirm whether the requested detailing service, location, and appointment time are suitable. A $35 mobile service fee applies to every eligible mobile appointment." },
+      { question: "Is window tinting available as a mobile service?", answer: "Window tint installation and removal are performed at our Basking Ridge shop. Contact us to discuss film choices and pricing for your vehicle." },
+    ],
+  },
   "warren-nj": {
     city: "Warren",
     serviceStories: {

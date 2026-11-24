@@ -6,9 +6,10 @@ type ServiceVideoProps = {
   src: string;
   poster: string;
   label: string;
+  landscape?: boolean;
 };
 
-export function ServiceVideo({ src, poster, label }: ServiceVideoProps) {
+export function ServiceVideo({ src, poster, label, landscape = false }: ServiceVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export function ServiceVideo({ src, poster, label }: ServiceVideoProps) {
   return (
     <video
       ref={videoRef}
-      className="aspect-[9/16] w-full bg-black object-contain"
+      className={`${landscape ? "aspect-video" : "aspect-[9/16]"} w-full bg-black object-contain`}
       controls
       muted
       loop

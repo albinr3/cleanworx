@@ -47,6 +47,7 @@ function CityStoryCard({
   index,
   preserveImage = false,
   gallery,
+  galleryVideo,
 }: {
   title: string;
   image: string;
@@ -56,12 +57,13 @@ function CityStoryCard({
   index: number;
   preserveImage?: boolean;
   gallery?: readonly { image: string; imageAlt: string }[];
+  galleryVideo?: { src: string; poster: string; label: string };
 }) {
   return (
     <figure className="group overflow-hidden rounded-2xl border border-white/15 bg-[#151a23] shadow-[0_22px_70px_-45px_rgba(18,119,255,0.4)] lg:grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
       <div className={`relative min-h-64 overflow-hidden bg-[#090d14] sm:min-h-80 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
         {gallery && gallery.length > 0 ? (
-          <CityStoryGallery photos={[{ image, imageAlt }, ...gallery]} />
+          <CityStoryGallery photos={[{ image, imageAlt }, ...gallery]} video={galleryVideo} />
         ) : (
         <Image
           src={image}
@@ -225,7 +227,29 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       index={storyIndex}
                     />
                   ))}
-                  {serviceStory && (
+                  {serviceStory?.layout === "stacked-media" ? (
+                    <figure className="overflow-hidden rounded-2xl border border-white/15 bg-[#151a23] lg:grid lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+                      <div className="grid grid-cols-2 gap-2 bg-[#090d14] p-2 sm:gap-3 sm:p-3">
+                        <div className="grid gap-2 sm:gap-3">
+                          {[{ image: serviceStory.image, imageAlt: serviceStory.imageAlt }, ...(serviceStory.gallery ?? [])].map((photo) => (
+                            <div key={photo.image} className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                              <Image src={photo.image} alt={normalizeTerminology(photo.imageAlt)} fill sizes="(max-width: 1023px) 50vw, 40vw" className="object-cover" />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex items-center overflow-hidden rounded-lg">
+                          {serviceStory.videos?.[0] && <ServiceVideo {...serviceStory.videos[0]} />}
+                        </div>
+                      </div>
+                      <figcaption className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#66adff]">Documented case</p>
+                        <h3 className="mt-4 text-2xl font-bold text-white sm:text-[1.75rem]">{normalizeTerminology(serviceStory.title)}</h3>
+                        <div className="mt-5 space-y-4 border-l-2 border-[#347bd2]/70 pl-5 text-sm leading-7 text-neutral-300 sm:text-[0.95rem]">
+                          {serviceStory.paragraphs.map((paragraph) => <p key={paragraph}>{normalizeTerminology(paragraph)}</p>)}
+                        </div>
+                      </figcaption>
+                    </figure>
+                  ) : serviceStory && (
                     <CityStoryCard
                       title={serviceStory.title}
                       image={serviceStory.image}
@@ -235,7 +259,15 @@ export function CityServicePage({ slug }: { slug: CitySlug }) {
                       index={sectionPhotos.length}
                       preserveImage
                       gallery={serviceStory.gallery}
+                      galleryVideo={serviceStory.galleryVideo}
                     />
+                  )}
+                  {serviceStory?.videos && serviceStory.layout !== "stacked-media" && (
+                    <div className="grid items-start gap-4 sm:grid-cols-3">
+                      {serviceStory.videos.map((video) => (
+                        <ServiceVideo key={video.src} {...video} />
+                      ))}
+                    </div>
                   )}
                 </div>
               )}

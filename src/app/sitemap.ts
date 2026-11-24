@@ -92,6 +92,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "bridgewater-nj",
       "bernardsville-nj",
       "warren-nj",
+      "roseland-nj",
+      "long-hill-nj",
     ].map((slug) => ({
       url: `${baseUrl}/service-areas/${slug}`,
       lastModified: new Date("2026-10-07T00:00:00.000Z"),
