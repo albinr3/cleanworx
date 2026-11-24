@@ -18,6 +18,16 @@ const services = [
   ["Car Odor Removal", "/car-odor-treatment"],
 ] as const;
 
+const serviceAreas = [
+  ["Woodbridge", "/service-areas/woodbridge-nj"],
+  ["Edison", "/service-areas/edison-nj"],
+  ["Westfield", "/service-areas/westfield-nj"],
+  ["Cranford", "/service-areas/cranford-nj"],
+  ["Bridgewater", "/service-areas/bridgewater-nj"],
+  ["Bernardsville", "/service-areas/bernardsville-nj"],
+  ["Warren", "/service-areas/warren-nj"],
+] as const;
+
 export function Header({ hideOurWork = false, contactMode = "booking" }: { hideOurWork?: boolean; contactMode?: "booking" | "call" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -108,6 +118,22 @@ export function Header({ hideOurWork = false, contactMode = "booking" }: { hideO
             <Link href="/pricing" className="text-sm font-medium text-neutral-300 hover:text-white">
               Pricing
             </Link>
+            <div className="group relative">
+              <Link href="/service-areas" className="flex items-center gap-1.5 py-2 text-sm font-medium text-neutral-300 transition-colors group-hover:text-white">
+                Service Areas <ChevronDown className="h-4 w-4 text-neutral-400 transition-transform duration-200 group-hover:rotate-180" />
+              </Link>
+              <div className="invisible pointer-events-none absolute left-0 top-full z-50 w-56 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                <div className="rounded-xl border border-white/10 bg-[#14151a]/95 p-2 shadow-2xl shadow-black/60 backdrop-blur-md">
+                  {serviceAreas.map(([label, href]) => (
+                    <Link key={href} href={href} className="block rounded-lg px-3 py-2 text-sm text-neutral-300 transition-colors hover:bg-white/10 hover:text-white">{label}</Link>
+                  ))}
+                  <div className="my-1 border-t border-white/10" />
+                  <Link href="/service-areas" className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-[#4da3ff] transition-colors hover:bg-white/10 hover:text-white">
+                    View All <ChevronRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
             {!hideOurWork && (
               <Link href="/our-work" className="text-sm font-medium text-neutral-300 hover:text-white">
                 Our Work
@@ -214,10 +240,18 @@ export function Header({ hideOurWork = false, contactMode = "booking" }: { hideO
               >
                 Pricing <ChevronRight className="h-4 w-4" />
               </Link>
+              <p className="px-3 py-3 font-bold text-neutral-100">Service Areas</p>
+              {serviceAreas.map(([label, href]) => (
+                <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="block px-6 py-2 text-sm text-neutral-400">
+                  {label}
+                </Link>
+              ))}
+              <Link href="/service-areas" onClick={() => setMenuOpen(false)} className="flex items-center justify-between px-6 py-2.5 text-sm font-semibold text-[#4da3ff]">
+                View All <ChevronRight className="h-4 w-4" />
+              </Link>
               {[
                 ["Our Work", "/our-work"],
                 ["About", "/about"],
-                ["Service Areas", "/service-areas"],
                 ["FAQ", "/faq"],
                 ["Contact", "/contact"],
               ].filter(([, href]) => !hideOurWork || href !== "/our-work").map(([label, href]) => (

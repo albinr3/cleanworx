@@ -5,6 +5,7 @@ export const citySlugs = [
   "cranford-nj",
   "bridgewater-nj",
   "bernardsville-nj",
+  "warren-nj",
 ] as const;
 
 export type CitySlug = (typeof citySlugs)[number];
@@ -47,6 +48,71 @@ type CityPageContent = {
 // Five unique portfolio images per city, distributed by the services they document.
 // No image is reused between cities; work-09 is the only unused portfolio item.
 export const cityPages: Record<CitySlug, CityPageContent> = {
+  "warren-nj": {
+    city: "Warren",
+    serviceStories: {
+      "exterior-detailing": {
+        title: "BMW 5 Series and Land Rover Defender — Mobile Full Details",
+        image: "/images/service-areas/warren/bmw-5-series-mobile-full-detail-warren-nj.webp",
+        imageAlt: "Black BMW 5 Series after a mobile full detail in Warren, NJ",
+        imageWidth: 1800,
+        imageHeight: 1350,
+        gallery: [
+          { image: "/images/service-areas/warren/land-rover-defender-mobile-full-detail-warren-nj.webp", imageAlt: "Black Land Rover Defender exterior during a mobile full detail in Warren, NJ" },
+          { image: "/images/service-areas/warren/land-rover-defender-interior-detail-warren-nj.webp", imageAlt: "Tan and black interior of a Land Rover Defender after detailing in Warren, NJ" },
+        ],
+        paragraphs: [
+          "A customer on Saratoga Drive in Warren, NJ, scheduled mobile full details for two vehicles: a black BMW 5 Series and a black Land Rover Defender. We worked on both vehicles at the customer's location, taking care of their interiors and exteriors during the visit.",
+          "We cleaned the BMW's body and wheels, then worked through its cabin. On the Defender, we cleaned the exterior and paid attention to the tan seating and door trim, the dashboard, and the floor mats. The finished BMW and Defender both showed clear reflections in their dark paint, and the Defender's cabin had a clean, even appearance.",
+        ],
+      },
+      "interior-detailing": {
+        title: "Subaru — Mobile Full Interior Detail",
+        image: "/images/service-areas/warren/subaru-interior-detail-warren-front.webp",
+        imageAlt: "Front cabin of a Subaru after mobile interior detailing in Warren, NJ",
+        imageWidth: 1800,
+        imageHeight: 1350,
+        gallery: [
+          { image: "/images/service-areas/warren/subaru-interior-detail-warren-rear.webp", imageAlt: "Rear seats and floor of a detailed Subaru in Warren, NJ" },
+          { image: "/images/service-areas/warren/subaru-mobile-detail-warren-exterior.webp", imageAlt: "Black Subaru at a mobile detailing appointment in Warren, NJ" },
+        ],
+        paragraphs: [
+          "We traveled to Olsen Drive in Warren, NJ, for a mobile full interior detail on this black Subaru. The cabin had black perforated seats, all-weather floor mats, and wood-look trim across the dashboard and doors.",
+          "We cleaned the front and rear seating areas, working around the seat seams, center console, dashboard, and floor mats. When we finished, the seats and surrounding trim had a clean, even appearance throughout the cabin.",
+        ],
+      },
+      "mobile-auto-detailing": {
+        title: "Lexus GX 550 — Mobile Mini Detail",
+        image: "/images/service-areas/warren/lexus-mobile-mini-detail.webp",
+        imageAlt: "Gray Lexus after a mobile mini detail in Warren, New Jersey",
+        imageWidth: 1800,
+        imageHeight: 1350,
+        paragraphs: [
+          "A Lexus GX 550 was scheduled for a mobile Mini Detail on Old Forge Drive in Warren, NJ. We brought our equipment to the customer's driveway and worked on the exterior and interior at the same visit.",
+          "We washed the body by hand using our three-bucket method, then vacuumed the interior and wiped down the plastic surfaces. We finished the exterior with spray wax and tire shine. Once we were done, the gray paint reflected the surroundings clearly, and the wheels and tires had a clean, even appearance.",
+        ],
+      },
+    },
+    intro: "Warren drivers can visit our Basking Ridge shop for detailing, paint protection, and specialist services. Eligible mobile detailing appointments are also available in Warren after we confirm the service and location.",
+    appointmentNote: "Tell us about your vehicle, the service you need, and whether you prefer a shop visit or a mobile appointment in Warren. We will confirm availability before scheduling.",
+    fullDetailNote: "A full detail combines interior and exterior cleaning. Tell us which areas need attention so we can discuss the scope and price for your vehicle.",
+    engineBayNote: "Engine bay cleaning is a separate service. We check the condition and access before recommending an approach; see our add-ons page for details.",
+    photoIds: [],
+    serviceCopy: {
+      "ceramic-coating": "Ceramic coating adds a water-repellent protective layer to prepared paint and makes routine washing easier. Warren drivers can bring their vehicles to our Basking Ridge shop for an inspection, surface preparation, and a discussion of available coating options.",
+      "paint-correction": "Paint correction uses machine polishing to reduce swirls, haze, and light scratches. We inspect the finish on each Warren vehicle at our shop and recommend a polishing approach based on its condition.",
+      "window-tinting": "Window tinting adds Carbon or Ceramic film to selected windows for privacy, UV protection, and reduced heat. We discuss the film and windows with Warren customers before installation at our Basking Ridge shop. The front windshield is confirmed separately.",
+      "interior-detailing": "Interior detailing addresses seats, carpets, mats, and trim with methods suited to each material. Tell us about stains, pet hair, or other concerns on your Warren vehicle so we can recommend the appropriate cleaning.",
+      "exterior-detailing": "Exterior detailing includes a careful hand wash and attention to wheels, tires, glass, and trim. We assess the paint for contamination and discuss suitable protection for your Warren vehicle.",
+      "mobile-auto-detailing": "For eligible interior, exterior, or full detailing, our mobile unit can come to a suitable home or workplace in Warren. We confirm the service and setup before scheduling. A $35 mobile service fee applies to every eligible mobile appointment.",
+      "headlight-restoration": "Headlight restoration treats surface haze and oxidation through cleaning, sanding, polishing, and protection. The condition of your Warren vehicle's lenses determines the result; cracks or damage inside the housing may require another repair.",
+      "car-odor-treatment": "Persistent odors require an assessment of their source and the affected materials. Warren customers can discuss cleaning and in-shop ozone air purification with us; results depend on the source, and permanent removal is not guaranteed.",
+    },
+    questions: [
+      { question: "Do you have a shop in Warren?", answer: "Our shop is at 19 E. Henry Street in Basking Ridge. Eligible mobile appointments in Warren are confirmed individually." },
+      { question: "Can I book a mobile detail in Warren?", answer: "Yes, eligible detailing services can be performed at a suitable home or workplace. We confirm the service, location, and availability before scheduling; a $35 mobile service fee applies." },
+    ],
+  },
   "woodbridge-nj": {
     city: "Woodbridge",
     intro:

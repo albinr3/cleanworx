@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { ServiceVideo } from "@/components/autodetail/ServiceVideo";
+import { CityStoryGallery } from "@/components/autodetail/CityStoryGallery";
 import { SiteShell } from "@/components/autodetail/SiteShell";
 import { normalizeTerminology } from "@/lib/terminology";
 import { PORTFOLIO_ITEMS, type PortfolioItem } from "@/data/ourWorkData";
@@ -59,12 +60,8 @@ function CityStoryCard({
   return (
     <figure className="group overflow-hidden rounded-2xl border border-white/15 bg-[#151a23] shadow-[0_22px_70px_-45px_rgba(18,119,255,0.4)] lg:grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
       <div className={`relative min-h-64 overflow-hidden bg-[#090d14] sm:min-h-80 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-        {gallery ? (
-          <div className="grid grid-cols-2 gap-1">
-            {[{ image, imageAlt }, ...gallery].map((photo) => (
-              <Image key={photo.image} src={photo.image} alt={normalizeTerminology(photo.imageAlt)} width={1024} height={768} sizes="(max-width: 1023px) 50vw, 17vw" className="aspect-[4/3] h-auto w-full object-cover" />
-            ))}
-          </div>
+        {gallery && gallery.length > 0 ? (
+          <CityStoryGallery photos={[{ image, imageAlt }, ...gallery]} />
         ) : (
         <Image
           src={image}
@@ -74,7 +71,7 @@ function CityStoryCard({
           className={preserveImage ? "object-contain" : "object-cover transition-transform duration-700 group-hover:scale-[1.04]"}
         />
         )}
-        <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#090d14]/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+        <span className="pointer-events-none absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#090d14]/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
           {service}
         </span>
       </div>
